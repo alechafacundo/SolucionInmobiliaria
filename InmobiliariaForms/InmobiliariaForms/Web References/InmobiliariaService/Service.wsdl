@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Test">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inmueble" type="tns:Inmueble" />
+            <s:element minOccurs="0" maxOccurs="1" name="interesado" type="tns:Interesado" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Inmueble">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Fecha" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Operacion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Tipo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Localidad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Barrio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Calle" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Numero" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Piso" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Departamento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntreCalles" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Metros2Terreno" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SupCubierta" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Moneda" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Precio" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Observaciones" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Dormitorios" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Baños" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comedor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cocina" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Garage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Patio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OtrasDependencias" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorMetro2" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="CargadoPor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Contacto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Referencia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Otro" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Interesado">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MontoDesde" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MontoHasta" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="TipoDeOperacion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TipoDeInmueble" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Dormitorios" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ParaInversion" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="TestResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CrearInmueble">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inmueble" type="tns:Inmueble" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearInmuebleResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GuardarInteresado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="interesado" type="tns:Interesado" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarInteresadoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetInmueblesParaInteresado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="interesado" type="tns:Interesado" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInmueblesParaInteresadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInmueblesParaInteresadoResult" type="tns:ArrayOfInmueble" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInmueble">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Inmueble" nillable="true" type="tns:Inmueble" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestSoapIn">
+    <wsdl:part name="parameters" element="tns:Test" />
+  </wsdl:message>
+  <wsdl:message name="TestSoapOut">
+    <wsdl:part name="parameters" element="tns:TestResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearInmuebleSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearInmueble" />
+  </wsdl:message>
+  <wsdl:message name="CrearInmuebleSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearInmuebleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarInteresadoSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarInteresado" />
+  </wsdl:message>
+  <wsdl:message name="GuardarInteresadoSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarInteresadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInmueblesParaInteresadoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInmueblesParaInteresado" />
+  </wsdl:message>
+  <wsdl:message name="GetInmueblesParaInteresadoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInmueblesParaInteresadoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <wsdl:input message="tns:TestSoapIn" />
+      <wsdl:output message="tns:TestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearInmueble">
+      <wsdl:input message="tns:CrearInmuebleSoapIn" />
+      <wsdl:output message="tns:CrearInmuebleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarInteresado">
+      <wsdl:input message="tns:GuardarInteresadoSoapIn" />
+      <wsdl:output message="tns:GuardarInteresadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInmueblesParaInteresado">
+      <wsdl:input message="tns:GetInmueblesParaInteresadoSoapIn" />
+      <wsdl:output message="tns:GetInmueblesParaInteresadoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <soap:operation soapAction="http://tempuri.org/Test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearInmueble">
+      <soap:operation soapAction="http://tempuri.org/CrearInmueble" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarInteresado">
+      <soap:operation soapAction="http://tempuri.org/GuardarInteresado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInmueblesParaInteresado">
+      <soap:operation soapAction="http://tempuri.org/GetInmueblesParaInteresado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <soap12:operation soapAction="http://tempuri.org/Test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearInmueble">
+      <soap12:operation soapAction="http://tempuri.org/CrearInmueble" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarInteresado">
+      <soap12:operation soapAction="http://tempuri.org/GuardarInteresado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInmueblesParaInteresado">
+      <soap12:operation soapAction="http://tempuri.org/GetInmueblesParaInteresado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://localhost:51592/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://localhost:51592/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

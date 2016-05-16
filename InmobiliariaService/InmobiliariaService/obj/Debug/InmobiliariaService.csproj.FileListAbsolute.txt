@@ -1,0 +1,14 @@
+C:\Users\Fabricio\Dropbox\Proyectos\SolucionInmobiliaria\InmobiliariaService\InmobiliariaService\bin\InmobiliariaService.dll
+C:\Users\Fabricio\Dropbox\Proyectos\SolucionInmobiliaria\InmobiliariaService\InmobiliariaService\bin\InmobiliariaService.pdb
+C:\Users\Fabricio\Dropbox\Proyectos\SolucionInmobiliaria\InmobiliariaService\InmobiliariaService\obj\Debug\InmobiliariaService.dll
+C:\Users\Fabricio\Dropbox\Proyectos\SolucionInmobiliaria\InmobiliariaService\InmobiliariaService\obj\Debug\InmobiliariaService.pdb
+C:\Users\fabricio.duarte\Dropbox\Proyectos\SolucionInmobiliaria\InmobiliariaService\InmobiliariaService\bin\InmobiliariaService.dll
+C:\Users\fabricio.duarte\Dropbox\Proyectos\SolucionInmobiliaria\InmobiliariaService\InmobiliariaService\bin\InmobiliariaService.pdb
+C:\Users\fabricio.duarte\Dropbox\Proyectos\SolucionInmobiliaria\InmobiliariaService\InmobiliariaService\obj\Debug\InmobiliariaService.dll
+C:\Users\fabricio.duarte\Dropbox\Proyectos\SolucionInmobiliaria\InmobiliariaService\InmobiliariaService\obj\Debug\InmobiliariaService.pdb
+C:\Users\Facu\Desktop\SolucionInmobiliaria\InmobiliariaService\InmobiliariaService\bin\InmobiliariaService.dll.config
+C:\Users\Facu\Desktop\SolucionInmobiliaria\InmobiliariaService\InmobiliariaService\bin\InmobiliariaService.dll
+C:\Users\Facu\Desktop\SolucionInmobiliaria\InmobiliariaService\InmobiliariaService\bin\InmobiliariaService.pdb
+C:\Users\Facu\Desktop\SolucionInmobiliaria\InmobiliariaService\InmobiliariaService\obj\Debug\InmobiliariaService.csprojResolveAssemblyReference.cache
+C:\Users\Facu\Desktop\SolucionInmobiliaria\InmobiliariaService\InmobiliariaService\obj\Debug\InmobiliariaService.dll
+C:\Users\Facu\Desktop\SolucionInmobiliaria\InmobiliariaService\InmobiliariaService\obj\Debug\InmobiliariaService.pdb
