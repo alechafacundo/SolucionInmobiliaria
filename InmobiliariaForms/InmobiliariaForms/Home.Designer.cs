@@ -83,6 +83,7 @@
             // 
             this.netBarItem1.Name = "netBarItem1";
             this.netBarItem1.Text = "Nuevo Interesado";
+            this.netBarItem1.ItemClick += new System.EventHandler(this.netBarItem1_ItemClick);
             // 
             // netBarItem2
             // 

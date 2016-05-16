@@ -9,3 +9,14 @@ C:\Users\Facu\Desktop\SolucionInmobiliaria\InmobiliariaForms\InmobiliariaForms\b
 C:\Users\Facu\Desktop\SolucionInmobiliaria\InmobiliariaForms\InmobiliariaForms\bin\Debug\InmobiliariaForms.pdb
 C:\Users\Facu\Desktop\SolucionInmobiliaria\InmobiliariaForms\InmobiliariaForms\obj\Debug\InmobiliariaForms.exe
 C:\Users\Facu\Desktop\SolucionInmobiliaria\InmobiliariaForms\InmobiliariaForms\obj\Debug\InmobiliariaForms.pdb
+C:\Users\Facu\Desktop\Proyecto\trunk\InmobiliariaForms\InmobiliariaForms\bin\Debug\InmobiliariaForms.exe.config
+C:\Users\Facu\Desktop\Proyecto\trunk\InmobiliariaForms\InmobiliariaForms\obj\Debug\InmobiliariaForms.exe
+C:\Users\Facu\Desktop\Proyecto\trunk\InmobiliariaForms\InmobiliariaForms\obj\Debug\InmobiliariaForms.pdb
+C:\Users\Facu\Desktop\Proyecto\trunk\InmobiliariaForms\InmobiliariaForms\bin\Debug\InmobiliariaForms.exe
+C:\Users\Facu\Desktop\Proyecto\trunk\InmobiliariaForms\InmobiliariaForms\bin\Debug\InmobiliariaForms.pdb
+C:\Users\Facu\Desktop\Proyecto\trunk\InmobiliariaForms\InmobiliariaForms\obj\Debug\InmobiliariaForms.csprojResolveAssemblyReference.cache
+C:\Users\Facu\Desktop\Proyecto\trunk\InmobiliariaForms\InmobiliariaForms\obj\Debug\InmobiliariaForms.frmInmueble.resources
+C:\Users\Facu\Desktop\Proyecto\trunk\InmobiliariaForms\InmobiliariaForms\obj\Debug\InmobiliariaForms.Home.resources
+C:\Users\Facu\Desktop\Proyecto\trunk\InmobiliariaForms\InmobiliariaForms\obj\Debug\InmobiliariaForms.frmInteresado.resources
+C:\Users\Facu\Desktop\Proyecto\trunk\InmobiliariaForms\InmobiliariaForms\obj\Debug\InmobiliariaForms.Properties.Resources.resources
+C:\Users\Facu\Desktop\Proyecto\trunk\InmobiliariaForms\InmobiliariaForms\obj\Debug\InmobiliariaForms.csproj.GenerateResource.Cache

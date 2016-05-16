@@ -21,6 +21,13 @@ namespace InmobiliariaForms
 
         private void frmInteresado_Load(object sender, EventArgs e)
         {
+            cbTipoInmueble.Items.Clear();
+            cbTipoInmueble.Items.Add("Departamento");
+            cbTipoInmueble.Items.Add("Casa");
+            cbTipoInmueble.Items.Add("Terreno");
+
+
+
             if (Interesado != null)
             {
                 txNombre.Text = Interesado.Nombre;
@@ -31,6 +38,11 @@ namespace InmobiliariaForms
                 //cbTipoInmueble
                 
             }
+        }
+
+        private void cbTipoInmueble_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

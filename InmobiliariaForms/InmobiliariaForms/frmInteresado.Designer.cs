@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInteresado));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbEsInversion = new System.Windows.Forms.CheckBox();
             this.numDormitorios = new System.Windows.Forms.NumericUpDown();
@@ -57,9 +58,12 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox1.BackgroundImage")));
+            this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.groupBox1.Controls.Add(this.cbEsInversion);
             this.groupBox1.Controls.Add(this.numDormitorios);
             this.groupBox1.Controls.Add(this.label8);
@@ -77,6 +81,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txNombre);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(499, 159);
@@ -87,14 +92,17 @@
             // cbEsInversion
             // 
             this.cbEsInversion.AutoSize = true;
+            this.cbEsInversion.BackColor = System.Drawing.Color.Transparent;
             this.cbEsInversion.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cbEsInversion.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbEsInversion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cbEsInversion.Location = new System.Drawing.Point(248, 128);
             this.cbEsInversion.Name = "cbEsInversion";
-            this.cbEsInversion.Size = new System.Drawing.Size(120, 18);
+            this.cbEsInversion.Size = new System.Drawing.Size(110, 18);
             this.cbEsInversion.TabIndex = 17;
             this.cbEsInversion.Text = "Es para Inversión";
             this.cbEsInversion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cbEsInversion.UseVisualStyleBackColor = true;
+            this.cbEsInversion.UseVisualStyleBackColor = false;
             // 
             // numDormitorios
             // 
@@ -106,18 +114,23 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.label8.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(6, 129);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 14);
+            this.label8.Size = new System.Drawing.Size(69, 14);
             this.label8.TabIndex = 14;
             this.label8.Text = "Dormitorios:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(245, 101);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(110, 14);
+            this.label7.Size = new System.Drawing.Size(99, 14);
             this.label7.TabIndex = 13;
             this.label7.Text = "Tipo de Operación:";
             // 
@@ -132,9 +145,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(6, 101);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(107, 14);
+            this.label6.Size = new System.Drawing.Size(95, 14);
             this.label6.TabIndex = 11;
             this.label6.Text = "Tipo de Inmueble:";
             // 
@@ -145,6 +160,7 @@
             this.cbTipoInmueble.Name = "cbTipoInmueble";
             this.cbTipoInmueble.Size = new System.Drawing.Size(120, 22);
             this.cbTipoInmueble.TabIndex = 10;
+            this.cbTipoInmueble.SelectedIndexChanged += new System.EventHandler(this.cbTipoInmueble_SelectedIndexChanged);
             // 
             // numHasta
             // 
@@ -166,9 +182,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(209, 72);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 14);
+            this.label5.Size = new System.Drawing.Size(74, 14);
             this.label5.TabIndex = 8;
             this.label5.Text = "Monto Hasta:";
             // 
@@ -192,9 +210,12 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label4.Location = new System.Drawing.Point(6, 72);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 14);
+            this.label4.Size = new System.Drawing.Size(76, 14);
             this.label4.TabIndex = 6;
             this.label4.Text = "Monto Desde:";
             // 
@@ -208,9 +229,12 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label3.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(245, 45);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 14);
+            this.label3.Size = new System.Drawing.Size(38, 14);
             this.label3.TabIndex = 4;
             this.label3.Text = "Email:";
             // 
@@ -224,9 +248,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(6, 45);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 14);
+            this.label2.Size = new System.Drawing.Size(52, 14);
             this.label2.TabIndex = 2;
             this.label2.Text = "Teléfono:";
             // 
@@ -240,17 +265,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(6, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 14);
+            this.label1.Size = new System.Drawing.Size(50, 14);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre:";
             // 
             // btGuardar
             // 
-            this.btGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.btGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btGuardar.Location = new System.Drawing.Point(436, 178);
             this.btGuardar.Name = "btGuardar";
             this.btGuardar.Size = new System.Drawing.Size(75, 25);
@@ -260,9 +286,9 @@
             // 
             // btEliminar
             // 
-            this.btEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.btEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btEliminar.Location = new System.Drawing.Point(12, 178);
             this.btEliminar.Name = "btEliminar";
             this.btEliminar.Size = new System.Drawing.Size(75, 25);
@@ -272,9 +298,9 @@
             // 
             // btCancelar
             // 
-            this.btCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.btCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btCancelar.Location = new System.Drawing.Point(355, 178);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(75, 25);
@@ -286,12 +312,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(523, 212);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btEliminar);
             this.Controls.Add(this.btGuardar);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmInteresado";
             this.Text = "Interesado";
             this.Load += new System.EventHandler(this.frmInteresado_Load);

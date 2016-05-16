@@ -28,23 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInmueble));
             this.g = new System.Windows.Forms.GroupBox();
-            this.g.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(74, 117);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
             // 
             // g
             // 
-            this.g.Controls.Add(this.label1);
+            this.g.BackColor = System.Drawing.SystemColors.Control;
+            this.g.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("g.BackgroundImage")));
+            this.g.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.g.Location = new System.Drawing.Point(4, 13);
             this.g.Name = "g";
             this.g.Size = new System.Drawing.Size(488, 237);
@@ -58,17 +50,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(504, 262);
             this.Controls.Add(this.g);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmInmueble";
-            this.Text = "frmInmueble";
-            this.g.ResumeLayout(false);
-            this.g.PerformLayout();
+            this.Text = "Inmueble";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox g;
     }
 }

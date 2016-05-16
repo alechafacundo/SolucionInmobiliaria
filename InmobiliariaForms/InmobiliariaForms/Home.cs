@@ -22,5 +22,11 @@ namespace InmobiliariaForms
 
             MessageBox.Show(saludo);
         }
+
+        private void netBarItem1_ItemClick(object sender, EventArgs e)
+        {
+            frmInteresado frm = new frmInteresado();
+            frm.Show();
+        }
     }
 }
