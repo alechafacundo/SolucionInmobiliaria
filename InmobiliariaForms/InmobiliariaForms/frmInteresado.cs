@@ -40,6 +40,14 @@ namespace InmobiliariaForms
             }
         }
 
-        
+        private void btGuardar_Click(object sender, EventArgs e)
+        {
+            //ToDo
+            //Validar campos mandatorios o requeridos
+            //Instanciar un interesado
+            //Set properties del interesado
+            //Invocar al ws y guardar el interesado
+            //Mostrar Mensaje que lo guardo bien o lo guardo mal
+        }
     }
 }

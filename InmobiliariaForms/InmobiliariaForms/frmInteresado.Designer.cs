@@ -282,6 +282,7 @@
             this.btGuardar.TabIndex = 1;
             this.btGuardar.Text = "Guardar";
             this.btGuardar.UseVisualStyleBackColor = true;
+            this.btGuardar.Click += new System.EventHandler(this.btGuardar_Click);
             // 
             // btEliminar
             // 
