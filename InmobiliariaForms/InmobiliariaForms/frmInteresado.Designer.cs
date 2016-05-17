@@ -63,7 +63,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox1.BackgroundImage")));
-            this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.groupBox1.Controls.Add(this.cbEsInversion);
             this.groupBox1.Controls.Add(this.numDormitorios);
             this.groupBox1.Controls.Add(this.label8);
@@ -160,7 +160,6 @@
             this.cbTipoInmueble.Name = "cbTipoInmueble";
             this.cbTipoInmueble.Size = new System.Drawing.Size(120, 22);
             this.cbTipoInmueble.TabIndex = 10;
-            this.cbTipoInmueble.SelectedIndexChanged += new System.EventHandler(this.cbTipoInmueble_SelectedIndexChanged);
             // 
             // numHasta
             // 

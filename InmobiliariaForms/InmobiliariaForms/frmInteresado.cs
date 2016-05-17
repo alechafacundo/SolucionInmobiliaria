@@ -40,9 +40,6 @@ namespace InmobiliariaForms
             }
         }
 
-        private void cbTipoInmueble_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
