@@ -80,9 +80,6 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="TextEditor">
-      <HintPath>..\..\..\..\..\Downloads\Instalador\TextEditor.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="frmInmueble.cs">

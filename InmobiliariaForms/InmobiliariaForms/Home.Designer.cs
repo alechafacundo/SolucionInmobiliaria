@@ -28,73 +28,171 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btInmueble = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.inmuebleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.buscarInmuebleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.interesadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            this.netBarControl1 = new NetBarControl.NetBarControl();
+            this.netBarGroup1 = new NetBarControl.NetBarGroup();
+            this.netBarItem1 = new NetBarControl.NetBarItem();
+            this.netBarItem2 = new NetBarControl.NetBarItem();
+            this.netBarGroup2 = new NetBarControl.NetBarGroup();
+            this.netBarItem3 = new NetBarControl.NetBarItem();
+            this.netBarItem4 = new NetBarControl.NetBarItem();
+            this.netBarGroup3 = new NetBarControl.NetBarGroup();
+            this.netBarItem5 = new NetBarControl.NetBarItem();
+            this.netBarItem6 = new NetBarControl.NetBarItem();
+            this.netBarGroup4 = new NetBarControl.NetBarGroup();
+            this.netBarItem7 = new NetBarControl.NetBarItem();
+            this.netBarItem8 = new NetBarControl.NetBarItem();
+            this.netBarGroup5 = new NetBarControl.NetBarGroup();
+            this.netBarItem9 = new NetBarControl.NetBarItem();
+            this.netBarItem10 = new NetBarControl.NetBarItem();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.SuspendLayout();
             // 
-            // btInmueble
+            // netBarControl1
             // 
-            this.btInmueble.Location = new System.Drawing.Point(34, 79);
-            this.btInmueble.Name = "btInmueble";
-            this.btInmueble.Size = new System.Drawing.Size(75, 23);
-            this.btInmueble.TabIndex = 0;
-            this.btInmueble.Text = "button1";
-            this.btInmueble.UseVisualStyleBackColor = true;
-            this.btInmueble.Click += new System.EventHandler(this.btInmueble_Click);
+            this.netBarControl1.ActiveGroup = this.netBarGroup1;
+            this.netBarControl1.Groups.AddRange(new NetBarControl.NetBarGroup[] {
+            this.netBarGroup1,
+            this.netBarGroup2,
+            this.netBarGroup3,
+            this.netBarGroup4,
+            this.netBarGroup5});
+            this.netBarControl1.ItemsBackground.BackColor = System.Drawing.Color.Empty;
+            this.netBarControl1.ItemsBackground.BackColor2 = System.Drawing.Color.Empty;
+            this.netBarControl1.Location = new System.Drawing.Point(2, 0);
+            this.netBarControl1.Name = "netBarControl1";
+            this.netBarControl1.ShowHorizontalSplitter = false;
+            this.netBarControl1.ShowOverflowPanel = false;
+            this.netBarControl1.ShowPopupShadow = true;
+            this.netBarControl1.ShowVerticalSplitter = false;
+            this.netBarControl1.Size = new System.Drawing.Size(145, 482);
+            this.netBarControl1.TabIndex = 1;
+            this.netBarControl1.Text = "netBarControl1";
             // 
-            // menuStrip1
+            // netBarGroup1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inmuebleToolStripMenuItem,
-            this.interesadoToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(284, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
+            this.netBarGroup1.Items.AddRange(new NetBarControl.NetBarItem[] {
+            this.netBarItem1,
+            this.netBarItem2});
+            this.netBarGroup1.Name = "netBarGroup1";
+            this.netBarGroup1.Style = NetBarControl.NetBarGroupStyle.LargeItemList;
+            this.netBarGroup1.Text = "Interesados";
             // 
-            // inmuebleToolStripMenuItem
+            // netBarItem1
             // 
-            this.inmuebleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.buscarInmuebleToolStripMenuItem});
-            this.inmuebleToolStripMenuItem.Name = "inmuebleToolStripMenuItem";
-            this.inmuebleToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
-            this.inmuebleToolStripMenuItem.Text = "Inmueble";
+            this.netBarItem1.Name = "netBarItem1";
+            this.netBarItem1.Text = "Nuevo Interesado";
             // 
-            // toolStripMenuItem1
+            // netBarItem2
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(162, 22);
-            this.toolStripMenuItem1.Text = "Nuevo Inmueble";
+            this.netBarItem2.Name = "netBarItem2";
+            this.netBarItem2.Text = "Buscar Interesado";
             // 
-            // buscarInmuebleToolStripMenuItem
+            // netBarGroup2
             // 
-            this.buscarInmuebleToolStripMenuItem.Name = "buscarInmuebleToolStripMenuItem";
-            this.buscarInmuebleToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.buscarInmuebleToolStripMenuItem.Text = "Buscar Inmueble";
+            this.netBarGroup2.Items.AddRange(new NetBarControl.NetBarItem[] {
+            this.netBarItem3,
+            this.netBarItem4});
+            this.netBarGroup2.Name = "netBarGroup2";
+            this.netBarGroup2.Style = NetBarControl.NetBarGroupStyle.LargeItemList;
+            this.netBarGroup2.Text = "Inmuebles";
+            this.netBarGroup2.Visible = true;
             // 
-            // interesadoToolStripMenuItem
+            // netBarItem3
             // 
-            this.interesadoToolStripMenuItem.Name = "interesadoToolStripMenuItem";
-            this.interesadoToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
-            this.interesadoToolStripMenuItem.Text = "Interesado";
+            this.netBarItem3.Name = "netBarItem3";
+            this.netBarItem3.Text = "Nuevo Inmueble";
             // 
-            // Home
+            // netBarItem4
             // 
-            this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Controls.Add(this.btInmueble);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Home";
-            this.Load += new System.EventHandler(this.Home_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.netBarItem4.Name = "netBarItem4";
+            this.netBarItem4.Text = "Buscar Inmueble";
+            // 
+            // netBarGroup3
+            // 
+            this.netBarGroup3.Items.AddRange(new NetBarControl.NetBarItem[] {
+            this.netBarItem5,
+            this.netBarItem6});
+            this.netBarGroup3.Name = "netBarGroup3";
+            this.netBarGroup3.Style = NetBarControl.NetBarGroupStyle.LargeItemList;
+            this.netBarGroup3.Text = "Vendedor";
+            this.netBarGroup3.Visible = false;
+            // 
+            // netBarItem5
+            // 
+            this.netBarItem5.Name = "netBarItem5";
+            this.netBarItem5.Text = "Nuevo Vendedor";
+            // 
+            // netBarItem6
+            // 
+            this.netBarItem6.Name = "netBarItem6";
+            this.netBarItem6.Text = "Buscar Vendedor";
+            // 
+            // netBarGroup4
+            // 
+            this.netBarGroup4.Items.AddRange(new NetBarControl.NetBarItem[] {
+            this.netBarItem7,
+            this.netBarItem8});
+            this.netBarGroup4.Name = "netBarGroup4";
+            this.netBarGroup4.Style = NetBarControl.NetBarGroupStyle.LargeItemList;
+            this.netBarGroup4.Text = "Localidad";
+            this.netBarGroup4.Visible = false;
+            // 
+            // netBarItem7
+            // 
+            this.netBarItem7.Name = "netBarItem7";
+            this.netBarItem7.Text = "Nueva Localidad";
+            // 
+            // netBarItem8
+            // 
+            this.netBarItem8.Name = "netBarItem8";
+            this.netBarItem8.Text = "Buscar Localidad";
+            // 
+            // netBarGroup5
+            // 
+            this.netBarGroup5.Items.AddRange(new NetBarControl.NetBarItem[] {
+            this.netBarItem9,
+            this.netBarItem10});
+            this.netBarGroup5.Name = "netBarGroup5";
+            this.netBarGroup5.Style = NetBarControl.NetBarGroupStyle.LargeItemList;
+            this.netBarGroup5.Text = "Barrio";
+            this.netBarGroup5.Visible = false;
+            // 
+            // netBarItem9
+            // 
+            this.netBarItem9.Name = "netBarItem9";
+            this.netBarItem9.Text = "Nuevo Barrio";
+            // 
+            // netBarItem10
+            // 
+            this.netBarItem10.Name = "netBarItem10";
+            this.netBarItem10.Text = "Buscar Barrio";
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip1.Location = new System.Drawing.Point(0, 485);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(654, 25);
+            this.toolStrip1.TabIndex = 2;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(654, 510);
+            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.netBarControl1);
+            this.IsMdiContainer = true;
+            this.Name = "Form1";
+            this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -120,12 +218,6 @@
         private NetBarControl.NetBarItem netBarItem9;
         private NetBarControl.NetBarItem netBarItem10;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.Button btInmueble;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem inmuebleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem buscarInmuebleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem interesadoToolStripMenuItem;
     }
 }
 
