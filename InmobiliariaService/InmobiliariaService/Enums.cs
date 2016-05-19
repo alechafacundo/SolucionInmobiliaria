@@ -4,6 +4,7 @@ using System.Text;
 
 namespace InmobiliariaService
 {
+    [Serializable]
     public enum eTipoInmueble
 	{
         Casa = 0,
