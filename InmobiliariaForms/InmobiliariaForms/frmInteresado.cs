@@ -25,11 +25,14 @@ namespace InmobiliariaForms
             cbTipoInmueble.Items.Add("Departamento");
             cbTipoInmueble.Items.Add("Casa");
             cbTipoInmueble.Items.Add("Terreno");
+            cbTipoOperacion.Items.Clear();
+            cbTipoOperacion.Items.Add("Venta");
+            cbTipoOperacion.Items.Add("Alquiler");
 
             //ToDo: Facu
             //Llenar cbTipoInmueble con eTipoInmueble
             //LLenar cbTipoOperacion con eTipoOperacion
-            
+
 
             if (Interesado != null)
             {

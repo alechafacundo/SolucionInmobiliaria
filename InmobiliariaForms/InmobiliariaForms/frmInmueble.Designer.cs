@@ -84,6 +84,7 @@
             this.btEliminar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.cbTipoOperacion = new System.Windows.Forms.ComboBox();
             this.g.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).BeginInit();
@@ -94,6 +95,7 @@
             this.g.BackColor = System.Drawing.SystemColors.Control;
             this.g.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("g.BackgroundImage")));
             this.g.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.g.Controls.Add(this.cbTipoOperacion);
             this.g.Controls.Add(this.groupBox1);
             this.g.Controls.Add(this.txOtras);
             this.g.Controls.Add(this.txPatio);
@@ -379,8 +381,7 @@
             this.cbMoneda.Name = "cbMoneda";
             this.cbMoneda.Size = new System.Drawing.Size(50, 21);
             this.cbMoneda.TabIndex = 23;
-            this.cbMoneda.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
-            // 
+                       // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -554,7 +555,6 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 3;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -572,7 +572,6 @@
             this.cbTipoInmueble.Name = "cbTipoInmueble";
             this.cbTipoInmueble.Size = new System.Drawing.Size(101, 21);
             this.cbTipoInmueble.TabIndex = 1;
-            this.cbTipoInmueble.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -600,7 +599,7 @@
             this.btCancelar.TabIndex = 3;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = true;
-                       // 
+            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(532, 273);
@@ -609,6 +608,15 @@
             this.button3.TabIndex = 4;
             this.button3.Text = "Guardar";
             this.button3.UseVisualStyleBackColor = true;
+            // 
+            // cbTipoOperacion
+            // 
+            this.cbTipoOperacion.FormattingEnabled = true;
+            this.cbTipoOperacion.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.cbTipoOperacion.Location = new System.Drawing.Point(278, 13);
+            this.cbTipoOperacion.Name = "cbTipoOperacion";
+            this.cbTipoOperacion.Size = new System.Drawing.Size(131, 21);
+            this.cbTipoOperacion.TabIndex = 45;
             // 
             // frmInmueble
             // 
@@ -688,5 +696,6 @@
         private System.Windows.Forms.Button btEliminar;
         private System.Windows.Forms.Button btCancelar;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox cbTipoOperacion;
     }
 }
