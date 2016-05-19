@@ -31,62 +31,62 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInmueble));
             this.g = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.txReferencia = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.txContacto = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cbCargadoPor = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.txOtras = new System.Windows.Forms.TextBox();
+            this.txPatio = new System.Windows.Forms.TextBox();
+            this.txGarage = new System.Windows.Forms.TextBox();
+            this.txComedor = new System.Windows.Forms.TextBox();
+            this.txBaño = new System.Windows.Forms.TextBox();
+            this.txDorm = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txObservaciones = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txValorMts = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txSupCubierta = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txMtsTerreno = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cbMoneda = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numPrecio = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txEntreCalles = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txDepto = new System.Windows.Forms.TextBox();
+            this.txPiso = new System.Windows.Forms.TextBox();
+            this.txNumero = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txCalle = new System.Windows.Forms.TextBox();
+            this.txBarrio = new System.Windows.Forms.TextBox();
+            this.txLocalidad = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeFecha = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbTipoInmueble = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btEliminar = new System.Windows.Forms.Button();
+            this.btCancelar = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.g.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).BeginInit();
             this.SuspendLayout();
             // 
             // g
@@ -95,45 +95,45 @@
             this.g.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("g.BackgroundImage")));
             this.g.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.g.Controls.Add(this.groupBox1);
-            this.g.Controls.Add(this.textBox17);
-            this.g.Controls.Add(this.textBox16);
-            this.g.Controls.Add(this.textBox15);
-            this.g.Controls.Add(this.textBox14);
-            this.g.Controls.Add(this.textBox13);
-            this.g.Controls.Add(this.textBox12);
+            this.g.Controls.Add(this.txOtras);
+            this.g.Controls.Add(this.txPatio);
+            this.g.Controls.Add(this.txGarage);
+            this.g.Controls.Add(this.txComedor);
+            this.g.Controls.Add(this.txBaño);
+            this.g.Controls.Add(this.txDorm);
             this.g.Controls.Add(this.label22);
             this.g.Controls.Add(this.label21);
             this.g.Controls.Add(this.label20);
             this.g.Controls.Add(this.label19);
             this.g.Controls.Add(this.label18);
             this.g.Controls.Add(this.label17);
-            this.g.Controls.Add(this.textBox11);
+            this.g.Controls.Add(this.txObservaciones);
             this.g.Controls.Add(this.label16);
-            this.g.Controls.Add(this.textBox10);
+            this.g.Controls.Add(this.txValorMts);
             this.g.Controls.Add(this.label15);
-            this.g.Controls.Add(this.textBox9);
+            this.g.Controls.Add(this.txSupCubierta);
             this.g.Controls.Add(this.label14);
-            this.g.Controls.Add(this.textBox8);
+            this.g.Controls.Add(this.txMtsTerreno);
             this.g.Controls.Add(this.label13);
-            this.g.Controls.Add(this.comboBox3);
+            this.g.Controls.Add(this.cbMoneda);
             this.g.Controls.Add(this.label12);
-            this.g.Controls.Add(this.numericUpDown1);
+            this.g.Controls.Add(this.numPrecio);
             this.g.Controls.Add(this.label11);
-            this.g.Controls.Add(this.textBox7);
+            this.g.Controls.Add(this.txEntreCalles);
             this.g.Controls.Add(this.label10);
-            this.g.Controls.Add(this.textBox6);
-            this.g.Controls.Add(this.textBox5);
-            this.g.Controls.Add(this.textBox4);
+            this.g.Controls.Add(this.txDepto);
+            this.g.Controls.Add(this.txPiso);
+            this.g.Controls.Add(this.txNumero);
             this.g.Controls.Add(this.label9);
             this.g.Controls.Add(this.label8);
             this.g.Controls.Add(this.label7);
-            this.g.Controls.Add(this.textBox3);
-            this.g.Controls.Add(this.textBox2);
-            this.g.Controls.Add(this.textBox1);
+            this.g.Controls.Add(this.txCalle);
+            this.g.Controls.Add(this.txBarrio);
+            this.g.Controls.Add(this.txLocalidad);
             this.g.Controls.Add(this.label6);
             this.g.Controls.Add(this.label5);
             this.g.Controls.Add(this.label4);
-            this.g.Controls.Add(this.dateTimePicker1);
+            this.g.Controls.Add(this.dateTimeFecha);
             this.g.Controls.Add(this.label3);
             this.g.Controls.Add(this.comboBox2);
             this.g.Controls.Add(this.label2);
@@ -148,11 +148,11 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox19);
+            this.groupBox1.Controls.Add(this.txReferencia);
             this.groupBox1.Controls.Add(this.label25);
-            this.groupBox1.Controls.Add(this.textBox18);
+            this.groupBox1.Controls.Add(this.txContacto);
             this.groupBox1.Controls.Add(this.label24);
-            this.groupBox1.Controls.Add(this.comboBox4);
+            this.groupBox1.Controls.Add(this.cbCargadoPor);
             this.groupBox1.Controls.Add(this.label23);
             this.groupBox1.Location = new System.Drawing.Point(14, 205);
             this.groupBox1.Name = "groupBox1";
@@ -161,12 +161,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Interno";
             // 
-            // textBox19
+            // txReferencia
             // 
-            this.textBox19.Location = new System.Drawing.Point(459, 17);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(124, 20);
-            this.textBox19.TabIndex = 5;
+            this.txReferencia.Location = new System.Drawing.Point(459, 17);
+            this.txReferencia.Name = "txReferencia";
+            this.txReferencia.Size = new System.Drawing.Size(124, 20);
+            this.txReferencia.TabIndex = 5;
             // 
             // label25
             // 
@@ -177,12 +177,12 @@
             this.label25.TabIndex = 4;
             this.label25.Text = "Referencia:";
             // 
-            // textBox18
+            // txContacto
             // 
-            this.textBox18.Location = new System.Drawing.Point(271, 17);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(114, 20);
-            this.textBox18.TabIndex = 3;
+            this.txContacto.Location = new System.Drawing.Point(271, 17);
+            this.txContacto.Name = "txContacto";
+            this.txContacto.Size = new System.Drawing.Size(114, 20);
+            this.txContacto.TabIndex = 3;
             // 
             // label24
             // 
@@ -193,13 +193,13 @@
             this.label24.TabIndex = 2;
             this.label24.Text = "Contacto:";
             // 
-            // comboBox4
+            // cbCargadoPor
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(80, 17);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(126, 21);
-            this.comboBox4.TabIndex = 1;
+            this.cbCargadoPor.FormattingEnabled = true;
+            this.cbCargadoPor.Location = new System.Drawing.Point(80, 17);
+            this.cbCargadoPor.Name = "cbCargadoPor";
+            this.cbCargadoPor.Size = new System.Drawing.Size(126, 21);
+            this.cbCargadoPor.TabIndex = 1;
             // 
             // label23
             // 
@@ -210,47 +210,47 @@
             this.label23.TabIndex = 0;
             this.label23.Text = "Cargado por:";
             // 
-            // textBox17
+            // txOtras
             // 
-            this.textBox17.Location = new System.Drawing.Point(499, 179);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(104, 20);
-            this.textBox17.TabIndex = 43;
+            this.txOtras.Location = new System.Drawing.Point(499, 179);
+            this.txOtras.Name = "txOtras";
+            this.txOtras.Size = new System.Drawing.Size(104, 20);
+            this.txOtras.TabIndex = 43;
             // 
-            // textBox16
+            // txPatio
             // 
-            this.textBox16.Location = new System.Drawing.Point(417, 179);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(38, 20);
-            this.textBox16.TabIndex = 42;
+            this.txPatio.Location = new System.Drawing.Point(417, 179);
+            this.txPatio.Name = "txPatio";
+            this.txPatio.Size = new System.Drawing.Size(38, 20);
+            this.txPatio.TabIndex = 42;
             // 
-            // textBox15
+            // txGarage
             // 
-            this.textBox15.Location = new System.Drawing.Point(334, 179);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(38, 20);
-            this.textBox15.TabIndex = 41;
+            this.txGarage.Location = new System.Drawing.Point(334, 179);
+            this.txGarage.Name = "txGarage";
+            this.txGarage.Size = new System.Drawing.Size(38, 20);
+            this.txGarage.TabIndex = 41;
             // 
-            // textBox14
+            // txComedor
             // 
-            this.textBox14.Location = new System.Drawing.Point(239, 179);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(38, 20);
-            this.textBox14.TabIndex = 40;
+            this.txComedor.Location = new System.Drawing.Point(239, 179);
+            this.txComedor.Name = "txComedor";
+            this.txComedor.Size = new System.Drawing.Size(38, 20);
+            this.txComedor.TabIndex = 40;
             // 
-            // textBox13
+            // txBaño
             // 
-            this.textBox13.Location = new System.Drawing.Point(137, 179);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(38, 20);
-            this.textBox13.TabIndex = 39;
+            this.txBaño.Location = new System.Drawing.Point(137, 179);
+            this.txBaño.Name = "txBaño";
+            this.txBaño.Size = new System.Drawing.Size(38, 20);
+            this.txBaño.TabIndex = 39;
             // 
-            // textBox12
+            // txDorm
             // 
-            this.textBox12.Location = new System.Drawing.Point(52, 179);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(38, 20);
-            this.textBox12.TabIndex = 38;
+            this.txDorm.Location = new System.Drawing.Point(52, 179);
+            this.txDorm.Name = "txDorm";
+            this.txDorm.Size = new System.Drawing.Size(38, 20);
+            this.txDorm.TabIndex = 38;
             // 
             // label22
             // 
@@ -306,12 +306,12 @@
             this.label17.TabIndex = 32;
             this.label17.Text = "Dorm:";
             // 
-            // textBox11
+            // txObservaciones
             // 
-            this.textBox11.Location = new System.Drawing.Point(281, 150);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(322, 20);
-            this.textBox11.TabIndex = 31;
+            this.txObservaciones.Location = new System.Drawing.Point(281, 150);
+            this.txObservaciones.Name = "txObservaciones";
+            this.txObservaciones.Size = new System.Drawing.Size(322, 20);
+            this.txObservaciones.TabIndex = 31;
             // 
             // label16
             // 
@@ -322,12 +322,12 @@
             this.label16.TabIndex = 30;
             this.label16.Text = "Observaciones: ";
             // 
-            // textBox10
+            // txValorMts
             // 
-            this.textBox10.Location = new System.Drawing.Point(88, 150);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 29;
+            this.txValorMts.Location = new System.Drawing.Point(88, 150);
+            this.txValorMts.Name = "txValorMts";
+            this.txValorMts.Size = new System.Drawing.Size(100, 20);
+            this.txValorMts.TabIndex = 29;
             // 
             // label15
             // 
@@ -338,12 +338,12 @@
             this.label15.TabIndex = 28;
             this.label15.Text = "Valor Por M2:";
             // 
-            // textBox9
+            // txSupCubierta
             // 
-            this.textBox9.Location = new System.Drawing.Point(524, 124);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(79, 20);
-            this.textBox9.TabIndex = 27;
+            this.txSupCubierta.Location = new System.Drawing.Point(524, 124);
+            this.txSupCubierta.Name = "txSupCubierta";
+            this.txSupCubierta.Size = new System.Drawing.Size(79, 20);
+            this.txSupCubierta.TabIndex = 27;
             // 
             // label14
             // 
@@ -355,12 +355,12 @@
             this.label14.TabIndex = 26;
             this.label14.Text = "Sup. Cubierta:";
             // 
-            // textBox8
+            // txMtsTerreno
             // 
-            this.textBox8.Location = new System.Drawing.Point(374, 123);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(64, 20);
-            this.textBox8.TabIndex = 25;
+            this.txMtsTerreno.Location = new System.Drawing.Point(374, 123);
+            this.txMtsTerreno.Name = "txMtsTerreno";
+            this.txMtsTerreno.Size = new System.Drawing.Size(64, 20);
+            this.txMtsTerreno.TabIndex = 25;
             // 
             // label13
             // 
@@ -372,14 +372,14 @@
             this.label13.TabIndex = 24;
             this.label13.Text = "Mts Terreno: ";
             // 
-            // comboBox3
+            // cbMoneda
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(242, 123);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(50, 21);
-            this.comboBox3.TabIndex = 23;
-            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            this.cbMoneda.FormattingEnabled = true;
+            this.cbMoneda.Location = new System.Drawing.Point(242, 123);
+            this.cbMoneda.Name = "cbMoneda";
+            this.cbMoneda.Size = new System.Drawing.Size(50, 21);
+            this.cbMoneda.TabIndex = 23;
+            this.cbMoneda.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // label12
             // 
@@ -391,23 +391,23 @@
             this.label12.TabIndex = 22;
             this.label12.Text = "Moneda:";
             // 
-            // numericUpDown1
+            // numPrecio
             // 
-            this.numericUpDown1.Increment = new decimal(new int[] {
+            this.numPrecio.Increment = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.numericUpDown1.Location = new System.Drawing.Point(60, 124);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.numPrecio.Location = new System.Drawing.Point(60, 124);
+            this.numPrecio.Maximum = new decimal(new int[] {
             1215752192,
             23,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 21;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numPrecio.Name = "numPrecio";
+            this.numPrecio.Size = new System.Drawing.Size(120, 20);
+            this.numPrecio.TabIndex = 21;
+            this.numPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label11
             // 
@@ -418,12 +418,12 @@
             this.label11.TabIndex = 20;
             this.label11.Text = "Precio:";
             // 
-            // textBox7
+            // txEntreCalles
             // 
-            this.textBox7.Location = new System.Drawing.Point(87, 98);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(516, 20);
-            this.textBox7.TabIndex = 19;
+            this.txEntreCalles.Location = new System.Drawing.Point(87, 98);
+            this.txEntreCalles.Name = "txEntreCalles";
+            this.txEntreCalles.Size = new System.Drawing.Size(516, 20);
+            this.txEntreCalles.TabIndex = 19;
             // 
             // label10
             // 
@@ -434,26 +434,26 @@
             this.label10.TabIndex = 18;
             this.label10.Text = "Entre Calles: ";
             // 
-            // textBox6
+            // txDepto
             // 
-            this.textBox6.Location = new System.Drawing.Point(566, 70);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(37, 20);
-            this.textBox6.TabIndex = 17;
+            this.txDepto.Location = new System.Drawing.Point(566, 70);
+            this.txDepto.Name = "txDepto";
+            this.txDepto.Size = new System.Drawing.Size(37, 20);
+            this.txDepto.TabIndex = 17;
             // 
-            // textBox5
+            // txPiso
             // 
-            this.textBox5.Location = new System.Drawing.Point(469, 70);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(46, 20);
-            this.textBox5.TabIndex = 16;
+            this.txPiso.Location = new System.Drawing.Point(469, 70);
+            this.txPiso.Name = "txPiso";
+            this.txPiso.Size = new System.Drawing.Size(46, 20);
+            this.txPiso.TabIndex = 16;
             // 
-            // textBox4
+            // txNumero
             // 
-            this.textBox4.Location = new System.Drawing.Point(374, 71);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(53, 20);
-            this.textBox4.TabIndex = 15;
+            this.txNumero.Location = new System.Drawing.Point(374, 71);
+            this.txNumero.Name = "txNumero";
+            this.txNumero.Size = new System.Drawing.Size(53, 20);
+            this.txNumero.TabIndex = 15;
             // 
             // label9
             // 
@@ -483,26 +483,26 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Nº:";
             // 
-            // textBox3
+            // txCalle
             // 
-            this.textBox3.Location = new System.Drawing.Point(54, 71);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(286, 20);
-            this.textBox3.TabIndex = 11;
+            this.txCalle.Location = new System.Drawing.Point(54, 71);
+            this.txCalle.Name = "txCalle";
+            this.txCalle.Size = new System.Drawing.Size(286, 20);
+            this.txCalle.TabIndex = 11;
             // 
-            // textBox2
+            // txBarrio
             // 
-            this.textBox2.Location = new System.Drawing.Point(324, 44);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(286, 20);
-            this.textBox2.TabIndex = 10;
+            this.txBarrio.Location = new System.Drawing.Point(324, 44);
+            this.txBarrio.Name = "txBarrio";
+            this.txBarrio.Size = new System.Drawing.Size(286, 20);
+            this.txBarrio.TabIndex = 10;
             // 
-            // textBox1
+            // txLocalidad
             // 
-            this.textBox1.Location = new System.Drawing.Point(74, 44);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(201, 20);
-            this.textBox1.TabIndex = 9;
+            this.txLocalidad.Location = new System.Drawing.Point(74, 44);
+            this.txLocalidad.Name = "txLocalidad";
+            this.txLocalidad.Size = new System.Drawing.Size(201, 20);
+            this.txLocalidad.TabIndex = 9;
             // 
             // label6
             // 
@@ -531,12 +531,12 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Localidad:";
             // 
-            // dateTimePicker1
+            // dateTimeFecha
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(461, 13);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(149, 20);
-            this.dateTimePicker1.TabIndex = 5;
+            this.dateTimeFecha.Location = new System.Drawing.Point(461, 13);
+            this.dateTimeFecha.Name = "dateTimeFecha";
+            this.dateTimeFecha.Size = new System.Drawing.Size(149, 20);
+            this.dateTimeFecha.TabIndex = 5;
             // 
             // label3
             // 
@@ -583,25 +583,24 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tipo de Inmueble:";
             // 
-            // button1
+            // btEliminar
             // 
-            this.button1.Location = new System.Drawing.Point(19, 274);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Eliminar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btEliminar.Location = new System.Drawing.Point(19, 274);
+            this.btEliminar.Name = "btEliminar";
+            this.btEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btEliminar.TabIndex = 2;
+            this.btEliminar.Text = "Eliminar";
+            this.btEliminar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btCancelar
             // 
-            this.button2.Location = new System.Drawing.Point(451, 273);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
+            this.btCancelar.Location = new System.Drawing.Point(451, 273);
+            this.btCancelar.Name = "btCancelar";
+            this.btCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btCancelar.TabIndex = 3;
+            this.btCancelar.Text = "Cancelar";
+            this.btCancelar.UseVisualStyleBackColor = true;
+                       // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(532, 273);
@@ -617,8 +616,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 303);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btCancelar);
+            this.Controls.Add(this.btEliminar);
             this.Controls.Add(this.g);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -628,7 +627,7 @@
             this.g.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -639,55 +638,55 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimeFecha;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbTipoInmueble;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txEntreCalles;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txDepto;
+        private System.Windows.Forms.TextBox txPiso;
+        private System.Windows.Forms.TextBox txNumero;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.TextBox txCalle;
+        private System.Windows.Forms.TextBox txBarrio;
+        private System.Windows.Forms.TextBox txLocalidad;
+        private System.Windows.Forms.NumericUpDown numPrecio;
+        private System.Windows.Forms.ComboBox cbMoneda;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox txOtras;
+        private System.Windows.Forms.TextBox txPatio;
+        private System.Windows.Forms.TextBox txGarage;
+        private System.Windows.Forms.TextBox txComedor;
+        private System.Windows.Forms.TextBox txBaño;
+        private System.Windows.Forms.TextBox txDorm;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txObservaciones;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txValorMts;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txSupCubierta;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txMtsTerreno;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.TextBox txReferencia;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.TextBox txContacto;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox cbCargadoPor;
+        private System.Windows.Forms.Button btEliminar;
+        private System.Windows.Forms.Button btCancelar;
         private System.Windows.Forms.Button button3;
     }
 }

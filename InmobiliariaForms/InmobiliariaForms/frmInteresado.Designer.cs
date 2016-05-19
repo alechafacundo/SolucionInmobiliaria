@@ -84,7 +84,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(499, 159);
+            this.groupBox1.Size = new System.Drawing.Size(576, 163);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Interesado";
@@ -220,7 +220,7 @@
             // 
             // txEmail
             // 
-            this.txEmail.Location = new System.Drawing.Point(289, 42);
+            this.txEmail.Location = new System.Drawing.Point(289, 43);
             this.txEmail.Name = "txEmail";
             this.txEmail.Size = new System.Drawing.Size(204, 22);
             this.txEmail.TabIndex = 5;
@@ -231,7 +231,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label3.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(245, 45);
+            this.label3.Location = new System.Drawing.Point(245, 46);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 14);
             this.label3.TabIndex = 4;
@@ -239,7 +239,7 @@
             // 
             // txTelefono
             // 
-            this.txTelefono.Location = new System.Drawing.Point(59, 42);
+            this.txTelefono.Location = new System.Drawing.Point(59, 43);
             this.txTelefono.Name = "txTelefono";
             this.txTelefono.Size = new System.Drawing.Size(180, 22);
             this.txTelefono.TabIndex = 3;
@@ -248,7 +248,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 45);
+            this.label2.Location = new System.Drawing.Point(6, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 14);
             this.label2.TabIndex = 2;
@@ -256,7 +256,7 @@
             // 
             // txNombre
             // 
-            this.txNombre.Location = new System.Drawing.Point(59, 14);
+            this.txNombre.Location = new System.Drawing.Point(59, 16);
             this.txNombre.Name = "txNombre";
             this.txNombre.Size = new System.Drawing.Size(434, 22);
             this.txNombre.TabIndex = 1;
@@ -265,7 +265,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 17);
+            this.label1.Location = new System.Drawing.Point(6, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 14);
             this.label1.TabIndex = 0;
@@ -278,7 +278,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btGuardar.Location = new System.Drawing.Point(436, 178);
             this.btGuardar.Name = "btGuardar";
-            this.btGuardar.Size = new System.Drawing.Size(75, 25);
+            this.btGuardar.Size = new System.Drawing.Size(152, 29);
             this.btGuardar.TabIndex = 1;
             this.btGuardar.Text = "Guardar";
             this.btGuardar.UseVisualStyleBackColor = true;
@@ -291,7 +291,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btEliminar.Location = new System.Drawing.Point(12, 178);
             this.btEliminar.Name = "btEliminar";
-            this.btEliminar.Size = new System.Drawing.Size(75, 25);
+            this.btEliminar.Size = new System.Drawing.Size(75, 23);
             this.btEliminar.TabIndex = 2;
             this.btEliminar.Text = "Eliminar";
             this.btEliminar.UseVisualStyleBackColor = true;
@@ -301,9 +301,9 @@
             this.btCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btCancelar.Location = new System.Drawing.Point(355, 178);
+            this.btCancelar.Location = new System.Drawing.Point(278, 178);
             this.btCancelar.Name = "btCancelar";
-            this.btCancelar.Size = new System.Drawing.Size(75, 25);
+            this.btCancelar.Size = new System.Drawing.Size(152, 29);
             this.btCancelar.TabIndex = 3;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = true;
@@ -313,7 +313,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(523, 212);
+            this.ClientSize = new System.Drawing.Size(600, 216);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btEliminar);
             this.Controls.Add(this.btGuardar);
@@ -321,6 +321,7 @@
             this.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmInteresado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Interesado";
             this.Load += new System.EventHandler(this.frmInteresado_Load);
             this.groupBox1.ResumeLayout(false);
