@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.netBarControl1 = new NetBarControl.NetBarControl();
-            this.netBarGroup2 = new NetBarControl.NetBarGroup();
-            this.netBarItem3 = new NetBarControl.NetBarItem();
-            this.netBarItem4 = new NetBarControl.NetBarItem();
             this.netBarGroup1 = new NetBarControl.NetBarGroup();
-            this.netBarItem1 = new NetBarControl.NetBarItem();
-            this.netBarItem2 = new NetBarControl.NetBarItem();
+            this.btNuevoInteresado = new NetBarControl.NetBarItem();
+            this.btBuscarInteresado = new NetBarControl.NetBarItem();
+            this.netBarGroup2 = new NetBarControl.NetBarGroup();
+            this.btNuevoInmueble = new NetBarControl.NetBarItem();
+            this.btBuscarInmueble = new NetBarControl.NetBarItem();
             this.netBarGroup3 = new NetBarControl.NetBarGroup();
             this.netBarItem5 = new NetBarControl.NetBarItem();
             this.netBarItem6 = new NetBarControl.NetBarItem();
@@ -53,6 +53,8 @@
             // netBarControl1
             // 
             this.netBarControl1.ActiveGroup = this.netBarGroup1;
+            this.netBarControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.netBarControl1.Groups.AddRange(new NetBarControl.NetBarGroup[] {
             this.netBarGroup1,
             this.netBarGroup2,
@@ -63,53 +65,56 @@
             this.netBarControl1.ItemsBackground.BackColor2 = System.Drawing.Color.Empty;
             this.netBarControl1.Location = new System.Drawing.Point(2, 0);
             this.netBarControl1.Name = "netBarControl1";
+            this.netBarControl1.ShowExpandButton = false;
             this.netBarControl1.ShowHorizontalSplitter = false;
             this.netBarControl1.ShowOverflowPanel = false;
             this.netBarControl1.ShowPopupShadow = true;
             this.netBarControl1.ShowVerticalSplitter = false;
-            this.netBarControl1.Size = new System.Drawing.Size(145, 301);
+            this.netBarControl1.Size = new System.Drawing.Size(145, 435);
             this.netBarControl1.TabIndex = 1;
             this.netBarControl1.Text = "netBarControl1";
-            // 
-            // netBarGroup2
-            // 
-            this.netBarGroup2.Items.AddRange(new NetBarControl.NetBarItem[] {
-            this.netBarItem3,
-            this.netBarItem4});
-            this.netBarGroup2.Name = "netBarGroup2";
-            this.netBarGroup2.Style = NetBarControl.NetBarGroupStyle.LargeItemList;
-            this.netBarGroup2.Text = "Inmuebles";
-            // 
-            // netBarItem3
-            // 
-            this.netBarItem3.Name = "netBarItem3";
-            this.netBarItem3.Text = "Nuevo Inmueble";
-            this.netBarItem3.ItemClick += new System.EventHandler(this.netBarItem3_ItemClick);
-            // 
-            // netBarItem4
-            // 
-            this.netBarItem4.Name = "netBarItem4";
-            this.netBarItem4.Text = "Buscar Inmueble";
             // 
             // netBarGroup1
             // 
             this.netBarGroup1.Items.AddRange(new NetBarControl.NetBarItem[] {
-            this.netBarItem1,
-            this.netBarItem2});
+            this.btNuevoInteresado,
+            this.btBuscarInteresado});
             this.netBarGroup1.Name = "netBarGroup1";
             this.netBarGroup1.Style = NetBarControl.NetBarGroupStyle.LargeItemList;
             this.netBarGroup1.Text = "Interesados";
             // 
-            // netBarItem1
+            // btNuevoInteresado
             // 
-            this.netBarItem1.Name = "netBarItem1";
-            this.netBarItem1.Text = "Nuevo Interesado";
-            this.netBarItem1.ItemClick += new System.EventHandler(this.netBarItem1_ItemClick_1);
+            this.btNuevoInteresado.Name = "btNuevoInteresado";
+            this.btNuevoInteresado.Text = "Nuevo Interesado";
+            this.btNuevoInteresado.ItemClick += new System.EventHandler(this.btNuevoInteresado_ItemClick);
             // 
-            // netBarItem2
+            // btBuscarInteresado
             // 
-            this.netBarItem2.Name = "netBarItem2";
-            this.netBarItem2.Text = "Buscar Interesado";
+            this.btBuscarInteresado.Name = "btBuscarInteresado";
+            this.btBuscarInteresado.Text = "Buscar Interesado";
+            this.btBuscarInteresado.ItemClick += new System.EventHandler(this.btBuscarInteresado_ItemClick);
+            // 
+            // netBarGroup2
+            // 
+            this.netBarGroup2.Items.AddRange(new NetBarControl.NetBarItem[] {
+            this.btNuevoInmueble,
+            this.btBuscarInmueble});
+            this.netBarGroup2.Name = "netBarGroup2";
+            this.netBarGroup2.Style = NetBarControl.NetBarGroupStyle.LargeItemList;
+            this.netBarGroup2.Text = "Inmuebles";
+            // 
+            // btNuevoInmueble
+            // 
+            this.btNuevoInmueble.Name = "btNuevoInmueble";
+            this.btNuevoInmueble.Text = "Nuevo Inmueble";
+            this.btNuevoInmueble.ItemClick += new System.EventHandler(this.btNuevoInmueble_ItemClick);
+            // 
+            // btBuscarInmueble
+            // 
+            this.btBuscarInmueble.Name = "btBuscarInmueble";
+            this.btBuscarInmueble.Text = "Buscar Inmueble";
+            this.btBuscarInmueble.ItemClick += new System.EventHandler(this.btBuscarInmueble_ItemClick);
             // 
             // netBarGroup3
             // 
@@ -174,9 +179,9 @@
             // toolStrip1
             // 
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.toolStrip1.Location = new System.Drawing.Point(0, 303);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 437);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(751, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(884, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -190,12 +195,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(751, 328);
+            this.ClientSize = new System.Drawing.Size(884, 462);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.netBarControl1);
             this.IsMdiContainer = true;
             this.Name = "Home";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Home_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,10 +213,10 @@
         private NetBarControl.NetBarGroup netBarGroup1;
         private NetBarControl.NetBarGroup netBarGroup2;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private NetBarControl.NetBarItem netBarItem1;
-        private NetBarControl.NetBarItem netBarItem2;
-        private NetBarControl.NetBarItem netBarItem3;
-        private NetBarControl.NetBarItem netBarItem4;
+        private NetBarControl.NetBarItem btNuevoInteresado;
+        private NetBarControl.NetBarItem btBuscarInteresado;
+        private NetBarControl.NetBarItem btNuevoInmueble;
+        private NetBarControl.NetBarItem btBuscarInmueble;
         private NetBarControl.NetBarGroup netBarGroup3;
         private NetBarControl.NetBarItem netBarItem5;
         private NetBarControl.NetBarItem netBarItem6;

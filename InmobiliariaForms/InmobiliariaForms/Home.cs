@@ -10,8 +10,8 @@ namespace InmobiliariaForms
 {
     public partial class Home : Form
     {
-        frmInteresado form1 = new frmInteresado();
-        frmInmueble form2 = new frmInmueble();
+        frmInteresado frmInteresado = new frmInteresado();
+        frmInmueble frmInmueble = new frmInmueble();
 
         public Home()
         {
@@ -26,36 +26,41 @@ namespace InmobiliariaForms
             //string saludo = ws.HelloWorld();
 
             //MessageBox.Show(saludo);
-            
+
         }
         
-       private void netBarItem3_ItemClick(object sender, EventArgs e)
-        {
-            //frmInmueble frm = new frmInmueble();
-            //frm.Show();
-            
-            form1.Close();
 
-            form2.TopLevel = false;
-            form2.Visible = true;
-            if (!Controls.Contains(form2))
-                Controls.Add(form2);
-            form2.Location = new Point(
-               this.ClientSize.Width - this.form2.Width - 5,
-               /*this.ClientSize.Height - this.form.Height*/ 90);
+        private void btNuevoInteresado_ItemClick(object sender, EventArgs e)
+        {
+            frmInteresado.MdiParent = this;
+            frmInteresado.BringToFront();
+            frmInteresado.StartPosition = FormStartPosition.Manual;
+
+            int width = this.Controls.Find("netBarControl1", true)[0].Width;
+
+            frmInteresado.Location = new Point(width + 10, 15);
+            frmInteresado.Show();
         }
 
-        private void netBarItem1_ItemClick_1(object sender, EventArgs e)
+        private void btNuevoInmueble_ItemClick(object sender, EventArgs e)
         {
-            //frmInteresado frm = new frmInteresado();
-            //frm.Show();
-            form1.TopLevel = false;
-            form1.Visible = true;
-            if(!Controls.Contains(form1))
-                Controls.Add(form1);
-            form1.Location = new Point(
-               this.ClientSize.Width - this.form1.Width - 5,
-               /*this.ClientSize.Height - this.form.Height*/ 90);
+            frmInmueble.MdiParent = this;
+            frmInmueble.BringToFront();
+            frmInmueble.StartPosition = FormStartPosition.Manual;
+
+            int width = this.Controls.Find("netBarControl1", true)[0].Width;
+            frmInmueble.Location = new Point(width + 10, 15);
+            frmInmueble.Show();
+        }
+
+        private void btBuscarInmueble_ItemClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btBuscarInteresado_ItemClick(object sender, EventArgs e)
+        {
+
         }
     }
 }
