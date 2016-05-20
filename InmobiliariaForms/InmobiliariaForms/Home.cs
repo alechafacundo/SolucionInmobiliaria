@@ -10,8 +10,8 @@ namespace InmobiliariaForms
 {
     public partial class Home : Form
     {
-        frmInteresado frmInteresado = new frmInteresado();
-        frmInmueble frmInmueble = new frmInmueble();
+        frmInteresado frmInteresado;
+        frmInmueble frmInmueble;
 
         public Home()
         {
@@ -32,6 +32,9 @@ namespace InmobiliariaForms
 
         private void btNuevoInteresado_ItemClick(object sender, EventArgs e)
         {
+            if (frmInteresado == null || frmInteresado.IsDisposed)
+                frmInteresado = new frmInteresado();
+
             frmInteresado.MdiParent = this;
             frmInteresado.BringToFront();
             frmInteresado.StartPosition = FormStartPosition.Manual;
@@ -44,6 +47,9 @@ namespace InmobiliariaForms
 
         private void btNuevoInmueble_ItemClick(object sender, EventArgs e)
         {
+            if (frmInmueble == null || frmInmueble.IsDisposed)
+                frmInmueble = new frmInmueble();
+
             frmInmueble.MdiParent = this;
             frmInmueble.BringToFront();
             frmInmueble.StartPosition = FormStartPosition.Manual;
