@@ -84,7 +84,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btEliminar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btGuardar = new System.Windows.Forms.Button();
             this.g.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).BeginInit();
@@ -609,21 +609,22 @@
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btGuardar
             // 
-            this.button3.Location = new System.Drawing.Point(532, 273);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Guardar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btGuardar.Location = new System.Drawing.Point(532, 273);
+            this.btGuardar.Name = "btGuardar";
+            this.btGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btGuardar.TabIndex = 4;
+            this.btGuardar.Text = "Guardar";
+            this.btGuardar.UseVisualStyleBackColor = true;
+            this.btGuardar.Click += new System.EventHandler(this.btGuardar_Click);
             // 
             // frmInmueble
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 303);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btGuardar);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btEliminar);
             this.Controls.Add(this.g);
@@ -696,7 +697,7 @@
         private System.Windows.Forms.ComboBox cbCargadoPor;
         private System.Windows.Forms.Button btEliminar;
         private System.Windows.Forms.Button btCancelar;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btGuardar;
         private System.Windows.Forms.ComboBox cbTipoOperacion;
     }
 }

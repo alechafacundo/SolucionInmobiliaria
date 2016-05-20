@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InmobiliariaForms.InmobiliariaService;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,7 +22,14 @@ namespace InmobiliariaForms
         {
             if (ValidarCamposObligatorios())
             {
-
+                //Declaras una variable de tipo enum donde vas a guardar el valor seleccionado
+                eTipoInmueble tipoInmueble;
+                //Le decis que agarre el texto seleccionado y en base a ese texto lo transforme en tu enum
+                Enum.TryParse<eTipoInmueble>(cbTipoInmueble.SelectedValue.ToString(), out tipoInmueble);
+                //Con solo castear el valor del enum en un int ya tenes el valor
+                int valor = (int)tipoInmueble;
+                //Si le decis ToString() lo que h aces es transformarlo a texto
+                string display = tipoInmueble.ToString();
             }
         }
 
@@ -39,16 +47,20 @@ namespace InmobiliariaForms
 
         private void frmInmueble_Load(object sender, EventArgs e)
         {
-            cbTipoInmueble.Items.Clear();
-            cbTipoInmueble.Items.Add("Departamento");
-            cbTipoInmueble.Items.Add("Casa");
-            cbTipoInmueble.Items.Add("Terreno");
-            cbTipoOperacion.Items.Clear();
-            cbTipoOperacion.Items.Add("Venta");
-            cbTipoOperacion.Items.Add("Alquiler");
-            cbMoneda.Items.Clear();
-            cbMoneda.Items.Add("Peso");
-            cbMoneda.Items.Add("Dolar");
+            cbTipoInmueble.DataSource = Enum.GetNames(typeof(eTipoInmueble));
+            cbTipoOperacion.DataSource = Enum.GetNames(typeof(eTipoOperacion));
+
+            //cbTipoInmueble.Items.Clear();
+            //cbTipoInmueble.Items.Add("Departamento");
+            //cbTipoInmueble.Items.Add("Casa");
+            //cbTipoInmueble.Items.Add("Terreno");
+            //cbTipoOperacion.Items.Clear();
+            //cbTipoOperacion.Items.Add("Venta");
+            //cbTipoOperacion.Items.Add("Alquiler");
+            //cbMoneda.Items.Clear();
+            //cbMoneda.Items.Add("Peso");
+            //cbMoneda.Items.Add("Dolar");
         }
+        
     }
 }
