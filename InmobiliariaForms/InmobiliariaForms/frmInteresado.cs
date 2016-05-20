@@ -41,6 +41,8 @@ namespace InmobiliariaForms
                 txEmail.Text = Interesado.Email;
                 numDesde.Value = Interesado.MontoDesde != null ? (decimal)Interesado.MontoDesde : 0;
                 numHasta.Value = Interesado.MontoHasta != null ? (decimal)Interesado.MontoHasta : 0;
+                cbTipoInmueble.ValueMember = Interesado.TipoDeInmueble; 
+                cbTipoOperacion.ValueMember = 
                 //cbTipoInmueble
                 
             }
@@ -66,7 +68,12 @@ namespace InmobiliariaForms
             //Llenar con el VALUE del combo seleccionado
             interesado.TipoDeInmueble = 2;
 
-            int numero = 0;
+           int numero = 0;
+
+            String Nombre = txNombre.Text;
+            String Email = txEmail.Text;
+            String Telefono = txTelefono.Text;
+
             
         }
     }

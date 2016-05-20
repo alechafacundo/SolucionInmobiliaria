@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInmueble));
             this.g = new System.Windows.Forms.GroupBox();
+            this.cbTipoOperacion = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txReferencia = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
@@ -84,7 +85,6 @@
             this.btEliminar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.cbTipoOperacion = new System.Windows.Forms.ComboBox();
             this.g.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).BeginInit();
@@ -147,6 +147,15 @@
             this.g.TabIndex = 1;
             this.g.TabStop = false;
             this.g.Text = "Inmueble";
+            // 
+            // cbTipoOperacion
+            // 
+            this.cbTipoOperacion.FormattingEnabled = true;
+            this.cbTipoOperacion.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.cbTipoOperacion.Location = new System.Drawing.Point(278, 13);
+            this.cbTipoOperacion.Name = "cbTipoOperacion";
+            this.cbTipoOperacion.Size = new System.Drawing.Size(131, 21);
+            this.cbTipoOperacion.TabIndex = 45;
             // 
             // groupBox1
             // 
@@ -381,7 +390,7 @@
             this.cbMoneda.Name = "cbMoneda";
             this.cbMoneda.Size = new System.Drawing.Size(50, 21);
             this.cbMoneda.TabIndex = 23;
-                       // 
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -609,15 +618,6 @@
             this.button3.Text = "Guardar";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // cbTipoOperacion
-            // 
-            this.cbTipoOperacion.FormattingEnabled = true;
-            this.cbTipoOperacion.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.cbTipoOperacion.Location = new System.Drawing.Point(278, 13);
-            this.cbTipoOperacion.Name = "cbTipoOperacion";
-            this.cbTipoOperacion.Size = new System.Drawing.Size(131, 21);
-            this.cbTipoOperacion.TabIndex = 45;
-            // 
             // frmInmueble
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -631,6 +631,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmInmueble";
             this.Text = "Inmueble";
+            this.Load += new System.EventHandler(this.frmInmueble_Load);
             this.g.ResumeLayout(false);
             this.g.PerformLayout();
             this.groupBox1.ResumeLayout(false);

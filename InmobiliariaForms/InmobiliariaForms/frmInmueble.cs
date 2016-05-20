@@ -15,19 +15,7 @@ namespace InmobiliariaForms
         {
             InitializeComponent();
         }
-        private void frmInmueble_Load(object sender, EventArgs e)
-        {
-            cbTipoInmueble.Items.Clear();
-            cbTipoInmueble.Items.Add("Departamento");
-            cbTipoInmueble.Items.Add("Casa");
-            cbTipoInmueble.Items.Add("Terreno");
-            cbTipoOperacion.Items.Clear();
-            cbTipoOperacion.Items.Add("Venta");
-            cbTipoOperacion.Items.Add("Alquiler");
-            cbMoneda.Items.Clear();
-            cbMoneda.Items.Add("Peso");
-            cbMoneda.Items.Add("Dolar");
-        }
+       
 
         private void btGuardar_Click(object sender, EventArgs e)
         {
@@ -47,6 +35,20 @@ namespace InmobiliariaForms
             //ToDo
             //Setear resultado en false
             //Cerrar Formulario
+        }
+
+        private void frmInmueble_Load(object sender, EventArgs e)
+        {
+            cbTipoInmueble.Items.Clear();
+            cbTipoInmueble.Items.Add("Departamento");
+            cbTipoInmueble.Items.Add("Casa");
+            cbTipoInmueble.Items.Add("Terreno");
+            cbTipoOperacion.Items.Clear();
+            cbTipoOperacion.Items.Add("Venta");
+            cbTipoOperacion.Items.Add("Alquiler");
+            cbMoneda.Items.Clear();
+            cbMoneda.Items.Add("Peso");
+            cbMoneda.Items.Add("Dolar");
         }
     }
 }
