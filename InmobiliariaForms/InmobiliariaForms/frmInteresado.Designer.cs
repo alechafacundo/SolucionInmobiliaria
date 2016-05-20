@@ -319,6 +319,7 @@
             this.Controls.Add(this.btGuardar);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmInteresado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
