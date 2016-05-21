@@ -41,9 +41,9 @@ namespace InmobiliariaForms
                 txEmail.Text = Interesado.Email;
                 numDesde.Value = Interesado.MontoDesde != null ? (decimal)Interesado.MontoDesde : 0;
                 numHasta.Value = Interesado.MontoHasta != null ? (decimal)Interesado.MontoHasta : 0;
-                //cbTipoInmueble.ValueMember = Interesado.TipoDeInmueble; 
-                //cbTipoOperacion.ValueMember = 
-                //cbTipoInmueble
+                cbTipoInmueble.ValueMember = Interesado.TipoDeInmueble; 
+                cbTipoOperacion.ValueMember = Interesado.TipoOperacion;
+                
                 
             }
         }
