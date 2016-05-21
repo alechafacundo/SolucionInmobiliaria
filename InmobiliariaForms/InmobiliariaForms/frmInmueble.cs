@@ -94,6 +94,9 @@ namespace InmobiliariaForms
                 cbTipoOperacion.DataSource = Enum.GetNames(typeof(eTipoOperacion));
                 cbTipoOperacion.SelectedItem = null;
 
+                cbMoneda.DataSource = Enum.GetNames(typeof(eMoneda));
+                cbMoneda.SelectedItem = null; 
+
                 if (Inmueble != null)
                 {
                     cbTipoInmueble.SelectedIndex = (int)Inmueble.Tipo;
@@ -102,17 +105,18 @@ namespace InmobiliariaForms
                     txLocalidad.Text = Inmueble.Localidad;
                     txBarrio.Text = Inmueble.Barrio;
                     txCalle.Text = Inmueble.Calle;
-                    txNumero.Text = Inmueble.Numero.HasValue ? Inmueble.Numero.ToString() : "";
-                    txPiso.Text = Inmueble.Piso.HasValue ? Inmueble.Piso.ToString() : "";
+                    txNumero.Text = Inmueble.Numero;
+                    txPiso.Text = Inmueble.Piso;
                     txDepto.Text = Inmueble.Departamento;
                     txEntreCalles.Text = Inmueble.EntreCalles;
-                    numPrecio.Value = Inmueble.Precio.HasValue ? Inmueble.Precio.Value : 0m;
+                    //numeric de precio, revisar 
+                    numPrecio.Value = Inmueble.Precio != null ? (decimal)Inmueble.Precio : 0;
                     cbMoneda.SelectedIndex = Inmueble.Moneda;
                     txMtsTerreno.Text = Inmueble.Metros2Terreno;
                     txSupCubierta.Text = Inmueble.SupCubierta;
-                    txValorMts.Text = Inmueble.ValorMetro2.HasValue ? Inmueble.ValorMetro2.Value.ToString() : "";
+                    txValorMts.Text = Inmueble.ValorMetro2;
                     txObservaciones.Text = Inmueble.Observaciones;
-                    txDorm.Text = Inmueble.Dormitorios.HasValue ? Inmueble.Dormitorios.Value.ToString() : "";
+                    txDorm.Text = Inmueble.Dormitorios;
                     txBaño.Text = Inmueble.Baños;
                     txGarage.Text = Inmueble.Garage;
                     txPatio.Text = Inmueble.Patio;

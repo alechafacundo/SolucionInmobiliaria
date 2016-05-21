@@ -33,11 +33,6 @@ namespace InmobiliariaForms
             cbMoneda.Items.Add("Dolar");
 
 
-            //ToDo: Facu
-            //Llenar cbTipoInmueble con eTipoInmueble
-            //LLenar cbTipoOperacion con eTipoOperacion
-
-
             if (Interesado != null)
             {
                 txNombre.Text = Interesado.Nombre;
@@ -48,9 +43,8 @@ namespace InmobiliariaForms
                 cbTipoInmueble.SelectedIndex = (int)Interesado.TipoDeInmueble;
                 cbTipoOperacion.SelectedIndex = (int)Interesado.TipoDeOperacion;
                 numDesde.Value = Interesado.MontoDesde != null ? (decimal)Interesado.MontoDesde : 0;
-                numHasta.Value = Interesado.MontoHasta != null ? (decimal)Interesado.MontoHasta : 0;
-                numDormitorios.Value = Interesado.Dormitorios != null ? (decimal)Interesado.Dormitorios : 0;
-                //falta el chekEsInversion
+                numHasta.Value = Interesado.MontoHasta != null ? (decimal)Interesado.MontoHasta : 0;               
+               //falta el chekEsInversion
 
                 
                 

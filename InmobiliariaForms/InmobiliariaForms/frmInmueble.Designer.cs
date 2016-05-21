@@ -150,7 +150,6 @@
             // 
             // cbTipoOperacion
             // 
-            this.cbTipoOperacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoOperacion.FormattingEnabled = true;
             this.cbTipoOperacion.ImeMode = System.Windows.Forms.ImeMode.On;
             this.cbTipoOperacion.Location = new System.Drawing.Point(278, 13);
@@ -577,7 +576,6 @@
             // 
             // cbTipoInmueble
             // 
-            this.cbTipoInmueble.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoInmueble.FormattingEnabled = true;
             this.cbTipoInmueble.Location = new System.Drawing.Point(106, 13);
             this.cbTipoInmueble.Name = "cbTipoInmueble";
