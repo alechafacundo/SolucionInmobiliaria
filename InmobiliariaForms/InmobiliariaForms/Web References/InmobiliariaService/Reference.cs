@@ -260,7 +260,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -285,9 +285,9 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         private string calleField;
         
-        private System.Nullable<int> numeroField;
+        private string numeroField;
         
-        private System.Nullable<int> pisoField;
+        private string pisoField;
         
         private string departamentoField;
         
@@ -303,7 +303,7 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         private string observacionesField;
         
-        private System.Nullable<int> dormitoriosField;
+        private string dormitoriosField;
         
         private string bañosField;
         
@@ -317,7 +317,7 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         private string otrasDependenciasField;
         
-        private System.Nullable<decimal> valorMetro2Field;
+        private string valorMetro2Field;
         
         private string cargadoPorField;
         
@@ -419,8 +419,7 @@ namespace InmobiliariaForms.InmobiliariaService {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<int> Numero {
+        public string Numero {
             get {
                 return this.numeroField;
             }
@@ -430,8 +429,7 @@ namespace InmobiliariaForms.InmobiliariaService {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<int> Piso {
+        public string Piso {
             get {
                 return this.pisoField;
             }
@@ -512,8 +510,7 @@ namespace InmobiliariaForms.InmobiliariaService {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<int> Dormitorios {
+        public string Dormitorios {
             get {
                 return this.dormitoriosField;
             }
@@ -583,8 +580,7 @@ namespace InmobiliariaForms.InmobiliariaService {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<decimal> ValorMetro2 {
+        public string ValorMetro2 {
             get {
                 return this.valorMetro2Field;
             }
@@ -635,7 +631,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -654,11 +650,13 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         private System.Nullable<decimal> montoHastaField;
         
+        private int tipoDeMonedaField;
+        
         private int tipoDeOperacionField;
         
         private int tipoDeInmuebleField;
         
-        private System.Nullable<int> dormitoriosField;
+        private string dormitoriosField;
         
         private bool paraInversionField;
         
@@ -725,6 +723,16 @@ namespace InmobiliariaForms.InmobiliariaService {
         }
         
         /// <remarks/>
+        public int TipoDeMoneda {
+            get {
+                return this.tipoDeMonedaField;
+            }
+            set {
+                this.tipoDeMonedaField = value;
+            }
+        }
+        
+        /// <remarks/>
         public int TipoDeOperacion {
             get {
                 return this.tipoDeOperacionField;
@@ -745,8 +753,7 @@ namespace InmobiliariaForms.InmobiliariaService {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<int> Dormitorios {
+        public string Dormitorios {
             get {
                 return this.dormitoriosField;
             }
@@ -767,7 +774,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public enum eTipoInmueble {
@@ -783,7 +790,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public enum eTipoOperacion {
@@ -796,7 +803,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public enum eMoneda {

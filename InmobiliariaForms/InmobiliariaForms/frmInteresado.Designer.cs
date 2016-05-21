@@ -30,8 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInteresado));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbEsInversion = new System.Windows.Forms.CheckBox();
-            this.numDormitorios = new System.Windows.Forms.NumericUpDown();
+            this.cbMoneda = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.checkEsInversion = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cbTipoOperacion = new System.Windows.Forms.ComboBox();
@@ -50,10 +51,8 @@
             this.btEliminar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.btGuardar = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.cbMoneda = new System.Windows.Forms.ComboBox();
+            this.txDorm = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numDormitorios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHasta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDesde)).BeginInit();
             this.SuspendLayout();
@@ -66,10 +65,10 @@
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox1.BackgroundImage")));
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.groupBox1.Controls.Add(this.txDorm);
             this.groupBox1.Controls.Add(this.cbMoneda);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.cbEsInversion);
-            this.groupBox1.Controls.Add(this.numDormitorios);
+            this.groupBox1.Controls.Add(this.checkEsInversion);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.cbTipoOperacion);
@@ -93,27 +92,38 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Interesado";
             // 
-            // cbEsInversion
+            // cbMoneda
             // 
-            this.cbEsInversion.AutoSize = true;
-            this.cbEsInversion.BackColor = System.Drawing.Color.Transparent;
-            this.cbEsInversion.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cbEsInversion.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbEsInversion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.cbEsInversion.Location = new System.Drawing.Point(352, 131);
-            this.cbEsInversion.Name = "cbEsInversion";
-            this.cbEsInversion.Size = new System.Drawing.Size(110, 18);
-            this.cbEsInversion.TabIndex = 17;
-            this.cbEsInversion.Text = "Es para Inversión";
-            this.cbEsInversion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cbEsInversion.UseVisualStyleBackColor = false;
+            this.cbMoneda.FormattingEnabled = true;
+            this.cbMoneda.Location = new System.Drawing.Point(55, 69);
+            this.cbMoneda.Name = "cbMoneda";
+            this.cbMoneda.Size = new System.Drawing.Size(50, 22);
+            this.cbMoneda.TabIndex = 24;
             // 
-            // numDormitorios
+            // label12
             // 
-            this.numDormitorios.Location = new System.Drawing.Point(86, 127);
-            this.numDormitorios.Name = "numDormitorios";
-            this.numDormitorios.Size = new System.Drawing.Size(117, 22);
-            this.numDormitorios.TabIndex = 15;
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Location = new System.Drawing.Point(6, 74);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(50, 14);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "Moneda:";
+            // 
+            // checkEsInversion
+            // 
+            this.checkEsInversion.AutoSize = true;
+            this.checkEsInversion.BackColor = System.Drawing.Color.Transparent;
+            this.checkEsInversion.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkEsInversion.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkEsInversion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.checkEsInversion.Location = new System.Drawing.Point(352, 131);
+            this.checkEsInversion.Name = "checkEsInversion";
+            this.checkEsInversion.Size = new System.Drawing.Size(110, 18);
+            this.checkEsInversion.TabIndex = 17;
+            this.checkEsInversion.Text = "Es para Inversión";
+            this.checkEsInversion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkEsInversion.UseVisualStyleBackColor = false;
             // 
             // label8
             // 
@@ -302,6 +312,7 @@
             this.btCancelar.TabIndex = 3;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = false;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // btGuardar
             // 
@@ -316,23 +327,12 @@
             this.btGuardar.Text = "Guardar";
             this.btGuardar.UseVisualStyleBackColor = false;
             // 
-            // label12
+            // txDorm
             // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Location = new System.Drawing.Point(6, 74);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(50, 14);
-            this.label12.TabIndex = 23;
-            this.label12.Text = "Moneda:";
-            // 
-            // cbMoneda
-            // 
-            this.cbMoneda.FormattingEnabled = true;
-            this.cbMoneda.Location = new System.Drawing.Point(55, 69);
-            this.cbMoneda.Name = "cbMoneda";
-            this.cbMoneda.Size = new System.Drawing.Size(50, 22);
-            this.cbMoneda.TabIndex = 24;
+            this.txDorm.Location = new System.Drawing.Point(81, 126);
+            this.txDorm.Name = "txDorm";
+            this.txDorm.Size = new System.Drawing.Size(58, 22);
+            this.txDorm.TabIndex = 25;
             // 
             // frmInteresado
             // 
@@ -354,7 +354,6 @@
             this.Load += new System.EventHandler(this.frmInteresado_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numDormitorios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHasta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDesde)).EndInit();
             this.ResumeLayout(false);
@@ -364,8 +363,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox cbEsInversion;
-        private System.Windows.Forms.NumericUpDown numDormitorios;
+        private System.Windows.Forms.CheckBox checkEsInversion;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbTipoOperacion;
@@ -386,5 +384,6 @@
         private System.Windows.Forms.Button btGuardar;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox cbMoneda;
+        private System.Windows.Forms.TextBox txDorm;
     }
 }

@@ -24,19 +24,56 @@ namespace InmobiliariaForms
         {
             if (ValidarCamposObligatorios())
             {
-                //Declaras una variable de tipo enum donde vas a guardar el valor seleccionado
+
+                Inmueble inmueble = new Inmueble();
                 eTipoInmueble tipoInmueble;
-                //Le decis que agarre el texto seleccionado y en base a ese texto lo transforme en tu enum
                 Enum.TryParse<eTipoInmueble>(cbTipoInmueble.SelectedValue.ToString(), out tipoInmueble);
-                //Con solo castear el valor del enum en un int ya tenes el valor
-                int valor = (int)tipoInmueble;
-                //Si le decis ToString() lo que h aces es transformarlo a texto
-                string display = tipoInmueble.ToString();
+                inmueble.Tipo = (int)tipoInmueble;
+                eTipoOperacion tipoOperacion;
+                Enum.TryParse<eTipoOperacion>(cbTipoOperacion.SelectedValue.ToString(), out tipoOperacion);
+                inmueble.Operacion = (int)tipoOperacion;
+                eMoneda tipoMoneda;
+                Enum.TryParse<eMoneda>(cbMoneda.SelectedValue.ToString(), out tipoMoneda);
+                inmueble.Moneda = (int)tipoMoneda;
+                inmueble.Fecha = dateTimeFecha.Value;
+                inmueble.Localidad = txLocalidad.Text;
+                inmueble.Calle = txCalle.Text;
+                inmueble.Barrio = txBarrio.Text;
+                inmueble.Numero = txNumero.Text;
+                inmueble.Piso = txPiso.Text;
+                inmueble.Departamento = txDepto.Text;
+                inmueble.EntreCalles = txEntreCalles.Text;
+                inmueble.Metros2Terreno = txMtsTerreno.Text;
+                inmueble.SupCubierta = txSupCubierta.Text;
+                inmueble.ValorMetro2 = txValorMts.Text;
+                inmueble.Observaciones = txObservaciones.Text;
+                inmueble.Dormitorios = txDorm.Text;
+                inmueble.Patio = txPatio.Text;
+                inmueble.Baños = txBaño.Text;
+                inmueble.Garage = txGarage.Text;
+                inmueble.Comedor = txComedor.Text;
+                inmueble.OtrasDependencias = txOtras.Text;
+                inmueble.Contacto = txContacto.Text;
+                inmueble.Referencia = txReferencia.Text;
+                //aca Puse el Value del numericUpDown, decime si esta bien.
+                inmueble.Precio = numPrecio.Value;
+
+
+
+
             }
         }
 
         private bool ValidarCamposObligatorios()
         {
+            if (cbTipoInmueble == null)
+            {
+                return false;
+            }
+            if (true)
+            {
+
+            }
             return true;
         }
 

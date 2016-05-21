@@ -28,6 +28,10 @@ namespace InmobiliariaForms
             cbTipoOperacion.Items.Clear();
             cbTipoOperacion.Items.Add("Venta");
             cbTipoOperacion.Items.Add("Alquiler");
+            cbMoneda.Items.Clear();
+            cbMoneda.Items.Add("Peso");
+            cbMoneda.Items.Add("Dolar");
+
 
             //ToDo: Facu
             //Llenar cbTipoInmueble con eTipoInmueble
@@ -39,10 +43,15 @@ namespace InmobiliariaForms
                 txNombre.Text = Interesado.Nombre;
                 txTelefono.Text = Interesado.Telefono;
                 txEmail.Text = Interesado.Email;
+                txDorm.Text = Interesado.Dormitorios;
+                cbMoneda.SelectedIndex = (int)Interesado.TipoDeMoneda;
+                cbTipoInmueble.SelectedIndex = (int)Interesado.TipoDeInmueble;
+                cbTipoOperacion.SelectedIndex = (int)Interesado.TipoDeOperacion;
                 numDesde.Value = Interesado.MontoDesde != null ? (decimal)Interesado.MontoDesde : 0;
                 numHasta.Value = Interesado.MontoHasta != null ? (decimal)Interesado.MontoHasta : 0;
-                cbTipoInmueble.ValueMember = Interesado.TipoDeInmueble; 
-                cbTipoOperacion.ValueMember = Interesado.TipoOperacion;
+                numDormitorios.Value = Interesado.Dormitorios != null ? (decimal)Interesado.Dormitorios : 0;
+                //falta el chekEsInversion
+
                 
                 
             }
@@ -61,13 +70,31 @@ namespace InmobiliariaForms
 
             eTipoInmueble tipoInmueble;
             Enum.TryParse<eTipoInmueble>(cbTipoInmueble.SelectedValue.ToString(), out tipoInmueble);
-            interesado.Tipo = (int)tipoInmueble;
+            interesado.TipoDeInmueble = (int)tipoInmueble;
             eTipoOperacion tipoOperacion;
             Enum.TryParse<eTipoOperacion>(cbTipoOperacion.SelectedValue.ToString(), out tipoOperacion);
-            interado.Operacion = (int)tipoOperacion;
+            interesado.TipoDeOperacion = (int)tipoOperacion;
             eMoneda tipoMoneda;
+            Enum.TryParse<eMoneda>(cbMoneda.SelectedValue.ToString(), out tipoMoneda);
+            interesado.TipoDeMoneda = (int)tipoMoneda;
+            interesado.Nombre = txNombre.Text;
+            interesado.Email = txEmail.Text;
+            interesado.Telefono = txTelefono.Text;
+            interesado.MontoDesde = numDesde.Value;
+            interesado.MontoHasta = numHasta.Value;
+            interesado.Dormitorios = txDorm.Text;
+            //falta el CheckEsInversion
+
+
+
                         
 
+        }
+
+        private void btCancelar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }
