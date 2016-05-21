@@ -20,7 +20,7 @@ namespace InmobiliariaService
         public string Departamento { get; set; }
         public string EntreCalles { get; set; }
         public string Metros2Terreno { get; set; }
-        public int SupCubierta { get; set; }
+        public string SupCubierta { get; set; }
         public int Moneda { get; set; }
         public decimal? Precio { get; set; }
         public string Observaciones { get; set; }
