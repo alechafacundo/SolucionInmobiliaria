@@ -92,7 +92,7 @@
             // 
             // g
             // 
-            this.g.BackColor = System.Drawing.SystemColors.Control;
+            this.g.BackColor = System.Drawing.Color.White;
             this.g.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("g.BackgroundImage")));
             this.g.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.g.Controls.Add(this.cbTipoOperacion);
@@ -143,7 +143,7 @@
             this.g.Controls.Add(this.label1);
             this.g.Location = new System.Drawing.Point(4, 13);
             this.g.Name = "g";
-            this.g.Size = new System.Drawing.Size(616, 254);
+            this.g.Size = new System.Drawing.Size(626, 254);
             this.g.TabIndex = 1;
             this.g.TabStop = false;
             this.g.Text = "Inmueble";
@@ -593,42 +593,46 @@
             // 
             // btEliminar
             // 
-            this.btEliminar.Location = new System.Drawing.Point(19, 274);
+            this.btEliminar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btEliminar.Location = new System.Drawing.Point(5, 272);
             this.btEliminar.Name = "btEliminar";
-            this.btEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btEliminar.Size = new System.Drawing.Size(160, 29);
             this.btEliminar.TabIndex = 2;
             this.btEliminar.Text = "Eliminar";
-            this.btEliminar.UseVisualStyleBackColor = true;
+            this.btEliminar.UseVisualStyleBackColor = false;
             // 
             // btCancelar
             // 
-            this.btCancelar.Location = new System.Drawing.Point(451, 273);
+            this.btCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btCancelar.Location = new System.Drawing.Point(308, 273);
             this.btCancelar.Name = "btCancelar";
-            this.btCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btCancelar.Size = new System.Drawing.Size(160, 29);
             this.btCancelar.TabIndex = 3;
             this.btCancelar.Text = "Cancelar";
-            this.btCancelar.UseVisualStyleBackColor = true;
+            this.btCancelar.UseVisualStyleBackColor = false;
             // 
             // btGuardar
             // 
-            this.btGuardar.Location = new System.Drawing.Point(532, 273);
+            this.btGuardar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btGuardar.Location = new System.Drawing.Point(470, 273);
             this.btGuardar.Name = "btGuardar";
-            this.btGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btGuardar.Size = new System.Drawing.Size(160, 29);
             this.btGuardar.TabIndex = 4;
             this.btGuardar.Text = "Guardar";
-            this.btGuardar.UseVisualStyleBackColor = true;
+            this.btGuardar.UseVisualStyleBackColor = false;
             this.btGuardar.Click += new System.EventHandler(this.btGuardar_Click);
             // 
             // frmInmueble
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(632, 303);
             this.Controls.Add(this.btGuardar);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btEliminar);
             this.Controls.Add(this.g);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmInmueble";
             this.Text = "Inmueble";

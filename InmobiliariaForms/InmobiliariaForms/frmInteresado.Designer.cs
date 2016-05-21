@@ -47,9 +47,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btGuardar = new System.Windows.Forms.Button();
             this.btEliminar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
+            this.btGuardar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numDormitorios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHasta)).BeginInit();
@@ -61,7 +61,7 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox1.BackgroundImage")));
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.groupBox1.Controls.Add(this.cbEsInversion);
@@ -82,9 +82,9 @@
             this.groupBox1.Controls.Add(this.txNombre);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(4, 10);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(576, 163);
+            this.groupBox1.Size = new System.Drawing.Size(626, 254);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Interesado";
@@ -96,7 +96,7 @@
             this.cbEsInversion.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cbEsInversion.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEsInversion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.cbEsInversion.Location = new System.Drawing.Point(248, 128);
+            this.cbEsInversion.Location = new System.Drawing.Point(352, 131);
             this.cbEsInversion.Name = "cbEsInversion";
             this.cbEsInversion.Size = new System.Drawing.Size(110, 18);
             this.cbEsInversion.TabIndex = 17;
@@ -128,7 +128,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(245, 101);
+            this.label7.Location = new System.Drawing.Point(281, 101);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(99, 14);
             this.label7.TabIndex = 13;
@@ -137,9 +137,9 @@
             // cbTipoOperacion
             // 
             this.cbTipoOperacion.FormattingEnabled = true;
-            this.cbTipoOperacion.Location = new System.Drawing.Point(361, 98);
+            this.cbTipoOperacion.Location = new System.Drawing.Point(381, 98);
             this.cbTipoOperacion.Name = "cbTipoOperacion";
-            this.cbTipoOperacion.Size = new System.Drawing.Size(132, 22);
+            this.cbTipoOperacion.Size = new System.Drawing.Size(189, 22);
             this.cbTipoOperacion.TabIndex = 12;
             // 
             // label6
@@ -168,14 +168,14 @@
             0,
             0,
             0});
-            this.numHasta.Location = new System.Drawing.Point(289, 70);
+            this.numHasta.Location = new System.Drawing.Point(348, 70);
             this.numHasta.Maximum = new decimal(new int[] {
             -1530494976,
             232830,
             0,
             0});
             this.numHasta.Name = "numHasta";
-            this.numHasta.Size = new System.Drawing.Size(204, 22);
+            this.numHasta.Size = new System.Drawing.Size(222, 22);
             this.numHasta.TabIndex = 9;
             // 
             // label5
@@ -183,7 +183,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(209, 72);
+            this.label5.Location = new System.Drawing.Point(273, 74);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 14);
             this.label5.TabIndex = 8;
@@ -203,7 +203,7 @@
             0,
             0});
             this.numDesde.Name = "numDesde";
-            this.numDesde.Size = new System.Drawing.Size(117, 22);
+            this.numDesde.Size = new System.Drawing.Size(153, 22);
             this.numDesde.TabIndex = 7;
             // 
             // label4
@@ -222,7 +222,7 @@
             // 
             this.txEmail.Location = new System.Drawing.Point(289, 43);
             this.txEmail.Name = "txEmail";
-            this.txEmail.Size = new System.Drawing.Size(204, 22);
+            this.txEmail.Size = new System.Drawing.Size(281, 22);
             this.txEmail.TabIndex = 5;
             // 
             // label3
@@ -258,7 +258,7 @@
             // 
             this.txNombre.Location = new System.Drawing.Point(59, 16);
             this.txNombre.Name = "txNombre";
-            this.txNombre.Size = new System.Drawing.Size(434, 22);
+            this.txNombre.Size = new System.Drawing.Size(511, 22);
             this.txNombre.TabIndex = 1;
             // 
             // label1
@@ -271,55 +271,60 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre:";
             // 
-            // btGuardar
-            // 
-            this.btGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btGuardar.Location = new System.Drawing.Point(436, 178);
-            this.btGuardar.Name = "btGuardar";
-            this.btGuardar.Size = new System.Drawing.Size(152, 29);
-            this.btGuardar.TabIndex = 1;
-            this.btGuardar.Text = "Guardar";
-            this.btGuardar.UseVisualStyleBackColor = true;
-            this.btGuardar.Click += new System.EventHandler(this.btGuardar_Click);
-            // 
             // btEliminar
             // 
             this.btEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btEliminar.Location = new System.Drawing.Point(12, 178);
+            this.btEliminar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btEliminar.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btEliminar.Location = new System.Drawing.Point(14, 271);
             this.btEliminar.Name = "btEliminar";
-            this.btEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btEliminar.Size = new System.Drawing.Size(160, 29);
             this.btEliminar.TabIndex = 2;
             this.btEliminar.Text = "Eliminar";
-            this.btEliminar.UseVisualStyleBackColor = true;
+            this.btEliminar.UseVisualStyleBackColor = false;
             // 
             // btCancelar
             // 
             this.btCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btCancelar.Location = new System.Drawing.Point(278, 178);
+            this.btCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btCancelar.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancelar.Location = new System.Drawing.Point(293, 270);
             this.btCancelar.Name = "btCancelar";
-            this.btCancelar.Size = new System.Drawing.Size(152, 29);
+            this.btCancelar.Size = new System.Drawing.Size(160, 29);
             this.btCancelar.TabIndex = 3;
             this.btCancelar.Text = "Cancelar";
-            this.btCancelar.UseVisualStyleBackColor = true;
+            this.btCancelar.UseVisualStyleBackColor = false;
+            // 
+            // btGuardar
+            // 
+            this.btGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btGuardar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btGuardar.Location = new System.Drawing.Point(454, 270);
+            this.btGuardar.Name = "btGuardar";
+            this.btGuardar.Size = new System.Drawing.Size(178, 28);
+            this.btGuardar.TabIndex = 4;
+            this.btGuardar.Text = "Guardar";
+            this.btGuardar.UseVisualStyleBackColor = false;
             // 
             // frmInteresado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(600, 216);
+            this.ClientSize = new System.Drawing.Size(632, 303);
+            this.Controls.Add(this.btGuardar);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btEliminar);
-            this.Controls.Add(this.btGuardar);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmInteresado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -354,8 +359,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txNombre;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btGuardar;
         private System.Windows.Forms.Button btEliminar;
         private System.Windows.Forms.Button btCancelar;
+        private System.Windows.Forms.Button btGuardar;
     }
 }

@@ -182,7 +182,7 @@
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.toolStrip1.Location = new System.Drawing.Point(0, 351);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(727, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(747, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -195,10 +195,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(727, 376);
+            this.ClientSize = new System.Drawing.Size(747, 376);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.netBarControl1);
             this.DoubleBuffered = true;
@@ -206,6 +205,7 @@
             this.IsMdiContainer = true;
             this.Name = "Home";
             this.Text = "Morán Villa Bienes Raíces";
+            this.TransparencyKey = System.Drawing.Color.White;
             this.Load += new System.EventHandler(this.Home_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
