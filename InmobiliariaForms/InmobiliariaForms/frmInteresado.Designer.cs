@@ -50,6 +50,8 @@
             this.btEliminar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.btGuardar = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cbMoneda = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numDormitorios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHasta)).BeginInit();
@@ -64,6 +66,8 @@
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox1.BackgroundImage")));
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.groupBox1.Controls.Add(this.cbMoneda);
+            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.cbEsInversion);
             this.groupBox1.Controls.Add(this.numDormitorios);
             this.groupBox1.Controls.Add(this.label8);
@@ -168,14 +172,14 @@
             0,
             0,
             0});
-            this.numHasta.Location = new System.Drawing.Point(348, 70);
+            this.numHasta.Location = new System.Drawing.Point(417, 70);
             this.numHasta.Maximum = new decimal(new int[] {
             -1530494976,
             232830,
             0,
             0});
             this.numHasta.Name = "numHasta";
-            this.numHasta.Size = new System.Drawing.Size(222, 22);
+            this.numHasta.Size = new System.Drawing.Size(153, 22);
             this.numHasta.TabIndex = 9;
             // 
             // label5
@@ -183,7 +187,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(273, 74);
+            this.label5.Location = new System.Drawing.Point(342, 74);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 14);
             this.label5.TabIndex = 8;
@@ -196,7 +200,7 @@
             0,
             0,
             0});
-            this.numDesde.Location = new System.Drawing.Point(86, 70);
+            this.numDesde.Location = new System.Drawing.Point(185, 70);
             this.numDesde.Maximum = new decimal(new int[] {
             -727379968,
             232,
@@ -212,7 +216,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(6, 72);
+            this.label4.Location = new System.Drawing.Point(106, 74);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 14);
             this.label4.TabIndex = 6;
@@ -312,6 +316,24 @@
             this.btGuardar.Text = "Guardar";
             this.btGuardar.UseVisualStyleBackColor = false;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Location = new System.Drawing.Point(6, 74);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(50, 14);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "Moneda:";
+            // 
+            // cbMoneda
+            // 
+            this.cbMoneda.FormattingEnabled = true;
+            this.cbMoneda.Location = new System.Drawing.Point(55, 69);
+            this.cbMoneda.Name = "cbMoneda";
+            this.cbMoneda.Size = new System.Drawing.Size(50, 22);
+            this.cbMoneda.TabIndex = 24;
+            // 
             // frmInteresado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -362,5 +384,7 @@
         private System.Windows.Forms.Button btEliminar;
         private System.Windows.Forms.Button btCancelar;
         private System.Windows.Forms.Button btGuardar;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox cbMoneda;
     }
 }

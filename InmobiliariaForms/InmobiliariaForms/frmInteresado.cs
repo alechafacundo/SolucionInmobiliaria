@@ -58,22 +58,16 @@ namespace InmobiliariaForms
             //Mostrar Mensaje que lo guardo bien o lo guardo mal
 
             Interesado interesado = new Interesado();
-            interesado.Nombre = "Facundo Alecha";
-            interesado.Dormitorios = null;
-            interesado.Email = "facu@gmail.com";
-            //interesado.Id = 3; 
-            interesado.MontoDesde = null;
-            interesado.MontoHasta = 100000;
-            interesado.ParaInversion = true;
-            //Llenar con el VALUE del combo seleccionado
-            interesado.TipoDeInmueble = 2;
-            
 
-            String Nombre = txNombre.Text;
-            String Email = txEmail.Text;
-            String Telefono = txTelefono.Text;
+            eTipoInmueble tipoInmueble;
+            Enum.TryParse<eTipoInmueble>(cbTipoInmueble.SelectedValue.ToString(), out tipoInmueble);
+            interesado.Tipo = (int)tipoInmueble;
+            eTipoOperacion tipoOperacion;
+            Enum.TryParse<eTipoOperacion>(cbTipoOperacion.SelectedValue.ToString(), out tipoOperacion);
+            interado.Operacion = (int)tipoOperacion;
+            eMoneda tipoMoneda;
+                        
 
-            
         }
     }
 }
