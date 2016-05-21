@@ -12,6 +12,8 @@ namespace InmobiliariaForms
 {
     public partial class frmInmueble : Form
     {
+        Inmueble Inmueble { get; set; }
+
         public frmInmueble()
         {
             InitializeComponent();
@@ -47,20 +49,54 @@ namespace InmobiliariaForms
 
         private void frmInmueble_Load(object sender, EventArgs e)
         {
-            cbTipoInmueble.DataSource = Enum.GetNames(typeof(eTipoInmueble));
-            cbTipoOperacion.DataSource = Enum.GetNames(typeof(eTipoOperacion));
+            try
+            {
+                cbTipoInmueble.DataSource = Enum.GetNames(typeof(eTipoInmueble));
+                cbTipoInmueble.SelectedItem = null;
 
-            //cbTipoInmueble.Items.Clear();
-            //cbTipoInmueble.Items.Add("Departamento");
-            //cbTipoInmueble.Items.Add("Casa");
-            //cbTipoInmueble.Items.Add("Terreno");
-            //cbTipoOperacion.Items.Clear();
-            //cbTipoOperacion.Items.Add("Venta");
-            //cbTipoOperacion.Items.Add("Alquiler");
-            //cbMoneda.Items.Clear();
-            //cbMoneda.Items.Add("Peso");
-            //cbMoneda.Items.Add("Dolar");
+                cbTipoOperacion.DataSource = Enum.GetNames(typeof(eTipoOperacion));
+                cbTipoOperacion.SelectedItem = null;
+
+                if (Inmueble != null)
+                {
+                    cbTipoInmueble.SelectedIndex = (int)Inmueble.Tipo;
+                    cbTipoOperacion.SelectedIndex = (int)Inmueble.Operacion;
+                    dateTimeFecha.Value = Inmueble.Fecha != null ? Inmueble.Fecha.Value : DateTime.Now;
+                    txLocalidad.Text = Inmueble.Localidad;
+                    txBarrio.Text = Inmueble.Barrio;
+                    txCalle.Text = Inmueble.Calle;
+                    txNumero.Text = Inmueble.Numero.HasValue ? Inmueble.Numero.ToString() : "";
+                    txPiso.Text = Inmueble.Piso.HasValue ? Inmueble.Piso.ToString() : "";
+                    txDepto.Text = Inmueble.Departamento;
+                    txEntreCalles.Text = Inmueble.EntreCalles;
+                    numPrecio.Value = Inmueble.Precio.HasValue ? Inmueble.Precio.Value : 0m;
+                    cbMoneda.SelectedIndex = Inmueble.Moneda;
+                    txMtsTerreno.Text = Inmueble.Metros2Terreno;
+                    txSupCubierta.Text = Inmueble.SupCubierta;
+                    txValorMts.Text = Inmueble.ValorMetro2.HasValue ? Inmueble.ValorMetro2.Value.ToString() : "";
+                    txObservaciones.Text = Inmueble.Observaciones;
+                    txDorm.Text = Inmueble.Dormitorios.HasValue ? Inmueble.Dormitorios.Value.ToString() : "";
+                    txBaño.Text = Inmueble.Baños;
+                    txGarage.Text = Inmueble.Garage;
+                    txPatio.Text = Inmueble.Patio;
+                    txOtras.Text = Inmueble.OtrasDependencias;
+                    cbCargadoPor.SelectedValue = null; //Inmueble.CargadoPor
+                    txContacto.Text = Inmueble.Contacto;
+                    txReferencia.Text = Inmueble.Referencia;
+                }
+            }
+            catch (Exception ex)
+            {
+                //ToDo: Fabri
+                //Modulo de notificaciones
+                throw;
+            }
         }
-        
+
+        private void btCancelar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
     }
 }

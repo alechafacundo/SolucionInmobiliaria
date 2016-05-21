@@ -150,6 +150,7 @@
             // 
             // cbTipoOperacion
             // 
+            this.cbTipoOperacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoOperacion.FormattingEnabled = true;
             this.cbTipoOperacion.ImeMode = System.Windows.Forms.ImeMode.On;
             this.cbTipoOperacion.Location = new System.Drawing.Point(278, 13);
@@ -576,6 +577,7 @@
             // 
             // cbTipoInmueble
             // 
+            this.cbTipoInmueble.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoInmueble.FormattingEnabled = true;
             this.cbTipoInmueble.Location = new System.Drawing.Point(106, 13);
             this.cbTipoInmueble.Name = "cbTipoInmueble";
@@ -610,6 +612,7 @@
             this.btCancelar.TabIndex = 3;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = false;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // btGuardar
             // 
@@ -656,7 +659,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbTipoInmueble;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txEntreCalles;
         private System.Windows.Forms.Label label10;
@@ -703,5 +705,6 @@
         private System.Windows.Forms.Button btCancelar;
         private System.Windows.Forms.Button btGuardar;
         private System.Windows.Forms.ComboBox cbTipoOperacion;
+        private System.Windows.Forms.ComboBox cbTipoInmueble;
     }
 }

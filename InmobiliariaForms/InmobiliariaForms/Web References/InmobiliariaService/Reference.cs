@@ -295,7 +295,7 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         private string metros2TerrenoField;
         
-        private int supCubiertaField;
+        private string supCubiertaField;
         
         private int monedaField;
         
@@ -471,7 +471,7 @@ namespace InmobiliariaForms.InmobiliariaService {
         }
         
         /// <remarks/>
-        public int SupCubierta {
+        public string SupCubierta {
             get {
                 return this.supCubiertaField;
             }
