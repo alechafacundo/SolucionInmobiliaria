@@ -14,9 +14,10 @@ namespace InmobiliariaService
         public decimal? MontoDesde { get; set; }
         public decimal? MontoHasta { get; set; }
         //Enum
+        public int TipoDeMoneda { get; set; }
         public int TipoDeOperacion { get; set; }
         public int TipoDeInmueble { get; set; }
-        public int? Dormitorios { get; set; }
+        public string Dormitorios { get; set; }
         public bool ParaInversion { get; set; }
     }
 }
