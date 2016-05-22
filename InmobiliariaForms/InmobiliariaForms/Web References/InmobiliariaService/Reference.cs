@@ -33,7 +33,7 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         private System.Threading.SendOrPostCallback TestOperationCompleted;
         
-        private System.Threading.SendOrPostCallback CrearInmuebleOperationCompleted;
+        private System.Threading.SendOrPostCallback GuardarInmuebleOperationCompleted;
         
         private System.Threading.SendOrPostCallback GuardarInteresadoOperationCompleted;
         
@@ -84,7 +84,7 @@ namespace InmobiliariaForms.InmobiliariaService {
         public event TestCompletedEventHandler TestCompleted;
         
         /// <remarks/>
-        public event CrearInmuebleCompletedEventHandler CrearInmuebleCompleted;
+        public event GuardarInmuebleCompletedEventHandler GuardarInmuebleCompleted;
         
         /// <remarks/>
         public event GuardarInteresadoCompletedEventHandler GuardarInteresadoCompleted;
@@ -156,30 +156,30 @@ namespace InmobiliariaForms.InmobiliariaService {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/CrearInmueble", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void CrearInmueble(Inmueble inmueble) {
-            this.Invoke("CrearInmueble", new object[] {
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GuardarInmueble", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void GuardarInmueble(Inmueble inmueble) {
+            this.Invoke("GuardarInmueble", new object[] {
                         inmueble});
         }
         
         /// <remarks/>
-        public void CrearInmuebleAsync(Inmueble inmueble) {
-            this.CrearInmuebleAsync(inmueble, null);
+        public void GuardarInmuebleAsync(Inmueble inmueble) {
+            this.GuardarInmuebleAsync(inmueble, null);
         }
         
         /// <remarks/>
-        public void CrearInmuebleAsync(Inmueble inmueble, object userState) {
-            if ((this.CrearInmuebleOperationCompleted == null)) {
-                this.CrearInmuebleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCrearInmuebleOperationCompleted);
+        public void GuardarInmuebleAsync(Inmueble inmueble, object userState) {
+            if ((this.GuardarInmuebleOperationCompleted == null)) {
+                this.GuardarInmuebleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGuardarInmuebleOperationCompleted);
             }
-            this.InvokeAsync("CrearInmueble", new object[] {
-                        inmueble}, this.CrearInmuebleOperationCompleted, userState);
+            this.InvokeAsync("GuardarInmueble", new object[] {
+                        inmueble}, this.GuardarInmuebleOperationCompleted, userState);
         }
         
-        private void OnCrearInmuebleOperationCompleted(object arg) {
-            if ((this.CrearInmuebleCompleted != null)) {
+        private void OnGuardarInmuebleOperationCompleted(object arg) {
+            if ((this.GuardarInmuebleCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.CrearInmuebleCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.GuardarInmuebleCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -260,7 +260,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -631,7 +631,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -774,7 +774,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public enum eTipoInmueble {
@@ -790,7 +790,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public enum eTipoOperacion {
@@ -803,7 +803,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public enum eMoneda {
@@ -847,7 +847,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void CrearInmuebleCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    public delegate void GuardarInmuebleCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
