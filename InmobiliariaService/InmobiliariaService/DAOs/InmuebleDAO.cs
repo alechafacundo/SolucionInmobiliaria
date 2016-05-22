@@ -9,7 +9,7 @@ namespace InmobiliariaService
     public class InmuebleDAO : DAOBase
     {
 
-        internal static void CrearInmueble(Inmueble inmueble)
+        internal static void GuardarInmueble(Inmueble inmueble)
         {
             try
             {
