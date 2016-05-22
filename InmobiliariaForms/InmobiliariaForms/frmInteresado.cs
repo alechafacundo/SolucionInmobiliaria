@@ -21,16 +21,18 @@ namespace InmobiliariaForms
 
         private void frmInteresado_Load(object sender, EventArgs e)
         {
-            cbTipoInmueble.Items.Clear();
-            cbTipoInmueble.Items.Add("Departamento");
-            cbTipoInmueble.Items.Add("Casa");
-            cbTipoInmueble.Items.Add("Terreno");
-            cbTipoOperacion.Items.Clear();
-            cbTipoOperacion.Items.Add("Venta");
-            cbTipoOperacion.Items.Add("Alquiler");
-            cbMoneda.Items.Clear();
-            cbMoneda.Items.Add("Peso");
-            cbMoneda.Items.Add("Dolar");
+            //ToDo: Facu
+            //Acordate de que así no se tienen que llenar los combos, llenarlos como en el inmueble
+            //cbTipoInmueble.Items.Clear();
+            //cbTipoInmueble.Items.Add("Departamento");
+            //cbTipoInmueble.Items.Add("Casa");
+            //cbTipoInmueble.Items.Add("Terreno");
+            //cbTipoOperacion.Items.Clear();
+            //cbTipoOperacion.Items.Add("Venta");
+            //cbTipoOperacion.Items.Add("Alquiler");
+            //cbMoneda.Items.Clear();
+            //cbMoneda.Items.Add("Peso");
+            //cbMoneda.Items.Add("Dolar");
 
 
             if (Interesado != null)
@@ -43,8 +45,9 @@ namespace InmobiliariaForms
                 cbTipoInmueble.SelectedIndex = (int)Interesado.TipoDeInmueble;
                 cbTipoOperacion.SelectedIndex = (int)Interesado.TipoDeOperacion;
                 numDesde.Value = Interesado.MontoDesde != null ? (decimal)Interesado.MontoDesde : 0;
-                numHasta.Value = Interesado.MontoHasta != null ? (decimal)Interesado.MontoHasta : 0;               
-               //falta el chekEsInversion
+                numHasta.Value = Interesado.MontoHasta != null ? (decimal)Interesado.MontoHasta : 0;
+                //Así se setea un CheckBox
+                checkEsInversion.Checked = Interesado.ParaInversion;        
 
                 
                 
@@ -53,36 +56,55 @@ namespace InmobiliariaForms
 
         private void btGuardar_Click(object sender, EventArgs e)
         {
-            //ToDo
+            //ToDo: Facu
             //Validar campos mandatorios o requeridos
-            //Instanciar un interesado
-            //Set properties del interesado
-            //Invocar al ws y guardar el interesado
             //Mostrar Mensaje que lo guardo bien o lo guardo mal
+            try
+            {
+                if (ValidarCampos())
+                {
+                    eTipoInmueble tipoInmueble;
+                    Enum.TryParse<eTipoInmueble>(cbTipoInmueble.SelectedValue.ToString(), out tipoInmueble);
+                    Interesado.TipoDeInmueble = (int)tipoInmueble;
 
-            Interesado interesado = new Interesado();
+                    eTipoOperacion tipoOperacion;
+                    Enum.TryParse<eTipoOperacion>(cbTipoOperacion.SelectedValue.ToString(), out tipoOperacion);
+                    Interesado.TipoDeOperacion = (int)tipoOperacion;
 
-            eTipoInmueble tipoInmueble;
-            Enum.TryParse<eTipoInmueble>(cbTipoInmueble.SelectedValue.ToString(), out tipoInmueble);
-            interesado.TipoDeInmueble = (int)tipoInmueble;
-            eTipoOperacion tipoOperacion;
-            Enum.TryParse<eTipoOperacion>(cbTipoOperacion.SelectedValue.ToString(), out tipoOperacion);
-            interesado.TipoDeOperacion = (int)tipoOperacion;
-            eMoneda tipoMoneda;
-            Enum.TryParse<eMoneda>(cbMoneda.SelectedValue.ToString(), out tipoMoneda);
-            interesado.TipoDeMoneda = (int)tipoMoneda;
-            interesado.Nombre = txNombre.Text;
-            interesado.Email = txEmail.Text;
-            interesado.Telefono = txTelefono.Text;
-            interesado.MontoDesde = numDesde.Value;
-            interesado.MontoHasta = numHasta.Value;
-            interesado.Dormitorios = txDorm.Text;
-            //falta el CheckEsInversion
+                    eMoneda tipoMoneda;
+                    Enum.TryParse<eMoneda>(cbMoneda.SelectedValue.ToString(), out tipoMoneda);
+                    Interesado.TipoDeMoneda = (int)tipoMoneda;
 
+                    Interesado.Nombre = txNombre.Text;
+                    Interesado.Email = txEmail.Text;
+                    Interesado.Telefono = txTelefono.Text;
+                    Interesado.MontoDesde = numDesde.Value;
+                    Interesado.MontoHasta = numHasta.Value;
+                    Interesado.Dormitorios = txDorm.Text;
+                    //Asi se obtiene el checkbox
+                    Interesado.ParaInversion = checkEsInversion.Checked;
 
+                    //Ahora que ya tenes el interesado guardado lo tenes que mandar al web service para que lo guarde en la base de datos:
+                    Service ws = new Service();
+                    ws.GuardarInteresado(Interesado);
 
-                        
+                    //Si llego hasta acá sin irse al catch entonces quiere decir que pudo guardar bien.
+                    //Mostremos un msj diciendo que se guardo bien
+                    //Cerremos el form poniendo el DialogResult en OK.
+                }
+            }
+            catch (Exception)
+            {
 
+                throw;
+            }
+            
+
+        }
+
+        private bool ValidarCampos()
+        {
+            return true;
         }
 
         private void btCancelar_Click(object sender, EventArgs e)

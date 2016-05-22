@@ -29,12 +29,15 @@ namespace InmobiliariaForms
                 eTipoInmueble tipoInmueble;
                 Enum.TryParse<eTipoInmueble>(cbTipoInmueble.SelectedValue.ToString(), out tipoInmueble);
                 inmueble.Tipo = (int)tipoInmueble;
+
                 eTipoOperacion tipoOperacion;
                 Enum.TryParse<eTipoOperacion>(cbTipoOperacion.SelectedValue.ToString(), out tipoOperacion);
                 inmueble.Operacion = (int)tipoOperacion;
+
                 eMoneda tipoMoneda;
                 Enum.TryParse<eMoneda>(cbMoneda.SelectedValue.ToString(), out tipoMoneda);
                 inmueble.Moneda = (int)tipoMoneda;
+
                 inmueble.Fecha = dateTimeFecha.Value;
                 inmueble.Localidad = txLocalidad.Text;
                 inmueble.Calle = txCalle.Text;
@@ -58,7 +61,8 @@ namespace InmobiliariaForms
                 //aca Puse el Value del numericUpDown, decime si esta bien.
                 inmueble.Precio = numPrecio.Value;
 
-
+                //Ahora que ya tenes el inmueble guardado lo tenes que mandar al web service para que lo guarde en la base de datos:
+                
 
 
             }
