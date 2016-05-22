@@ -71,7 +71,7 @@
             this.netBarControl1.ShowOverflowPanel = false;
             this.netBarControl1.ShowPopupShadow = true;
             this.netBarControl1.ShowVerticalSplitter = false;
-            this.netBarControl1.Size = new System.Drawing.Size(132, 349);
+            this.netBarControl1.Size = new System.Drawing.Size(132, 306);
             this.netBarControl1.TabIndex = 1;
             this.netBarControl1.Text = "netBarControl1";
             // 
@@ -180,9 +180,9 @@
             // toolStrip1
             // 
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.toolStrip1.Location = new System.Drawing.Point(0, 351);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 308);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(747, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(769, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -197,7 +197,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(747, 376);
+            this.ClientSize = new System.Drawing.Size(769, 333);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.netBarControl1);
             this.DoubleBuffered = true;

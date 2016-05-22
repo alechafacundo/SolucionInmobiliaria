@@ -41,7 +41,7 @@ namespace InmobiliariaForms
 
             int width = this.Controls.Find("netBarControl1", true)[0].Width;
 
-            frmInteresado.Location = new Point(width + 10, 15);
+            frmInteresado.Location = new Point(width);
             frmInteresado.Show();
         }
 
@@ -55,7 +55,7 @@ namespace InmobiliariaForms
             frmInmueble.StartPosition = FormStartPosition.Manual;
 
             int width = this.Controls.Find("netBarControl1", true)[0].Width;
-            frmInmueble.Location = new Point(width + 10, 15);
+            frmInmueble.Location = new Point(width);
             frmInmueble.Show();
         }
 

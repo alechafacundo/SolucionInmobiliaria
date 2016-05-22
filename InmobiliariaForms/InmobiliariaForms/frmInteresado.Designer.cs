@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInteresado));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txDorm = new System.Windows.Forms.TextBox();
             this.cbMoneda = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.checkEsInversion = new System.Windows.Forms.CheckBox();
@@ -51,7 +52,6 @@
             this.btEliminar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.btGuardar = new System.Windows.Forms.Button();
-            this.txDorm = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHasta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDesde)).BeginInit();
@@ -92,13 +92,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Interesado";
             // 
+            // txDorm
+            // 
+            this.txDorm.Location = new System.Drawing.Point(81, 126);
+            this.txDorm.Name = "txDorm";
+            this.txDorm.Size = new System.Drawing.Size(58, 22);
+            this.txDorm.TabIndex = 9;
+            // 
             // cbMoneda
             // 
             this.cbMoneda.FormattingEnabled = true;
             this.cbMoneda.Location = new System.Drawing.Point(55, 69);
             this.cbMoneda.Name = "cbMoneda";
             this.cbMoneda.Size = new System.Drawing.Size(50, 22);
-            this.cbMoneda.TabIndex = 24;
+            this.cbMoneda.TabIndex = 4;
             // 
             // label12
             // 
@@ -120,7 +127,7 @@
             this.checkEsInversion.Location = new System.Drawing.Point(352, 131);
             this.checkEsInversion.Name = "checkEsInversion";
             this.checkEsInversion.Size = new System.Drawing.Size(110, 18);
-            this.checkEsInversion.TabIndex = 17;
+            this.checkEsInversion.TabIndex = 10;
             this.checkEsInversion.Text = "Es para Inversión";
             this.checkEsInversion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkEsInversion.UseVisualStyleBackColor = false;
@@ -154,7 +161,7 @@
             this.cbTipoOperacion.Location = new System.Drawing.Point(381, 98);
             this.cbTipoOperacion.Name = "cbTipoOperacion";
             this.cbTipoOperacion.Size = new System.Drawing.Size(189, 22);
-            this.cbTipoOperacion.TabIndex = 12;
+            this.cbTipoOperacion.TabIndex = 8;
             // 
             // label6
             // 
@@ -173,7 +180,7 @@
             this.cbTipoInmueble.Location = new System.Drawing.Point(119, 98);
             this.cbTipoInmueble.Name = "cbTipoInmueble";
             this.cbTipoInmueble.Size = new System.Drawing.Size(120, 22);
-            this.cbTipoInmueble.TabIndex = 10;
+            this.cbTipoInmueble.TabIndex = 7;
             // 
             // numHasta
             // 
@@ -190,7 +197,7 @@
             0});
             this.numHasta.Name = "numHasta";
             this.numHasta.Size = new System.Drawing.Size(153, 22);
-            this.numHasta.TabIndex = 9;
+            this.numHasta.TabIndex = 6;
             // 
             // label5
             // 
@@ -218,7 +225,7 @@
             0});
             this.numDesde.Name = "numDesde";
             this.numDesde.Size = new System.Drawing.Size(153, 22);
-            this.numDesde.TabIndex = 7;
+            this.numDesde.TabIndex = 5;
             // 
             // label4
             // 
@@ -237,7 +244,7 @@
             this.txEmail.Location = new System.Drawing.Point(289, 43);
             this.txEmail.Name = "txEmail";
             this.txEmail.Size = new System.Drawing.Size(281, 22);
-            this.txEmail.TabIndex = 5;
+            this.txEmail.TabIndex = 3;
             // 
             // label3
             // 
@@ -256,7 +263,7 @@
             this.txTelefono.Location = new System.Drawing.Point(59, 43);
             this.txTelefono.Name = "txTelefono";
             this.txTelefono.Size = new System.Drawing.Size(180, 22);
-            this.txTelefono.TabIndex = 3;
+            this.txTelefono.TabIndex = 2;
             // 
             // label2
             // 
@@ -295,9 +302,10 @@
             this.btEliminar.Location = new System.Drawing.Point(14, 271);
             this.btEliminar.Name = "btEliminar";
             this.btEliminar.Size = new System.Drawing.Size(160, 29);
-            this.btEliminar.TabIndex = 2;
+            this.btEliminar.TabIndex = 13;
             this.btEliminar.Text = "Eliminar";
             this.btEliminar.UseVisualStyleBackColor = false;
+            this.btEliminar.Click += new System.EventHandler(this.btEliminar_Click);
             // 
             // btCancelar
             // 
@@ -309,7 +317,7 @@
             this.btCancelar.Location = new System.Drawing.Point(293, 270);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(160, 29);
-            this.btCancelar.TabIndex = 3;
+            this.btCancelar.TabIndex = 12;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = false;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
@@ -324,16 +332,9 @@
             this.btGuardar.Location = new System.Drawing.Point(454, 270);
             this.btGuardar.Name = "btGuardar";
             this.btGuardar.Size = new System.Drawing.Size(178, 28);
-            this.btGuardar.TabIndex = 4;
+            this.btGuardar.TabIndex = 11;
             this.btGuardar.Text = "Guardar";
             this.btGuardar.UseVisualStyleBackColor = false;
-            // 
-            // txDorm
-            // 
-            this.txDorm.Location = new System.Drawing.Point(81, 126);
-            this.txDorm.Name = "txDorm";
-            this.txDorm.Size = new System.Drawing.Size(58, 22);
-            this.txDorm.TabIndex = 25;
             // 
             // frmInteresado
             // 

@@ -48,7 +48,7 @@ namespace InmobiliariaForms
                 numHasta.Value = Interesado.MontoHasta != null ? (decimal)Interesado.MontoHasta : 0;
                 //Así se setea un CheckBox
                 checkEsInversion.Checked = Interesado.ParaInversion;        
-
+                //
                 
                 
             }
@@ -111,6 +111,11 @@ namespace InmobiliariaForms
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void btEliminar_Click(object sender, EventArgs e)
+        {
+            //Parece qye ahi va.
         }
     }
 }
