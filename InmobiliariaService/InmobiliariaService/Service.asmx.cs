@@ -65,5 +65,19 @@ namespace InmobiliariaService
                 throw;
             }
         }
+
+        [WebMethod]
+        public Inmueble[] BuscarInmuebles(Inmueble inmueble, decimal? precioDesde, decimal? precioHasta)
+        {
+            try
+            {
+                return InmuebleDAO.BuscarInmuebles(inmueble, precioDesde, precioHasta).ToArray();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

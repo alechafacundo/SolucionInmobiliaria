@@ -73,6 +73,53 @@ namespace InmobiliariaService
             }
         }
 
+        internal static List<Inmueble> BuscarInmuebles(Inmueble inmueble, decimal? precioDesde, decimal? precioHasta)
+        {
+            try
+            {
+                List<Inmueble> inmuebles = new List<Inmueble>();
+                DataTable dt = DAOBase.GetDataTable(new Inmueble(), string.Empty);
+                if (dt.Rows.Count > 0)
+                {
+                    inmuebles = LlenarInmuebles(new Inmueble(), dt);
+
+                    inmuebles = inmuebles.Where(x => x.Operacion == inmueble.Operacion).ToList();
+                    inmuebles = inmuebles.Where(x => x.Tipo == inmueble.Tipo).ToList();
+
+                    if (!string.IsNullOrEmpty(inmueble.Barrio))
+                    {
+                        inmuebles = inmuebles.Where(x => x.Barrio.Contains(inmueble.Barrio)).ToList();
+                    }
+                    if (!string.IsNullOrEmpty(inmueble.Baños))
+                    {
+                        inmuebles = inmuebles.Where(x => x.Baños.Contains(inmueble.Baños)).ToList();
+                    }
+                    if (!string.IsNullOrEmpty(inmueble.Dormitorios))
+                    {
+                        inmuebles = inmuebles.Where(x => x.Dormitorios.Contains(inmueble.Dormitorios)).ToList();
+                    }
+                    if (!string.IsNullOrEmpty(inmueble.Localidad))
+                    {
+                        inmuebles = inmuebles.Where(x => x.Localidad.Contains(inmueble.Localidad)).ToList();
+                    }
+                    if (precioDesde.HasValue)
+                    {
+                        inmuebles = inmuebles.Where(x => x.Precio > precioDesde.Value && x.Moneda == inmueble.Moneda).ToList();
+                    }
+                    if (precioHasta.HasValue)
+                    {
+                        inmuebles = inmuebles.Where(x => x.Precio < precioHasta.Value && x.Moneda == inmueble.Moneda).ToList();
+                    }
+                }
+
+                return inmuebles;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         private static List<Inmueble> LlenarInmuebles(Inmueble inmueble, DataTable dt)
         {
             List<Inmueble> dtos = new List<Inmueble>();
