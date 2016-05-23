@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInteresado));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.txDorm = new System.Windows.Forms.TextBox();
             this.cbMoneda = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -63,8 +64,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox1.BackgroundImage")));
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.txDorm);
             this.groupBox1.Controls.Add(this.cbMoneda);
             this.groupBox1.Controls.Add(this.label12);
@@ -91,6 +92,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Interesado";
+            
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::InmobiliariaForms.Properties.Resources.MV;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Location = new System.Drawing.Point(224, 146);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(167, 100);
+            this.panel1.TabIndex = 24;
             // 
             // txDorm
             // 
@@ -124,7 +135,7 @@
             this.checkEsInversion.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkEsInversion.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkEsInversion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.checkEsInversion.Location = new System.Drawing.Point(352, 131);
+            this.checkEsInversion.Location = new System.Drawing.Point(501, 131);
             this.checkEsInversion.Name = "checkEsInversion";
             this.checkEsInversion.Size = new System.Drawing.Size(110, 18);
             this.checkEsInversion.TabIndex = 10;
@@ -149,7 +160,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(281, 101);
+            this.label7.Location = new System.Drawing.Point(327, 101);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(99, 14);
             this.label7.TabIndex = 13;
@@ -158,7 +169,7 @@
             // cbTipoOperacion
             // 
             this.cbTipoOperacion.FormattingEnabled = true;
-            this.cbTipoOperacion.Location = new System.Drawing.Point(381, 98);
+            this.cbTipoOperacion.Location = new System.Drawing.Point(425, 98);
             this.cbTipoOperacion.Name = "cbTipoOperacion";
             this.cbTipoOperacion.Size = new System.Drawing.Size(189, 22);
             this.cbTipoOperacion.TabIndex = 8;
@@ -189,7 +200,7 @@
             0,
             0,
             0});
-            this.numHasta.Location = new System.Drawing.Point(417, 70);
+            this.numHasta.Location = new System.Drawing.Point(462, 70);
             this.numHasta.Maximum = new decimal(new int[] {
             -1530494976,
             232830,
@@ -204,7 +215,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(342, 74);
+            this.label5.Location = new System.Drawing.Point(385, 74);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 14);
             this.label5.TabIndex = 8;
@@ -217,7 +228,7 @@
             0,
             0,
             0});
-            this.numDesde.Location = new System.Drawing.Point(185, 70);
+            this.numDesde.Location = new System.Drawing.Point(222, 70);
             this.numDesde.Maximum = new decimal(new int[] {
             -727379968,
             232,
@@ -233,7 +244,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(106, 74);
+            this.label4.Location = new System.Drawing.Point(145, 74);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 14);
             this.label4.TabIndex = 6;
@@ -243,7 +254,7 @@
             // 
             this.txEmail.Location = new System.Drawing.Point(289, 43);
             this.txEmail.Name = "txEmail";
-            this.txEmail.Size = new System.Drawing.Size(281, 22);
+            this.txEmail.Size = new System.Drawing.Size(327, 22);
             this.txEmail.TabIndex = 3;
             // 
             // label3
@@ -279,7 +290,7 @@
             // 
             this.txNombre.Location = new System.Drawing.Point(59, 16);
             this.txNombre.Name = "txNombre";
-            this.txNombre.Size = new System.Drawing.Size(511, 22);
+            this.txNombre.Size = new System.Drawing.Size(557, 22);
             this.txNombre.TabIndex = 1;
             // 
             // label1
@@ -299,7 +310,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btEliminar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btEliminar.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEliminar.Location = new System.Drawing.Point(14, 271);
+            this.btEliminar.Location = new System.Drawing.Point(7, 271);
             this.btEliminar.Name = "btEliminar";
             this.btEliminar.Size = new System.Drawing.Size(160, 29);
             this.btEliminar.TabIndex = 13;
@@ -387,5 +398,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox cbMoneda;
         private System.Windows.Forms.TextBox txDorm;
+        private System.Windows.Forms.Panel panel1;
     }
 }

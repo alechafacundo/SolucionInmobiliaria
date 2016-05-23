@@ -82,6 +82,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBuscarInmueble.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarInmueble.Designer.cs">
+      <DependentUpon>frmBuscarInmueble.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBuscarInteresado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmBuscarInmueble.resx">
+      <DependentUpon>frmBuscarInmueble.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBuscarInteresado.resx">
       <DependentUpon>frmBuscarInteresado.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,6 +181,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Web References\InmobiliariaService\Service.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MV.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

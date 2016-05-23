@@ -19,39 +19,38 @@ namespace InmobiliariaForms
 
         private void btBuscar_Click(object sender, EventArgs e)
         {
-            Inmueble inmueble = new Inmueble();
+            Interesado interesado = new Interesado();
+            
 
             eTipoInmueble tipoInmueble;
             Enum.TryParse<eTipoInmueble>(cbTipoInmueble.SelectedValue.ToString(), out tipoInmueble);
-            inmueble.Tipo = (int)tipoInmueble;
+            interesado.TipoDeInmueble = (int)tipoInmueble;
 
             eTipoOperacion tipoOperacion;
             Enum.TryParse<eTipoOperacion>(cbTipoOperacion.SelectedValue.ToString(), out tipoOperacion);
-            inmueble.Operacion = (int)tipoOperacion;
+            interesado.TipoDeOperacion = (int)tipoOperacion;
 
             eMoneda tipoMoneda;
             Enum.TryParse<eMoneda>(cbMoneda.SelectedValue.ToString(), out tipoMoneda);
-            inmueble.Moneda = (int)tipoMoneda;
+            interesado.TipoDeMoneda = (int)tipoMoneda;
 
-            inmueble.Fecha = dateTimeFecha.Value;
-            inmueble.Localidad = txLocalidad.Text;
-            inmueble.Barrio = txBarrio.Text;
-            inmueble.Dormitorios = txDorm.Text;
-            inmueble.Patio = txPatio.Text;
-            inmueble.Baños = txBaño.Text;
-            inmueble.Garage = txGarage.Text;
-            inmueble.Comedor = txComedor.Text;
+            
+            interesado.Nombre = txNombre.Text;
+            interesado.Email = txEmail.Text;      
+            interesado.Dormitorios = txDorm.Text;
+            interesado.Telefono = txTelefono.Text;
 
             decimal? precioDesde = null;
-            if (numPrecioDesde.Value != 0)
-                precioDesde = numPrecioDesde.Value;
+            if (numDesde.Value != 0)
+                precioDesde = numDesde.Value;
 
             decimal? precioHasta = null;
-            if (numPrecioHasta.Value != 0)
-                precioHasta = numPrecioHasta.Value;
+            if (numHasta.Value != 0)
+                precioHasta = numHasta.Value;
 
-            Service ws = new Service();
-            List<Inmueble> inmuebles = ws.BuscarInmuebles(inmueble, precioDesde, precioHasta).ToList();
+
+
+
         }
     }
 }

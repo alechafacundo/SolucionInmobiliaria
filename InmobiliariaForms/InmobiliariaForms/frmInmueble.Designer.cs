@@ -93,7 +93,6 @@
             // g
             // 
             this.g.BackColor = System.Drawing.Color.White;
-            this.g.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("g.BackgroundImage")));
             this.g.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.g.Controls.Add(this.cbTipoOperacion);
             this.g.Controls.Add(this.groupBox1);

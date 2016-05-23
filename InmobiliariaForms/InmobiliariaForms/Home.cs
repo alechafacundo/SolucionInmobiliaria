@@ -12,6 +12,9 @@ namespace InmobiliariaForms
     {
         frmInteresado frmInteresado;
         frmInmueble frmInmueble;
+        frmBuscarInmueble frmBuscarInmueble;
+        frmBuscarInteresado frmBuscarInteresado;
+
 
         public Home()
         {
@@ -61,7 +64,16 @@ namespace InmobiliariaForms
 
         private void btBuscarInmueble_ItemClick(object sender, EventArgs e)
         {
+            if (frmBuscarInmueble == null || frmBuscarInmueble.IsDisposed)
+                frmBuscarInmueble = new frmBuscarInmueble();
 
+            frmBuscarInmueble.MdiParent = this;
+            frmBuscarInmueble.BringToFront();
+            frmBuscarInmueble.StartPosition = FormStartPosition.Manual;
+
+            int width = this.Controls.Find("netBarControl1", true)[0].Width;
+            frmBuscarInmueble.Location = new Point(width);
+            frmBuscarInmueble.Show();
         }
 
         private void btBuscarInteresado_ItemClick(object sender, EventArgs e)
