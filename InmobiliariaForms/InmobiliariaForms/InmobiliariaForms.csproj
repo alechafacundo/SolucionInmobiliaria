@@ -82,6 +82,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBuscarInteresado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarInteresado.Designer.cs">
+      <DependentUpon>frmBuscarInteresado.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInmueble.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmBuscarInteresado.resx">
+      <DependentUpon>frmBuscarInteresado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInmueble.resx">
       <DependentUpon>frmInmueble.cs</DependentUpon>
     </EmbeddedResource>

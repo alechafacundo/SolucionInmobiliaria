@@ -39,6 +39,8 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         private System.Threading.SendOrPostCallback GetInmueblesParaInteresadoOperationCompleted;
         
+        private System.Threading.SendOrPostCallback BuscarInmueblesOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -91,6 +93,9 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         /// <remarks/>
         public event GetInmueblesParaInteresadoCompletedEventHandler GetInmueblesParaInteresadoCompleted;
+        
+        /// <remarks/>
+        public event BuscarInmueblesCompletedEventHandler BuscarInmueblesCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/HelloWorld", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -237,6 +242,39 @@ namespace InmobiliariaForms.InmobiliariaService {
             if ((this.GetInmueblesParaInteresadoCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.GetInmueblesParaInteresadoCompleted(this, new GetInmueblesParaInteresadoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/BuscarInmuebles", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Inmueble[] BuscarInmuebles(Inmueble inmueble, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] System.Nullable<decimal> precioDesde, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] System.Nullable<decimal> precioHasta) {
+            object[] results = this.Invoke("BuscarInmuebles", new object[] {
+                        inmueble,
+                        precioDesde,
+                        precioHasta});
+            return ((Inmueble[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void BuscarInmueblesAsync(Inmueble inmueble, System.Nullable<decimal> precioDesde, System.Nullable<decimal> precioHasta) {
+            this.BuscarInmueblesAsync(inmueble, precioDesde, precioHasta, null);
+        }
+        
+        /// <remarks/>
+        public void BuscarInmueblesAsync(Inmueble inmueble, System.Nullable<decimal> precioDesde, System.Nullable<decimal> precioHasta, object userState) {
+            if ((this.BuscarInmueblesOperationCompleted == null)) {
+                this.BuscarInmueblesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnBuscarInmueblesOperationCompleted);
+            }
+            this.InvokeAsync("BuscarInmuebles", new object[] {
+                        inmueble,
+                        precioDesde,
+                        precioHasta}, this.BuscarInmueblesOperationCompleted, userState);
+        }
+        
+        private void OnBuscarInmueblesOperationCompleted(object arg) {
+            if ((this.BuscarInmueblesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.BuscarInmueblesCompleted(this, new BuscarInmueblesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -866,6 +904,32 @@ namespace InmobiliariaForms.InmobiliariaService {
         private object[] results;
         
         internal GetInmueblesParaInteresadoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Inmueble[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Inmueble[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void BuscarInmueblesCompletedEventHandler(object sender, BuscarInmueblesCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class BuscarInmueblesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal BuscarInmueblesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
