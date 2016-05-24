@@ -29,8 +29,6 @@
           <s:element minOccurs="1" maxOccurs="1" name="Fecha" nillable="true" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="Operacion" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="Tipo" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Localidad" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Barrio" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Calle" type="s:string" />
@@ -54,7 +52,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="CargadoPor" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="Contacto" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Referencia" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Otro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Otros" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="Interesado">

@@ -41,36 +41,43 @@ namespace InmobiliariaForms
                 
 
                 inmueble.Fecha = dateTimeFecha.Value;
-                inmueble.Localidad = txLocalidad.Text;
-                inmueble.Calle = txCalle.Text;
-                inmueble.Barrio = txBarrio.Text;
-                inmueble.Numero = txNumero.Text;
-                inmueble.Piso = txPiso.Text;
-                inmueble.Departamento = txDepto.Text;
-                inmueble.EntreCalles = txEntreCalles.Text;
-                inmueble.Metros2Terreno = txMtsTerreno.Text;
-                inmueble.SupCubierta = txSupCubierta.Text;
-                inmueble.ValorMetro2 = txValorMts.Text;
-                inmueble.Observaciones = txObservaciones.Text;
-                inmueble.Dormitorios = txDorm.Text;
-                inmueble.Patio = txPatio.Text;
-                inmueble.Baños = txBaño.Text;
-                inmueble.Garage = txGarage.Text;
-                inmueble.Comedor = txComedor.Text;
-                inmueble.OtrasDependencias = txOtras.Text;
-                inmueble.Contacto = txContacto.Text;
-                inmueble.Referencia = txReferencia.Text;
+                inmueble.Localidad = txLocalidad.Text.ToUpperInvariant();
+                inmueble.Calle = txCalle.Text.ToUpperInvariant();
+                inmueble.Barrio = txBarrio.Text.ToUpperInvariant();
+                inmueble.Numero = txNumero.Text.ToUpperInvariant();
+                inmueble.Piso = txPiso.Text.ToUpperInvariant();
+                inmueble.Departamento = txDepto.Text.ToUpperInvariant();
+                inmueble.EntreCalles = txEntreCalles.Text.ToUpperInvariant();
+                inmueble.Metros2Terreno = txMtsTerreno.Text.ToUpperInvariant();
+                inmueble.SupCubierta = txSupCubierta.Text.ToUpperInvariant();
+                inmueble.ValorMetro2 = txValorMts.Text.ToUpperInvariant();
+                inmueble.Observaciones = txObservaciones.Text.ToUpperInvariant();
+                inmueble.Dormitorios = txDorm.Text.ToUpperInvariant();
+                inmueble.Patio = txPatio.Text.ToUpperInvariant();
+                inmueble.Baños = txBaño.Text.ToUpperInvariant();
+                inmueble.Garage = txGarage.Text.ToUpperInvariant();
+                inmueble.Comedor = txComedor.Text.ToUpperInvariant();
+                inmueble.OtrasDependencias = txOtras.Text.ToUpperInvariant();
+                inmueble.Contacto = txContacto.Text.ToUpperInvariant();
+                inmueble.Referencia = txReferencia.Text.ToUpperInvariant();
                 inmueble.Precio = numPrecio.Value;
+                inmueble.CargadoPor = ((Vendedor)cbCargadoPor.SelectedItem).Id;
 
-
-
-           
-                
+                //faltan poner en el form
+                inmueble.Cocina = "1";
+                inmueble.Otros = "";
 
                 //Ahora que ya tenes el inmueble guardado lo tenes que mandar al web service para que lo guarde en la base de datos:
-
-
-
+                try
+                {
+                    Service ws = new Service();
+                    ws.GuardarInmueble(inmueble);
+                    MessageBox.Show("Se guardo joya papá!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 

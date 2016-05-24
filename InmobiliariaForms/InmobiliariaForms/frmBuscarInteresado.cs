@@ -35,10 +35,10 @@ namespace InmobiliariaForms
             interesado.TipoDeMoneda = (int)tipoMoneda;
 
             
-            interesado.Nombre = txNombre.Text;
-            interesado.Email = txEmail.Text;      
-            interesado.Dormitorios = txDorm.Text;
-            interesado.Telefono = txTelefono.Text;
+            interesado.Nombre = txNombre.Text.ToUpperInvariant();
+            interesado.Email = txEmail.Text.ToUpperInvariant();      
+            interesado.Dormitorios = txDorm.Text.ToUpperInvariant();
+            interesado.Telefono = txTelefono.Text.ToUpperInvariant();
 
             decimal? precioDesde = null;
             if (numDesde.Value != 0)

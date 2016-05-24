@@ -330,7 +330,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -344,10 +344,6 @@ namespace InmobiliariaForms.InmobiliariaService {
         private int operacionField;
         
         private int tipoField;
-        
-        private string nombreField;
-        
-        private string telefonoField;
         
         private string localidadField;
         
@@ -395,7 +391,7 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         private string referenciaField;
         
-        private string otroField;
+        private string otrosField;
         
         /// <remarks/>
         public int Id {
@@ -435,26 +431,6 @@ namespace InmobiliariaForms.InmobiliariaService {
             }
             set {
                 this.tipoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Nombre {
-            get {
-                return this.nombreField;
-            }
-            set {
-                this.nombreField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Telefono {
-            get {
-                return this.telefonoField;
-            }
-            set {
-                this.telefonoField = value;
             }
         }
         
@@ -690,18 +666,18 @@ namespace InmobiliariaForms.InmobiliariaService {
         }
         
         /// <remarks/>
-        public string Otro {
+        public string Otros {
             get {
-                return this.otroField;
+                return this.otrosField;
             }
             set {
-                this.otroField = value;
+                this.otrosField = value;
             }
         }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -770,7 +746,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -913,7 +889,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public enum eTipoInmueble {
@@ -929,7 +905,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public enum eTipoOperacion {
@@ -942,7 +918,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public enum eMoneda {

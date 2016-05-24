@@ -22,25 +22,25 @@ namespace InmobiliariaForms
             Inmueble inmueble = new Inmueble();
 
             eTipoInmueble tipoInmueble;
-            Enum.TryParse<eTipoInmueble>(cbTipoInmueble.SelectedValue.ToString(), out tipoInmueble);
+            Enum.TryParse(cbTipoInmueble.SelectedValue.ToString(), out tipoInmueble);
             inmueble.Tipo = (int)tipoInmueble;
 
             eTipoOperacion tipoOperacion;
-            Enum.TryParse<eTipoOperacion>(cbTipoOperacion.SelectedValue.ToString(), out tipoOperacion);
+            Enum.TryParse(cbTipoOperacion.SelectedValue.ToString(), out tipoOperacion);
             inmueble.Operacion = (int)tipoOperacion;
 
             eMoneda tipoMoneda;
-            Enum.TryParse<eMoneda>(cbMoneda.SelectedValue.ToString(), out tipoMoneda);
+            Enum.TryParse(cbMoneda.SelectedValue.ToString(), out tipoMoneda);
             inmueble.Moneda = (int)tipoMoneda;
 
             inmueble.Fecha = dateTimeFecha.Value;
-            inmueble.Localidad = txLocalidad.Text;
-            inmueble.Barrio = txBarrio.Text;
-            inmueble.Dormitorios = txDorm.Text;
-            inmueble.Patio = txPatio.Text;
-            inmueble.Baños = txBaño.Text;
-            inmueble.Garage = txGarage.Text;
-            inmueble.Comedor = txComedor.Text;
+            inmueble.Localidad = txLocalidad.Text.ToUpperInvariant();
+            inmueble.Barrio = txBarrio.Text.ToUpperInvariant();
+            inmueble.Dormitorios = txDorm.Text.ToUpperInvariant();
+            inmueble.Patio = txPatio.Text.ToUpperInvariant();
+            inmueble.Baños = txBaño.Text.ToUpperInvariant();
+            inmueble.Garage = txGarage.Text.ToUpperInvariant();
+            inmueble.Comedor = txComedor.Text.ToUpperInvariant();
 
             decimal? precioDesde = null;
             if (numPrecioDesde.Value != 0)
@@ -52,6 +52,7 @@ namespace InmobiliariaForms
 
             Service ws = new Service();
             List<Inmueble> inmuebles = ws.BuscarInmuebles(inmueble, precioDesde, precioHasta).ToList();
+            gvResultado.DataSource = inmuebles;
             
         }
 
