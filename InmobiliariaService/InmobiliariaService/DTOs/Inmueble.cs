@@ -10,8 +10,8 @@ namespace InmobiliariaService
         public DateTime? Fecha { get; set; }
         public int Operacion { get; set; }
         public int Tipo { get; set; }
-        public string Nombre { get; set; }
-        public string Telefono { get; set; }
+        //public string Nombre { get; set; }
+        //public string Telefono { get; set; }
         public string Localidad { get; set; }
         public string Barrio { get; set; }
         public string Calle { get; set; }
@@ -35,6 +35,6 @@ namespace InmobiliariaService
         public int CargadoPor { get; set; }
         public string Contacto { get; set; }
         public string Referencia { get; set; }
-        public string Otro { get; set; }
+        public string Otros { get; set; }
     }
 }
