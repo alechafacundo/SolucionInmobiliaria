@@ -17,7 +17,7 @@ namespace InmobiliariaService
         public string HelloWorld()
         {
             return "Hello World";
-            
+
         }
 
         [WebMethod]
@@ -26,7 +26,7 @@ namespace InmobiliariaService
         {
 
         }
-        
+
         [WebMethod]
         public void GuardarInmueble(Inmueble inmueble)
         {
@@ -78,6 +78,43 @@ namespace InmobiliariaService
 
                 throw;
             }
+
         }
+
+        [WebMethod]
+        public Vendedor[] GetVendedores()
+        {
+            try
+            {
+                List<Vendedor> vendedores = new List<Vendedor>();
+                Vendedor v1 = new Vendedor();
+                v1.Id = 1;
+                v1.Nombre = "Facu";
+                v1.Direccion = "Trejo 1070";
+                vendedores.Add(v1);
+
+                Vendedor v2 = new Vendedor();
+                v2.Id = 2;
+                v2.Nombre = "Fabri";
+                v2.Direccion = "Corrientes 4315";
+                vendedores.Add(v2);
+
+                Vendedor v3 = new Vendedor();
+                v3.Id = 3;
+                v3.Nombre = "Gonza";
+                v3.Direccion = "Cabaret 1320";
+                vendedores.Add(v3);
+
+                return vendedores.ToArray();
+
+                return VendedorDAO.GetVendedores().ToArray();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        } 
     }
+
 }

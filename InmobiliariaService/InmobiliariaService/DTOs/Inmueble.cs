@@ -32,7 +32,7 @@ namespace InmobiliariaService
         public string Patio { get; set; }
         public string OtrasDependencias { get; set; }
         public string ValorMetro2 { get; set; }
-        public string CargadoPor { get; set; }
+        public int CargadoPor { get; set; }
         public string Contacto { get; set; }
         public string Referencia { get; set; }
         public string Otro { get; set; }

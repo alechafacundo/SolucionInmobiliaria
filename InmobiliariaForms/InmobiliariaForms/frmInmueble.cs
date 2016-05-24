@@ -38,6 +38,8 @@ namespace InmobiliariaForms
                 Enum.TryParse<eMoneda>(cbMoneda.SelectedValue.ToString(), out tipoMoneda);
                 inmueble.Moneda = (int)tipoMoneda;
 
+                
+
                 inmueble.Fecha = dateTimeFecha.Value;
                 inmueble.Localidad = txLocalidad.Text;
                 inmueble.Calle = txCalle.Text;
@@ -58,11 +60,15 @@ namespace InmobiliariaForms
                 inmueble.OtrasDependencias = txOtras.Text;
                 inmueble.Contacto = txContacto.Text;
                 inmueble.Referencia = txReferencia.Text;
-                //aca Puse el Value del numericUpDown, decime si esta bien.
                 inmueble.Precio = numPrecio.Value;
 
-                //Ahora que ya tenes el inmueble guardado lo tenes que mandar al web service para que lo guarde en la base de datos:
+
+
+           
                 
+
+                //Ahora que ya tenes el inmueble guardado lo tenes que mandar al web service para que lo guarde en la base de datos:
+
 
 
             }
@@ -92,12 +98,20 @@ namespace InmobiliariaForms
                 cbTipoOperacion.SelectedItem = null;
 
                 cbMoneda.DataSource = Enum.GetNames(typeof(eMoneda));
-                cbMoneda.SelectedItem = null; 
+                cbMoneda.SelectedItem = null;
+
+                Service ws = new Service();
+                List<Vendedor> vendedores = ws.GetVendedores().ToList();
+                cbCargadoPor.DataSource = vendedores;
+                cbCargadoPor.DisplayMember = "Nombre";
+                cbCargadoPor.ValueMember = "Id";
+                //cbCargadoPor.SelectedItem = null; 
 
                 if (Inmueble != null)
                 {
                     cbTipoInmueble.SelectedIndex = (int)Inmueble.Tipo;
                     cbTipoOperacion.SelectedIndex = (int)Inmueble.Operacion;
+
                     dateTimeFecha.Value = Inmueble.Fecha != null ? Inmueble.Fecha.Value : DateTime.Now;
                     txLocalidad.Text = Inmueble.Localidad;
                     txBarrio.Text = Inmueble.Barrio;
@@ -119,8 +133,10 @@ namespace InmobiliariaForms
                     txPatio.Text = Inmueble.Patio;
                     txOtras.Text = Inmueble.OtrasDependencias;
                     cbCargadoPor.SelectedValue = null; //Inmueble.CargadoPor
+
                     txContacto.Text = Inmueble.Contacto;
                     txReferencia.Text = Inmueble.Referencia;
+                    
                 }
             }
             catch (Exception ex)

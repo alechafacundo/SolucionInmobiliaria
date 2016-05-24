@@ -162,6 +162,9 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Web References\InmobiliariaService\Service.wsdl" />
+    <None Include="Web References\InmobiliariaService\Vendedor.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WebReferences Include="Web References\" />
