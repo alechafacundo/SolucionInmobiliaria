@@ -85,6 +85,8 @@
             this.btEliminar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.btGuardar = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
+            this.txCocina = new System.Windows.Forms.TextBox();
             this.g.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).BeginInit();
@@ -94,6 +96,8 @@
             // 
             this.g.BackColor = System.Drawing.Color.White;
             this.g.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.g.Controls.Add(this.txCocina);
+            this.g.Controls.Add(this.label26);
             this.g.Controls.Add(this.cbTipoOperacion);
             this.g.Controls.Add(this.groupBox1);
             this.g.Controls.Add(this.txOtras);
@@ -142,7 +146,7 @@
             this.g.Controls.Add(this.label1);
             this.g.Location = new System.Drawing.Point(4, 13);
             this.g.Name = "g";
-            this.g.Size = new System.Drawing.Size(626, 254);
+            this.g.Size = new System.Drawing.Size(626, 303);
             this.g.TabIndex = 1;
             this.g.TabStop = false;
             this.g.Text = "Inmueble";
@@ -164,7 +168,7 @@
             this.groupBox1.Controls.Add(this.label24);
             this.groupBox1.Controls.Add(this.cbCargadoPor);
             this.groupBox1.Controls.Add(this.label23);
-            this.groupBox1.Location = new System.Drawing.Point(14, 205);
+            this.groupBox1.Location = new System.Drawing.Point(14, 253);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(589, 43);
             this.groupBox1.TabIndex = 44;
@@ -269,7 +273,7 @@
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(34, 13);
             this.label22.TabIndex = 37;
-            this.label22.Text = "Otras";
+            this.label22.Text = "Otros";
             // 
             // label21
             // 
@@ -593,7 +597,7 @@
             // btEliminar
             // 
             this.btEliminar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btEliminar.Location = new System.Drawing.Point(5, 272);
+            this.btEliminar.Location = new System.Drawing.Point(5, 322);
             this.btEliminar.Name = "btEliminar";
             this.btEliminar.Size = new System.Drawing.Size(160, 29);
             this.btEliminar.TabIndex = 28;
@@ -603,7 +607,7 @@
             // btCancelar
             // 
             this.btCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btCancelar.Location = new System.Drawing.Point(308, 273);
+            this.btCancelar.Location = new System.Drawing.Point(308, 322);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(160, 29);
             this.btCancelar.TabIndex = 27;
@@ -614,7 +618,7 @@
             // btGuardar
             // 
             this.btGuardar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btGuardar.Location = new System.Drawing.Point(470, 273);
+            this.btGuardar.Location = new System.Drawing.Point(470, 322);
             this.btGuardar.Name = "btGuardar";
             this.btGuardar.Size = new System.Drawing.Size(160, 29);
             this.btGuardar.TabIndex = 26;
@@ -622,12 +626,28 @@
             this.btGuardar.UseVisualStyleBackColor = false;
             this.btGuardar.Click += new System.EventHandler(this.btGuardar_Click);
             // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(11, 214);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(43, 13);
+            this.label26.TabIndex = 45;
+            this.label26.Text = "Cocina:";
+            // 
+            // txCocina
+            // 
+            this.txCocina.Location = new System.Drawing.Point(54, 210);
+            this.txCocina.Name = "txCocina";
+            this.txCocina.Size = new System.Drawing.Size(100, 21);
+            this.txCocina.TabIndex = 46;
+            // 
             // frmInmueble
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(632, 303);
+            this.ClientSize = new System.Drawing.Size(632, 355);
             this.Controls.Add(this.btGuardar);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btEliminar);
@@ -704,5 +724,7 @@
         private System.Windows.Forms.Button btGuardar;
         private System.Windows.Forms.ComboBox cbTipoOperacion;
         private System.Windows.Forms.ComboBox cbTipoInmueble;
+        private System.Windows.Forms.TextBox txCocina;
+        private System.Windows.Forms.Label label26;
     }
 }

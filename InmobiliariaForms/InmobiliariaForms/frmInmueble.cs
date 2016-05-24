@@ -63,9 +63,9 @@ namespace InmobiliariaForms
                 inmueble.Precio = numPrecio.Value;
                 inmueble.CargadoPor = ((Vendedor)cbCargadoPor.SelectedItem).Id;
 
-                //faltan poner en el form
-                inmueble.Cocina = "1";
-                inmueble.Otros = "";
+                //Ahi Estan 
+                inmueble.Cocina = txCocina.Text.ToUpperInvariant();
+                inmueble.Otros = txOtras.Text.ToUpperInvariant();
 
                 //Ahora que ya tenes el inmueble guardado lo tenes que mandar al web service para que lo guarde en la base de datos:
                 try
@@ -73,6 +73,9 @@ namespace InmobiliariaForms
                     Service ws = new Service();
                     ws.GuardarInmueble(inmueble);
                     MessageBox.Show("Se guardo joya papá!");
+                    //this.DialogResult = DialogResult.ok;
+                    //this.Close();
+
                 }
                 catch (Exception ex)
                 {
@@ -127,7 +130,6 @@ namespace InmobiliariaForms
                     txPiso.Text = Inmueble.Piso;
                     txDepto.Text = Inmueble.Departamento;
                     txEntreCalles.Text = Inmueble.EntreCalles;
-                    //numeric de precio, revisar 
                     numPrecio.Value = Inmueble.Precio != null ? (decimal)Inmueble.Precio : 0;
                     cbMoneda.SelectedIndex = Inmueble.Moneda;
                     txMtsTerreno.Text = Inmueble.Metros2Terreno;
