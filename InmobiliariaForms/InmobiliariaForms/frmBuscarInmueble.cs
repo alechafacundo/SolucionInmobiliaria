@@ -56,6 +56,27 @@ namespace InmobiliariaForms
             
         }
 
-       
+        private void frmBuscarInmueble_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                cbTipoInmueble.DataSource = Enum.GetNames(typeof(eTipoInmueble));
+                cbTipoInmueble.SelectedItem = null;
+
+                cbTipoOperacion.DataSource = Enum.GetNames(typeof(eTipoOperacion));
+                cbTipoOperacion.SelectedItem = null;
+
+                cbMoneda.DataSource = Enum.GetNames(typeof(eMoneda));
+                cbMoneda.SelectedItem = null;
+
+                          
+            }
+            catch (Exception ex)
+            {
+                //ToDo: Fabri
+                //Modulo de notificaciones
+                throw;
+            }
+        }
     }
 }

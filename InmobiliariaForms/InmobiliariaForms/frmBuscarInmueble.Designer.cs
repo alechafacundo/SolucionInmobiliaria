@@ -116,7 +116,6 @@
             this.g.TabIndex = 4;
             this.g.TabStop = false;
             this.g.Text = "Inmueble";
-    
             // 
             // btCancelar
             // 
@@ -400,6 +399,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmBuscarInmueble";
             this.Text = "frmBuscarInmueble";
+            this.Load += new System.EventHandler(this.frmBuscarInmueble_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvResultado)).EndInit();
             this.g.ResumeLayout(false);
             this.g.PerformLayout();
