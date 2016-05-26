@@ -20,6 +20,7 @@
             <s:element minOccurs="1" maxOccurs="1" name="tipoInmueble" type="tns:eTipoInmueble" />
             <s:element minOccurs="1" maxOccurs="1" name="tipoOperacion" type="tns:eTipoOperacion" />
             <s:element minOccurs="1" maxOccurs="1" name="moneda" type="tns:eMoneda" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendedor" type="tns:Vendedor" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -89,6 +90,18 @@
           <s:enumeration value="Dolar" />
         </s:restriction>
       </s:simpleType>
+      <s:complexType name="Vendedor">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Apellido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Celular" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Legajo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DNI" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="TestResponse">
         <s:complexType />
       </s:element>
@@ -110,6 +123,16 @@
         </s:complexType>
       </s:element>
       <s:element name="GuardarInteresadoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GuardarVendedor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendedor" type="tns:Vendedor" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarVendedorResponse">
         <s:complexType />
       </s:element>
       <s:element name="GetInmueblesParaInteresado">
@@ -162,15 +185,6 @@
           <s:element minOccurs="0" maxOccurs="unbounded" name="Vendedor" nillable="true" type="tns:Vendedor" />
         </s:sequence>
       </s:complexType>
-      <s:complexType name="Vendedor">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Telefono2" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Direccion" type="s:string" />
-        </s:sequence>
-      </s:complexType>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HelloWorldSoapIn">
@@ -196,6 +210,12 @@
   </wsdl:message>
   <wsdl:message name="GuardarInteresadoSoapOut">
     <wsdl:part name="parameters" element="tns:GuardarInteresadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarVendedorSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarVendedor" />
+  </wsdl:message>
+  <wsdl:message name="GuardarVendedorSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarVendedorResponse" />
   </wsdl:message>
   <wsdl:message name="GetInmueblesParaInteresadoSoapIn">
     <wsdl:part name="parameters" element="tns:GetInmueblesParaInteresado" />
@@ -231,6 +251,10 @@
     <wsdl:operation name="GuardarInteresado">
       <wsdl:input message="tns:GuardarInteresadoSoapIn" />
       <wsdl:output message="tns:GuardarInteresadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarVendedor">
+      <wsdl:input message="tns:GuardarVendedorSoapIn" />
+      <wsdl:output message="tns:GuardarVendedorSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetInmueblesParaInteresado">
       <wsdl:input message="tns:GetInmueblesParaInteresadoSoapIn" />
@@ -276,6 +300,15 @@
     </wsdl:operation>
     <wsdl:operation name="GuardarInteresado">
       <soap:operation soapAction="http://tempuri.org/GuardarInteresado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarVendedor">
+      <soap:operation soapAction="http://tempuri.org/GuardarVendedor" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -342,6 +375,15 @@
     </wsdl:operation>
     <wsdl:operation name="GuardarInteresado">
       <soap12:operation soapAction="http://tempuri.org/GuardarInteresado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarVendedor">
+      <soap12:operation soapAction="http://tempuri.org/GuardarVendedor" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

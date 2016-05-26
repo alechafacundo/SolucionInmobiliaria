@@ -37,6 +37,8 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         private System.Threading.SendOrPostCallback GuardarInteresadoOperationCompleted;
         
+        private System.Threading.SendOrPostCallback GuardarVendedorOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetInmueblesParaInteresadoOperationCompleted;
         
         private System.Threading.SendOrPostCallback BuscarInmueblesOperationCompleted;
@@ -94,6 +96,9 @@ namespace InmobiliariaForms.InmobiliariaService {
         public event GuardarInteresadoCompletedEventHandler GuardarInteresadoCompleted;
         
         /// <remarks/>
+        public event GuardarVendedorCompletedEventHandler GuardarVendedorCompleted;
+        
+        /// <remarks/>
         public event GetInmueblesParaInteresadoCompletedEventHandler GetInmueblesParaInteresadoCompleted;
         
         /// <remarks/>
@@ -131,22 +136,23 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Test", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void Test(Inmueble inmueble, Interesado interesado, eTipoInmueble tipoInmueble, eTipoOperacion tipoOperacion, eMoneda moneda) {
+        public void Test(Inmueble inmueble, Interesado interesado, eTipoInmueble tipoInmueble, eTipoOperacion tipoOperacion, eMoneda moneda, Vendedor vendedor) {
             this.Invoke("Test", new object[] {
                         inmueble,
                         interesado,
                         tipoInmueble,
                         tipoOperacion,
-                        moneda});
+                        moneda,
+                        vendedor});
         }
         
         /// <remarks/>
-        public void TestAsync(Inmueble inmueble, Interesado interesado, eTipoInmueble tipoInmueble, eTipoOperacion tipoOperacion, eMoneda moneda) {
-            this.TestAsync(inmueble, interesado, tipoInmueble, tipoOperacion, moneda, null);
+        public void TestAsync(Inmueble inmueble, Interesado interesado, eTipoInmueble tipoInmueble, eTipoOperacion tipoOperacion, eMoneda moneda, Vendedor vendedor) {
+            this.TestAsync(inmueble, interesado, tipoInmueble, tipoOperacion, moneda, vendedor, null);
         }
         
         /// <remarks/>
-        public void TestAsync(Inmueble inmueble, Interesado interesado, eTipoInmueble tipoInmueble, eTipoOperacion tipoOperacion, eMoneda moneda, object userState) {
+        public void TestAsync(Inmueble inmueble, Interesado interesado, eTipoInmueble tipoInmueble, eTipoOperacion tipoOperacion, eMoneda moneda, Vendedor vendedor, object userState) {
             if ((this.TestOperationCompleted == null)) {
                 this.TestOperationCompleted = new System.Threading.SendOrPostCallback(this.OnTestOperationCompleted);
             }
@@ -155,7 +161,8 @@ namespace InmobiliariaForms.InmobiliariaService {
                         interesado,
                         tipoInmueble,
                         tipoOperacion,
-                        moneda}, this.TestOperationCompleted, userState);
+                        moneda,
+                        vendedor}, this.TestOperationCompleted, userState);
         }
         
         private void OnTestOperationCompleted(object arg) {
@@ -218,6 +225,34 @@ namespace InmobiliariaForms.InmobiliariaService {
             if ((this.GuardarInteresadoCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.GuardarInteresadoCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GuardarVendedor", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void GuardarVendedor(Vendedor vendedor) {
+            this.Invoke("GuardarVendedor", new object[] {
+                        vendedor});
+        }
+        
+        /// <remarks/>
+        public void GuardarVendedorAsync(Vendedor vendedor) {
+            this.GuardarVendedorAsync(vendedor, null);
+        }
+        
+        /// <remarks/>
+        public void GuardarVendedorAsync(Vendedor vendedor, object userState) {
+            if ((this.GuardarVendedorOperationCompleted == null)) {
+                this.GuardarVendedorOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGuardarVendedorOperationCompleted);
+            }
+            this.InvokeAsync("GuardarVendedor", new object[] {
+                        vendedor}, this.GuardarVendedorOperationCompleted, userState);
+        }
+        
+        private void OnGuardarVendedorOperationCompleted(object arg) {
+            if ((this.GuardarVendedorCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GuardarVendedorCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -688,11 +723,17 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         private string nombreField;
         
+        private string apellidoField;
+        
         private string telefonoField;
         
-        private string telefono2Field;
+        private string celularField;
         
-        private string direccionField;
+        private string legajoField;
+        
+        private string emailField;
+        
+        private string dNIField;
         
         /// <remarks/>
         public int Id {
@@ -715,6 +756,16 @@ namespace InmobiliariaForms.InmobiliariaService {
         }
         
         /// <remarks/>
+        public string Apellido {
+            get {
+                return this.apellidoField;
+            }
+            set {
+                this.apellidoField = value;
+            }
+        }
+        
+        /// <remarks/>
         public string Telefono {
             get {
                 return this.telefonoField;
@@ -725,22 +776,42 @@ namespace InmobiliariaForms.InmobiliariaService {
         }
         
         /// <remarks/>
-        public string Telefono2 {
+        public string Celular {
             get {
-                return this.telefono2Field;
+                return this.celularField;
             }
             set {
-                this.telefono2Field = value;
+                this.celularField = value;
             }
         }
         
         /// <remarks/>
-        public string Direccion {
+        public string Legajo {
             get {
-                return this.direccionField;
+                return this.legajoField;
             }
             set {
-                this.direccionField = value;
+                this.legajoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Email {
+            get {
+                return this.emailField;
+            }
+            set {
+                this.emailField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DNI {
+            get {
+                return this.dNIField;
+            }
+            set {
+                this.dNIField = value;
             }
         }
     }
@@ -967,6 +1038,10 @@ namespace InmobiliariaForms.InmobiliariaService {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void GuardarInteresadoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GuardarVendedorCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]

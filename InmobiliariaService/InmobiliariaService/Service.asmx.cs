@@ -22,7 +22,7 @@ namespace InmobiliariaService
 
         [WebMethod]
         public void Test(Inmueble inmueble, Interesado interesado, eTipoInmueble tipoInmueble,
-            eTipoOperacion tipoOperacion, eMoneda moneda)
+            eTipoOperacion tipoOperacion, eMoneda moneda, Vendedor vendedor)
         {
 
         }
@@ -51,6 +51,20 @@ namespace InmobiliariaService
             {
                 throw;
             }
+        }
+
+        [WebMethod]
+        public void GuardarVendedor(Vendedor vendedor)
+        {
+            try
+            {
+                VendedorDAO.CrearVendedor(vendedor);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
         }
 
         [WebMethod]

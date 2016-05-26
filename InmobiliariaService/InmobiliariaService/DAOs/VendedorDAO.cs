@@ -8,25 +8,25 @@ namespace InmobiliariaService
 {
     public class VendedorDAO : DAOBase
     {
-        //internal static void CrearInteresado(Interesado interesado)
-        //{
-        //    try
-        //    {
-        //        if (interesado.Id == null || interesado.Id == 0)
-        //        {
-        //            interesado.Id = GetNextId(interesado);
-        //            DAOBase.CreateEntity(interesado);
-        //        }
-        //        else
-        //        {
-        //            DAOBase.UpdateEntity(interesado);
-        //        }
-        //    }
-        //    catch (Exception)
-        //    {
-        //        throw;
-        //    }
-        //}
+        internal static void CrearVendedor(Vendedor vendedor)
+        {
+            try
+            {
+                if (vendedor.Id == null || vendedor.Id == 0)
+                {
+                    vendedor.Id = GetNextId(vendedor);
+                    DAOBase.CreateEntity(vendedor);
+                }
+                else
+                {
+                    DAOBase.UpdateEntity(vendedor);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
         internal static List<Vendedor> GetVendedores()
         {
