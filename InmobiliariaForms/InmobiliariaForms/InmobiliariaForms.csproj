@@ -94,6 +94,12 @@
     <Compile Include="frmBuscarInteresado.Designer.cs">
       <DependentUpon>frmBuscarInteresado.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBuscarVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarVendedor.Designer.cs">
+      <DependentUpon>frmBuscarVendedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInmueble.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBuscarInteresado.resx">
       <DependentUpon>frmBuscarInteresado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarVendedor.resx">
+      <DependentUpon>frmBuscarVendedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInmueble.resx">
       <DependentUpon>frmInmueble.cs</DependentUpon>
