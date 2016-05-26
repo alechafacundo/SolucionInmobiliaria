@@ -21,6 +21,16 @@ namespace InmobiliariaForms
 
         private void frmInteresado_Load(object sender, EventArgs e)
         {
+            //ahi llene los combobox, los hacemos con try y catch tambien?
+            cbTipoInmueble.DataSource = Enum.GetNames(typeof(eTipoInmueble));
+            cbTipoInmueble.SelectedItem = null;
+
+            cbTipoOperacion.DataSource = Enum.GetNames(typeof(eTipoOperacion));
+            cbTipoOperacion.SelectedItem = null;
+
+            cbMoneda.DataSource = Enum.GetNames(typeof(eMoneda));
+            cbMoneda.SelectedItem = null;
+
             //ToDo: Facu
             //Acordate de que así no se tienen que llenar los combos, llenarlos como en el inmueble
             //cbTipoInmueble.Items.Clear();

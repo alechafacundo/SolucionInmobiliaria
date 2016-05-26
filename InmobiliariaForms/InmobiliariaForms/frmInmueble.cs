@@ -61,9 +61,7 @@ namespace InmobiliariaForms
                 inmueble.Contacto = txContacto.Text.ToUpperInvariant();
                 inmueble.Referencia = txReferencia.Text.ToUpperInvariant();
                 inmueble.Precio = numPrecio.Value;
-                inmueble.CargadoPor = ((Vendedor)cbCargadoPor.SelectedItem).Id;
-
-                //Ahi Estan 
+               // inmueble.CargadoPor = ((Vendedor)cbCargadoPor.SelectedItem).Id;                            
                 inmueble.Cocina = txCocina.Text.ToUpperInvariant();
                 inmueble.Otros = txOtras.Text.ToUpperInvariant();
 
@@ -72,7 +70,7 @@ namespace InmobiliariaForms
                 {
                     Service ws = new Service();
                     ws.GuardarInmueble(inmueble);
-                    MessageBox.Show("Se guardo joya papá!");
+                    MessageBox.Show("Inmueble guardado correctamente");
                     //this.DialogResult = DialogResult.ok;
                     //this.Close();
 
@@ -109,13 +107,14 @@ namespace InmobiliariaForms
 
                 cbMoneda.DataSource = Enum.GetNames(typeof(eMoneda));
                 cbMoneda.SelectedItem = null;
-
-                Service ws = new Service();
+                //ToDo: Fabri
+                //No anda este llamado al ws
+                /*Service ws = new Service();
                 List<Vendedor> vendedores = ws.GetVendedores().ToList();
                 cbCargadoPor.DataSource = vendedores;
                 cbCargadoPor.DisplayMember = "Nombre";
                 cbCargadoPor.ValueMember = "Id";
-                //cbCargadoPor.SelectedItem = null; 
+                //cbCargadoPor.SelectedItem = null; */
 
                 if (Inmueble != null)
                 {

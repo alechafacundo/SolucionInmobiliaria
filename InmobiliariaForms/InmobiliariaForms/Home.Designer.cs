@@ -46,17 +46,17 @@
             this.netBarGroup5 = new NetBarControl.NetBarGroup();
             this.netBarItem9 = new NetBarControl.NetBarItem();
             this.netBarItem10 = new NetBarControl.NetBarItem();
+            this.netBarGroup6 = new NetBarControl.NetBarGroup();
+            this.btNuevoVendedor = new NetBarControl.NetBarItem();
+            this.btBuscarVendedor = new NetBarControl.NetBarItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.netBarGroup6 = new NetBarControl.NetBarGroup();
-            this.netBarItem1 = new NetBarControl.NetBarItem();
-            this.netBarItem2 = new NetBarControl.NetBarItem();
             this.SuspendLayout();
             // 
             // netBarControl1
             // 
-            this.netBarControl1.ActiveGroup = this.netBarGroup1;
+            this.netBarControl1.ActiveGroup = this.netBarGroup6;
             this.netBarControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.netBarControl1.Groups.AddRange(new NetBarControl.NetBarGroup[] {
@@ -185,6 +185,28 @@
             this.netBarItem10.Name = "netBarItem10";
             this.netBarItem10.Text = "Buscar Barrio";
             // 
+            // netBarGroup6
+            // 
+            this.netBarGroup6.Items.AddRange(new NetBarControl.NetBarItem[] {
+            this.btNuevoVendedor,
+            this.btBuscarVendedor});
+            this.netBarGroup6.Name = "netBarGroup6";
+            this.netBarGroup6.Style = NetBarControl.NetBarGroupStyle.LargeItemList;
+            this.netBarGroup6.Text = "Vendedores";
+            // 
+            // btNuevoVendedor
+            // 
+            this.btNuevoVendedor.LargeImage = ((System.Drawing.Image)(resources.GetObject("btNuevoVendedor.LargeImage")));
+            this.btNuevoVendedor.Name = "btNuevoVendedor";
+            this.btNuevoVendedor.Text = "Nuevo Vendedor";
+            this.btNuevoVendedor.ItemClick += new System.EventHandler(this.btNuevoVendedor_ItemClick);
+            // 
+            // btBuscarVendedor
+            // 
+            this.btBuscarVendedor.LargeImage = ((System.Drawing.Image)(resources.GetObject("btBuscarVendedor.LargeImage")));
+            this.btBuscarVendedor.Name = "btBuscarVendedor";
+            this.btBuscarVendedor.Text = "Buscar Vendedor";
+            // 
             // toolStrip1
             // 
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -198,27 +220,6 @@
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // netBarGroup6
-            // 
-            this.netBarGroup6.Items.AddRange(new NetBarControl.NetBarItem[] {
-            this.netBarItem1,
-            this.netBarItem2});
-            this.netBarGroup6.Name = "netBarGroup6";
-            this.netBarGroup6.Style = NetBarControl.NetBarGroupStyle.LargeItemList;
-            this.netBarGroup6.Text = "Vendedores";
-            // 
-            // netBarItem1
-            // 
-            this.netBarItem1.LargeImage = ((System.Drawing.Image)(resources.GetObject("netBarItem1.LargeImage")));
-            this.netBarItem1.Name = "netBarItem1";
-            this.netBarItem1.Text = "Nuevo Vendedor";
-            // 
-            // netBarItem2
-            // 
-            this.netBarItem2.LargeImage = ((System.Drawing.Image)(resources.GetObject("netBarItem2.LargeImage")));
-            this.netBarItem2.Name = "netBarItem2";
-            this.netBarItem2.Text = "Buscar Vendedor";
             // 
             // Home
             // 
@@ -263,8 +264,8 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolTip toolTip1;
         private NetBarControl.NetBarGroup netBarGroup6;
-        private NetBarControl.NetBarItem netBarItem1;
-        private NetBarControl.NetBarItem netBarItem2;
+        private NetBarControl.NetBarItem btNuevoVendedor;
+        private NetBarControl.NetBarItem btBuscarVendedor;
     }
 }
 
