@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btEliminar = new System.Windows.Forms.Button();
-            this.btCancelar = new System.Windows.Forms.Button();
-            this.btGuardar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txEmail = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -47,6 +44,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btEliminar = new System.Windows.Forms.Button();
+            this.btCancelar = new System.Windows.Forms.Button();
+            this.btGuardar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,37 +73,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Vendedor";
-            // 
-            // btEliminar
-            // 
-            this.btEliminar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btEliminar.Location = new System.Drawing.Point(2, 272);
-            this.btEliminar.Name = "btEliminar";
-            this.btEliminar.Size = new System.Drawing.Size(160, 29);
-            this.btEliminar.TabIndex = 1;
-            this.btEliminar.Text = "Eliminar";
-            this.btEliminar.UseVisualStyleBackColor = false;
-            // 
-            // btCancelar
-            // 
-            this.btCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btCancelar.Location = new System.Drawing.Point(303, 270);
-            this.btCancelar.Name = "btCancelar";
-            this.btCancelar.Size = new System.Drawing.Size(160, 29);
-            this.btCancelar.TabIndex = 2;
-            this.btCancelar.Text = "Cancelar";
-            this.btCancelar.UseVisualStyleBackColor = false;
-            // 
-            // btGuardar
-            // 
-            this.btGuardar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btGuardar.Location = new System.Drawing.Point(466, 269);
-            this.btGuardar.Name = "btGuardar";
-            this.btGuardar.Size = new System.Drawing.Size(160, 29);
-            this.btGuardar.TabIndex = 3;
-            this.btGuardar.Text = "Guardar";
-            this.btGuardar.UseVisualStyleBackColor = false;
-            this.btGuardar.Click += new System.EventHandler(this.btGuardar_Click);
             // 
             // panel1
             // 
@@ -225,6 +194,38 @@
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 15;
             this.label1.Text = "Nombre:";
+            // 
+            // btEliminar
+            // 
+            this.btEliminar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btEliminar.Location = new System.Drawing.Point(2, 272);
+            this.btEliminar.Name = "btEliminar";
+            this.btEliminar.Size = new System.Drawing.Size(160, 29);
+            this.btEliminar.TabIndex = 1;
+            this.btEliminar.Text = "Eliminar";
+            this.btEliminar.UseVisualStyleBackColor = false;
+            // 
+            // btCancelar
+            // 
+            this.btCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btCancelar.Location = new System.Drawing.Point(303, 270);
+            this.btCancelar.Name = "btCancelar";
+            this.btCancelar.Size = new System.Drawing.Size(160, 29);
+            this.btCancelar.TabIndex = 2;
+            this.btCancelar.Text = "Cancelar";
+            this.btCancelar.UseVisualStyleBackColor = false;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
+            // 
+            // btGuardar
+            // 
+            this.btGuardar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btGuardar.Location = new System.Drawing.Point(466, 269);
+            this.btGuardar.Name = "btGuardar";
+            this.btGuardar.Size = new System.Drawing.Size(160, 29);
+            this.btGuardar.TabIndex = 3;
+            this.btGuardar.Text = "Guardar";
+            this.btGuardar.UseVisualStyleBackColor = false;
+            this.btGuardar.Click += new System.EventHandler(this.btGuardar_Click);
             // 
             // frmVendedor
             // 

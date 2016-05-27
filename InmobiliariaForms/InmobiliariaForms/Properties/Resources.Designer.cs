@@ -63,6 +63,26 @@ namespace InmobiliariaForms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap candado_oa {
+            get {
+                object obj = ResourceManager.GetObject("candado_oa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap candado_oa1 {
+            get {
+                object obj = ResourceManager.GetObject("candado_oa1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LoggIn {
             get {
                 object obj = ResourceManager.GetObject("LoggIn", resourceCulture);
