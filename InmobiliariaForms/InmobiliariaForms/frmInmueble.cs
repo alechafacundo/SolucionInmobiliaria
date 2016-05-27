@@ -12,6 +12,7 @@ namespace InmobiliariaForms
 {
     public partial class frmInmueble : Form
     {
+        List<Vendedor> vendedores = new List<Vendedor>();
         Inmueble Inmueble { get; set; }
 
         public frmInmueble()
@@ -61,7 +62,7 @@ namespace InmobiliariaForms
                 inmueble.Contacto = txContacto.Text.ToUpperInvariant();
                 inmueble.Referencia = txReferencia.Text.ToUpperInvariant();
                 inmueble.Precio = numPrecio.Value;
-               // inmueble.CargadoPor = ((Vendedor)cbCargadoPor.SelectedItem).Id;                            
+                inmueble.CargadoPor = ((Vendedor)cbCargadoPor.SelectedItem).Id;
                 inmueble.Cocina = txCocina.Text.ToUpperInvariant();
                 inmueble.Otros = txOtras.Text.ToUpperInvariant();
 
@@ -71,8 +72,8 @@ namespace InmobiliariaForms
                     Service ws = new Service();
                     ws.GuardarInmueble(inmueble);
                     MessageBox.Show("Inmueble guardado correctamente");
-                    //this.DialogResult = DialogResult.ok;
-                    //this.Close();
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
 
                 }
                 catch (Exception ex)
@@ -110,7 +111,8 @@ namespace InmobiliariaForms
                 //ToDo: Fabri
                 //No anda este llamado al ws
                 /*Service ws = new Service();
-                List<Vendedor> vendedores = ws.GetVendedores().ToList();
+                //Esta lista la hago global para poder accederla
+                vendedores = ws.GetVendedores().ToList();
                 cbCargadoPor.DataSource = vendedores;
                 cbCargadoPor.DisplayMember = "Nombre";
                 cbCargadoPor.ValueMember = "Id";
@@ -140,8 +142,7 @@ namespace InmobiliariaForms
                     txGarage.Text = Inmueble.Garage;
                     txPatio.Text = Inmueble.Patio;
                     txOtras.Text = Inmueble.OtrasDependencias;
-                    cbCargadoPor.SelectedValue = null; //Inmueble.CargadoPor
-
+                    cbCargadoPor.SelectedValue = vendedores.Find(x => x.Id == Inmueble.Id);
                     txContacto.Text = Inmueble.Contacto;
                     txReferencia.Text = Inmueble.Referencia;
                     

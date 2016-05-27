@@ -13,7 +13,7 @@ namespace InmobiliariaForms
 {
     public partial class frmVendedor : Form
     {
-        Vendedor Vendedor { get; set }
+        Vendedor Vendedor { get; set; }
         public frmVendedor()
         {
             InitializeComponent();
@@ -23,17 +23,19 @@ namespace InmobiliariaForms
         {
             try
 
-            { if (Vendedor != null)
-               {
-                txApellido.Text = Vendedor.Apellido;
-                txNombre.Text = Vendedor.Nombre;
-                txTelefono.Text = Vendedor.Telefono;
-                txDNI.Text = Vendedor.DNI;
-                txEmail.Text = Vendedor.Email;
-                txLegajo.Text = Vendedor.Legajo; 
-                txCelular.Text = Vendedor.Celular; 
-               
-               }
+            {
+                if (Vendedor != null)
+                {
+                    txApellido.Text = Vendedor.Apellido;
+                    txNombre.Text = Vendedor.Nombre;
+                    txTelefono.Text = Vendedor.Telefono;
+                    txDNI.Text = Vendedor.DNI;
+                    txEmail.Text = Vendedor.Email;
+                    txLegajo.Text = Vendedor.Legajo;
+                    txCelular.Text = Vendedor.Celular;
+
+                }
+            }
             catch (Exception ex)
             {  //ToDo: Fabri
                 //Modulo de notificaciones
@@ -61,8 +63,8 @@ namespace InmobiliariaForms
                 Service ws = new Service();
                 ws.GuardarVendedor(Vendedor);
                 MessageBox.Show("Vendedor guardado correctamente!");
-                //this.DialogResult = DialogResult.ok;
-                //this.Close();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -71,13 +73,14 @@ namespace InmobiliariaForms
         }
         private bool ValidarCampos()
         {
-            if (txApellido == "")
+            if (txApellido.Text == "")
             {
                 return false;
             }
-            if (true)
+            //Esta es otra manera que mira si es vacio, es nullo, o es un espacio blanco, es como una manera mas cheta de hacer lo mismo que de arriba.
+            if (string.IsNullOrEmpty(txDNI.Text))
             {
-
+                return false;
             }
             return true;
         }

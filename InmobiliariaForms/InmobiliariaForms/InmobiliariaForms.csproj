@@ -106,6 +106,12 @@
     <Compile Include="frmInmueble.Designer.cs">
       <DependentUpon>frmInmueble.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmInmueble.resx">
       <DependentUpon>frmInmueble.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
@@ -204,7 +213,10 @@
     <None Include="Web References\InmobiliariaService\Service.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\MV.png" />
+    <None Include="Resources\LoggIn.png" />
+    <Content Include="Resources\MV.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
