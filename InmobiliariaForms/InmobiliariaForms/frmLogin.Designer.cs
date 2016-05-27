@@ -101,6 +101,8 @@
             // 
             this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.configuraciónToolStripMenuItem});
+            this.ayudaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ayudaToolStripMenuItem.ForeColor = System.Drawing.Color.Blue;
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
@@ -108,7 +110,7 @@
             // configuraciónToolStripMenuItem
             // 
             this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
-            this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.configuraciónToolStripMenuItem.Text = "Configuración";
             // 
             // btAceptar
