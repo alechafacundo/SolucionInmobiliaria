@@ -15,6 +15,7 @@ namespace InmobiliariaService
         public string Legajo { get; set; }
         public string Email { get; set; }
         public string DNI { get; set; }
+        public string Password { get; set; }
 
     }
 }

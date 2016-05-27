@@ -56,17 +56,49 @@ namespace InmobiliariaService
 
         private static List<Vendedor> LlenarVendedores(Vendedor vendedor, DataTable dt)
         {
-            List<Vendedor> dtos = new List<Vendedor>();
-
-            foreach (DataRow dr in dt.Rows)
+            try
             {
-                Vendedor aux = new Vendedor();
-                PoblarObjetoDesdeDataRow(aux, dr);
+                List<Vendedor> dtos = new List<Vendedor>();
 
-                dtos.Add(aux);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    Vendedor aux = new Vendedor();
+                    PoblarObjetoDesdeDataRow(aux, dr);
+
+                    dtos.Add(aux);
+                }
+
+                return dtos;
             }
+            catch (Exception)
+            {
 
-            return dtos;
+                throw;
+            }
+        }
+
+        internal static bool Login(string dni, string password)
+        {
+            try
+            {
+                List<Vendedor> vendedores = new List<Vendedor>();
+                DataTable dt = DAOBase.GetDataTableWhere(new Vendedor(), string.Format("DNI == {0} AND Password == {1}", dni, password));
+
+                if (dt.Rows.Count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

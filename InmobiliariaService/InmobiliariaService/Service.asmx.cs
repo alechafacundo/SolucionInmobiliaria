@@ -107,7 +107,21 @@ namespace InmobiliariaService
 
                 throw;
             }
-        } 
+        }
+
+        [WebMethod]
+        public bool Login(string dni, string password)
+        {
+            try
+            {
+                return VendedorDAO.Login(dni, password);
+            }
+            catch (Exception ex)
+            {
+                //ToDo Fabri loguear ex
+                throw ex;
+            }
+        }
     }
 
 }
