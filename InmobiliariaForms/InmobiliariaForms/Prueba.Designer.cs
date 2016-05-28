@@ -29,230 +29,116 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Prueba));
-            this.netBarControl1 = new NetBarControl.NetBarControl();
-            this.netBarGroup6 = new NetBarControl.NetBarGroup();
-            this.btNuevoVendedor = new NetBarControl.NetBarItem();
-            this.btBuscarVendedor = new NetBarControl.NetBarItem();
-            this.netBarGroup1 = new NetBarControl.NetBarGroup();
-            this.btNuevoInteresado = new NetBarControl.NetBarItem();
-            this.btBuscarInteresado = new NetBarControl.NetBarItem();
-            this.netBarGroup2 = new NetBarControl.NetBarGroup();
-            this.btNuevoInmueble = new NetBarControl.NetBarItem();
-            this.btBuscarInmueble = new NetBarControl.NetBarItem();
-            this.netBarGroup3 = new NetBarControl.NetBarGroup();
-            this.netBarItem5 = new NetBarControl.NetBarItem();
-            this.netBarItem6 = new NetBarControl.NetBarItem();
-            this.netBarGroup4 = new NetBarControl.NetBarGroup();
-            this.netBarItem7 = new NetBarControl.NetBarItem();
-            this.netBarItem8 = new NetBarControl.NetBarItem();
-            this.netBarGroup5 = new NetBarControl.NetBarGroup();
-            this.netBarItem9 = new NetBarControl.NetBarItem();
-            this.netBarItem10 = new NetBarControl.NetBarItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
-            // netBarControl1
+            // pictureBox1
             // 
-            this.netBarControl1.ActiveGroup = this.netBarGroup2;
-            this.netBarControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.netBarControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.netBarControl1.Groups.AddRange(new NetBarControl.NetBarGroup[] {
-            this.netBarGroup1,
-            this.netBarGroup2,
-            this.netBarGroup3,
-            this.netBarGroup4,
-            this.netBarGroup5,
-            this.netBarGroup6});
-            this.netBarControl1.ItemsBackground.BackColor = System.Drawing.Color.Empty;
-            this.netBarControl1.ItemsBackground.BackColor2 = System.Drawing.Color.Empty;
-            this.netBarControl1.Location = new System.Drawing.Point(1, -1);
-            this.netBarControl1.Name = "netBarControl1";
-            this.netBarControl1.ShowExpandButton = false;
-            this.netBarControl1.ShowHorizontalSplitter = false;
-            this.netBarControl1.ShowOverflowPanel = false;
-            this.netBarControl1.ShowPopupShadow = true;
-            this.netBarControl1.ShowVerticalSplitter = false;
-            this.netBarControl1.Size = new System.Drawing.Size(132, 535);
-            this.netBarControl1.TabIndex = 2;
-            this.netBarControl1.Text = "netBarControl1";
+            this.pictureBox1.BackgroundImage = global::InmobiliariaForms.Properties.Resources.MV;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(360, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(162, 108);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
-            // netBarGroup6
+            // pictureBox2
             // 
-            this.netBarGroup6.Items.AddRange(new NetBarControl.NetBarItem[] {
-            this.btNuevoVendedor,
-            this.btBuscarVendedor});
-            this.netBarGroup6.Name = "netBarGroup6";
-            this.netBarGroup6.Style = NetBarControl.NetBarGroupStyle.LargeItemList;
-            this.netBarGroup6.Text = "Vendedores";
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(74, 170);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(191, 41);
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // btNuevoVendedor
+            // pictureBox3
             // 
-            this.btNuevoVendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btNuevoVendedor.LargeImage = ((System.Drawing.Image)(resources.GetObject("btNuevoVendedor.LargeImage")));
-            this.btNuevoVendedor.Name = "btNuevoVendedor";
-            this.btNuevoVendedor.Text = "Nuevo Vendedor";
-            this.btNuevoVendedor.ItemClick += new System.EventHandler(this.btNuevoVendedor_ItemClick);
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Location = new System.Drawing.Point(348, 170);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(191, 41);
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
             // 
-            // btBuscarVendedor
+            // pictureBox4
             // 
-            this.btBuscarVendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBuscarVendedor.LargeImage = ((System.Drawing.Image)(resources.GetObject("btBuscarVendedor.LargeImage")));
-            this.btBuscarVendedor.Name = "btBuscarVendedor";
-            this.btBuscarVendedor.Text = "Buscar Vendedor";
-            this.btBuscarVendedor.ItemClick += new System.EventHandler(this.btBuscarVendedor_ItemClick);
+            this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.Location = new System.Drawing.Point(615, 170);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(191, 41);
+            this.pictureBox4.TabIndex = 4;
+            this.pictureBox4.TabStop = false;
             // 
-            // netBarGroup1
+            // pictureBox5
             // 
-            this.netBarGroup1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.netBarGroup1.Items.AddRange(new NetBarControl.NetBarItem[] {
-            this.btNuevoInteresado,
-            this.btBuscarInteresado});
-            this.netBarGroup1.Name = "netBarGroup1";
-            this.netBarGroup1.Style = NetBarControl.NetBarGroupStyle.LargeItemList;
-            this.netBarGroup1.Text = "Interesados";
+            this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
+            this.pictureBox5.Location = new System.Drawing.Point(29, 146);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(841, 4);
+            this.pictureBox5.TabIndex = 5;
+            this.pictureBox5.TabStop = false;
             // 
-            // btNuevoInteresado
+            // pictureBox6
             // 
-            this.btNuevoInteresado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btNuevoInteresado.LargeImage = ((System.Drawing.Image)(resources.GetObject("btNuevoInteresado.LargeImage")));
-            this.btNuevoInteresado.Name = "btNuevoInteresado";
-            this.btNuevoInteresado.Text = "Nuevo Interesado";
-            this.btNuevoInteresado.ItemClick += new System.EventHandler(this.btNuevoInteresado_ItemClick);
-            // 
-            // btBuscarInteresado
-            // 
-            this.btBuscarInteresado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBuscarInteresado.LargeImage = ((System.Drawing.Image)(resources.GetObject("btBuscarInteresado.LargeImage")));
-            this.btBuscarInteresado.Name = "btBuscarInteresado";
-            this.btBuscarInteresado.Text = "Buscar Interesado";
-            this.btBuscarInteresado.ItemClick += new System.EventHandler(this.btBuscarInteresado_ItemClick);
-            // 
-            // netBarGroup2
-            // 
-            this.netBarGroup2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.netBarGroup2.Items.AddRange(new NetBarControl.NetBarItem[] {
-            this.btNuevoInmueble,
-            this.btBuscarInmueble});
-            this.netBarGroup2.Name = "netBarGroup2";
-            this.netBarGroup2.Style = NetBarControl.NetBarGroupStyle.LargeItemList;
-            this.netBarGroup2.Text = "Inmuebles";
-            // 
-            // btNuevoInmueble
-            // 
-            this.btNuevoInmueble.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btNuevoInmueble.LargeImage = ((System.Drawing.Image)(resources.GetObject("btNuevoInmueble.LargeImage")));
-            this.btNuevoInmueble.Name = "btNuevoInmueble";
-            this.btNuevoInmueble.Text = "Nuevo Inmueble";
-            this.btNuevoInmueble.ItemClick += new System.EventHandler(this.btNuevoInmueble_ItemClick);
-            // 
-            // btBuscarInmueble
-            // 
-            this.btBuscarInmueble.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBuscarInmueble.LargeImage = ((System.Drawing.Image)(resources.GetObject("btBuscarInmueble.LargeImage")));
-            this.btBuscarInmueble.Name = "btBuscarInmueble";
-            this.btBuscarInmueble.Text = "Buscar Inmueble";
-            this.btBuscarInmueble.ItemClick += new System.EventHandler(this.btBuscarInmueble_ItemClick);
-            // 
-            // netBarGroup3
-            // 
-            this.netBarGroup3.Items.AddRange(new NetBarControl.NetBarItem[] {
-            this.netBarItem5,
-            this.netBarItem6});
-            this.netBarGroup3.Name = "netBarGroup3";
-            this.netBarGroup3.Style = NetBarControl.NetBarGroupStyle.LargeItemList;
-            this.netBarGroup3.Text = "Vendedor";
-            this.netBarGroup3.Visible = false;
-            // 
-            // netBarItem5
-            // 
-            this.netBarItem5.Name = "netBarItem5";
-            this.netBarItem5.Text = "Nuevo Vendedor";
-            // 
-            // netBarItem6
-            // 
-            this.netBarItem6.Name = "netBarItem6";
-            this.netBarItem6.Text = "Buscar Vendedor";
-            // 
-            // netBarGroup4
-            // 
-            this.netBarGroup4.Items.AddRange(new NetBarControl.NetBarItem[] {
-            this.netBarItem7,
-            this.netBarItem8});
-            this.netBarGroup4.Name = "netBarGroup4";
-            this.netBarGroup4.Style = NetBarControl.NetBarGroupStyle.LargeItemList;
-            this.netBarGroup4.Text = "Localidad";
-            this.netBarGroup4.Visible = false;
-            // 
-            // netBarItem7
-            // 
-            this.netBarItem7.Name = "netBarItem7";
-            this.netBarItem7.Text = "Nueva Localidad";
-            // 
-            // netBarItem8
-            // 
-            this.netBarItem8.Name = "netBarItem8";
-            this.netBarItem8.Text = "Buscar Localidad";
-            // 
-            // netBarGroup5
-            // 
-            this.netBarGroup5.Items.AddRange(new NetBarControl.NetBarItem[] {
-            this.netBarItem9,
-            this.netBarItem10});
-            this.netBarGroup5.Name = "netBarGroup5";
-            this.netBarGroup5.Style = NetBarControl.NetBarGroupStyle.LargeItemList;
-            this.netBarGroup5.Text = "Barrio";
-            this.netBarGroup5.Visible = false;
-            // 
-            // netBarItem9
-            // 
-            this.netBarItem9.Name = "netBarItem9";
-            this.netBarItem9.Text = "Nuevo Barrio";
-            // 
-            // netBarItem10
-            // 
-            this.netBarItem10.Name = "netBarItem10";
-            this.netBarItem10.Text = "Buscar Barrio";
+            this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
+            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox6.Location = new System.Drawing.Point(1, 2);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(897, 19);
+            this.pictureBox6.TabIndex = 6;
+            this.pictureBox6.TabStop = false;
             // 
             // Prueba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::InmobiliariaForms.Properties.Resources.backColor;
-            this.ClientSize = new System.Drawing.Size(767, 535);
-            this.Controls.Add(this.netBarControl1);
+            this.ClientSize = new System.Drawing.Size(900, 788);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.IsMdiContainer = true;
             this.Name = "Prueba";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Moran Villa Bienes Raices";
-            this.Load += new System.EventHandler(this.Prueba_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private NetBarControl.NetBarControl netBarControl1;
-        private NetBarControl.NetBarGroup netBarGroup1;
-        private NetBarControl.NetBarItem btNuevoInteresado;
-        private NetBarControl.NetBarItem btBuscarInteresado;
-        private NetBarControl.NetBarGroup netBarGroup2;
-        private NetBarControl.NetBarItem btNuevoInmueble;
-        private NetBarControl.NetBarItem btBuscarInmueble;
-        private NetBarControl.NetBarGroup netBarGroup3;
-        private NetBarControl.NetBarItem netBarItem5;
-        private NetBarControl.NetBarItem netBarItem6;
-        private NetBarControl.NetBarGroup netBarGroup4;
-        private NetBarControl.NetBarItem netBarItem7;
-        private NetBarControl.NetBarItem netBarItem8;
-        private NetBarControl.NetBarGroup netBarGroup5;
-        private NetBarControl.NetBarItem netBarItem9;
-        private NetBarControl.NetBarItem netBarItem10;
-        private NetBarControl.NetBarGroup netBarGroup6;
-        private NetBarControl.NetBarItem btNuevoVendedor;
-        private NetBarControl.NetBarItem btBuscarVendedor;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox6;
     }
 }

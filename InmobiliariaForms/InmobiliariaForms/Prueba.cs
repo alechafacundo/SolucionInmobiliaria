@@ -46,16 +46,7 @@ namespace InmobiliariaForms
 
         private void btNuevoInmueble_ItemClick(object sender, EventArgs e)
         {
-            if (frmInmueble == null || frmInmueble.IsDisposed)
-                frmInmueble = new frmInmueble();
-
-            frmInmueble.MdiParent = this;
-            frmInmueble.BringToFront();
-            frmInmueble.StartPosition = FormStartPosition.Manual;
-
-            int width = this.Controls.Find("netBarControl1", true)[0].Width;
-            frmInmueble.Location = new Point(width);
-            frmInmueble.Show();
+           
         }
 
         private void btNuevoVendedor_ItemClick(object sender, EventArgs e)
@@ -127,6 +118,20 @@ namespace InmobiliariaForms
             int width = this.Controls.Find("netBarControl1", true)[0].Width;
             frmBuscarInmueble.Location = new Point(width);
             frmBuscarInmueble.Show();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            if (frmInmueble == null || frmInmueble.IsDisposed)
+                frmInmueble = new frmInmueble();
+
+            frmInmueble.MdiParent = this;
+            frmInmueble.BringToFront();
+            frmInmueble.StartPosition = FormStartPosition.Manual;
+
+            //int width = this.Controls.Find("netBarControl1", true)[0].Width;
+            frmInmueble.Location = new Point(121 , 275);
+            frmInmueble.Show();
         }
     }
 }

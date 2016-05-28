@@ -94,7 +94,7 @@
             // 
             // g
             // 
-            this.g.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.g.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.g.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.g.Controls.Add(this.txCocina);
             this.g.Controls.Add(this.label26);
@@ -642,7 +642,7 @@
             // 
             // btEliminar
             // 
-            this.btEliminar.BackColor = System.Drawing.Color.Orange;
+            this.btEliminar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btEliminar.Font = new System.Drawing.Font("News Cycle", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btEliminar.Location = new System.Drawing.Point(4, 388);
             this.btEliminar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -654,7 +654,7 @@
             // 
             // btCancelar
             // 
-            this.btCancelar.BackColor = System.Drawing.Color.Orange;
+            this.btCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btCancelar.Font = new System.Drawing.Font("News Cycle", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCancelar.Location = new System.Drawing.Point(299, 388);
             this.btCancelar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -667,7 +667,7 @@
             // 
             // btGuardar
             // 
-            this.btGuardar.BackColor = System.Drawing.Color.Orange;
+            this.btGuardar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btGuardar.Font = new System.Drawing.Font("News Cycle", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btGuardar.Location = new System.Drawing.Point(465, 388);
             this.btGuardar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -682,7 +682,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(632, 428);
             this.Controls.Add(this.btGuardar);
