@@ -82,7 +82,7 @@ namespace InmobiliariaService
             try
             {
                 List<Vendedor> vendedores = new List<Vendedor>();
-                DataTable dt = DAOBase.GetDataTableWhere(new Vendedor(), string.Format("DNI == {0} AND Password == {1}", dni, password));
+                DataTable dt = DAOBase.GetDataTableWhere(new Vendedor(), string.Format("DNI = '{0}' AND Password = '{1}'", dni, password));
 
                 if (dt.Rows.Count > 0)
                 {
