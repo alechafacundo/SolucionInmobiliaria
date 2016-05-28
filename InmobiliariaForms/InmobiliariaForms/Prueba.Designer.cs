@@ -87,7 +87,7 @@
             // 
             // btNuevoVendedor
             // 
-            this.btNuevoVendedor.Font = new System.Drawing.Font("News Cycle", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btNuevoVendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btNuevoVendedor.LargeImage = ((System.Drawing.Image)(resources.GetObject("btNuevoVendedor.LargeImage")));
             this.btNuevoVendedor.Name = "btNuevoVendedor";
             this.btNuevoVendedor.Text = "Nuevo Vendedor";
@@ -95,14 +95,14 @@
             // 
             // btBuscarVendedor
             // 
-            this.btBuscarVendedor.Font = new System.Drawing.Font("News Cycle", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btBuscarVendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btBuscarVendedor.LargeImage = ((System.Drawing.Image)(resources.GetObject("btBuscarVendedor.LargeImage")));
             this.btBuscarVendedor.Name = "btBuscarVendedor";
             this.btBuscarVendedor.Text = "Buscar Vendedor";
             // 
             // netBarGroup1
             // 
-            this.netBarGroup1.Font = new System.Drawing.Font("News Cycle", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.netBarGroup1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.netBarGroup1.Items.AddRange(new NetBarControl.NetBarItem[] {
             this.btNuevoInteresado,
             this.btBuscarInteresado});
@@ -112,7 +112,7 @@
             // 
             // btNuevoInteresado
             // 
-            this.btNuevoInteresado.Font = new System.Drawing.Font("News Cycle", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btNuevoInteresado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btNuevoInteresado.LargeImage = ((System.Drawing.Image)(resources.GetObject("btNuevoInteresado.LargeImage")));
             this.btNuevoInteresado.Name = "btNuevoInteresado";
             this.btNuevoInteresado.Text = "Nuevo Interesado";
@@ -120,14 +120,14 @@
             // 
             // btBuscarInteresado
             // 
-            this.btBuscarInteresado.Font = new System.Drawing.Font("News Cycle", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btBuscarInteresado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btBuscarInteresado.LargeImage = ((System.Drawing.Image)(resources.GetObject("btBuscarInteresado.LargeImage")));
             this.btBuscarInteresado.Name = "btBuscarInteresado";
             this.btBuscarInteresado.Text = "Buscar Interesado";
             // 
             // netBarGroup2
             // 
-            this.netBarGroup2.Font = new System.Drawing.Font("News Cycle", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.netBarGroup2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.netBarGroup2.Items.AddRange(new NetBarControl.NetBarItem[] {
             this.btNuevoInmueble,
             this.btBuscarInmueble});
@@ -137,7 +137,7 @@
             // 
             // btNuevoInmueble
             // 
-            this.btNuevoInmueble.Font = new System.Drawing.Font("News Cycle", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btNuevoInmueble.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btNuevoInmueble.LargeImage = ((System.Drawing.Image)(resources.GetObject("btNuevoInmueble.LargeImage")));
             this.btNuevoInmueble.Name = "btNuevoInmueble";
             this.btNuevoInmueble.Text = "Nuevo Inmueble";
@@ -145,7 +145,7 @@
             // 
             // btBuscarInmueble
             // 
-            this.btBuscarInmueble.Font = new System.Drawing.Font("News Cycle", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btBuscarInmueble.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btBuscarInmueble.LargeImage = ((System.Drawing.Image)(resources.GetObject("btBuscarInmueble.LargeImage")));
             this.btBuscarInmueble.Name = "btBuscarInmueble";
             this.btBuscarInmueble.Text = "Buscar Inmueble";
@@ -220,6 +220,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Prueba";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Moran Villa Bienes Raices";
             this.ResumeLayout(false);
 

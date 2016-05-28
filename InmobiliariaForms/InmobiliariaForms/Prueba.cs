@@ -19,6 +19,12 @@ namespace InmobiliariaForms
         frmBuscarInteresado frmBuscarInteresado;
         frmVendedor frmVendedor;
         frmBuscarVendedor frmBuscarVendedor;
+
+        public Prueba()
+        {
+            InitializeComponent();
+        }
+
         private void btNuevoInteresado_ItemClick(object sender, EventArgs e)
         {
             if (frmInteresado == null || frmInteresado.IsDisposed)
