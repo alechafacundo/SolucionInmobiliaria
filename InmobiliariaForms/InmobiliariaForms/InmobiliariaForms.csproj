@@ -225,6 +225,7 @@
     <None Include="Resources\LoggIn.png" />
     <None Include="Resources\candado_oa.png" />
     <None Include="Resources\candado_oa1.png" />
+    <None Include="Resources\backColor.png" />
     <Content Include="Resources\MV.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
