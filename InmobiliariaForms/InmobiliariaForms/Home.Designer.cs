@@ -31,9 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.netBarControl1 = new NetBarControl.NetBarControl();
-            this.netBarGroup6 = new NetBarControl.NetBarGroup();
-            this.btNuevoVendedor = new NetBarControl.NetBarItem();
-            this.btBuscarVendedor = new NetBarControl.NetBarItem();
             this.netBarGroup1 = new NetBarControl.NetBarGroup();
             this.btNuevoInteresado = new NetBarControl.NetBarItem();
             this.btBuscarInteresado = new NetBarControl.NetBarItem();
@@ -49,6 +46,9 @@
             this.netBarGroup5 = new NetBarControl.NetBarGroup();
             this.netBarItem9 = new NetBarControl.NetBarItem();
             this.netBarItem10 = new NetBarControl.NetBarItem();
+            this.netBarGroup6 = new NetBarControl.NetBarGroup();
+            this.btNuevoVendedor = new NetBarControl.NetBarItem();
+            this.btBuscarVendedor = new NetBarControl.NetBarItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -56,7 +56,7 @@
             // 
             // netBarControl1
             // 
-            this.netBarControl1.ActiveGroup = this.netBarGroup1;
+            this.netBarControl1.ActiveGroup = this.netBarGroup2;
             this.netBarControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.netBarControl1.Groups.AddRange(new NetBarControl.NetBarGroup[] {
@@ -79,29 +79,6 @@
             this.netBarControl1.TabIndex = 1;
             this.netBarControl1.Text = "netBarControl1";
             // 
-            // netBarGroup6
-            // 
-            this.netBarGroup6.Items.AddRange(new NetBarControl.NetBarItem[] {
-            this.btNuevoVendedor,
-            this.btBuscarVendedor});
-            this.netBarGroup6.Name = "netBarGroup6";
-            this.netBarGroup6.Style = NetBarControl.NetBarGroupStyle.LargeItemList;
-            this.netBarGroup6.Text = "Vendedores";
-            // 
-            // btNuevoVendedor
-            // 
-            this.btNuevoVendedor.LargeImage = ((System.Drawing.Image)(resources.GetObject("btNuevoVendedor.LargeImage")));
-            this.btNuevoVendedor.Name = "btNuevoVendedor";
-            this.btNuevoVendedor.Text = "Nuevo Vendedor";
-            this.btNuevoVendedor.ItemClick += new System.EventHandler(this.btNuevoVendedor_ItemClick);
-            // 
-            // btBuscarVendedor
-            // 
-            this.btBuscarVendedor.LargeImage = ((System.Drawing.Image)(resources.GetObject("btBuscarVendedor.LargeImage")));
-            this.btBuscarVendedor.Name = "btBuscarVendedor";
-            this.btBuscarVendedor.Text = "Buscar Vendedor";
-            this.btBuscarVendedor.ItemClick += new System.EventHandler(this.btBuscarVendedor_ItemClick);
-            // 
             // netBarGroup1
             // 
             this.netBarGroup1.Items.AddRange(new NetBarControl.NetBarItem[] {
@@ -113,6 +90,7 @@
             // 
             // btNuevoInteresado
             // 
+            this.btNuevoInteresado.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btNuevoInteresado.LargeImage = ((System.Drawing.Image)(resources.GetObject("btNuevoInteresado.LargeImage")));
             this.btNuevoInteresado.Name = "btNuevoInteresado";
             this.btNuevoInteresado.Text = "Nuevo Interesado";
@@ -120,6 +98,7 @@
             // 
             // btBuscarInteresado
             // 
+            this.btBuscarInteresado.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btBuscarInteresado.LargeImage = ((System.Drawing.Image)(resources.GetObject("btBuscarInteresado.LargeImage")));
             this.btBuscarInteresado.Name = "btBuscarInteresado";
             this.btBuscarInteresado.Text = "Buscar Interesado";
@@ -136,6 +115,7 @@
             // 
             // btNuevoInmueble
             // 
+            this.btNuevoInmueble.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btNuevoInmueble.LargeImage = ((System.Drawing.Image)(resources.GetObject("btNuevoInmueble.LargeImage")));
             this.btNuevoInmueble.Name = "btNuevoInmueble";
             this.btNuevoInmueble.Text = "Nuevo Inmueble";
@@ -143,6 +123,7 @@
             // 
             // btBuscarInmueble
             // 
+            this.btBuscarInmueble.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btBuscarInmueble.LargeImage = ((System.Drawing.Image)(resources.GetObject("btBuscarInmueble.LargeImage")));
             this.btBuscarInmueble.Name = "btBuscarInmueble";
             this.btBuscarInmueble.Text = "Buscar Inmueble";
@@ -207,6 +188,30 @@
             // 
             this.netBarItem10.Name = "netBarItem10";
             this.netBarItem10.Text = "Buscar Barrio";
+            // 
+            // netBarGroup6
+            // 
+            this.netBarGroup6.Items.AddRange(new NetBarControl.NetBarItem[] {
+            this.btNuevoVendedor,
+            this.btBuscarVendedor});
+            this.netBarGroup6.Name = "netBarGroup6";
+            this.netBarGroup6.Style = NetBarControl.NetBarGroupStyle.LargeItemList;
+            this.netBarGroup6.Text = "Vendedores";
+            // 
+            // btNuevoVendedor
+            // 
+            this.btNuevoVendedor.LargeImage = ((System.Drawing.Image)(resources.GetObject("btNuevoVendedor.LargeImage")));
+            this.btNuevoVendedor.Name = "btNuevoVendedor";
+            this.btNuevoVendedor.Text = "Nuevo Vendedor";
+            this.btNuevoVendedor.ItemClick += new System.EventHandler(this.btNuevoVendedor_ItemClick);
+            // 
+            // btBuscarVendedor
+            // 
+            this.btBuscarVendedor.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btBuscarVendedor.LargeImage = ((System.Drawing.Image)(resources.GetObject("btBuscarVendedor.LargeImage")));
+            this.btBuscarVendedor.Name = "btBuscarVendedor";
+            this.btBuscarVendedor.Text = "Buscar Vendedor";
+            this.btBuscarVendedor.ItemClick += new System.EventHandler(this.btBuscarVendedor_ItemClick);
             // 
             // toolStrip1
             // 

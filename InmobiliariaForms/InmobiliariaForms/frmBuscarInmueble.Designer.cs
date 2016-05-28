@@ -119,12 +119,13 @@
             // 
             // btCancelar
             // 
+            this.btCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btCancelar.Location = new System.Drawing.Point(504, 223);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(108, 23);
             this.btCancelar.TabIndex = 50;
             this.btCancelar.Text = "Cancelar";
-            this.btCancelar.UseVisualStyleBackColor = true;
+            this.btCancelar.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
@@ -164,12 +165,13 @@
             // 
             // btBuscar
             // 
+            this.btBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btBuscar.Location = new System.Drawing.Point(504, 193);
             this.btBuscar.Name = "btBuscar";
             this.btBuscar.Size = new System.Drawing.Size(108, 23);
             this.btBuscar.TabIndex = 46;
             this.btBuscar.Text = "Buscar";
-            this.btBuscar.UseVisualStyleBackColor = true;
+            this.btBuscar.UseVisualStyleBackColor = false;
             this.btBuscar.Click += new System.EventHandler(this.btBuscar_Click);
             // 
             // cbTipoOperacion
@@ -308,6 +310,7 @@
             // 
             // txBarrio
             // 
+            this.txBarrio.BackColor = System.Drawing.SystemColors.Info;
             this.txBarrio.Location = new System.Drawing.Point(324, 39);
             this.txBarrio.Name = "txBarrio";
             this.txBarrio.Size = new System.Drawing.Size(286, 20);
