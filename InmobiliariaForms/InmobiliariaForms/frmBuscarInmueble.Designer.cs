@@ -72,9 +72,14 @@
             this.gvResultado.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.gvResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvResultado.Location = new System.Drawing.Point(8, 258);
+            this.gvResultado.MultiSelect = false;
             this.gvResultado.Name = "gvResultado";
+            this.gvResultado.ReadOnly = true;
+            this.gvResultado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvResultado.Size = new System.Drawing.Size(612, 191);
             this.gvResultado.TabIndex = 5;
+            this.gvResultado.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvResultado_CellContentDoubleClick);
+            this.gvResultado.DoubleClick += new System.EventHandler(this.gvResultado_DoubleClick);
             // 
             // g
             // 

@@ -47,11 +47,15 @@
             this.btEliminar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.btGuardar = new System.Windows.Forms.Button();
+            this.txPassword = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txPassword);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.txEmail);
             this.groupBox1.Controls.Add(this.label7);
@@ -227,6 +231,23 @@
             this.btGuardar.UseVisualStyleBackColor = false;
             this.btGuardar.Click += new System.EventHandler(this.btGuardar_Click);
             // 
+            // txPassword
+            // 
+            this.txPassword.Location = new System.Drawing.Point(79, 160);
+            this.txPassword.Name = "txPassword";
+            this.txPassword.PasswordChar = '*';
+            this.txPassword.Size = new System.Drawing.Size(142, 20);
+            this.txPassword.TabIndex = 31;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(19, 163);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(56, 13);
+            this.label8.TabIndex = 30;
+            this.label8.Text = "Password:";
+            // 
             // frmVendedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -269,5 +290,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txNombre;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txPassword;
+        private System.Windows.Forms.Label label8;
     }
 }

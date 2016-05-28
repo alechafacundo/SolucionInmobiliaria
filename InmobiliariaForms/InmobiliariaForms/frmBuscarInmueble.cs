@@ -78,5 +78,15 @@ namespace InmobiliariaForms
                 throw;
             }
         }
+
+        private void gvResultado_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void gvResultado_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

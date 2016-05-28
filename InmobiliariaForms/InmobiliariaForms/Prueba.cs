@@ -86,5 +86,47 @@ namespace InmobiliariaForms
                 }
             }
         }
+
+        private void btBuscarVendedor_ItemClick(object sender, EventArgs e)
+        {
+            if (frmBuscarVendedor == null || frmBuscarVendedor.IsDisposed)
+                frmBuscarVendedor = new frmBuscarVendedor();
+
+            frmBuscarVendedor.MdiParent = this;
+            frmBuscarVendedor.BringToFront();
+            frmBuscarVendedor.StartPosition = FormStartPosition.Manual;
+
+            int width = this.Controls.Find("netBarControl1", true)[0].Width;
+            frmBuscarVendedor.Location = new Point(width);
+            frmBuscarVendedor.Show();
+        }
+
+        private void btBuscarInteresado_ItemClick(object sender, EventArgs e)
+        {
+            if (frmBuscarInteresado == null || frmBuscarInteresado.IsDisposed)
+                frmBuscarInteresado = new frmBuscarInteresado();
+
+            frmBuscarInteresado.MdiParent = this;
+            frmBuscarInteresado.BringToFront();
+            frmBuscarInteresado.StartPosition = FormStartPosition.Manual;
+
+            int width = this.Controls.Find("netBarControl1", true)[0].Width;
+            frmBuscarInteresado.Location = new Point(width);
+            frmBuscarInteresado.Show();
+        }
+
+        private void btBuscarInmueble_ItemClick(object sender, EventArgs e)
+        {
+            if (frmBuscarInmueble == null || frmBuscarInmueble.IsDisposed)
+                frmBuscarInmueble = new frmBuscarInmueble();
+
+            frmBuscarInmueble.MdiParent = this;
+            frmBuscarInmueble.BringToFront();
+            frmBuscarInmueble.StartPosition = FormStartPosition.Manual;
+
+            int width = this.Controls.Find("netBarControl1", true)[0].Width;
+            frmBuscarInmueble.Location = new Point(width);
+            frmBuscarInmueble.Show();
+        }
     }
 }

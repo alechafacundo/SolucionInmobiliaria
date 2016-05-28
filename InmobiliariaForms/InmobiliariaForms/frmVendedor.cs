@@ -33,7 +33,8 @@ namespace InmobiliariaForms
                     txEmail.Text = Vendedor.Email;
                     txLegajo.Text = Vendedor.Legajo;
                     txCelular.Text = Vendedor.Celular;
-
+                    //ToDo: Facu
+                    //Falta poner el tx del Password. Poner uno para confirmar password, y en validar campos tienen que ser iguales
                 }
             }
             catch (Exception ex)
@@ -56,20 +57,22 @@ namespace InmobiliariaForms
                 vendedor.Telefono = txTelefono.Text;
                 vendedor.Celular = txCelular.Text;
                 vendedor.Email = txEmail.Text;
-                
+                vendedor.Password = txPassword.Text;
+
+                try
+                {
+                    Service ws = new Service();
+                    ws.GuardarVendedor(vendedor);
+                    MessageBox.Show("Vendedor guardado correctamente!");
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            try
-            {
-                Service ws = new Service();
-                ws.GuardarVendedor(Vendedor);
-                MessageBox.Show("Vendedor guardado correctamente!");
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+           
         }
         private bool ValidarCampos()
         {

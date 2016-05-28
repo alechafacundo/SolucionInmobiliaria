@@ -52,7 +52,7 @@
             // 
             // netBarControl1
             // 
-            this.netBarControl1.ActiveGroup = this.netBarGroup6;
+            this.netBarControl1.ActiveGroup = this.netBarGroup2;
             this.netBarControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.netBarControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -99,6 +99,7 @@
             this.btBuscarVendedor.LargeImage = ((System.Drawing.Image)(resources.GetObject("btBuscarVendedor.LargeImage")));
             this.btBuscarVendedor.Name = "btBuscarVendedor";
             this.btBuscarVendedor.Text = "Buscar Vendedor";
+            this.btBuscarVendedor.ItemClick += new System.EventHandler(this.btBuscarVendedor_ItemClick);
             // 
             // netBarGroup1
             // 
@@ -124,6 +125,7 @@
             this.btBuscarInteresado.LargeImage = ((System.Drawing.Image)(resources.GetObject("btBuscarInteresado.LargeImage")));
             this.btBuscarInteresado.Name = "btBuscarInteresado";
             this.btBuscarInteresado.Text = "Buscar Interesado";
+            this.btBuscarInteresado.ItemClick += new System.EventHandler(this.btBuscarInteresado_ItemClick);
             // 
             // netBarGroup2
             // 
@@ -149,6 +151,7 @@
             this.btBuscarInmueble.LargeImage = ((System.Drawing.Image)(resources.GetObject("btBuscarInmueble.LargeImage")));
             this.btBuscarInmueble.Name = "btBuscarInmueble";
             this.btBuscarInmueble.Text = "Buscar Inmueble";
+            this.btBuscarInmueble.ItemClick += new System.EventHandler(this.btBuscarInmueble_ItemClick);
             // 
             // netBarGroup3
             // 
