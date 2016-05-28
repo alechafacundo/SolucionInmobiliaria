@@ -30,66 +30,76 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Prueba));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pbInmueble1 = new System.Windows.Forms.PictureBox();
+            this.pbInteresado1 = new System.Windows.Forms.PictureBox();
+            this.pbVendedor1 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pbInmueble2 = new System.Windows.Forms.PictureBox();
+            this.pbInteresado2 = new System.Windows.Forms.PictureBox();
+            this.pbVendedor2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbInmueble1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbInteresado1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbVendedor1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbInmueble2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbInteresado2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbVendedor2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::InmobiliariaForms.Properties.Resources.MV;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(360, 25);
+            this.pictureBox1.Location = new System.Drawing.Point(345, 27);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(162, 108);
+            this.pictureBox1.Size = new System.Drawing.Size(182, 124);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox2
+            // pbInmueble1
             // 
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(74, 170);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(191, 41);
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pbInmueble1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbInmueble1.BackgroundImage")));
+            this.pbInmueble1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbInmueble1.Location = new System.Drawing.Point(92, 182);
+            this.pbInmueble1.Name = "pbInmueble1";
+            this.pbInmueble1.Size = new System.Drawing.Size(173, 35);
+            this.pbInmueble1.TabIndex = 2;
+            this.pbInmueble1.TabStop = false;
+            this.pbInmueble1.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pbInmueble1.MouseHover += new System.EventHandler(this.pbInmueble1_MouseHover);
             // 
-            // pictureBox3
+            // pbInteresado1
             // 
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(348, 170);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(191, 41);
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
+            this.pbInteresado1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbInteresado1.BackgroundImage")));
+            this.pbInteresado1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbInteresado1.Location = new System.Drawing.Point(349, 182);
+            this.pbInteresado1.Name = "pbInteresado1";
+            this.pbInteresado1.Size = new System.Drawing.Size(173, 35);
+            this.pbInteresado1.TabIndex = 3;
+            this.pbInteresado1.TabStop = false;
+            this.pbInteresado1.MouseHover += new System.EventHandler(this.pbInteresado1_MouseHover);
             // 
-            // pictureBox4
+            // pbVendedor1
             // 
-            this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.Location = new System.Drawing.Point(615, 170);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(191, 41);
-            this.pictureBox4.TabIndex = 4;
-            this.pictureBox4.TabStop = false;
+            this.pbVendedor1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbVendedor1.BackgroundImage")));
+            this.pbVendedor1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbVendedor1.Location = new System.Drawing.Point(629, 182);
+            this.pbVendedor1.Name = "pbVendedor1";
+            this.pbVendedor1.Size = new System.Drawing.Size(173, 35);
+            this.pbVendedor1.TabIndex = 4;
+            this.pbVendedor1.TabStop = false;
+            this.pbVendedor1.MouseHover += new System.EventHandler(this.pbVendedor1_MouseHover);
             // 
             // pictureBox5
             // 
             this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
-            this.pictureBox5.Location = new System.Drawing.Point(29, 146);
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox5.Location = new System.Drawing.Point(29, 161);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(841, 4);
+            this.pictureBox5.Size = new System.Drawing.Size(841, 10);
             this.pictureBox5.TabIndex = 5;
             this.pictureBox5.TabStop = false;
             // 
@@ -97,11 +107,47 @@
             // 
             this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox6.Location = new System.Drawing.Point(1, 2);
+            this.pictureBox6.Location = new System.Drawing.Point(1, -3);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(897, 19);
+            this.pictureBox6.Size = new System.Drawing.Size(897, 24);
             this.pictureBox6.TabIndex = 6;
             this.pictureBox6.TabStop = false;
+            // 
+            // pbInmueble2
+            // 
+            this.pbInmueble2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbInmueble2.BackgroundImage")));
+            this.pbInmueble2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbInmueble2.Location = new System.Drawing.Point(92, 182);
+            this.pbInmueble2.Name = "pbInmueble2";
+            this.pbInmueble2.Size = new System.Drawing.Size(173, 35);
+            this.pbInmueble2.TabIndex = 8;
+            this.pbInmueble2.TabStop = false;
+            this.pbInmueble2.Visible = false;
+            this.pbInmueble2.MouseLeave += new System.EventHandler(this.pbInmueble2_MouseLeave);
+            // 
+            // pbInteresado2
+            // 
+            this.pbInteresado2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbInteresado2.BackgroundImage")));
+            this.pbInteresado2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbInteresado2.Location = new System.Drawing.Point(349, 182);
+            this.pbInteresado2.Name = "pbInteresado2";
+            this.pbInteresado2.Size = new System.Drawing.Size(173, 35);
+            this.pbInteresado2.TabIndex = 9;
+            this.pbInteresado2.TabStop = false;
+            this.pbInteresado2.Visible = false;
+            this.pbInteresado2.MouseLeave += new System.EventHandler(this.pbInteresado2_MouseLeave);
+            // 
+            // pbVendedor2
+            // 
+            this.pbVendedor2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbVendedor2.BackgroundImage")));
+            this.pbVendedor2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbVendedor2.Location = new System.Drawing.Point(629, 182);
+            this.pbVendedor2.Name = "pbVendedor2";
+            this.pbVendedor2.Size = new System.Drawing.Size(173, 35);
+            this.pbVendedor2.TabIndex = 10;
+            this.pbVendedor2.TabStop = false;
+            this.pbVendedor2.Visible = false;
+            this.pbVendedor2.MouseLeave += new System.EventHandler(this.pbVendedor2_MouseLeave);
             // 
             // Prueba
             // 
@@ -110,24 +156,29 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::InmobiliariaForms.Properties.Resources.backColor;
             this.ClientSize = new System.Drawing.Size(900, 788);
+            this.Controls.Add(this.pbVendedor2);
+            this.Controls.Add(this.pbInteresado2);
+            this.Controls.Add(this.pbInmueble2);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pbVendedor1);
+            this.Controls.Add(this.pbInteresado1);
+            this.Controls.Add(this.pbInmueble1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.IsMdiContainer = true;
             this.Name = "Prueba";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Moran Villa Bienes Raices";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbInmueble1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbInteresado1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbVendedor1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbInmueble2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbInteresado2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbVendedor2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -135,10 +186,13 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pbInmueble1;
+        private System.Windows.Forms.PictureBox pbInteresado1;
+        private System.Windows.Forms.PictureBox pbVendedor1;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pbInmueble2;
+        private System.Windows.Forms.PictureBox pbInteresado2;
+        private System.Windows.Forms.PictureBox pbVendedor2;
     }
 }

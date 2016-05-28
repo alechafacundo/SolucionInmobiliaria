@@ -12,9 +12,11 @@ using System.Windows.Forms;
 namespace InmobiliariaForms
 {
    
+   
 
     public partial class Prueba : Form
     {
+        public static int MouseHoverTime { get; set; } 
         frmInteresado frmInteresado;
         frmInmueble frmInmueble;
         frmBuscarInmueble frmBuscarInmueble;
@@ -132,6 +134,49 @@ namespace InmobiliariaForms
             //int width = this.Controls.Find("netBarControl1", true)[0].Width;
             frmInmueble.Location = new Point(121 , 275);
             frmInmueble.Show();
+        }
+
+        private void pbInmueble1_MouseHover(object sender, EventArgs e)
+        {
+            pbInmueble1.Visible = false;
+            pbInmueble2.Visible = true;
+            MouseHoverTime = 1; 
+        
+       }
+
+        private void pbInmueble2_MouseLeave(object sender, EventArgs e)
+        {
+            pbInmueble1.Visible = true;
+            pbInmueble2.Visible = false;
+                
+        }
+
+        private void pbInteresado1_MouseHover(object sender, EventArgs e)
+        {
+            pbInteresado1.Visible = false;
+            pbInteresado2.Visible = true;
+            MouseHoverTime = 1;
+
+        }
+
+        private void pbInteresado2_MouseLeave(object sender, EventArgs e)
+        {
+            pbInteresado1.Visible = true;
+            pbInteresado2.Visible = false;
+        }
+
+        private void pbVendedor1_MouseHover(object sender, EventArgs e)
+        {
+            pbVendedor1.Visible = false;
+            pbVendedor2.Visible = true;
+            MouseHoverTime = 1;
+
+        }
+
+        private void pbVendedor2_MouseLeave(object sender, EventArgs e)
+        {
+            pbVendedor1.Visible = true;
+            pbVendedor2.Visible = false;
         }
     }
 }
