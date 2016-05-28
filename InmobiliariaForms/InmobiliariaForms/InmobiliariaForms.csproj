@@ -132,6 +132,12 @@
     <Compile Include="frmVendedor.Designer.cs">
       <DependentUpon>frmVendedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Prueba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prueba.Designer.cs">
+      <DependentUpon>Prueba.cs</DependentUpon>
+    </Compile>
     <Compile Include="Web References\InmobiliariaService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -170,6 +176,9 @@
     </Compile>
     <EmbeddedResource Include="frmVendedor.resx">
       <DependentUpon>frmVendedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prueba.resx">
+      <DependentUpon>Prueba.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">

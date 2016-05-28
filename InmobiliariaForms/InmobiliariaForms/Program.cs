@@ -17,7 +17,7 @@ namespace InmobiliariaForms
             //En este new va el Formulario que arranca la aplicación,
             // por ejemplo, si queres que inicie en frmInmueble el codigo sria:
             //Application.Run(new frmInmueble());
-            Application.Run(new Home());
+            Application.Run(new Prueba());
         }
     }
 }

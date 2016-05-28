@@ -32,11 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.netBarControl1 = new NetBarControl.NetBarControl();
             this.netBarGroup1 = new NetBarControl.NetBarGroup();
-            this.btNuevoInteresado = new NetBarControl.NetBarItem();
-            this.btBuscarInteresado = new NetBarControl.NetBarItem();
             this.netBarGroup2 = new NetBarControl.NetBarGroup();
-            this.btNuevoInmueble = new NetBarControl.NetBarItem();
-            this.btBuscarInmueble = new NetBarControl.NetBarItem();
             this.netBarGroup3 = new NetBarControl.NetBarGroup();
             this.netBarItem5 = new NetBarControl.NetBarItem();
             this.netBarItem6 = new NetBarControl.NetBarItem();
@@ -47,18 +43,23 @@
             this.netBarItem9 = new NetBarControl.NetBarItem();
             this.netBarItem10 = new NetBarControl.NetBarItem();
             this.netBarGroup6 = new NetBarControl.NetBarGroup();
-            this.btNuevoVendedor = new NetBarControl.NetBarItem();
-            this.btBuscarVendedor = new NetBarControl.NetBarItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btNuevoInteresado = new NetBarControl.NetBarItem();
+            this.btBuscarInteresado = new NetBarControl.NetBarItem();
+            this.btNuevoInmueble = new NetBarControl.NetBarItem();
+            this.btBuscarInmueble = new NetBarControl.NetBarItem();
+            this.btNuevoVendedor = new NetBarControl.NetBarItem();
+            this.btBuscarVendedor = new NetBarControl.NetBarItem();
             this.SuspendLayout();
             // 
             // netBarControl1
             // 
-            this.netBarControl1.ActiveGroup = this.netBarGroup2;
+            this.netBarControl1.ActiveGroup = this.netBarGroup1;
             this.netBarControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.netBarControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.netBarControl1.Groups.AddRange(new NetBarControl.NetBarGroup[] {
             this.netBarGroup1,
             this.netBarGroup2,
@@ -88,22 +89,6 @@
             this.netBarGroup1.Style = NetBarControl.NetBarGroupStyle.LargeItemList;
             this.netBarGroup1.Text = "Interesados";
             // 
-            // btNuevoInteresado
-            // 
-            this.btNuevoInteresado.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btNuevoInteresado.LargeImage = ((System.Drawing.Image)(resources.GetObject("btNuevoInteresado.LargeImage")));
-            this.btNuevoInteresado.Name = "btNuevoInteresado";
-            this.btNuevoInteresado.Text = "Nuevo Interesado";
-            this.btNuevoInteresado.ItemClick += new System.EventHandler(this.btNuevoInteresado_ItemClick);
-            // 
-            // btBuscarInteresado
-            // 
-            this.btBuscarInteresado.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBuscarInteresado.LargeImage = ((System.Drawing.Image)(resources.GetObject("btBuscarInteresado.LargeImage")));
-            this.btBuscarInteresado.Name = "btBuscarInteresado";
-            this.btBuscarInteresado.Text = "Buscar Interesado";
-            this.btBuscarInteresado.ItemClick += new System.EventHandler(this.btBuscarInteresado_ItemClick);
-            // 
             // netBarGroup2
             // 
             this.netBarGroup2.Items.AddRange(new NetBarControl.NetBarItem[] {
@@ -112,22 +97,6 @@
             this.netBarGroup2.Name = "netBarGroup2";
             this.netBarGroup2.Style = NetBarControl.NetBarGroupStyle.LargeItemList;
             this.netBarGroup2.Text = "Inmuebles";
-            // 
-            // btNuevoInmueble
-            // 
-            this.btNuevoInmueble.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btNuevoInmueble.LargeImage = ((System.Drawing.Image)(resources.GetObject("btNuevoInmueble.LargeImage")));
-            this.btNuevoInmueble.Name = "btNuevoInmueble";
-            this.btNuevoInmueble.Text = "Nuevo Inmueble";
-            this.btNuevoInmueble.ItemClick += new System.EventHandler(this.btNuevoInmueble_ItemClick);
-            // 
-            // btBuscarInmueble
-            // 
-            this.btBuscarInmueble.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBuscarInmueble.LargeImage = ((System.Drawing.Image)(resources.GetObject("btBuscarInmueble.LargeImage")));
-            this.btBuscarInmueble.Name = "btBuscarInmueble";
-            this.btBuscarInmueble.Text = "Buscar Inmueble";
-            this.btBuscarInmueble.ItemClick += new System.EventHandler(this.btBuscarInmueble_ItemClick);
             // 
             // netBarGroup3
             // 
@@ -198,6 +167,52 @@
             this.netBarGroup6.Style = NetBarControl.NetBarGroupStyle.LargeItemList;
             this.netBarGroup6.Text = "Vendedores";
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip1.Location = new System.Drawing.Point(0, 397);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(807, 25);
+            this.toolStrip1.TabIndex = 2;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // btNuevoInteresado
+            // 
+            this.btNuevoInteresado.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btNuevoInteresado.LargeImage = ((System.Drawing.Image)(resources.GetObject("btNuevoInteresado.LargeImage")));
+            this.btNuevoInteresado.Name = "btNuevoInteresado";
+            this.btNuevoInteresado.Text = "Nuevo Interesado";
+            this.btNuevoInteresado.ItemClick += new System.EventHandler(this.btNuevoInteresado_ItemClick);
+            // 
+            // btBuscarInteresado
+            // 
+            this.btBuscarInteresado.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btBuscarInteresado.LargeImage = ((System.Drawing.Image)(resources.GetObject("btBuscarInteresado.LargeImage")));
+            this.btBuscarInteresado.Name = "btBuscarInteresado";
+            this.btBuscarInteresado.Text = "Buscar Interesado";
+            this.btBuscarInteresado.ItemClick += new System.EventHandler(this.btBuscarInteresado_ItemClick);
+            // 
+            // btNuevoInmueble
+            // 
+            this.btNuevoInmueble.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btNuevoInmueble.LargeImage = ((System.Drawing.Image)(resources.GetObject("btNuevoInmueble.LargeImage")));
+            this.btNuevoInmueble.Name = "btNuevoInmueble";
+            this.btNuevoInmueble.Text = "Nuevo Inmueble";
+            this.btNuevoInmueble.ItemClick += new System.EventHandler(this.btNuevoInmueble_ItemClick);
+            // 
+            // btBuscarInmueble
+            // 
+            this.btBuscarInmueble.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btBuscarInmueble.LargeImage = ((System.Drawing.Image)(resources.GetObject("btBuscarInmueble.LargeImage")));
+            this.btBuscarInmueble.Name = "btBuscarInmueble";
+            this.btBuscarInmueble.Text = "Buscar Inmueble";
+            this.btBuscarInmueble.ItemClick += new System.EventHandler(this.btBuscarInmueble_ItemClick);
+            // 
             // btNuevoVendedor
             // 
             this.btNuevoVendedor.LargeImage = ((System.Drawing.Image)(resources.GetObject("btNuevoVendedor.LargeImage")));
@@ -213,25 +228,11 @@
             this.btBuscarVendedor.Text = "Buscar Vendedor";
             this.btBuscarVendedor.ItemClick += new System.EventHandler(this.btBuscarVendedor_ItemClick);
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.toolStrip1.Location = new System.Drawing.Point(0, 397);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(807, 25);
-            this.toolStrip1.TabIndex = 2;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(807, 422);
             this.Controls.Add(this.toolStrip1);
