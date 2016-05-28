@@ -225,6 +225,7 @@
             this.Name = "Prueba";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Moran Villa Bienes Raices";
+            this.Load += new System.EventHandler(this.Prueba_Load);
             this.ResumeLayout(false);
 
         }

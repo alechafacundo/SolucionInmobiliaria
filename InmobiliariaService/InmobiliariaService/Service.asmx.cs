@@ -110,7 +110,7 @@ namespace InmobiliariaService
         }
 
         [WebMethod]
-        public bool Login(string dni, string password)
+        public Vendedor Login(string dni, string password)
         {
             try
             {

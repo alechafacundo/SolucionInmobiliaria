@@ -1,4 +1,5 @@
-﻿using InmobiliariaForms.Properties;
+﻿using InmobiliariaForms.InmobiliariaService;
+using InmobiliariaForms.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,8 @@ namespace InmobiliariaForms
         frmBuscarInteresado frmBuscarInteresado;
         frmVendedor frmVendedor;
         frmBuscarVendedor frmBuscarVendedor;
+
+        Vendedor Vendedor { get; set; }
 
         public Prueba()
         {
@@ -67,6 +70,21 @@ namespace InmobiliariaForms
             int width = this.Controls.Find("netBarControl1", true)[0].Width;
             frmVendedor.Location = new Point(width);
             frmVendedor.Show();
+        }
+
+        private void Prueba_Load(object sender, EventArgs e)
+        {
+            using (frmLogin f = new frmLogin())
+            {
+                if (f.ShowDialog() == DialogResult.OK)
+                {
+                    this.Vendedor = f.Vendedor;
+                }
+                else
+                {
+                    Application.Exit();
+                }
+            }
         }
     }
 }

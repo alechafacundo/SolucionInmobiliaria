@@ -197,7 +197,7 @@
       <s:element name="LoginResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="LoginResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="tns:Vendedor" />
           </s:sequence>
         </s:complexType>
       </s:element>

@@ -110,7 +110,7 @@
             // configuraciónToolStripMenuItem
             // 
             this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
-            this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.configuraciónToolStripMenuItem.Text = "Configuración";
             // 
             // btAceptar
@@ -163,6 +163,7 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

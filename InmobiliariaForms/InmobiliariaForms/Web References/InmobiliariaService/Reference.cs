@@ -352,11 +352,11 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Login", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool Login(string dni, string password) {
+        public Vendedor Login(string dni, string password) {
             object[] results = this.Invoke("Login", new object[] {
                         dni,
                         password});
-            return ((bool)(results[0]));
+            return ((Vendedor)(results[0]));
         }
         
         /// <remarks/>
@@ -1187,10 +1187,10 @@ namespace InmobiliariaForms.InmobiliariaService {
         }
         
         /// <remarks/>
-        public bool Result {
+        public Vendedor Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
+                return ((Vendedor)(this.results[0]));
             }
         }
     }

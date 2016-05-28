@@ -77,7 +77,7 @@ namespace InmobiliariaService
             }
         }
 
-        internal static bool Login(string dni, string password)
+        internal static Vendedor Login(string dni, string password)
         {
             try
             {
@@ -86,11 +86,14 @@ namespace InmobiliariaService
 
                 if (dt.Rows.Count > 0)
                 {
-                    return true;
+                    Vendedor vendedor = new Vendedor();
+                    PoblarObjetoDesdeDataRow(vendedor, dt.Rows[0]);
+
+                    return vendedor;
                 }
                 else
                 {
-                    return false;
+                    return null;
                 }
                 
             }
