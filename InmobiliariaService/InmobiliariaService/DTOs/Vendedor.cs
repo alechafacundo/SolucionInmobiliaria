@@ -16,5 +16,6 @@ namespace InmobiliariaService
         public string Email { get; set; }
         public string DNI { get; set; }
         public string Password { get; set; }
+        public string FullName { get { return Nombre + " " + Apellido;} set {  } }
     }
 }
