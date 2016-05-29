@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InmobiliariaForms.InmobiliariaService;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,20 @@ namespace InmobiliariaForms
         public frmBuscarVendedor()
         {
             InitializeComponent();
+        }
+
+        private void btBuscar_Click(object sender, EventArgs e)
+        {
+            Vendedor vendedor = new Vendedor();
+            vendedor.Apellido = txApellido.Text;
+            vendedor.Celular = txCelular.Text;
+            vendedor.DNI = txDNI.Text;
+        }
+
+        private void btCancelar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

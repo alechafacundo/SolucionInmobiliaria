@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace InmobiliariaForms
 {
-   /*
+  
     public partial class frmBuscarInmueble : Form
     {
         public frmBuscarInmueble()

@@ -23,7 +23,7 @@ namespace InmobiliariaForms
         frmBuscarInteresado frmBuscarInteresado;
         frmVendedor frmVendedor;
         frmBuscarVendedor frmBuscarVendedor;
-        Inmueble Inmueble;
+        frmAgregarInmueble frmAgregarInmueble;
 
         Vendedor Vendedor { get; set; }
 
@@ -121,21 +121,7 @@ namespace InmobiliariaForms
             int width = this.Controls.Find("netBarControl1", true)[0].Width;
             frmBuscarInmueble.Location = new Point(width);
             frmBuscarInmueble.Show();
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            if (Inmueble == null || Inmueble.IsDisposed)
-                Inmueble = new Inmueble();
-
-            Inmueble.MdiParent = this;
-            Inmueble.BringToFront();
-            Inmueble.StartPosition = FormStartPosition.Manual;
-
-            //int width = this.Controls.Find("netBarControl1", true)[0].Width;
-            Inmueble.Location = new Point(121 , 275);
-            Inmueble.Show();
-        }
+        }        
 
         private void pbInmueble1_MouseHover(object sender, EventArgs e)
         {
@@ -178,6 +164,22 @@ namespace InmobiliariaForms
         {
             pbVendedor1.Visible = true;
             pbVendedor2.Visible = false;
+        }
+
+        private void pbInmueble2_Click(object sender, EventArgs e)
+        {
+            if (frmAgregarInmueble == null || frmAgregarInmueble.IsDisposed)
+                frmAgregarInmueble = new frmAgregarInmueble();
+
+            frmAgregarInmueble.MdiParent = this;
+            pnlMdi.Controls.Add(frmAgregarInmueble);
+            frmAgregarInmueble.BringToFront();
+            frmAgregarInmueble.StartPosition = FormStartPosition.Manual;
+
+            //int width = this.Controls.Find("netBarControl1", true)[0].Width;
+            //frmAgregarInmueble.Location = new Point(121, 275);
+            frmAgregarInmueble.Location = new Point(90, 10);
+            frmAgregarInmueble.Show();
         }
     }
 }

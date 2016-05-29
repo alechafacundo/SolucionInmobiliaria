@@ -82,7 +82,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmBuscarInmueble.cs" />
+    <Compile Include="frmBuscarInmueble.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmBuscarInmueble.Designer.cs">
       <DependentUpon>frmBuscarInmueble.cs</DependentUpon>
     </Compile>
@@ -122,11 +124,11 @@
     <Compile Include="frmInteresado.Designer.cs">
       <DependentUpon>frmInteresado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Inmueble.cs">
+    <Compile Include="frmAgregarInmueble.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inmueble.Designer.cs">
-      <DependentUpon>Inmueble.cs</DependentUpon>
+    <Compile Include="frmAgregarInmueble.Designer.cs">
+      <DependentUpon>frmAgregarInmueble.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -168,8 +170,8 @@
     <EmbeddedResource Include="frmInteresado.resx">
       <DependentUpon>frmInteresado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inmueble.resx">
-      <DependentUpon>Inmueble.cs</DependentUpon>
+    <EmbeddedResource Include="frmAgregarInmueble.resx">
+      <DependentUpon>frmAgregarInmueble.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

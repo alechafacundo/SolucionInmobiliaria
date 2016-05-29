@@ -37,6 +37,7 @@
             this.pbInmueble2 = new System.Windows.Forms.PictureBox();
             this.pbInteresado2 = new System.Windows.Forms.PictureBox();
             this.pbVendedor2 = new System.Windows.Forms.PictureBox();
+            this.pnlMdi = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbInmueble1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbInteresado1)).BeginInit();
@@ -66,7 +67,7 @@
             this.pbInmueble1.Size = new System.Drawing.Size(173, 35);
             this.pbInmueble1.TabIndex = 2;
             this.pbInmueble1.TabStop = false;
-            this.pbInmueble1.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pbInmueble1.Click += new System.EventHandler(this.pbInmueble2_Click);
             this.pbInmueble1.MouseHover += new System.EventHandler(this.pbInmueble1_MouseHover);
             // 
             // pbInteresado1
@@ -111,6 +112,7 @@
             this.pbInmueble2.TabIndex = 8;
             this.pbInmueble2.TabStop = false;
             this.pbInmueble2.Visible = false;
+            this.pbInmueble2.Click += new System.EventHandler(this.pbInmueble2_Click);
             this.pbInmueble2.MouseLeave += new System.EventHandler(this.pbInmueble2_MouseLeave);
             // 
             // pbInteresado2
@@ -137,6 +139,13 @@
             this.pbVendedor2.Visible = false;
             this.pbVendedor2.MouseLeave += new System.EventHandler(this.pbVendedor2_MouseLeave);
             // 
+            // pnlMdi
+            // 
+            this.pnlMdi.Location = new System.Drawing.Point(12, 203);
+            this.pnlMdi.Name = "pnlMdi";
+            this.pnlMdi.Size = new System.Drawing.Size(876, 501);
+            this.pnlMdi.TabIndex = 12;
+            // 
             // Prueba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -144,6 +153,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::InmobiliariaForms.Properties.Resources.backColor;
             this.ClientSize = new System.Drawing.Size(900, 716);
+            this.Controls.Add(this.pnlMdi);
             this.Controls.Add(this.pbVendedor2);
             this.Controls.Add(this.pbInteresado2);
             this.Controls.Add(this.pbInmueble2);
@@ -154,6 +164,7 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IsMdiContainer = true;
             this.Name = "Prueba";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Moran Villa Bienes Raices";
@@ -179,5 +190,6 @@
         private System.Windows.Forms.PictureBox pbInmueble2;
         private System.Windows.Forms.PictureBox pbInteresado2;
         private System.Windows.Forms.PictureBox pbVendedor2;
+        private System.Windows.Forms.Panel pnlMdi;
     }
 }
