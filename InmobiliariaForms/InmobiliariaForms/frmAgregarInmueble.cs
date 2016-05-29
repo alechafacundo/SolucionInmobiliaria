@@ -52,7 +52,7 @@ namespace InmobiliariaForms
             frmInmueble.StartPosition = FormStartPosition.Manual;
           
             //int width = this.Controls.Find("netBarControl1", true)[0].Width;
-            frmInmueble.Location = new Point(100, 10);
+            frmInmueble.Location = new Point(120, 0);
             this.Close();
             frmInmueble.Show();
         }

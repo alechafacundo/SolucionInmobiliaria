@@ -118,7 +118,7 @@ namespace InmobiliariaForms
                 //No anda este llamado al ws
                 Service ws = new Service();
                 //Esta lista la hago global para poder accederla
-                vendedores = ws.GetVendedores().ToList();
+               // vendedores = ws.GetVendedores().ToList();
                 cbCargadoPor.DataSource = vendedores;
                 cbCargadoPor.DisplayMember = "FullName";
                 cbCargadoPor.ValueMember = "Id";

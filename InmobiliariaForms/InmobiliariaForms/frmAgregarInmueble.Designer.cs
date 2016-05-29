@@ -39,7 +39,7 @@
             // 
             this.pbAgregarInmueble1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbAgregarInmueble1.BackgroundImage")));
             this.pbAgregarInmueble1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbAgregarInmueble1.Location = new System.Drawing.Point(13, 13);
+            this.pbAgregarInmueble1.Location = new System.Drawing.Point(103, 5);
             this.pbAgregarInmueble1.Name = "pbAgregarInmueble1";
             this.pbAgregarInmueble1.Size = new System.Drawing.Size(160, 25);
             this.pbAgregarInmueble1.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             this.pbAgregarInmueble2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbAgregarInmueble2.BackgroundImage")));
             this.pbAgregarInmueble2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbAgregarInmueble2.Location = new System.Drawing.Point(13, 13);
+            this.pbAgregarInmueble2.Location = new System.Drawing.Point(103, 5);
             this.pbAgregarInmueble2.Name = "pbAgregarInmueble2";
             this.pbAgregarInmueble2.Size = new System.Drawing.Size(160, 25);
             this.pbAgregarInmueble2.TabIndex = 1;

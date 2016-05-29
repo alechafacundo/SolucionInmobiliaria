@@ -64,7 +64,7 @@
             this.pbInmueble1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbInmueble1.Location = new System.Drawing.Point(92, 162);
             this.pbInmueble1.Name = "pbInmueble1";
-            this.pbInmueble1.Size = new System.Drawing.Size(173, 35);
+            this.pbInmueble1.Size = new System.Drawing.Size(152, 40);
             this.pbInmueble1.TabIndex = 2;
             this.pbInmueble1.TabStop = false;
             this.pbInmueble1.Click += new System.EventHandler(this.pbInmueble2_Click);
@@ -76,7 +76,7 @@
             this.pbInteresado1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbInteresado1.Location = new System.Drawing.Point(354, 162);
             this.pbInteresado1.Name = "pbInteresado1";
-            this.pbInteresado1.Size = new System.Drawing.Size(173, 35);
+            this.pbInteresado1.Size = new System.Drawing.Size(152, 40);
             this.pbInteresado1.TabIndex = 3;
             this.pbInteresado1.TabStop = false;
             this.pbInteresado1.MouseHover += new System.EventHandler(this.pbInteresado1_MouseHover);
@@ -87,7 +87,7 @@
             this.pbVendedor1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbVendedor1.Location = new System.Drawing.Point(629, 162);
             this.pbVendedor1.Name = "pbVendedor1";
-            this.pbVendedor1.Size = new System.Drawing.Size(173, 35);
+            this.pbVendedor1.Size = new System.Drawing.Size(152, 40);
             this.pbVendedor1.TabIndex = 4;
             this.pbVendedor1.TabStop = false;
             this.pbVendedor1.MouseHover += new System.EventHandler(this.pbVendedor1_MouseHover);
@@ -108,7 +108,7 @@
             this.pbInmueble2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbInmueble2.Location = new System.Drawing.Point(92, 162);
             this.pbInmueble2.Name = "pbInmueble2";
-            this.pbInmueble2.Size = new System.Drawing.Size(173, 35);
+            this.pbInmueble2.Size = new System.Drawing.Size(152, 40);
             this.pbInmueble2.TabIndex = 8;
             this.pbInmueble2.TabStop = false;
             this.pbInmueble2.Visible = false;
@@ -121,7 +121,7 @@
             this.pbInteresado2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbInteresado2.Location = new System.Drawing.Point(354, 162);
             this.pbInteresado2.Name = "pbInteresado2";
-            this.pbInteresado2.Size = new System.Drawing.Size(173, 35);
+            this.pbInteresado2.Size = new System.Drawing.Size(152, 40);
             this.pbInteresado2.TabIndex = 9;
             this.pbInteresado2.TabStop = false;
             this.pbInteresado2.Visible = false;
@@ -133,7 +133,7 @@
             this.pbVendedor2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbVendedor2.Location = new System.Drawing.Point(629, 162);
             this.pbVendedor2.Name = "pbVendedor2";
-            this.pbVendedor2.Size = new System.Drawing.Size(173, 35);
+            this.pbVendedor2.Size = new System.Drawing.Size(152, 40);
             this.pbVendedor2.TabIndex = 10;
             this.pbVendedor2.TabStop = false;
             this.pbVendedor2.Visible = false;
