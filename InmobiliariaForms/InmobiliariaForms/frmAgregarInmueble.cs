@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InmobiliariaForms.InmobiliariaService;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,7 @@ namespace InmobiliariaForms
         frmVendedor frmVendedor;
         frmBuscarVendedor frmBuscarVendedor;
 
-        //Vendedor Vendedor { get; set; }
+        public Vendedor Vendedor { get; set; }
 
         public frmAgregarInmueble()
         {
@@ -44,6 +45,7 @@ namespace InmobiliariaForms
             if (frmInmueble == null || frmInmueble.IsDisposed)
                 frmInmueble = new frmInmueble();
 
+            frmInmueble.Vendedor = this.Vendedor;
             frmInmueble.MdiParent = (Form)this.Parent.Parent;
             Panel p = (Panel)this.Parent.Parent.Controls.Find("pnlMdi", true).First();
             p.Controls.Add(frmInmueble);

@@ -14,6 +14,7 @@ namespace InmobiliariaForms
     {
         List<Vendedor> vendedores = new List<Vendedor>();
         Inmueble Inmueble { get; set; }
+        public Vendedor Vendedor { get; set; }
 
         public frmInmueble()
         {
@@ -123,6 +124,11 @@ namespace InmobiliariaForms
                 cbCargadoPor.DisplayMember = "FullName";
                 cbCargadoPor.ValueMember = "Id";
                 cbCargadoPor.SelectedItem = null;
+
+                if (this.Vendedor != null)
+                {
+                    cbCargadoPor.SelectedValue = Vendedor.Id;
+                }
 
                 if (Inmueble != null)
                 {

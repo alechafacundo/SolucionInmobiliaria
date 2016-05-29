@@ -169,6 +169,7 @@
             this.Name = "Prueba";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Moran Villa Bienes Raices";
+            this.Load += new System.EventHandler(this.Prueba_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbInmueble1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbInteresado1)).EndInit();

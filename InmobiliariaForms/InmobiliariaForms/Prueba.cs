@@ -171,6 +171,7 @@ namespace InmobiliariaForms
             if (frmAgregarInmueble == null || frmAgregarInmueble.IsDisposed)
                 frmAgregarInmueble = new frmAgregarInmueble();
 
+            frmAgregarInmueble.Vendedor = this.Vendedor;
             frmAgregarInmueble.MdiParent = this;
             pnlMdi.Controls.Add(frmAgregarInmueble);
             frmAgregarInmueble.BringToFront();
