@@ -122,7 +122,7 @@ namespace InmobiliariaForms
                 cbCargadoPor.DataSource = vendedores;
                 cbCargadoPor.DisplayMember = "FullName";
                 cbCargadoPor.ValueMember = "Id";
-                //cbCargadoPor.SelectedItem = null;
+                cbCargadoPor.SelectedItem = null;
 
                 if (Inmueble != null)
                 {

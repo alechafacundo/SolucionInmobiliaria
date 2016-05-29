@@ -137,6 +137,7 @@
             this.pbVendedor2.TabIndex = 10;
             this.pbVendedor2.TabStop = false;
             this.pbVendedor2.Visible = false;
+            this.pbVendedor2.Click += new System.EventHandler(this.pbVendedor2_Click);
             this.pbVendedor2.MouseLeave += new System.EventHandler(this.pbVendedor2_MouseLeave);
             // 
             // pnlMdi

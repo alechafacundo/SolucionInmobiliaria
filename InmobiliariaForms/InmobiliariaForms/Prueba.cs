@@ -181,5 +181,22 @@ namespace InmobiliariaForms
             frmAgregarInmueble.Location = new Point(90, 10);
             frmAgregarInmueble.Show();
         }
+
+        private void pbVendedor2_Click(object sender, EventArgs e)
+        {
+            if (frmVendedor == null || frmVendedor.IsDisposed)
+                frmVendedor = new frmVendedor();
+
+            frmVendedor.MdiParent = this;
+
+            pnlMdi.Controls.Add(frmVendedor);
+
+            frmVendedor.BringToFront();
+            frmVendedor.StartPosition = FormStartPosition.Manual;
+
+            //int width = this.Controls.Find("netBarControl1", true)[0].Width;
+            frmVendedor.Location = new Point(90, 10);
+            frmVendedor.Show();
+        }
     }
 }
