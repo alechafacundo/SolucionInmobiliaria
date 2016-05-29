@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInteresado));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.txDorm = new System.Windows.Forms.TextBox();
             this.cbMoneda = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -63,9 +62,8 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.txDorm);
             this.groupBox1.Controls.Add(this.cbMoneda);
             this.groupBox1.Controls.Add(this.label12);
@@ -91,15 +89,6 @@
             this.groupBox1.Size = new System.Drawing.Size(626, 291);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::InmobiliariaForms.Properties.Resources.MV;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(224, 164);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(167, 107);
-            this.panel1.TabIndex = 24;
             // 
             // txDorm
             // 
@@ -316,7 +305,7 @@
             this.btEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btEliminar.BackColor = System.Drawing.Color.Orange;
+            this.btEliminar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btEliminar.Font = new System.Drawing.Font("News Cycle", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btEliminar.Location = new System.Drawing.Point(3, 289);
             this.btEliminar.Name = "btEliminar";
@@ -331,7 +320,7 @@
             this.btCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btCancelar.BackColor = System.Drawing.Color.Orange;
+            this.btCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btCancelar.Font = new System.Drawing.Font("News Cycle", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCancelar.Location = new System.Drawing.Point(307, 289);
             this.btCancelar.Name = "btCancelar";
@@ -346,7 +335,7 @@
             this.btGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btGuardar.BackColor = System.Drawing.Color.Orange;
+            this.btGuardar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btGuardar.Font = new System.Drawing.Font("News Cycle", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btGuardar.Location = new System.Drawing.Point(469, 289);
             this.btGuardar.Name = "btGuardar";
@@ -359,7 +348,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(632, 325);
             this.Controls.Add(this.btGuardar);
@@ -406,6 +395,5 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox cbMoneda;
         private System.Windows.Forms.TextBox txDorm;
-        private System.Windows.Forms.Panel panel1;
     }
 }

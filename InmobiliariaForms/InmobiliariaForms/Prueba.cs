@@ -24,6 +24,8 @@ namespace InmobiliariaForms
         frmVendedor frmVendedor;
         frmBuscarVendedor frmBuscarVendedor;
         frmAgregarInmueble frmAgregarInmueble;
+        frmAgregarInteresado frmAgregarInteresado;
+        frmAgregarVendedor frmAgregarVendedor;
 
         Vendedor Vendedor { get; set; }
 
@@ -185,19 +187,36 @@ namespace InmobiliariaForms
 
         private void pbVendedor2_Click(object sender, EventArgs e)
         {
-            if (frmVendedor == null || frmVendedor.IsDisposed)
-                frmVendedor = new frmVendedor();
+            if (frmAgregarVendedor == null || frmAgregarVendedor.IsDisposed)
+                frmAgregarVendedor = new frmAgregarVendedor();
 
-            frmVendedor.MdiParent = this;
+            frmAgregarVendedor.MdiParent = this;
 
-            pnlMdi.Controls.Add(frmVendedor);
+            pnlMdi.Controls.Add(frmAgregarVendedor);
 
-            frmVendedor.BringToFront();
-            frmVendedor.StartPosition = FormStartPosition.Manual;
+            frmAgregarVendedor.BringToFront();
+            frmAgregarVendedor.StartPosition = FormStartPosition.Manual;
 
             //int width = this.Controls.Find("netBarControl1", true)[0].Width;
-            frmVendedor.Location = new Point(90, 10);
-            frmVendedor.Show();
+            frmAgregarVendedor.Location = new Point(90, 10);
+            frmAgregarVendedor.Show();
+        }
+
+        private void pbInteresado2_Click(object sender, EventArgs e)
+        {
+            if (frmAgregarInteresado == null || frmAgregarInteresado.IsDisposed)
+                frmAgregarInteresado = new frmAgregarInteresado();
+
+            //frmAgregarInmueble.Vendedor = this.Vendedor;
+            frmAgregarInteresado.MdiParent = this;
+            pnlMdi.Controls.Add(frmAgregarInteresado);
+            frmAgregarInteresado.BringToFront();
+            frmAgregarInteresado.StartPosition = FormStartPosition.Manual;
+
+            //int width = this.Controls.Find("netBarControl1", true)[0].Width;
+            //frmAgregarInmueble.Location = new Point(121, 275);
+            frmAgregarInteresado.Location = new Point(90, 10);
+            frmAgregarInteresado.Show();
         }
     }
 }

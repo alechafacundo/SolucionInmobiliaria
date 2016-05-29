@@ -82,6 +82,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAgregarInteresado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarInteresado.Designer.cs">
+      <DependentUpon>frmAgregarInteresado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAgregarVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarVendedor.Designer.cs">
+      <DependentUpon>frmAgregarVendedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBuscarInmueble.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +161,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmAgregarInteresado.resx">
+      <DependentUpon>frmAgregarInteresado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgregarVendedor.resx">
+      <DependentUpon>frmAgregarVendedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBuscarInmueble.resx">
       <DependentUpon>frmBuscarInmueble.cs</DependentUpon>
     </EmbeddedResource>

@@ -89,5 +89,11 @@ namespace InmobiliariaForms
         {
 
         }
+
+        private void btCancelar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
     }
 }

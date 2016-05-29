@@ -38,6 +38,7 @@
             this.pbInteresado2 = new System.Windows.Forms.PictureBox();
             this.pbVendedor2 = new System.Windows.Forms.PictureBox();
             this.pnlMdi = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbInmueble1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbInteresado1)).BeginInit();
@@ -46,15 +47,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbInmueble2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbInteresado2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbVendedor2)).BeginInit();
+            this.pnlMdi.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(345, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(335, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(182, 124);
+            this.pictureBox1.Size = new System.Drawing.Size(190, 134);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -125,6 +128,7 @@
             this.pbInteresado2.TabIndex = 9;
             this.pbInteresado2.TabStop = false;
             this.pbInteresado2.Visible = false;
+            this.pbInteresado2.Click += new System.EventHandler(this.pbInteresado2_Click);
             this.pbInteresado2.MouseLeave += new System.EventHandler(this.pbInteresado2_MouseLeave);
             // 
             // pbVendedor2
@@ -142,10 +146,21 @@
             // 
             // pnlMdi
             // 
+            this.pnlMdi.Controls.Add(this.pictureBox2);
             this.pnlMdi.Location = new System.Drawing.Point(12, 203);
             this.pnlMdi.Name = "pnlMdi";
             this.pnlMdi.Size = new System.Drawing.Size(876, 501);
             this.pnlMdi.TabIndex = 12;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(139, 117);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(598, 97);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // Prueba
             // 
@@ -178,6 +193,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbInmueble2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbInteresado2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbVendedor2)).EndInit();
+            this.pnlMdi.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -193,5 +210,6 @@
         private System.Windows.Forms.PictureBox pbInteresado2;
         private System.Windows.Forms.PictureBox pbVendedor2;
         private System.Windows.Forms.Panel pnlMdi;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
