@@ -23,7 +23,8 @@ namespace InmobiliariaForms
 
         private void btGuardar_Click(object sender, EventArgs e)
         {
-            if (ValidarCamposObligatorios())
+            string errores = ValidarCamposObligatorios();
+            if (errores == string.Empty)
             {
 
                 Inmueble inmueble = new Inmueble();
@@ -81,19 +82,24 @@ namespace InmobiliariaForms
                     MessageBox.Show(ex.Message);
                 }
             }
+            else
+            {
+                MessageBox.Show(errores, "Error de Validación");
+            }
         }
 
-        private bool ValidarCamposObligatorios()
+        private string ValidarCamposObligatorios()
         {
-            if (cbTipoInmueble == null)
-            {
-                return false;
-            }
-            if (true)
-            {
+            if (cbTipoInmueble.SelectedItem == null)
+                return "Seleccione un Tipo de Inmueble por favor";
+            if (cbCargadoPor.SelectedItem == null)
+                return "Seleccione un Vendedor por favor";
+            if (cbMoneda.SelectedItem == null)
+                return "Seleccione una moneda por favor";
+            if (cbTipoOperacion.SelectedItem == null)
+                return "Seleccione un Tipo de Operación por favor";
 
-            }
-            return true;
+            return string.Empty;
         }
         
         private void frmInmueble_Load(object sender, EventArgs e)
@@ -110,13 +116,13 @@ namespace InmobiliariaForms
                 cbMoneda.SelectedItem = null;
                 //ToDo: Fabri
                 //No anda este llamado al ws
-                /*Service ws = new Service();
+                Service ws = new Service();
                 //Esta lista la hago global para poder accederla
                 vendedores = ws.GetVendedores().ToList();
                 cbCargadoPor.DataSource = vendedores;
                 cbCargadoPor.DisplayMember = "Nombre";
                 cbCargadoPor.ValueMember = "Id";
-                //cbCargadoPor.SelectedItem = null; */
+                //cbCargadoPor.SelectedItem = null;
 
                 if (Inmueble != null)
                 {
@@ -160,6 +166,11 @@ namespace InmobiliariaForms
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void btEliminar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
