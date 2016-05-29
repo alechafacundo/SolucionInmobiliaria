@@ -23,6 +23,7 @@ namespace InmobiliariaForms
         frmBuscarInteresado frmBuscarInteresado;
         frmVendedor frmVendedor;
         frmBuscarVendedor frmBuscarVendedor;
+        Inmueble Inmueble;
 
         Vendedor Vendedor { get; set; }
 
@@ -124,16 +125,16 @@ namespace InmobiliariaForms
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            if (frmInmueble == null || frmInmueble.IsDisposed)
-                frmInmueble = new frmInmueble();
+            if (Inmueble == null || Inmueble.IsDisposed)
+                Inmueble = new Inmueble();
 
-            frmInmueble.MdiParent = this;
-            frmInmueble.BringToFront();
-            frmInmueble.StartPosition = FormStartPosition.Manual;
+            Inmueble.MdiParent = this;
+            Inmueble.BringToFront();
+            Inmueble.StartPosition = FormStartPosition.Manual;
 
             //int width = this.Controls.Find("netBarControl1", true)[0].Width;
-            frmInmueble.Location = new Point(121 , 275);
-            frmInmueble.Show();
+            Inmueble.Location = new Point(121 , 275);
+            Inmueble.Show();
         }
 
         private void pbInmueble1_MouseHover(object sender, EventArgs e)
