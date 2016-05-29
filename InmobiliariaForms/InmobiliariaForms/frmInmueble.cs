@@ -143,6 +143,7 @@ namespace InmobiliariaForms
 
                 if (Inmueble != null)
                 {
+                    btEliminar.Visible = true;
                     cbTipoInmueble.SelectedIndex = (int)Inmueble.Tipo;
                     cbTipoOperacion.SelectedIndex = (int)Inmueble.Operacion;
 
