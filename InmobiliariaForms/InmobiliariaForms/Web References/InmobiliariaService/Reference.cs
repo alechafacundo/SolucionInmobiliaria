@@ -773,6 +773,8 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         private string passwordField;
         
+        private string fullNameField;
+        
         /// <remarks/>
         public int Id {
             get {
@@ -860,6 +862,16 @@ namespace InmobiliariaForms.InmobiliariaService {
             }
             set {
                 this.passwordField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string FullName {
+            get {
+                return this.fullNameField;
+            }
+            set {
+                this.fullNameField = value;
             }
         }
     }

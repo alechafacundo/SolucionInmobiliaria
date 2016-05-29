@@ -120,7 +120,7 @@ namespace InmobiliariaForms
                 //Esta lista la hago global para poder accederla
                 vendedores = ws.GetVendedores().ToList();
                 cbCargadoPor.DataSource = vendedores;
-                cbCargadoPor.DisplayMember = "Nombre";
+                cbCargadoPor.DisplayMember = "FullName";
                 cbCargadoPor.ValueMember = "Id";
                 //cbCargadoPor.SelectedItem = null;
 
