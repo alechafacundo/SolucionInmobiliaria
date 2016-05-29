@@ -124,6 +124,7 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper.cs" />
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -22,7 +22,6 @@ namespace InmobiliariaForms
         private void frmVendedor_Load(object sender, EventArgs e)
         {
             try
-
             {
                 if (Vendedor != null)
                 {
@@ -38,8 +37,8 @@ namespace InmobiliariaForms
                 }
             }
             catch (Exception ex)
-            {  //ToDo: Fabri
-                //Modulo de notificaciones
+            {
+                Helper.EnviarNotificacion(ex);
                 throw;
             }
 
@@ -47,45 +46,52 @@ namespace InmobiliariaForms
 
         private void btGuardar_Click(object sender, EventArgs e)
         {
-            if (ValidarCampos())
+            try
             {
-                Vendedor vendedor = new Vendedor();
-                vendedor.Nombre = txNombre.Text;
-                vendedor.Apellido = txApellido.Text;
-                vendedor.DNI = txDNI.Text;
-                vendedor.Legajo = txLegajo.Text;
-                vendedor.Telefono = txTelefono.Text;
-                vendedor.Celular = txCelular.Text;
-                vendedor.Email = txEmail.Text;
-                vendedor.Password = txPassword.Text;
-
-                try
+                if (ValidarCampos())
                 {
+                    Vendedor vendedor = new Vendedor();
+                    vendedor.Nombre = txNombre.Text;
+                    vendedor.Apellido = txApellido.Text;
+                    vendedor.DNI = txDNI.Text;
+                    vendedor.Legajo = txLegajo.Text;
+                    vendedor.Telefono = txTelefono.Text;
+                    vendedor.Celular = txCelular.Text;
+                    vendedor.Email = txEmail.Text;
+                    vendedor.Password = txPassword.Text;
                     Service ws = new Service();
                     ws.GuardarVendedor(vendedor);
                     MessageBox.Show("Vendedor guardado correctamente!");
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
             }
-           
+            catch (Exception ex)
+            {
+                Helper.EnviarNotificacion(ex);
+                MessageBox.Show(ex.Message);
+            }
+
         }
         private bool ValidarCampos()
         {
-            if (txApellido.Text == "")
+            try
             {
-                return false;
+                if (txApellido.Text == "")
+                {
+                    return false;
+                }
+                //Esta es otra manera que mira si es vacio, es nullo, o es un espacio blanco, es como una manera mas cheta de hacer lo mismo que de arriba.
+                if (string.IsNullOrEmpty(txDNI.Text))
+                {
+                    return false;
+                }
+                return true;
             }
-            //Esta es otra manera que mira si es vacio, es nullo, o es un espacio blanco, es como una manera mas cheta de hacer lo mismo que de arriba.
-            if (string.IsNullOrEmpty(txDNI.Text))
+            catch (Exception)
             {
-                return false;
+                throw;
             }
-            return true;
         }
 
         private void btCancelar_Click(object sender, EventArgs e)

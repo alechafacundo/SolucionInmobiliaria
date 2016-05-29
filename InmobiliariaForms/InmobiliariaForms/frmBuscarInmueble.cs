@@ -20,41 +20,48 @@ namespace InmobiliariaForms
 
         private void btBuscar_Click(object sender, EventArgs e)
         {
-            Inmueble inmueble = new Inmueble();
+            try
+            {
+                Inmueble inmueble = new Inmueble();
 
-            eTipoInmueble tipoInmueble;
-            Enum.TryParse(cbTipoInmueble.SelectedValue.ToString(), out tipoInmueble);
-            inmueble.Tipo = (int)tipoInmueble;
+                eTipoInmueble tipoInmueble;
+                Enum.TryParse(cbTipoInmueble.SelectedValue.ToString(), out tipoInmueble);
+                inmueble.Tipo = (int)tipoInmueble;
 
-            eTipoOperacion tipoOperacion;
-            Enum.TryParse(cbTipoOperacion.SelectedValue.ToString(), out tipoOperacion);
-            inmueble.Operacion = (int)tipoOperacion;
+                eTipoOperacion tipoOperacion;
+                Enum.TryParse(cbTipoOperacion.SelectedValue.ToString(), out tipoOperacion);
+                inmueble.Operacion = (int)tipoOperacion;
 
-            eMoneda tipoMoneda;
-            Enum.TryParse(cbMoneda.SelectedValue.ToString(), out tipoMoneda);
-            inmueble.Moneda = (int)tipoMoneda;
+                eMoneda tipoMoneda;
+                Enum.TryParse(cbMoneda.SelectedValue.ToString(), out tipoMoneda);
+                inmueble.Moneda = (int)tipoMoneda;
 
-            inmueble.Fecha = dateTimeFecha.Value;
-            inmueble.Localidad = txLocalidad.Text.ToUpperInvariant();
-            inmueble.Barrio = txBarrio.Text.ToUpperInvariant();
-            inmueble.Dormitorios = txDorm.Text.ToUpperInvariant();
-            inmueble.Patio = txPatio.Text.ToUpperInvariant();
-            inmueble.Baños = txBaño.Text.ToUpperInvariant();
-            inmueble.Garage = txGarage.Text.ToUpperInvariant();
-            inmueble.Comedor = txComedor.Text.ToUpperInvariant();
+                inmueble.Fecha = dateTimeFecha.Value;
+                inmueble.Localidad = txLocalidad.Text.ToUpperInvariant();
+                inmueble.Barrio = txBarrio.Text.ToUpperInvariant();
+                inmueble.Dormitorios = txDorm.Text.ToUpperInvariant();
+                inmueble.Patio = txPatio.Text.ToUpperInvariant();
+                inmueble.Baños = txBaño.Text.ToUpperInvariant();
+                inmueble.Garage = txGarage.Text.ToUpperInvariant();
+                inmueble.Comedor = txComedor.Text.ToUpperInvariant();
 
-            decimal? precioDesde = null;
-            if (numPrecioDesde.Value != 0)
-                precioDesde = numPrecioDesde.Value;
+                decimal? precioDesde = null;
+                if (numPrecioDesde.Value != 0)
+                    precioDesde = numPrecioDesde.Value;
 
-            decimal? precioHasta = null;
-            if (numPrecioHasta.Value != 0)
-                precioHasta = numPrecioHasta.Value;
+                decimal? precioHasta = null;
+                if (numPrecioHasta.Value != 0)
+                    precioHasta = numPrecioHasta.Value;
 
-            Service ws = new Service();
-            List<Inmueble> inmuebles = ws.BuscarInmuebles(inmueble, precioDesde, precioHasta).ToList();
-            gvResultado.DataSource = inmuebles;
-            
+                Service ws = new Service();
+                List<Inmueble> inmuebles = ws.BuscarInmuebles(inmueble, precioDesde, precioHasta).ToList();
+                gvResultado.DataSource = inmuebles;
+            }
+            catch (Exception ex)
+            {
+                Helper.EnviarNotificacion(ex);
+                throw;
+            }
         }
 
         private void frmBuscarInmueble_Load(object sender, EventArgs e)
@@ -74,8 +81,7 @@ namespace InmobiliariaForms
             }
             catch (Exception ex)
             {
-                //ToDo: Fabri
-                //Modulo de notificaciones
+                Helper.EnviarNotificacion(ex);
                 throw;
             }
         }

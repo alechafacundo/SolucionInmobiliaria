@@ -24,83 +24,94 @@ namespace InmobiliariaForms
 
         private void btGuardar_Click(object sender, EventArgs e)
         {
-            string errores = ValidarCamposObligatorios();
-            if (errores == string.Empty)
+            try
             {
-
-                Inmueble inmueble = new Inmueble();
-                eTipoInmueble tipoInmueble;
-                Enum.TryParse<eTipoInmueble>(cbTipoInmueble.SelectedValue.ToString(), out tipoInmueble);
-                inmueble.Tipo = (int)tipoInmueble;
-
-                eTipoOperacion tipoOperacion;
-                Enum.TryParse<eTipoOperacion>(cbTipoOperacion.SelectedValue.ToString(), out tipoOperacion);
-                inmueble.Operacion = (int)tipoOperacion;
-
-                eMoneda tipoMoneda;
-                Enum.TryParse<eMoneda>(cbMoneda.SelectedValue.ToString(), out tipoMoneda);
-                inmueble.Moneda = (int)tipoMoneda;
-
-                
-
-                inmueble.Fecha = dateTimeFecha.Value;
-                inmueble.Localidad = txLocalidad.Text.ToUpperInvariant();
-                inmueble.Calle = txCalle.Text.ToUpperInvariant();
-                inmueble.Barrio = txBarrio.Text.ToUpperInvariant();
-                inmueble.Numero = txNumero.Text.ToUpperInvariant();
-                inmueble.Piso = txPiso.Text.ToUpperInvariant();
-                inmueble.Departamento = txDepto.Text.ToUpperInvariant();
-                inmueble.EntreCalles = txEntreCalles.Text.ToUpperInvariant();
-                inmueble.Metros2Terreno = txMtsTerreno.Text.ToUpperInvariant();
-                inmueble.SupCubierta = txSupCubierta.Text.ToUpperInvariant();
-                inmueble.ValorMetro2 = txValorMts.Text.ToUpperInvariant();
-                inmueble.Observaciones = txObservaciones.Text.ToUpperInvariant();
-                inmueble.Dormitorios = txDorm.Text.ToUpperInvariant();
-                inmueble.Patio = txPatio.Text.ToUpperInvariant();
-                inmueble.Baños = txBaño.Text.ToUpperInvariant();
-                inmueble.Garage = txGarage.Text.ToUpperInvariant();
-                inmueble.Comedor = txComedor.Text.ToUpperInvariant();
-                inmueble.OtrasDependencias = txOtras.Text.ToUpperInvariant();
-                inmueble.Contacto = txContacto.Text.ToUpperInvariant();
-                inmueble.Referencia = txReferencia.Text.ToUpperInvariant();
-                inmueble.Precio = numPrecio.Value;
-                inmueble.CargadoPor = ((Vendedor)cbCargadoPor.SelectedItem).Id;
-                inmueble.Cocina = txCocina.Text.ToUpperInvariant();
-                inmueble.Otros = txOtras.Text.ToUpperInvariant();
-
-                //Ahora que ya tenes el inmueble guardado lo tenes que mandar al web service para que lo guarde en la base de datos:
-                try
+                string errores = ValidarCamposObligatorios();
+                if (errores == string.Empty)
                 {
+
+                    Inmueble inmueble = new Inmueble();
+                    eTipoInmueble tipoInmueble;
+                    Enum.TryParse<eTipoInmueble>(cbTipoInmueble.SelectedValue.ToString(), out tipoInmueble);
+                    inmueble.Tipo = (int)tipoInmueble;
+
+                    eTipoOperacion tipoOperacion;
+                    Enum.TryParse<eTipoOperacion>(cbTipoOperacion.SelectedValue.ToString(), out tipoOperacion);
+                    inmueble.Operacion = (int)tipoOperacion;
+
+                    eMoneda tipoMoneda;
+                    Enum.TryParse<eMoneda>(cbMoneda.SelectedValue.ToString(), out tipoMoneda);
+                    inmueble.Moneda = (int)tipoMoneda;
+
+
+
+                    inmueble.Fecha = dateTimeFecha.Value;
+                    inmueble.Localidad = txLocalidad.Text.ToUpperInvariant();
+                    inmueble.Calle = txCalle.Text.ToUpperInvariant();
+                    inmueble.Barrio = txBarrio.Text.ToUpperInvariant();
+                    inmueble.Numero = txNumero.Text.ToUpperInvariant();
+                    inmueble.Piso = txPiso.Text.ToUpperInvariant();
+                    inmueble.Departamento = txDepto.Text.ToUpperInvariant();
+                    inmueble.EntreCalles = txEntreCalles.Text.ToUpperInvariant();
+                    inmueble.Metros2Terreno = txMtsTerreno.Text.ToUpperInvariant();
+                    inmueble.SupCubierta = txSupCubierta.Text.ToUpperInvariant();
+                    inmueble.ValorMetro2 = txValorMts.Text.ToUpperInvariant();
+                    inmueble.Observaciones = txObservaciones.Text.ToUpperInvariant();
+                    inmueble.Dormitorios = txDorm.Text.ToUpperInvariant();
+                    inmueble.Patio = txPatio.Text.ToUpperInvariant();
+                    inmueble.Baños = txBaño.Text.ToUpperInvariant();
+                    inmueble.Garage = txGarage.Text.ToUpperInvariant();
+                    inmueble.Comedor = txComedor.Text.ToUpperInvariant();
+                    inmueble.OtrasDependencias = txOtras.Text.ToUpperInvariant();
+                    inmueble.Contacto = txContacto.Text.ToUpperInvariant();
+                    inmueble.Referencia = txReferencia.Text.ToUpperInvariant();
+                    inmueble.Precio = numPrecio.Value;
+                    inmueble.CargadoPor = ((Vendedor)cbCargadoPor.SelectedItem).Id;
+                    inmueble.Cocina = txCocina.Text.ToUpperInvariant();
+                    inmueble.Otros = txOtras.Text.ToUpperInvariant();
+
+                    //Ahora que ya tenes el inmueble guardado lo tenes que mandar al web service para que lo guarde en la base de datos:
+
                     Service ws = new Service();
                     ws.GuardarInmueble(inmueble);
                     MessageBox.Show("Inmueble guardado correctamente");
                     this.DialogResult = DialogResult.OK;
                     this.Close();
 
+
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(errores, "Error de Validación");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show(errores, "Error de Validación");
+                Helper.EnviarNotificacion(ex);
+                throw ex;
             }
+            
         }
 
         private string ValidarCamposObligatorios()
         {
-            if (cbTipoInmueble.SelectedItem == null)
-                return "Seleccione un Tipo de Inmueble por favor";
-            if (cbCargadoPor.SelectedItem == null)
-                return "Seleccione un Vendedor por favor";
-            if (cbMoneda.SelectedItem == null)
-                return "Seleccione una moneda por favor";
-            if (cbTipoOperacion.SelectedItem == null)
-                return "Seleccione un Tipo de Operación por favor";
+            try
+            {
+                if (cbTipoInmueble.SelectedItem == null)
+                    return "Seleccione un Tipo de Inmueble por favor";
+                if (cbCargadoPor.SelectedItem == null)
+                    return "Seleccione un Vendedor por favor";
+                if (cbMoneda.SelectedItem == null)
+                    return "Seleccione una moneda por favor";
+                if (cbTipoOperacion.SelectedItem == null)
+                    return "Seleccione un Tipo de Operación por favor";
 
-            return string.Empty;
+                return string.Empty;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
         
         private void frmInmueble_Load(object sender, EventArgs e)
@@ -115,11 +126,11 @@ namespace InmobiliariaForms
 
                 cbMoneda.DataSource = Enum.GetNames(typeof(eMoneda));
                 cbMoneda.SelectedItem = null;
-                //ToDo: Fabri
-                //No anda este llamado al ws
+                //ToDo: Facu
+                //Probalo ahora con el servicio corriendo
                 Service ws = new Service();
                 //Esta lista la hago global para poder accederla
-               // vendedores = ws.GetVendedores().ToList();
+                vendedores = ws.GetVendedores().ToList();
                 cbCargadoPor.DataSource = vendedores;
                 cbCargadoPor.DisplayMember = "FullName";
                 cbCargadoPor.ValueMember = "Id";
@@ -162,8 +173,7 @@ namespace InmobiliariaForms
             }
             catch (Exception ex)
             {
-                //ToDo: Fabri
-                //Modulo de notificaciones
+                Helper.EnviarNotificacion(ex);
                 throw;
             }
         }

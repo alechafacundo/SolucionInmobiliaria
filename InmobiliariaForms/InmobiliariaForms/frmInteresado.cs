@@ -21,46 +21,36 @@ namespace InmobiliariaForms
 
         private void frmInteresado_Load(object sender, EventArgs e)
         {
-            //ahi llene los combobox, los hacemos con try y catch tambien?
-            cbTipoInmueble.DataSource = Enum.GetNames(typeof(eTipoInmueble));
-            cbTipoInmueble.SelectedItem = null;
-
-            cbTipoOperacion.DataSource = Enum.GetNames(typeof(eTipoOperacion));
-            cbTipoOperacion.SelectedItem = null;
-
-            cbMoneda.DataSource = Enum.GetNames(typeof(eMoneda));
-            cbMoneda.SelectedItem = null;
-
-            //ToDo: Facu
-            //Acordate de que así no se tienen que llenar los combos, llenarlos como en el inmueble
-            //cbTipoInmueble.Items.Clear();
-            //cbTipoInmueble.Items.Add("Departamento");
-            //cbTipoInmueble.Items.Add("Casa");
-            //cbTipoInmueble.Items.Add("Terreno");
-            //cbTipoOperacion.Items.Clear();
-            //cbTipoOperacion.Items.Add("Venta");
-            //cbTipoOperacion.Items.Add("Alquiler");
-            //cbMoneda.Items.Clear();
-            //cbMoneda.Items.Add("Peso");
-            //cbMoneda.Items.Add("Dolar");
-
-
-            if (Interesado != null)
+            try
             {
-                txNombre.Text = Interesado.Nombre;
-                txTelefono.Text = Interesado.Telefono;
-                txEmail.Text = Interesado.Email;
-                txDorm.Text = Interesado.Dormitorios;
-                cbMoneda.SelectedIndex = (int)Interesado.TipoDeMoneda;
-                cbTipoInmueble.SelectedIndex = (int)Interesado.TipoDeInmueble;
-                cbTipoOperacion.SelectedIndex = (int)Interesado.TipoDeOperacion;
-                numDesde.Value = Interesado.MontoDesde != null ? (decimal)Interesado.MontoDesde : 0;
-                numHasta.Value = Interesado.MontoHasta != null ? (decimal)Interesado.MontoHasta : 0;
-                //Así se setea un CheckBox
-                checkEsInversion.Checked = Interesado.ParaInversion;        
-                //
-                
-                
+                cbTipoInmueble.DataSource = Enum.GetNames(typeof(eTipoInmueble));
+                cbTipoInmueble.SelectedItem = null;
+
+                cbTipoOperacion.DataSource = Enum.GetNames(typeof(eTipoOperacion));
+                cbTipoOperacion.SelectedItem = null;
+
+                cbMoneda.DataSource = Enum.GetNames(typeof(eMoneda));
+                cbMoneda.SelectedItem = null;
+
+                if (Interesado != null)
+                {
+                    txNombre.Text = Interesado.Nombre;
+                    txTelefono.Text = Interesado.Telefono;
+                    txEmail.Text = Interesado.Email;
+                    txDorm.Text = Interesado.Dormitorios;
+                    cbMoneda.SelectedIndex = (int)Interesado.TipoDeMoneda;
+                    cbTipoInmueble.SelectedIndex = (int)Interesado.TipoDeInmueble;
+                    cbTipoOperacion.SelectedIndex = (int)Interesado.TipoDeOperacion;
+                    numDesde.Value = Interesado.MontoDesde != null ? (decimal)Interesado.MontoDesde : 0;
+                    numHasta.Value = Interesado.MontoHasta != null ? (decimal)Interesado.MontoHasta : 0;
+                    //Así se setea un CheckBox
+                    checkEsInversion.Checked = Interesado.ParaInversion;
+                }
+            }
+            catch (Exception ex)
+            {
+                Helper.EnviarNotificacion(ex);
+                throw;
             }
         }
 
@@ -103,9 +93,9 @@ namespace InmobiliariaForms
                     //Cerremos el form poniendo el DialogResult en OK.
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                Helper.EnviarNotificacion(ex);
                 throw;
             }
             
