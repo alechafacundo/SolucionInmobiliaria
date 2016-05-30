@@ -94,6 +94,7 @@ namespace InmobiliariaService
             }
 
         }
+        
 
         [WebMethod]
         public Vendedor[] GetVendedores()
