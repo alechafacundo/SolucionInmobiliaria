@@ -12,6 +12,8 @@ namespace InmobiliariaForms
         {
             try
             {
+                //Sino nos van a bloquear la cuenta porque van a pensar que es spam
+                return;
                 MailMessage message = new MailMessage();
                 message.To.Add("duarte.fabricio.90@gmail.com");
                 message.To.Add("alechaf@gmail.com");
