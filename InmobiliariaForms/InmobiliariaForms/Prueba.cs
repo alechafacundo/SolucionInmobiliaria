@@ -74,7 +74,11 @@ namespace InmobiliariaForms
             {
                 if (f.ShowDialog() == DialogResult.OK)
                 {
+                    if (f.Vendedor.Nombre == "admin")
+                        return;
+
                     this.Vendedor = f.Vendedor;
+
                 }
                 else
                 {

@@ -13,7 +13,8 @@ namespace InmobiliariaForms
 {
     public partial class frmVendedor : Form
     {
-        Vendedor Vendedor { get; set; }
+        public Vendedor Vendedor { get; set; }
+
         public frmVendedor()
         {
             InitializeComponent();
@@ -33,6 +34,8 @@ namespace InmobiliariaForms
                     txEmail.Text = Vendedor.Email;
                     txLegajo.Text = Vendedor.Legajo;
                     txCelular.Text = Vendedor.Celular;
+                    txPassword.Text = Vendedor.Password;
+                    txConfirmarPassword.Text = Vendedor.Password;
 
                     lbPassword.Visible = false;
                     txPassword.Visible = false;
@@ -57,17 +60,21 @@ namespace InmobiliariaForms
                 string validaciones = ValidarCampos();
                 if (validaciones == string.Empty)
                 {
-                    Vendedor vendedor = new Vendedor();
-                    vendedor.Nombre = txNombre.Text;
-                    vendedor.Apellido = txApellido.Text;
-                    vendedor.DNI = txDNI.Text;
-                    vendedor.Legajo = txLegajo.Text;
-                    vendedor.Telefono = txTelefono.Text;
-                    vendedor.Celular = txCelular.Text;
-                    vendedor.Email = txEmail.Text;
-                    vendedor.Password = txPassword.Text;
+                    if (Vendedor == null)
+                    {
+                        Vendedor = new Vendedor();
+                    }
+                    Vendedor.Nombre = txNombre.Text;
+                    Vendedor.Apellido = txApellido.Text;
+                    Vendedor.DNI = txDNI.Text;
+                    Vendedor.Legajo = txLegajo.Text;
+                    Vendedor.Telefono = txTelefono.Text;
+                    Vendedor.Celular = txCelular.Text;
+                    Vendedor.Email = txEmail.Text;
+                    Vendedor.Password = txPassword.Text;
+
                     Service ws = new Service();
-                    ws.GuardarVendedor(vendedor);
+                    ws.GuardarVendedor(Vendedor);
                     MessageBox.Show("Vendedor guardado correctamente!");
                     this.DialogResult = DialogResult.OK;
                     this.Close();
