@@ -176,7 +176,7 @@
             this.cbTipoOperacion.ImeMode = System.Windows.Forms.ImeMode.On;
             this.cbTipoOperacion.Location = new System.Drawing.Point(278, 21);
             this.cbTipoOperacion.Name = "cbTipoOperacion";
-            this.cbTipoOperacion.Size = new System.Drawing.Size(131, 22);
+            this.cbTipoOperacion.Size = new System.Drawing.Size(118, 22);
             this.cbTipoOperacion.TabIndex = 45;
             // 
             // txPatio
@@ -339,15 +339,15 @@
             // 
             // dateTimeFecha
             // 
-            this.dateTimeFecha.Location = new System.Drawing.Point(461, 21);
+            this.dateTimeFecha.Location = new System.Drawing.Point(451, 21);
             this.dateTimeFecha.Name = "dateTimeFecha";
-            this.dateTimeFecha.Size = new System.Drawing.Size(149, 22);
+            this.dateTimeFecha.Size = new System.Drawing.Size(159, 22);
             this.dateTimeFecha.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(415, 24);
+            this.label3.Location = new System.Drawing.Point(402, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 14);
             this.label3.TabIndex = 4;
@@ -392,7 +392,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(632, 428);
+            this.ClientSize = new System.Drawing.Size(632, 424);
             this.Controls.Add(this.gvResultado);
             this.Controls.Add(this.g);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

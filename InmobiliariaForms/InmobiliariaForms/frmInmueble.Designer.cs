@@ -145,28 +145,28 @@
             this.g.Controls.Add(this.cbTipoInmueble);
             this.g.Controls.Add(this.label1);
             this.g.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.g.Location = new System.Drawing.Point(2, 3);
-            this.g.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.g.Location = new System.Drawing.Point(7, 3);
+            this.g.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.g.Name = "g";
-            this.g.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.g.Size = new System.Drawing.Size(628, 375);
+            this.g.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.g.Size = new System.Drawing.Size(612, 316);
             this.g.TabIndex = 1;
             this.g.TabStop = false;
             // 
             // txCocina
             // 
             this.txCocina.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txCocina.Location = new System.Drawing.Point(63, 268);
-            this.txCocina.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txCocina.Location = new System.Drawing.Point(65, 223);
+            this.txCocina.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txCocina.Name = "txCocina";
-            this.txCocina.Size = new System.Drawing.Size(100, 22);
+            this.txCocina.Size = new System.Drawing.Size(88, 22);
             this.txCocina.TabIndex = 46;
             // 
             // label26
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(13, 271);
+            this.label26.Location = new System.Drawing.Point(15, 226);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(48, 14);
             this.label26.TabIndex = 45;
@@ -177,10 +177,10 @@
             this.cbTipoOperacion.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTipoOperacion.FormattingEnabled = true;
             this.cbTipoOperacion.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.cbTipoOperacion.Location = new System.Drawing.Point(278, 21);
-            this.cbTipoOperacion.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.cbTipoOperacion.Location = new System.Drawing.Point(275, 17);
+            this.cbTipoOperacion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbTipoOperacion.Name = "cbTipoOperacion";
-            this.cbTipoOperacion.Size = new System.Drawing.Size(131, 22);
+            this.cbTipoOperacion.Size = new System.Drawing.Size(115, 22);
             this.cbTipoOperacion.TabIndex = 2;
             // 
             // groupBox1
@@ -192,27 +192,27 @@
             this.groupBox1.Controls.Add(this.cbCargadoPor);
             this.groupBox1.Controls.Add(this.label23);
             this.groupBox1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(11, 297);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.groupBox1.Location = new System.Drawing.Point(4, 253);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.groupBox1.Size = new System.Drawing.Size(607, 67);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Size = new System.Drawing.Size(602, 59);
             this.groupBox1.TabIndex = 44;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Interno";
             // 
             // txReferencia
             // 
-            this.txReferencia.Location = new System.Drawing.Point(459, 27);
-            this.txReferencia.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txReferencia.Location = new System.Drawing.Point(474, 24);
+            this.txReferencia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txReferencia.Name = "txReferencia";
-            this.txReferencia.Size = new System.Drawing.Size(124, 22);
+            this.txReferencia.Size = new System.Drawing.Size(122, 22);
             this.txReferencia.TabIndex = 25;
             // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(391, 30);
+            this.label25.Location = new System.Drawing.Point(407, 28);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(67, 14);
             this.label25.TabIndex = 4;
@@ -220,16 +220,16 @@
             // 
             // txContacto
             // 
-            this.txContacto.Location = new System.Drawing.Point(271, 27);
-            this.txContacto.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txContacto.Location = new System.Drawing.Point(291, 23);
+            this.txContacto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txContacto.Name = "txContacto";
-            this.txContacto.Size = new System.Drawing.Size(114, 22);
+            this.txContacto.Size = new System.Drawing.Size(110, 22);
             this.txContacto.TabIndex = 24;
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(212, 30);
+            this.label24.Location = new System.Drawing.Point(225, 28);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(60, 14);
             this.label24.TabIndex = 2;
@@ -238,16 +238,16 @@
             // cbCargadoPor
             // 
             this.cbCargadoPor.FormattingEnabled = true;
-            this.cbCargadoPor.Location = new System.Drawing.Point(90, 27);
-            this.cbCargadoPor.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.cbCargadoPor.Location = new System.Drawing.Point(93, 23);
+            this.cbCargadoPor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbCargadoPor.Name = "cbCargadoPor";
-            this.cbCargadoPor.Size = new System.Drawing.Size(116, 22);
+            this.cbCargadoPor.Size = new System.Drawing.Size(126, 22);
             this.cbCargadoPor.TabIndex = 23;
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(8, 32);
+            this.label23.Location = new System.Drawing.Point(7, 28);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(78, 14);
             this.label23.TabIndex = 0;
@@ -256,72 +256,72 @@
             // txOtras
             // 
             this.txOtras.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txOtras.Location = new System.Drawing.Point(510, 232);
-            this.txOtras.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txOtras.Location = new System.Drawing.Point(509, 193);
+            this.txOtras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txOtras.Name = "txOtras";
-            this.txOtras.Size = new System.Drawing.Size(104, 22);
+            this.txOtras.Size = new System.Drawing.Size(92, 22);
             this.txOtras.TabIndex = 22;
             // 
             // txPatio
             // 
             this.txPatio.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txPatio.Location = new System.Drawing.Point(428, 232);
-            this.txPatio.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txPatio.Location = new System.Drawing.Point(430, 193);
+            this.txPatio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txPatio.Name = "txPatio";
-            this.txPatio.Size = new System.Drawing.Size(38, 22);
+            this.txPatio.Size = new System.Drawing.Size(34, 22);
             this.txPatio.TabIndex = 21;
             // 
             // txGarage
             // 
             this.txGarage.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txGarage.Location = new System.Drawing.Point(345, 232);
-            this.txGarage.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txGarage.Location = new System.Drawing.Point(345, 193);
+            this.txGarage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txGarage.Name = "txGarage";
-            this.txGarage.Size = new System.Drawing.Size(38, 22);
+            this.txGarage.Size = new System.Drawing.Size(34, 22);
             this.txGarage.TabIndex = 20;
             // 
             // txComedor
             // 
             this.txComedor.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txComedor.Location = new System.Drawing.Point(250, 232);
-            this.txComedor.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txComedor.Location = new System.Drawing.Point(253, 193);
+            this.txComedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txComedor.Name = "txComedor";
-            this.txComedor.Size = new System.Drawing.Size(38, 22);
+            this.txComedor.Size = new System.Drawing.Size(34, 22);
             this.txComedor.TabIndex = 19;
             // 
             // txBaño
             // 
             this.txBaño.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txBaño.Location = new System.Drawing.Point(148, 232);
-            this.txBaño.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txBaño.Location = new System.Drawing.Point(148, 193);
+            this.txBaño.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txBaño.Name = "txBaño";
-            this.txBaño.Size = new System.Drawing.Size(38, 22);
+            this.txBaño.Size = new System.Drawing.Size(34, 22);
             this.txBaño.TabIndex = 18;
             // 
             // txDorm
             // 
             this.txDorm.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txDorm.Location = new System.Drawing.Point(63, 232);
-            this.txDorm.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txDorm.Location = new System.Drawing.Point(55, 193);
+            this.txDorm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txDorm.Name = "txDorm";
-            this.txDorm.Size = new System.Drawing.Size(38, 22);
+            this.txDorm.Size = new System.Drawing.Size(44, 22);
             this.txDorm.TabIndex = 17;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(472, 237);
+            this.label22.Location = new System.Drawing.Point(467, 196);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(36, 14);
+            this.label22.Size = new System.Drawing.Size(39, 14);
             this.label22.TabIndex = 37;
-            this.label22.Text = "Otros";
+            this.label22.Text = "Otros:";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(389, 237);
+            this.label21.Location = new System.Drawing.Point(385, 196);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(39, 14);
             this.label21.TabIndex = 36;
@@ -331,7 +331,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(294, 237);
+            this.label20.Location = new System.Drawing.Point(293, 196);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(49, 14);
             this.label20.TabIndex = 35;
@@ -341,7 +341,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(192, 237);
+            this.label19.Location = new System.Drawing.Point(188, 196);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(59, 14);
             this.label19.TabIndex = 34;
@@ -351,7 +351,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(107, 237);
+            this.label18.Location = new System.Drawing.Point(104, 196);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(39, 14);
             this.label18.TabIndex = 33;
@@ -361,7 +361,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(22, 237);
+            this.label17.Location = new System.Drawing.Point(15, 196);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(39, 14);
             this.label17.TabIndex = 32;
@@ -370,17 +370,17 @@
             // txObservaciones
             // 
             this.txObservaciones.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txObservaciones.Location = new System.Drawing.Point(288, 196);
-            this.txObservaciones.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txObservaciones.Location = new System.Drawing.Point(315, 163);
+            this.txObservaciones.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txObservaciones.Name = "txObservaciones";
-            this.txObservaciones.Size = new System.Drawing.Size(326, 22);
+            this.txObservaciones.Size = new System.Drawing.Size(286, 22);
             this.txObservaciones.TabIndex = 16;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(199, 199);
+            this.label16.Location = new System.Drawing.Point(217, 166);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(92, 14);
             this.label16.TabIndex = 30;
@@ -389,17 +389,17 @@
             // txValorMts
             // 
             this.txValorMts.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txValorMts.Location = new System.Drawing.Point(86, 194);
-            this.txValorMts.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txValorMts.Location = new System.Drawing.Point(102, 162);
+            this.txValorMts.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txValorMts.Name = "txValorMts";
-            this.txValorMts.Size = new System.Drawing.Size(100, 22);
+            this.txValorMts.Size = new System.Drawing.Size(109, 22);
             this.txValorMts.TabIndex = 15;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(7, 199);
+            this.label15.Location = new System.Drawing.Point(15, 166);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(81, 14);
             this.label15.TabIndex = 28;
@@ -408,10 +408,10 @@
             // txSupCubierta
             // 
             this.txSupCubierta.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txSupCubierta.Location = new System.Drawing.Point(524, 157);
-            this.txSupCubierta.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txSupCubierta.Location = new System.Drawing.Point(536, 133);
+            this.txSupCubierta.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txSupCubierta.Name = "txSupCubierta";
-            this.txSupCubierta.Size = new System.Drawing.Size(90, 22);
+            this.txSupCubierta.Size = new System.Drawing.Size(65, 22);
             this.txSupCubierta.TabIndex = 14;
             // 
             // label14
@@ -419,7 +419,7 @@
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(442, 161);
+            this.label14.Location = new System.Drawing.Point(447, 137);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(83, 14);
             this.label14.TabIndex = 26;
@@ -428,10 +428,10 @@
             // txMtsTerreno
             // 
             this.txMtsTerreno.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txMtsTerreno.Location = new System.Drawing.Point(371, 157);
-            this.txMtsTerreno.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txMtsTerreno.Location = new System.Drawing.Point(385, 133);
+            this.txMtsTerreno.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txMtsTerreno.Name = "txMtsTerreno";
-            this.txMtsTerreno.Size = new System.Drawing.Size(64, 22);
+            this.txMtsTerreno.Size = new System.Drawing.Size(56, 22);
             this.txMtsTerreno.TabIndex = 13;
             // 
             // label13
@@ -439,7 +439,7 @@
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(296, 161);
+            this.label13.Location = new System.Drawing.Point(302, 136);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(77, 14);
             this.label13.TabIndex = 24;
@@ -449,10 +449,10 @@
             // 
             this.cbMoneda.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMoneda.FormattingEnabled = true;
-            this.cbMoneda.Location = new System.Drawing.Point(239, 157);
-            this.cbMoneda.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.cbMoneda.Location = new System.Drawing.Point(236, 132);
+            this.cbMoneda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbMoneda.Name = "cbMoneda";
-            this.cbMoneda.Size = new System.Drawing.Size(50, 22);
+            this.cbMoneda.Size = new System.Drawing.Size(60, 22);
             this.cbMoneda.TabIndex = 12;
             // 
             // label12
@@ -460,7 +460,7 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(179, 161);
+            this.label12.Location = new System.Drawing.Point(176, 136);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(54, 14);
             this.label12.TabIndex = 22;
@@ -474,15 +474,15 @@
             0,
             0,
             0});
-            this.numPrecio.Location = new System.Drawing.Point(52, 157);
-            this.numPrecio.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.numPrecio.Location = new System.Drawing.Point(65, 132);
+            this.numPrecio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numPrecio.Maximum = new decimal(new int[] {
             1215752192,
             23,
             0,
             0});
             this.numPrecio.Name = "numPrecio";
-            this.numPrecio.Size = new System.Drawing.Size(120, 22);
+            this.numPrecio.Size = new System.Drawing.Size(105, 22);
             this.numPrecio.TabIndex = 11;
             this.numPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -490,7 +490,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(6, 161);
+            this.label11.Location = new System.Drawing.Point(15, 137);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(44, 14);
             this.label11.TabIndex = 20;
@@ -499,17 +499,17 @@
             // txEntreCalles
             // 
             this.txEntreCalles.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txEntreCalles.Location = new System.Drawing.Point(88, 124);
-            this.txEntreCalles.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txEntreCalles.Location = new System.Drawing.Point(90, 104);
+            this.txEntreCalles.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txEntreCalles.Name = "txEntreCalles";
-            this.txEntreCalles.Size = new System.Drawing.Size(526, 22);
+            this.txEntreCalles.Size = new System.Drawing.Size(511, 22);
             this.txEntreCalles.TabIndex = 10;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(11, 126);
+            this.label10.Location = new System.Drawing.Point(13, 108);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(77, 14);
             this.label10.TabIndex = 18;
@@ -518,35 +518,35 @@
             // txDepto
             // 
             this.txDepto.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txDepto.Location = new System.Drawing.Point(573, 89);
-            this.txDepto.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txDepto.Location = new System.Drawing.Point(565, 77);
+            this.txDepto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txDepto.Name = "txDepto";
-            this.txDepto.Size = new System.Drawing.Size(41, 22);
+            this.txDepto.Size = new System.Drawing.Size(36, 22);
             this.txDepto.TabIndex = 9;
             // 
             // txPiso
             // 
             this.txPiso.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txPiso.Location = new System.Drawing.Point(476, 89);
-            this.txPiso.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txPiso.Location = new System.Drawing.Point(470, 75);
+            this.txPiso.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txPiso.Name = "txPiso";
-            this.txPiso.Size = new System.Drawing.Size(46, 22);
+            this.txPiso.Size = new System.Drawing.Size(41, 22);
             this.txPiso.TabIndex = 8;
             // 
             // txNumero
             // 
             this.txNumero.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txNumero.Location = new System.Drawing.Point(382, 89);
-            this.txNumero.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txNumero.Location = new System.Drawing.Point(377, 75);
+            this.txNumero.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txNumero.Name = "txNumero";
-            this.txNumero.Size = new System.Drawing.Size(53, 22);
+            this.txNumero.Size = new System.Drawing.Size(47, 22);
             this.txNumero.TabIndex = 7;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(528, 92);
+            this.label9.Location = new System.Drawing.Point(517, 80);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(42, 14);
             this.label9.TabIndex = 14;
@@ -556,7 +556,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(441, 92);
+            this.label8.Location = new System.Drawing.Point(430, 80);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(34, 14);
             this.label8.TabIndex = 13;
@@ -567,7 +567,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(350, 92);
+            this.label7.Location = new System.Drawing.Point(344, 80);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(23, 14);
             this.label7.TabIndex = 12;
@@ -576,35 +576,35 @@
             // txCalle
             // 
             this.txCalle.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txCalle.Location = new System.Drawing.Point(47, 89);
-            this.txCalle.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txCalle.Location = new System.Drawing.Point(55, 75);
+            this.txCalle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txCalle.Name = "txCalle";
-            this.txCalle.Size = new System.Drawing.Size(286, 22);
+            this.txCalle.Size = new System.Drawing.Size(283, 22);
             this.txCalle.TabIndex = 6;
             // 
             // txBarrio
             // 
             this.txBarrio.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txBarrio.Location = new System.Drawing.Point(324, 55);
-            this.txBarrio.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txBarrio.Location = new System.Drawing.Point(347, 47);
+            this.txBarrio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txBarrio.Name = "txBarrio";
-            this.txBarrio.Size = new System.Drawing.Size(290, 22);
+            this.txBarrio.Size = new System.Drawing.Size(254, 22);
             this.txBarrio.TabIndex = 5;
             // 
             // txLocalidad
             // 
             this.txLocalidad.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txLocalidad.Location = new System.Drawing.Point(71, 55);
-            this.txLocalidad.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txLocalidad.Location = new System.Drawing.Point(82, 47);
+            this.txLocalidad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txLocalidad.Name = "txLocalidad";
-            this.txLocalidad.Size = new System.Drawing.Size(201, 22);
+            this.txLocalidad.Size = new System.Drawing.Size(208, 22);
             this.txLocalidad.TabIndex = 4;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(9, 95);
+            this.label6.Location = new System.Drawing.Point(12, 80);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 14);
             this.label6.TabIndex = 8;
@@ -614,7 +614,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(282, 63);
+            this.label5.Location = new System.Drawing.Point(298, 52);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 14);
             this.label5.TabIndex = 7;
@@ -624,7 +624,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(9, 60);
+            this.label4.Location = new System.Drawing.Point(12, 52);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 14);
             this.label4.TabIndex = 6;
@@ -633,17 +633,17 @@
             // dateTimeFecha
             // 
             this.dateTimeFecha.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimeFecha.Location = new System.Drawing.Point(461, 21);
-            this.dateTimeFecha.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.dateTimeFecha.Location = new System.Drawing.Point(446, 17);
+            this.dateTimeFecha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateTimeFecha.Name = "dateTimeFecha";
-            this.dateTimeFecha.Size = new System.Drawing.Size(153, 22);
+            this.dateTimeFecha.Size = new System.Drawing.Size(155, 22);
             this.dateTimeFecha.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(415, 29);
+            this.label3.Location = new System.Drawing.Point(402, 21);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 14);
             this.label3.TabIndex = 4;
@@ -652,17 +652,17 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(334, -82);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.comboBox2.Location = new System.Drawing.Point(292, -72);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 23);
+            this.comboBox2.Size = new System.Drawing.Size(106, 23);
             this.comboBox2.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(215, 29);
+            this.label2.Location = new System.Drawing.Point(206, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 14);
             this.label2.TabIndex = 2;
@@ -672,17 +672,17 @@
             // 
             this.cbTipoInmueble.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTipoInmueble.FormattingEnabled = true;
-            this.cbTipoInmueble.Location = new System.Drawing.Point(112, 21);
-            this.cbTipoInmueble.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.cbTipoInmueble.Location = new System.Drawing.Point(114, 18);
+            this.cbTipoInmueble.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbTipoInmueble.Name = "cbTipoInmueble";
-            this.cbTipoInmueble.Size = new System.Drawing.Size(101, 22);
+            this.cbTipoInmueble.Size = new System.Drawing.Size(89, 22);
             this.cbTipoInmueble.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(7, 29);
+            this.label1.Location = new System.Drawing.Point(12, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 14);
             this.label1.TabIndex = 0;
@@ -692,8 +692,8 @@
             // 
             this.btEliminar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btEliminar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEliminar.Location = new System.Drawing.Point(4, 388);
-            this.btEliminar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btEliminar.Location = new System.Drawing.Point(7, 323);
+            this.btEliminar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btEliminar.Name = "btEliminar";
             this.btEliminar.Size = new System.Drawing.Size(160, 31);
             this.btEliminar.TabIndex = 28;
@@ -706,8 +706,8 @@
             // 
             this.btCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btCancelar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCancelar.Location = new System.Drawing.Point(299, 388);
-            this.btCancelar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btCancelar.Location = new System.Drawing.Point(293, 323);
+            this.btCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(160, 31);
             this.btCancelar.TabIndex = 27;
@@ -719,8 +719,8 @@
             // 
             this.btGuardar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btGuardar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btGuardar.Location = new System.Drawing.Point(465, 388);
-            this.btGuardar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btGuardar.Location = new System.Drawing.Point(459, 323);
+            this.btGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btGuardar.Name = "btGuardar";
             this.btGuardar.Size = new System.Drawing.Size(160, 31);
             this.btGuardar.TabIndex = 26;
@@ -730,19 +730,19 @@
             // 
             // frmInmueble
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(632, 428);
+            this.ClientSize = new System.Drawing.Size(626, 359);
             this.Controls.Add(this.btGuardar);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btEliminar);
             this.Controls.Add(this.g);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmInmueble";
             this.Text = "Inmueble";
             this.Load += new System.EventHandler(this.frmInmueble_Load);

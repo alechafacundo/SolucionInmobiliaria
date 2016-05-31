@@ -41,8 +41,6 @@ namespace InmobiliariaForms
                     txPassword.Visible = false;
                     lbConfirmarPassword.Visible = false;
                     txConfirmarPassword.Visible = false;
-                    //ToDo: Facu
-                    //Falta poner el tx del Password. Poner uno para confirmar password, y en validar campos tienen que ser iguales
                 }
             }
             catch (Exception ex)

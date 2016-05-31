@@ -126,8 +126,7 @@ namespace InmobiliariaForms
 
                 cbMoneda.DataSource = Enum.GetNames(typeof(eMoneda));
                 cbMoneda.SelectedItem = null;
-                //ToDo: Facu
-                //Probalo ahora con el servicio corriendo
+                
                 Service ws = new Service();
                 //Esta lista la hago global para poder accederla
                 vendedores = ws.GetVendedores().ToList();

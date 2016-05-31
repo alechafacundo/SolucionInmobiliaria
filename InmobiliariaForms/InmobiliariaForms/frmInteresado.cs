@@ -43,7 +43,6 @@ namespace InmobiliariaForms
                     cbTipoOperacion.SelectedIndex = (int)Interesado.TipoDeOperacion;
                     numDesde.Value = Interesado.MontoDesde != null ? (decimal)Interesado.MontoDesde : 0;
                     numHasta.Value = Interesado.MontoHasta != null ? (decimal)Interesado.MontoHasta : 0;
-                    //Así se setea un CheckBox
                     checkEsInversion.Checked = Interesado.ParaInversion;
                 }
             }
@@ -58,10 +57,11 @@ namespace InmobiliariaForms
         {
             //ToDo: Facu
             //Validar campos mandatorios o requeridos
-            //Mostrar Mensaje que lo guardo bien o lo guardo mal
+           
             try
             {
-                if (ValidarCampos())
+                string errores = ValidarCamposObligatorios();
+                if (errores == string.Empty)
                 {
                     eTipoInmueble tipoInmueble;
                     Enum.TryParse<eTipoInmueble>(cbTipoInmueble.SelectedValue.ToString(), out tipoInmueble);
@@ -74,23 +74,26 @@ namespace InmobiliariaForms
                     eMoneda tipoMoneda;
                     Enum.TryParse<eMoneda>(cbMoneda.SelectedValue.ToString(), out tipoMoneda);
                     Interesado.TipoDeMoneda = (int)tipoMoneda;
-
+                    
                     Interesado.Nombre = txNombre.Text;
                     Interesado.Email = txEmail.Text;
                     Interesado.Telefono = txTelefono.Text;
                     Interesado.MontoDesde = numDesde.Value;
                     Interesado.MontoHasta = numHasta.Value;
                     Interesado.Dormitorios = txDorm.Text;
-                    //Asi se obtiene el checkbox
                     Interesado.ParaInversion = checkEsInversion.Checked;
 
                     //Ahora que ya tenes el interesado guardado lo tenes que mandar al web service para que lo guarde en la base de datos:
                     Service ws = new Service();
                     ws.GuardarInteresado(Interesado);
-
-                    //Si llego hasta acá sin irse al catch entonces quiere decir que pudo guardar bien.
-                    //Mostremos un msj diciendo que se guardo bien
-                    //Cerremos el form poniendo el DialogResult en OK.
+                    MessageBox.Show("Interesado guardado correctamente");
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                   
+                }
+                else
+                {
+                        MessageBox.Show(errores, "Errores de Validación");
                 }
             }
             catch (Exception ex)
@@ -102,11 +105,27 @@ namespace InmobiliariaForms
 
         }
 
-        private bool ValidarCampos()
+        private string ValidarCamposObligatorios()
         {
-            return true;
+            try
+            {
+                if (cbTipoInmueble.SelectedItem == null)
+                    return "Seleccione un Tipo de Inmueble por favor";
+                if (cbMoneda.SelectedItem == null)
+                    return "Seleccione una moneda por favor";
+                if (cbTipoOperacion.SelectedItem == null)
+                    return "Seleccione un Tipo de Operación por favor";
+                if (string.IsNullOrEmpty(txNombre.Text))
+                    return "Ingrese un Nombre por favor";          
+              
+                return string.Empty;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
-
+        
         private void btCancelar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
