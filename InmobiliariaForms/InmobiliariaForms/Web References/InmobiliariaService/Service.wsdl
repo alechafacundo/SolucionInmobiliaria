@@ -187,6 +187,21 @@
           <s:element minOccurs="0" maxOccurs="unbounded" name="Vendedor" nillable="true" type="tns:Vendedor" />
         </s:sequence>
       </s:complexType>
+      <s:element name="GetInteresados">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetInteresadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInteresadosResult" type="tns:ArrayOfInteresado" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInteresado">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Interesado" nillable="true" type="tns:Interesado" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="Login">
         <s:complexType>
           <s:sequence>
@@ -202,6 +217,32 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetFotosDelInmueble">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="inmuebleId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFotosDelInmuebleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFotosDelInmuebleResult" type="tns:ArrayOfFoto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFoto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Foto" nillable="true" type="tns:Foto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Foto">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="InmuebleId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Imagen" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HelloWorldSoapIn">
@@ -252,11 +293,23 @@
   <wsdl:message name="GetVendedoresSoapOut">
     <wsdl:part name="parameters" element="tns:GetVendedoresResponse" />
   </wsdl:message>
+  <wsdl:message name="GetInteresadosSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInteresados" />
+  </wsdl:message>
+  <wsdl:message name="GetInteresadosSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInteresadosResponse" />
+  </wsdl:message>
   <wsdl:message name="LoginSoapIn">
     <wsdl:part name="parameters" element="tns:Login" />
   </wsdl:message>
   <wsdl:message name="LoginSoapOut">
     <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFotosDelInmuebleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFotosDelInmueble" />
+  </wsdl:message>
+  <wsdl:message name="GetFotosDelInmuebleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFotosDelInmuebleResponse" />
   </wsdl:message>
   <wsdl:portType name="ServiceSoap">
     <wsdl:operation name="HelloWorld">
@@ -291,9 +344,17 @@
       <wsdl:input message="tns:GetVendedoresSoapIn" />
       <wsdl:output message="tns:GetVendedoresSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetInteresados">
+      <wsdl:input message="tns:GetInteresadosSoapIn" />
+      <wsdl:output message="tns:GetInteresadosSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="Login">
       <wsdl:input message="tns:LoginSoapIn" />
       <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFotosDelInmueble">
+      <wsdl:input message="tns:GetFotosDelInmuebleSoapIn" />
+      <wsdl:output message="tns:GetFotosDelInmuebleSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
@@ -370,8 +431,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetInteresados">
+      <soap:operation soapAction="http://tempuri.org/GetInteresados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Login">
       <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFotosDelInmueble">
+      <soap:operation soapAction="http://tempuri.org/GetFotosDelInmueble" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -454,8 +533,26 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetInteresados">
+      <soap12:operation soapAction="http://tempuri.org/GetInteresados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Login">
       <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFotosDelInmueble">
+      <soap12:operation soapAction="http://tempuri.org/GetFotosDelInmueble" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

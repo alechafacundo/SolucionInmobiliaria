@@ -45,7 +45,11 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         private System.Threading.SendOrPostCallback GetVendedoresOperationCompleted;
         
+        private System.Threading.SendOrPostCallback GetInteresadosOperationCompleted;
+        
         private System.Threading.SendOrPostCallback LoginOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetFotosDelInmuebleOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -110,7 +114,13 @@ namespace InmobiliariaForms.InmobiliariaService {
         public event GetVendedoresCompletedEventHandler GetVendedoresCompleted;
         
         /// <remarks/>
+        public event GetInteresadosCompletedEventHandler GetInteresadosCompleted;
+        
+        /// <remarks/>
         public event LoginCompletedEventHandler LoginCompleted;
+        
+        /// <remarks/>
+        public event GetFotosDelInmuebleCompletedEventHandler GetFotosDelInmuebleCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/HelloWorld", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -351,6 +361,33 @@ namespace InmobiliariaForms.InmobiliariaService {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetInteresados", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Interesado[] GetInteresados() {
+            object[] results = this.Invoke("GetInteresados", new object[0]);
+            return ((Interesado[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetInteresadosAsync() {
+            this.GetInteresadosAsync(null);
+        }
+        
+        /// <remarks/>
+        public void GetInteresadosAsync(object userState) {
+            if ((this.GetInteresadosOperationCompleted == null)) {
+                this.GetInteresadosOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetInteresadosOperationCompleted);
+            }
+            this.InvokeAsync("GetInteresados", new object[0], this.GetInteresadosOperationCompleted, userState);
+        }
+        
+        private void OnGetInteresadosOperationCompleted(object arg) {
+            if ((this.GetInteresadosCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetInteresadosCompleted(this, new GetInteresadosCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Login", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public Vendedor Login(string dni, string password) {
             object[] results = this.Invoke("Login", new object[] {
@@ -378,6 +415,35 @@ namespace InmobiliariaForms.InmobiliariaService {
             if ((this.LoginCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.LoginCompleted(this, new LoginCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetFotosDelInmueble", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Foto[] GetFotosDelInmueble(int inmuebleId) {
+            object[] results = this.Invoke("GetFotosDelInmueble", new object[] {
+                        inmuebleId});
+            return ((Foto[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetFotosDelInmuebleAsync(int inmuebleId) {
+            this.GetFotosDelInmuebleAsync(inmuebleId, null);
+        }
+        
+        /// <remarks/>
+        public void GetFotosDelInmuebleAsync(int inmuebleId, object userState) {
+            if ((this.GetFotosDelInmuebleOperationCompleted == null)) {
+                this.GetFotosDelInmuebleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetFotosDelInmuebleOperationCompleted);
+            }
+            this.InvokeAsync("GetFotosDelInmueble", new object[] {
+                        inmuebleId}, this.GetFotosDelInmuebleOperationCompleted, userState);
+        }
+        
+        private void OnGetFotosDelInmuebleOperationCompleted(object arg) {
+            if ((this.GetFotosDelInmuebleCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetFotosDelInmuebleCompleted(this, new GetFotosDelInmuebleCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -743,6 +809,52 @@ namespace InmobiliariaForms.InmobiliariaService {
             }
             set {
                 this.otrosField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class Foto {
+        
+        private int idField;
+        
+        private int inmuebleIdField;
+        
+        private byte[] imagenField;
+        
+        /// <remarks/>
+        public int Id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int InmuebleId {
+            get {
+                return this.inmuebleIdField;
+            }
+            set {
+                this.inmuebleIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary")]
+        public byte[] Imagen {
+            get {
+                return this.imagenField;
+            }
+            set {
+                this.imagenField = value;
             }
         }
     }
@@ -1183,6 +1295,32 @@ namespace InmobiliariaForms.InmobiliariaService {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetInteresadosCompletedEventHandler(object sender, GetInteresadosCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetInteresadosCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetInteresadosCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Interesado[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Interesado[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void LoginCompletedEventHandler(object sender, LoginCompletedEventArgs e);
     
     /// <remarks/>
@@ -1203,6 +1341,32 @@ namespace InmobiliariaForms.InmobiliariaService {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((Vendedor)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetFotosDelInmuebleCompletedEventHandler(object sender, GetFotosDelInmuebleCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetFotosDelInmuebleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetFotosDelInmuebleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Foto[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Foto[])(this.results[0]));
             }
         }
     }
