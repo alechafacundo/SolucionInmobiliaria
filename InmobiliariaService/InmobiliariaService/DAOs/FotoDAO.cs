@@ -37,7 +37,7 @@ namespace InmobiliariaService
                 //Hasta aca la lista esta vacia
 
                 //Le pedimos a la bd que nos de todos los Fotos
-                DataTable dt = DAOBase.GetDataTable(new Foto(), string.Format("InmuebleId = {0}", inmuebleId));
+                DataTable dt = DAOBase.GetDataTableWhere(new Foto(), string.Format("InmuebleId = {0}", inmuebleId));
                 if (dt.Rows.Count > 0)
                 {
                     //Aca llenamos la lista de Fotos

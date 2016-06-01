@@ -149,6 +149,20 @@ namespace InmobiliariaService
                 throw ex;
             }
         }
+
+        [WebMethod]
+        public bool GuardarFoto(Foto foto)
+        {
+            try
+            {
+                FotoDAO.CrearFoto(foto);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 
 }
