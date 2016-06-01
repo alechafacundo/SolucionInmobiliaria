@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -13,7 +15,7 @@ namespace InmobiliariaForms
     public partial class frmInmueble : Form
     {
         List<Vendedor> vendedores = new List<Vendedor>();
-        Inmueble Inmueble { get; set; }
+        public Inmueble Inmueble { get; set; }
         public Vendedor Vendedor { get; set; }
 
         public frmInmueble()
@@ -187,6 +189,181 @@ namespace InmobiliariaForms
         private void btEliminar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btGuardarFotos_Click(object sender, EventArgs e)
+        {
+            List<Foto> fotos = new List<Foto>();
+            Service ws = new Service();
+            string archivosSinGuardar = string.Empty;
+
+            using (OpenFileDialog opf = new OpenFileDialog())
+            {
+                opf.Multiselect = true;
+                opf.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF";
+
+                opf.Title = "Seleccione las Imagenes por favor";
+
+                if (opf.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    foreach (String file in opf.FileNames)
+                    {
+                        try
+                        {
+                            Foto f = new Foto();
+
+                            //Image img = ResizeImage(file, 488, 414, true);
+
+                            Image img = GetImageLowQuality(file);
+
+                            ImageConverter converter = new ImageConverter();
+
+                            f.Imagen = (byte[])converter.ConvertTo(img, typeof(byte[]));
+                            f.InmuebleId = Inmueble.Id;
+
+                            fotos.Add(f);
+                            try
+                            {
+                                ws.GuardarFoto(f);
+                            }
+                            catch (Exception)
+                            {
+                                if (archivosSinGuardar == string.Empty)
+                                    archivosSinGuardar = "No se pudieron guardar los siguientes archivos: " + Environment.NewLine;
+
+                                archivosSinGuardar += " - " + file + Environment.NewLine;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error: " + ex.Message);
+                        }
+                    }
+
+                    if (archivosSinGuardar != string.Empty)
+                    {
+                        MessageBox.Show(archivosSinGuardar, "Error");
+                    }
+                }
+            }
+        }
+
+        #region Imagenes
+
+        private Image GetImageLowQuality(string file)
+        {
+            try
+            {
+                // Get a bitmap.
+                //Bitmap bmp1 = new Bitmap(file);
+                Bitmap bmp1 = new Bitmap(ResizeImage(file, 800, 600, false));
+                ImageCodecInfo jgpEncoder = GetEncoder(ImageFormat.Jpeg);
+
+                // Create an Encoder object based on the GUID 
+                // for the Quality parameter category.
+                System.Drawing.Imaging.Encoder myEncoder =
+                    System.Drawing.Imaging.Encoder.Quality;
+
+                string tempFile = string.Empty;
+                // Create an EncoderParameters object. 
+                // An EncoderParameters object has an array of EncoderParameter 
+                // objects. In this case, there is only one 
+                // EncoderParameter object in the array.
+                EncoderParameters myEncoderParameters = new EncoderParameters(1);
+
+                EncoderParameter myEncoderParameter = new EncoderParameter(myEncoder, 60L);
+                myEncoderParameters.Param[0] = myEncoderParameter;
+                tempFile = Path.GetTempFileName();
+                bmp1.Save(tempFile, jgpEncoder, myEncoderParameters);
+
+                Image imagenTuneada = System.Drawing.Image.FromFile(tempFile);
+                //System.IO.File.Delete(tempFile);
+
+                return imagenTuneada;
+                //myEncoderParameter = new EncoderParameter(myEncoder, 70L);
+                //myEncoderParameters.Param[0] = myEncoderParameter;
+                //tempFile = Path.GetTempFileName();
+                //bmp1.Save(tempFile, jgpEncoder, myEncoderParameters);
+
+                //// Save the bitmap as a JPG file with zero quality level compression.
+                //myEncoderParameter = new EncoderParameter(myEncoder, 0L);
+                //myEncoderParameters.Param[0] = myEncoderParameter;
+                //tempFile = Path.GetTempFileName();
+                //bmp1.Save(tempFile, jgpEncoder, myEncoderParameters);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+        internal static Image ResizeImage(string OriginalFile, int NewWidth, int MaxHeight, bool OnlyResizeIfWider)
+        {
+            System.Drawing.Image FullsizeImage = System.Drawing.Image.FromFile(OriginalFile);
+
+            // Prevent using images internal thumbnail
+            FullsizeImage.RotateFlip(System.Drawing.RotateFlipType.Rotate180FlipNone);
+            FullsizeImage.RotateFlip(System.Drawing.RotateFlipType.Rotate180FlipNone);
+
+            if (OnlyResizeIfWider)
+            {
+                if (FullsizeImage.Width <= NewWidth)
+                {
+                    NewWidth = FullsizeImage.Width;
+                }
+            }
+
+            int NewHeight = FullsizeImage.Height * NewWidth / FullsizeImage.Width;
+            if (NewHeight > MaxHeight)
+            {
+                // Resize with height instead
+                NewWidth = FullsizeImage.Width * MaxHeight / FullsizeImage.Height;
+                NewHeight = MaxHeight;
+            }
+
+            System.Drawing.Image NewImage = FullsizeImage.GetThumbnailImage(NewWidth, NewHeight, null, IntPtr.Zero);
+
+            // Clear handle to original file so that we can overwrite it if necessary
+            FullsizeImage.Dispose();
+
+            return NewImage;
+        }
+
+        private ImageCodecInfo GetEncoder(ImageFormat format)
+        {
+
+            ImageCodecInfo[] codecs = ImageCodecInfo.GetImageDecoders();
+
+            foreach (ImageCodecInfo codec in codecs)
+            {
+                if (codec.FormatID == format.Guid)
+                {
+                    return codec;
+                }
+            }
+            return null;
+        }
+
+        #endregion
+
+        private void btVerFotos_Click(object sender, EventArgs e)
+        {
+            frmFotos frmFotos = new frmFotos();
+            frmFotos.Inmueble = Inmueble;
+
+            frmFotos.MdiParent = (Form)this.Parent.Parent;
+            Panel p = (Panel)this.Parent.Parent.Controls.Find("pnlMdi", true).First();
+            p.Controls.Add(frmFotos);
+
+            frmFotos.BringToFront();
+            frmFotos.StartPosition = FormStartPosition.Manual;
+
+            //int width = this.Controls.Find("netBarControl1", true)[0].Width;
+            frmFotos.Location = new Point(120, 0);
+            //this.Close();
+            frmFotos.Show();
         }
     }
 }

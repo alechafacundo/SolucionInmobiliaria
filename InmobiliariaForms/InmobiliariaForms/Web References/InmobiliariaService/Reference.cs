@@ -51,6 +51,8 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         private System.Threading.SendOrPostCallback GetFotosDelInmuebleOperationCompleted;
         
+        private System.Threading.SendOrPostCallback GuardarFotoOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -121,6 +123,9 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         /// <remarks/>
         public event GetFotosDelInmuebleCompletedEventHandler GetFotosDelInmuebleCompleted;
+        
+        /// <remarks/>
+        public event GuardarFotoCompletedEventHandler GuardarFotoCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/HelloWorld", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -444,6 +449,35 @@ namespace InmobiliariaForms.InmobiliariaService {
             if ((this.GetFotosDelInmuebleCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.GetFotosDelInmuebleCompleted(this, new GetFotosDelInmuebleCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GuardarFoto", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool GuardarFoto(Foto foto) {
+            object[] results = this.Invoke("GuardarFoto", new object[] {
+                        foto});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GuardarFotoAsync(Foto foto) {
+            this.GuardarFotoAsync(foto, null);
+        }
+        
+        /// <remarks/>
+        public void GuardarFotoAsync(Foto foto, object userState) {
+            if ((this.GuardarFotoOperationCompleted == null)) {
+                this.GuardarFotoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGuardarFotoOperationCompleted);
+            }
+            this.InvokeAsync("GuardarFoto", new object[] {
+                        foto}, this.GuardarFotoOperationCompleted, userState);
+        }
+        
+        private void OnGuardarFotoOperationCompleted(object arg) {
+            if ((this.GuardarFotoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GuardarFotoCompleted(this, new GuardarFotoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1367,6 +1401,32 @@ namespace InmobiliariaForms.InmobiliariaService {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((Foto[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GuardarFotoCompletedEventHandler(object sender, GuardarFotoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GuardarFotoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GuardarFotoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
             }
         }
     }

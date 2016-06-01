@@ -13,6 +13,8 @@ namespace InmobiliariaForms
   
     public partial class frmBuscarInmueble : Form
     {
+        public Vendedor Vendedor { get; set; }
+
         public frmBuscarInmueble()
         {
             InitializeComponent();
@@ -95,7 +97,34 @@ namespace InmobiliariaForms
 
         private void gvResultado_DoubleClick(object sender, EventArgs e)
         {
+            try
+            {
+                if (gvResultado.SelectedRows.Count == 1)
+                {
+                    Inmueble inmueble = (Inmueble)gvResultado.SelectedRows[0].DataBoundItem;
 
+                    frmInmueble frmInmueble = new frmInmueble();
+                    frmInmueble.Vendedor = this.Vendedor;
+                    frmInmueble.Inmueble = inmueble;
+
+                    frmInmueble.MdiParent = (Form)this.Parent.Parent;
+                    Panel p = (Panel)this.Parent.Parent.Controls.Find("pnlMdi", true).First();
+                    p.Controls.Add(frmInmueble);
+
+                    frmInmueble.BringToFront();
+                    frmInmueble.StartPosition = FormStartPosition.Manual;
+
+                    //int width = this.Controls.Find("netBarControl1", true)[0].Width;
+                    frmInmueble.Location = new Point(120, 0);
+                    this.Close();
+                    frmInmueble.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                Helper.EnviarNotificacion(ex);
+                throw;
+            }
         }
 
         private void btCancelar_Click(object sender, EventArgs e)

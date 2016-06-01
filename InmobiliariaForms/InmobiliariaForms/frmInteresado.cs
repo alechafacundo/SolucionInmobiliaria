@@ -61,6 +61,10 @@ namespace InmobiliariaForms
                 string errores = ValidarCamposObligatorios();
                 if (errores == string.Empty)
                 {
+                    if (Interesado == null)
+                    {
+                        Interesado = new Interesado();
+                    }
                     eTipoInmueble tipoInmueble;
                     Enum.TryParse<eTipoInmueble>(cbTipoInmueble.SelectedValue.ToString(), out tipoInmueble);
                     Interesado.TipoDeInmueble = (int)tipoInmueble;

@@ -87,6 +87,8 @@
             this.btEliminar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.btGuardar = new System.Windows.Forms.Button();
+            this.btGuardarFotos = new System.Windows.Forms.Button();
+            this.btVerFotos = new System.Windows.Forms.Button();
             this.g.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).BeginInit();
@@ -732,13 +734,35 @@
             this.btGuardar.UseVisualStyleBackColor = false;
             this.btGuardar.Click += new System.EventHandler(this.btGuardar_Click);
             // 
+            // btGuardarFotos
+            // 
+            this.btGuardarFotos.Location = new System.Drawing.Point(173, 326);
+            this.btGuardarFotos.Name = "btGuardarFotos";
+            this.btGuardarFotos.Size = new System.Drawing.Size(107, 23);
+            this.btGuardarFotos.TabIndex = 29;
+            this.btGuardarFotos.Text = "Guardar Fotos";
+            this.btGuardarFotos.UseVisualStyleBackColor = true;
+            this.btGuardarFotos.Click += new System.EventHandler(this.btGuardarFotos_Click);
+            // 
+            // btVerFotos
+            // 
+            this.btVerFotos.Location = new System.Drawing.Point(173, 351);
+            this.btVerFotos.Name = "btVerFotos";
+            this.btVerFotos.Size = new System.Drawing.Size(107, 23);
+            this.btVerFotos.TabIndex = 30;
+            this.btVerFotos.Text = "Ver Fotos";
+            this.btVerFotos.UseVisualStyleBackColor = true;
+            this.btVerFotos.Click += new System.EventHandler(this.btVerFotos_Click);
+            // 
             // frmInmueble
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(626, 359);
+            this.ClientSize = new System.Drawing.Size(626, 386);
+            this.Controls.Add(this.btVerFotos);
+            this.Controls.Add(this.btGuardarFotos);
             this.Controls.Add(this.btGuardar);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btEliminar);
@@ -818,5 +842,7 @@
         private System.Windows.Forms.ComboBox cbTipoInmueble;
         private System.Windows.Forms.TextBox txCocina;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Button btGuardarFotos;
+        private System.Windows.Forms.Button btVerFotos;
     }
 }
