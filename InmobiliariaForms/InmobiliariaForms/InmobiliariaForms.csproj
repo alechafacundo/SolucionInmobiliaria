@@ -112,6 +112,12 @@
     <Compile Include="frmBuscarVendedor.Designer.cs">
       <DependentUpon>frmBuscarVendedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmFotos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFotos.Designer.cs">
+      <DependentUpon>frmFotos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInmueble.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,9 @@
     <EmbeddedResource Include="frmBuscarVendedor.resx">
       <DependentUpon>frmBuscarVendedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmFotos.resx">
+      <DependentUpon>frmFotos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInmueble.resx">
       <DependentUpon>frmInmueble.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,7 +227,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Web References\InmobiliariaService\Foto.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
     <None Include="Web References\InmobiliariaService\Inmueble.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\InmobiliariaService\Interesado.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
     <None Include="Web References\InmobiliariaService\Reference.map">
