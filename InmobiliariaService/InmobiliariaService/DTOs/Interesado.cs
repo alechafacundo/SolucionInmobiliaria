@@ -13,7 +13,6 @@ namespace InmobiliariaService
         public string Email { get; set; }
         public decimal? MontoDesde { get; set; }
         public decimal? MontoHasta { get; set; }
-        //Enum
         public int TipoDeMoneda { get; set; }
         public int TipoDeOperacion { get; set; }
         public int TipoDeInmueble { get; set; }

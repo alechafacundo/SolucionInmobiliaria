@@ -174,6 +174,7 @@
             // 
             // cbTipoOperacion
             // 
+            this.cbTipoOperacion.BackColor = System.Drawing.Color.Beige;
             this.cbTipoOperacion.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTipoOperacion.FormattingEnabled = true;
             this.cbTipoOperacion.ImeMode = System.Windows.Forms.ImeMode.On;
@@ -237,6 +238,7 @@
             // 
             // cbCargadoPor
             // 
+            this.cbCargadoPor.BackColor = System.Drawing.Color.Beige;
             this.cbCargadoPor.FormattingEnabled = true;
             this.cbCargadoPor.Location = new System.Drawing.Point(93, 23);
             this.cbCargadoPor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -447,6 +449,7 @@
             // 
             // cbMoneda
             // 
+            this.cbMoneda.BackColor = System.Drawing.Color.Beige;
             this.cbMoneda.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMoneda.FormattingEnabled = true;
             this.cbMoneda.Location = new System.Drawing.Point(236, 132);
@@ -670,6 +673,7 @@
             // 
             // cbTipoInmueble
             // 
+            this.cbTipoInmueble.BackColor = System.Drawing.Color.Beige;
             this.cbTipoInmueble.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTipoInmueble.FormattingEnabled = true;
             this.cbTipoInmueble.Location = new System.Drawing.Point(114, 18);

@@ -85,6 +85,8 @@ namespace InmobiliariaForms
                 throw;
             }
         }
+        //ToDo Fabri
+        //estos eventos que son?
 
         private void gvResultado_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {

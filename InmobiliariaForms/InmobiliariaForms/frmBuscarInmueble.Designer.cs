@@ -172,6 +172,7 @@
             // 
             // cbTipoOperacion
             // 
+            this.cbTipoOperacion.BackColor = System.Drawing.Color.Beige;
             this.cbTipoOperacion.FormattingEnabled = true;
             this.cbTipoOperacion.ImeMode = System.Windows.Forms.ImeMode.On;
             this.cbTipoOperacion.Location = new System.Drawing.Point(278, 21);
@@ -261,6 +262,7 @@
             // 
             // cbMoneda
             // 
+            this.cbMoneda.BackColor = System.Drawing.Color.Beige;
             this.cbMoneda.FormattingEnabled = true;
             this.cbMoneda.Location = new System.Drawing.Point(509, 83);
             this.cbMoneda.Name = "cbMoneda";
@@ -306,7 +308,7 @@
             // 
             // txBarrio
             // 
-            this.txBarrio.BackColor = System.Drawing.SystemColors.Info;
+            this.txBarrio.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txBarrio.Location = new System.Drawing.Point(324, 53);
             this.txBarrio.Name = "txBarrio";
             this.txBarrio.Size = new System.Drawing.Size(286, 22);
@@ -372,6 +374,7 @@
             // 
             // cbTipoInmueble
             // 
+            this.cbTipoInmueble.BackColor = System.Drawing.Color.Beige;
             this.cbTipoInmueble.FormattingEnabled = true;
             this.cbTipoInmueble.Location = new System.Drawing.Point(108, 21);
             this.cbTipoInmueble.Name = "cbTipoInmueble";
