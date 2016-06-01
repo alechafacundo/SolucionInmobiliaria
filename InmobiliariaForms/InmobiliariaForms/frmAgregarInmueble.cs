@@ -74,7 +74,7 @@ namespace InmobiliariaForms
             if (frmBuscarInmueble == null || frmBuscarInmueble.IsDisposed)
                 frmBuscarInmueble = new frmBuscarInmueble();
 
-            //frmBuscarInmueble.Vendedor = this.Vendedor;
+            frmBuscarInmueble.Vendedor = this.Vendedor;
             frmBuscarInmueble.MdiParent = (Form)this.Parent.Parent;
             Panel p = (Panel)this.Parent.Parent.Controls.Find("pnlMdi", true).First();
             p.Controls.Add(frmBuscarInmueble);

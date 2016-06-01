@@ -38,9 +38,9 @@
             // 
             this.pnlImagenes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlImagenes.AutoScroll = true;
-            this.pnlImagenes.Location = new System.Drawing.Point(12, 328);
+            this.pnlImagenes.Location = new System.Drawing.Point(12, 315);
             this.pnlImagenes.Name = "pnlImagenes";
-            this.pnlImagenes.Size = new System.Drawing.Size(586, 142);
+            this.pnlImagenes.Size = new System.Drawing.Size(602, 143);
             this.pnlImagenes.TabIndex = 0;
             // 
             // picBox
@@ -48,29 +48,33 @@
             this.picBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.picBox.Location = new System.Drawing.Point(89, 12);
+            this.picBox.Location = new System.Drawing.Point(96, 12);
             this.picBox.Name = "picBox";
-            this.picBox.Size = new System.Drawing.Size(411, 310);
+            this.picBox.Size = new System.Drawing.Size(427, 297);
             this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBox.TabIndex = 1;
             this.picBox.TabStop = false;
             // 
             // btCancelar
             // 
-            this.btCancelar.Location = new System.Drawing.Point(523, 476);
+            this.btCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btCancelar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancelar.Location = new System.Drawing.Point(454, 464);
             this.btCancelar.Name = "btCancelar";
-            this.btCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btCancelar.Size = new System.Drawing.Size(160, 31);
             this.btCancelar.TabIndex = 2;
             this.btCancelar.Text = "Cancelar";
-            this.btCancelar.UseVisualStyleBackColor = true;
+            this.btCancelar.UseVisualStyleBackColor = false;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // frmFotos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.CancelButton = this.btCancelar;
-            this.ClientSize = new System.Drawing.Size(610, 511);
+            this.ClientSize = new System.Drawing.Size(626, 511);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.picBox);
             this.Controls.Add(this.pnlImagenes);

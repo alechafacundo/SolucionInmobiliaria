@@ -701,7 +701,7 @@
             this.btEliminar.Location = new System.Drawing.Point(7, 323);
             this.btEliminar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btEliminar.Name = "btEliminar";
-            this.btEliminar.Size = new System.Drawing.Size(160, 31);
+            this.btEliminar.Size = new System.Drawing.Size(130, 31);
             this.btEliminar.TabIndex = 28;
             this.btEliminar.Text = "Eliminar";
             this.btEliminar.UseVisualStyleBackColor = false;
@@ -712,10 +712,10 @@
             // 
             this.btCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btCancelar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCancelar.Location = new System.Drawing.Point(293, 323);
+            this.btCancelar.Location = new System.Drawing.Point(354, 323);
             this.btCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btCancelar.Name = "btCancelar";
-            this.btCancelar.Size = new System.Drawing.Size(160, 31);
+            this.btCancelar.Size = new System.Drawing.Size(130, 31);
             this.btCancelar.TabIndex = 27;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = false;
@@ -725,10 +725,10 @@
             // 
             this.btGuardar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btGuardar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btGuardar.Location = new System.Drawing.Point(459, 323);
+            this.btGuardar.Location = new System.Drawing.Point(489, 323);
             this.btGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btGuardar.Name = "btGuardar";
-            this.btGuardar.Size = new System.Drawing.Size(160, 31);
+            this.btGuardar.Size = new System.Drawing.Size(130, 31);
             this.btGuardar.TabIndex = 26;
             this.btGuardar.Text = "Guardar";
             this.btGuardar.UseVisualStyleBackColor = false;
@@ -736,22 +736,24 @@
             // 
             // btGuardarFotos
             // 
-            this.btGuardarFotos.Location = new System.Drawing.Point(173, 326);
+            this.btGuardarFotos.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btGuardarFotos.Location = new System.Drawing.Point(152, 328);
             this.btGuardarFotos.Name = "btGuardarFotos";
-            this.btGuardarFotos.Size = new System.Drawing.Size(107, 23);
+            this.btGuardarFotos.Size = new System.Drawing.Size(95, 23);
             this.btGuardarFotos.TabIndex = 29;
             this.btGuardarFotos.Text = "Guardar Fotos";
-            this.btGuardarFotos.UseVisualStyleBackColor = true;
+            this.btGuardarFotos.UseVisualStyleBackColor = false;
             this.btGuardarFotos.Click += new System.EventHandler(this.btGuardarFotos_Click);
             // 
             // btVerFotos
             // 
-            this.btVerFotos.Location = new System.Drawing.Point(173, 351);
+            this.btVerFotos.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btVerFotos.Location = new System.Drawing.Point(253, 328);
             this.btVerFotos.Name = "btVerFotos";
-            this.btVerFotos.Size = new System.Drawing.Size(107, 23);
+            this.btVerFotos.Size = new System.Drawing.Size(95, 23);
             this.btVerFotos.TabIndex = 30;
             this.btVerFotos.Text = "Ver Fotos";
-            this.btVerFotos.UseVisualStyleBackColor = true;
+            this.btVerFotos.UseVisualStyleBackColor = false;
             this.btVerFotos.Click += new System.EventHandler(this.btVerFotos_Click);
             // 
             // frmInmueble
@@ -760,7 +762,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(626, 386);
+            this.ClientSize = new System.Drawing.Size(626, 362);
             this.Controls.Add(this.btVerFotos);
             this.Controls.Add(this.btGuardarFotos);
             this.Controls.Add(this.btGuardar);

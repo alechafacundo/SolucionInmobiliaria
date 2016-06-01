@@ -190,6 +190,7 @@
             this.cbTipoOperacion.Name = "cbTipoOperacion";
             this.cbTipoOperacion.Size = new System.Drawing.Size(189, 22);
             this.cbTipoOperacion.TabIndex = 65;
+            this.cbTipoOperacion.TextChanged += new System.EventHandler(this.FiltrarResultados);
             // 
             // label6
             // 
@@ -209,6 +210,7 @@
             this.cbTipoInmueble.Name = "cbTipoInmueble";
             this.cbTipoInmueble.Size = new System.Drawing.Size(120, 22);
             this.cbTipoInmueble.TabIndex = 63;
+            this.cbTipoInmueble.TextChanged += new System.EventHandler(this.FiltrarResultados);
             // 
             // numHasta
             // 
@@ -273,6 +275,7 @@
             this.txEmail.Name = "txEmail";
             this.txEmail.Size = new System.Drawing.Size(314, 22);
             this.txEmail.TabIndex = 57;
+            this.txEmail.TextChanged += new System.EventHandler(this.FiltrarResultados);
             // 
             // label3
             // 
@@ -292,6 +295,7 @@
             this.txTelefono.Name = "txTelefono";
             this.txTelefono.Size = new System.Drawing.Size(173, 22);
             this.txTelefono.TabIndex = 56;
+            this.txTelefono.TextChanged += new System.EventHandler(this.FiltrarResultados);
             // 
             // label2
             // 
@@ -309,6 +313,7 @@
             this.txNombre.Name = "txNombre";
             this.txNombre.Size = new System.Drawing.Size(545, 22);
             this.txNombre.TabIndex = 54;
+            this.txNombre.TextChanged += new System.EventHandler(this.FiltrarResultados);
             // 
             // label1
             // 

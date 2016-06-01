@@ -167,7 +167,7 @@ namespace InmobiliariaForms
                     txGarage.Text = Inmueble.Garage;
                     txPatio.Text = Inmueble.Patio;
                     txOtras.Text = Inmueble.OtrasDependencias;
-                    cbCargadoPor.SelectedValue = vendedores.Find(x => x.Id == Inmueble.Id);
+                    cbCargadoPor.SelectedValue = vendedores.Find(x => x.Id == Vendedor.Id);
                     txContacto.Text = Inmueble.Contacto;
                     txReferencia.Text = Inmueble.Referencia;
                     
