@@ -6,9 +6,9 @@ using System.Web;
 
 namespace InmobiliariaService
 {
-    public class FotoDAO
+    public class FotoDAO : DAOBase
     {
-        internal static void GuardarFoto(Foto foto)
+        internal static void CrearFoto(Foto foto)
         {
             try
             {
@@ -24,24 +24,58 @@ namespace InmobiliariaService
             }
             catch (Exception)
             {
+                throw;
+            }
+        }
+
+        internal static List<Foto> GetFotosDelInmueble(int inmuebleId)
+        {
+            try
+            {
+                //Instanciamos una lista de Fotos que es la que vamos a retornar
+                List<Foto> fotos = new List<Foto>();
+                //Hasta aca la lista esta vacia
+
+                //Le pedimos a la bd que nos de todos los Fotos
+                DataTable dt = DAOBase.GetDataTable(new Foto(), string.Format("InmuebleId = {0}", inmuebleId));
+                if (dt.Rows.Count > 0)
+                {
+                    //Aca llenamos la lista de Fotos
+                    fotos = LlenarFotos(new Foto(), dt);
+                }
+
+                //Retornamos la lista de vendedores
+                return fotos;
+            }
+            catch (Exception)
+            {
 
                 throw;
             }
         }
 
-        private static List<Foto> LlenarInmuebles(Foto foto, DataTable dt)
+        private static List<Foto> LlenarFotos(Foto foto, DataTable dt)
         {
-            List<Foto> dtos = new List<Foto>();
-
-            foreach (DataRow dr in dt.Rows)
+            try
             {
-                Inmueble aux = new Inmueble();
-                PoblarObjetoDesdeDataRow(aux, dr);
+                List<Foto> dtos = new List<Foto>();
 
-                dtos.Add(aux);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    Foto aux = new Foto();
+                    PoblarObjetoDesdeDataRow(aux, dr);
+
+                    dtos.Add(aux);
+                }
+
+                return dtos;
             }
+            catch (Exception)
+            {
 
-            return dtos;
+                throw;
+            }
         }
+
     }
 }

@@ -111,6 +111,19 @@ namespace InmobiliariaService
         }
 
         [WebMethod]
+        public Interesado[] GetInteresados()
+        {
+            try
+            {
+                return InteresadoDAO.GetInteresados().ToArray();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [WebMethod]
         public Vendedor Login(string dni, string password)
         {
             try

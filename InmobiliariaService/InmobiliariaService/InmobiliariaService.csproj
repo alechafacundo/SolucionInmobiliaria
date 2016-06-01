@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAOs\DAOBase.cs" />
+    <Compile Include="DAOs\FotoDAO.cs" />
     <Compile Include="DTOs\Barrio.cs" />
     <Compile Include="DTOs\Inmueble.cs" />
     <Compile Include="DTOs\Interesado.cs" />
@@ -73,7 +74,6 @@
     <Compile Include="DAOs\InmuebleDAO.cs" />
     <Compile Include="DAOs\InteresadoDAO.cs" />
     <Compile Include="DTOs\Foto.cs" />
-    <Compile Include="FotoDAO.cs" />
     <Compile Include="Service.asmx.cs">
       <DependentUpon>Service.asmx</DependentUpon>
       <SubType>Component</SubType>
