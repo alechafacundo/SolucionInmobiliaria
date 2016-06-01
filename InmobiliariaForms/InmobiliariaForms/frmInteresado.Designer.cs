@@ -100,6 +100,7 @@
             // 
             // cbMoneda
             // 
+            this.cbMoneda.BackColor = System.Drawing.Color.Beige;
             this.cbMoneda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMoneda.FormattingEnabled = true;
             this.cbMoneda.Location = new System.Drawing.Point(74, 78);
@@ -127,7 +128,7 @@
             this.checkEsInversion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.checkEsInversion.Location = new System.Drawing.Point(485, 140);
             this.checkEsInversion.Name = "checkEsInversion";
-            this.checkEsInversion.Size = new System.Drawing.Size(131, 19);
+            this.checkEsInversion.Size = new System.Drawing.Size(131, 20);
             this.checkEsInversion.TabIndex = 10;
             this.checkEsInversion.Text = "Es para Inversión";
             this.checkEsInversion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -158,6 +159,7 @@
             // 
             // cbTipoOperacion
             // 
+            this.cbTipoOperacion.BackColor = System.Drawing.Color.Beige;
             this.cbTipoOperacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTipoOperacion.FormattingEnabled = true;
             this.cbTipoOperacion.Location = new System.Drawing.Point(426, 109);
@@ -178,6 +180,7 @@
             // 
             // cbTipoInmueble
             // 
+            this.cbTipoInmueble.BackColor = System.Drawing.Color.Beige;
             this.cbTipoInmueble.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTipoInmueble.FormattingEnabled = true;
             this.cbTipoInmueble.Location = new System.Drawing.Point(131, 109);
