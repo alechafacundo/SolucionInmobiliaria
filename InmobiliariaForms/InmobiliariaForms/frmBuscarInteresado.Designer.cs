@@ -118,6 +118,7 @@
             this.btBuscar.TabIndex = 73;
             this.btBuscar.Text = "Buscar";
             this.btBuscar.UseVisualStyleBackColor = false;
+            this.btBuscar.Click += new System.EventHandler(this.btBuscar_Click);
             // 
             // txDorm
             // 

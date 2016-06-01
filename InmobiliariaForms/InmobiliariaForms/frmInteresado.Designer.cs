@@ -83,7 +83,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txNombre);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Font = new System.Drawing.Font("News Cycle", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(3, -8);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(626, 291);
@@ -92,29 +92,29 @@
             // 
             // txDorm
             // 
-            this.txDorm.Font = new System.Drawing.Font("News Cycle", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txDorm.Location = new System.Drawing.Point(80, 148);
+            this.txDorm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txDorm.Location = new System.Drawing.Point(93, 148);
             this.txDorm.Name = "txDorm";
-            this.txDorm.Size = new System.Drawing.Size(58, 27);
+            this.txDorm.Size = new System.Drawing.Size(58, 21);
             this.txDorm.TabIndex = 9;
             // 
             // cbMoneda
             // 
-            this.cbMoneda.Font = new System.Drawing.Font("Slabo 27px", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMoneda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMoneda.FormattingEnabled = true;
-            this.cbMoneda.Location = new System.Drawing.Point(59, 84);
+            this.cbMoneda.Location = new System.Drawing.Point(74, 84);
             this.cbMoneda.Name = "cbMoneda";
-            this.cbMoneda.Size = new System.Drawing.Size(50, 24);
+            this.cbMoneda.Size = new System.Drawing.Size(66, 24);
             this.cbMoneda.TabIndex = 4;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("News Cycle", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(7, 86);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(51, 21);
+            this.label12.Size = new System.Drawing.Size(61, 16);
             this.label12.TabIndex = 23;
             this.label12.Text = "Moneda:";
             // 
@@ -123,11 +123,11 @@
             this.checkEsInversion.AutoSize = true;
             this.checkEsInversion.BackColor = System.Drawing.Color.Transparent;
             this.checkEsInversion.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkEsInversion.Font = new System.Drawing.Font("News Cycle", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkEsInversion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkEsInversion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.checkEsInversion.Location = new System.Drawing.Point(501, 152);
+            this.checkEsInversion.Location = new System.Drawing.Point(485, 150);
             this.checkEsInversion.Name = "checkEsInversion";
-            this.checkEsInversion.Size = new System.Drawing.Size(116, 25);
+            this.checkEsInversion.Size = new System.Drawing.Size(131, 20);
             this.checkEsInversion.TabIndex = 10;
             this.checkEsInversion.Text = "Es para Inversión";
             this.checkEsInversion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -138,10 +138,10 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.label8.Font = new System.Drawing.Font("News Cycle", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(7, 150);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(9, 151);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(72, 21);
+            this.label8.Size = new System.Drawing.Size(80, 16);
             this.label8.TabIndex = 14;
             this.label8.Text = "Dormitorios:";
             // 
@@ -149,107 +149,107 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("News Cycle", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(320, 121);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(296, 120);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(103, 21);
+            this.label7.Size = new System.Drawing.Size(124, 16);
             this.label7.TabIndex = 13;
             this.label7.Text = "Tipo de Operación:";
             // 
             // cbTipoOperacion
             // 
-            this.cbTipoOperacion.Font = new System.Drawing.Font("News Cycle", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTipoOperacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTipoOperacion.FormattingEnabled = true;
             this.cbTipoOperacion.Location = new System.Drawing.Point(426, 117);
             this.cbTipoOperacion.Name = "cbTipoOperacion";
-            this.cbTipoOperacion.Size = new System.Drawing.Size(191, 28);
+            this.cbTipoOperacion.Size = new System.Drawing.Size(191, 23);
             this.cbTipoOperacion.TabIndex = 8;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("News Cycle", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(6, 120);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(98, 21);
+            this.label6.Size = new System.Drawing.Size(116, 16);
             this.label6.TabIndex = 11;
             this.label6.Text = "Tipo de Inmueble:";
             // 
             // cbTipoInmueble
             // 
-            this.cbTipoInmueble.Font = new System.Drawing.Font("News Cycle", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTipoInmueble.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTipoInmueble.FormattingEnabled = true;
-            this.cbTipoInmueble.Location = new System.Drawing.Point(110, 116);
+            this.cbTipoInmueble.Location = new System.Drawing.Point(131, 117);
             this.cbTipoInmueble.Name = "cbTipoInmueble";
-            this.cbTipoInmueble.Size = new System.Drawing.Size(120, 28);
+            this.cbTipoInmueble.Size = new System.Drawing.Size(159, 23);
             this.cbTipoInmueble.TabIndex = 7;
             // 
             // numHasta
             // 
-            this.numHasta.Font = new System.Drawing.Font("News Cycle", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numHasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numHasta.Increment = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.numHasta.Location = new System.Drawing.Point(462, 85);
+            this.numHasta.Location = new System.Drawing.Point(478, 88);
             this.numHasta.Maximum = new decimal(new int[] {
             -1530494976,
             232830,
             0,
             0});
             this.numHasta.Name = "numHasta";
-            this.numHasta.Size = new System.Drawing.Size(153, 27);
+            this.numHasta.Size = new System.Drawing.Size(137, 21);
             this.numHasta.TabIndex = 6;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("News Cycle", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(385, 89);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 21);
+            this.label5.Size = new System.Drawing.Size(87, 16);
             this.label5.TabIndex = 8;
             this.label5.Text = "Monto Hasta:";
             // 
             // numDesde
             // 
-            this.numDesde.Font = new System.Drawing.Font("News Cycle", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numDesde.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numDesde.Increment = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.numDesde.Location = new System.Drawing.Point(223, 84);
+            this.numDesde.Location = new System.Drawing.Point(244, 88);
             this.numDesde.Maximum = new decimal(new int[] {
             -727379968,
             232,
             0,
             0});
             this.numDesde.Name = "numDesde";
-            this.numDesde.Size = new System.Drawing.Size(153, 27);
+            this.numDesde.Size = new System.Drawing.Size(132, 21);
             this.numDesde.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("News Cycle", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label4.Location = new System.Drawing.Point(146, 90);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 21);
+            this.label4.Size = new System.Drawing.Size(92, 16);
             this.label4.TabIndex = 6;
             this.label4.Text = "Monto Desde:";
             // 
             // txEmail
             // 
-            this.txEmail.Font = new System.Drawing.Font("News Cycle", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txEmail.Location = new System.Drawing.Point(288, 53);
             this.txEmail.Name = "txEmail";
-            this.txEmail.Size = new System.Drawing.Size(328, 27);
+            this.txEmail.Size = new System.Drawing.Size(328, 21);
             this.txEmail.TabIndex = 3;
             // 
             // label3
@@ -257,46 +257,46 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label3.Font = new System.Drawing.Font("News Cycle", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(245, 58);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 21);
+            this.label3.Size = new System.Drawing.Size(45, 16);
             this.label3.TabIndex = 4;
             this.label3.Text = "Email:";
             // 
             // txTelefono
             // 
-            this.txTelefono.Font = new System.Drawing.Font("News Cycle", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txTelefono.Location = new System.Drawing.Point(59, 53);
+            this.txTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txTelefono.Location = new System.Drawing.Point(74, 53);
             this.txTelefono.Name = "txTelefono";
-            this.txTelefono.Size = new System.Drawing.Size(180, 27);
+            this.txTelefono.Size = new System.Drawing.Size(165, 21);
             this.txTelefono.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("News Cycle", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(5, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 21);
+            this.label2.Size = new System.Drawing.Size(65, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "Teléfono:";
             // 
             // txNombre
             // 
-            this.txNombre.Font = new System.Drawing.Font("News Cycle", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txNombre.Location = new System.Drawing.Point(59, 21);
+            this.txNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txNombre.Location = new System.Drawing.Point(72, 21);
             this.txNombre.Name = "txNombre";
-            this.txNombre.Size = new System.Drawing.Size(557, 27);
+            this.txNombre.Size = new System.Drawing.Size(544, 21);
             this.txNombre.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("News Cycle", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(10, 24);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 21);
+            this.label1.Size = new System.Drawing.Size(60, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre:";
             // 
@@ -306,7 +306,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btEliminar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btEliminar.Font = new System.Drawing.Font("News Cycle", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btEliminar.Location = new System.Drawing.Point(3, 289);
             this.btEliminar.Name = "btEliminar";
             this.btEliminar.Size = new System.Drawing.Size(160, 31);
@@ -321,7 +321,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btCancelar.Font = new System.Drawing.Font("News Cycle", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCancelar.Location = new System.Drawing.Point(307, 289);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(160, 31);
@@ -336,17 +336,18 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btGuardar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btGuardar.Font = new System.Drawing.Font("News Cycle", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btGuardar.Location = new System.Drawing.Point(469, 289);
             this.btGuardar.Name = "btGuardar";
             this.btGuardar.Size = new System.Drawing.Size(160, 31);
             this.btGuardar.TabIndex = 11;
             this.btGuardar.Text = "Guardar";
             this.btGuardar.UseVisualStyleBackColor = false;
+            this.btGuardar.Click += new System.EventHandler(this.btGuardar_Click);
             // 
             // frmInteresado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -355,7 +356,7 @@
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btEliminar);
             this.Controls.Add(this.groupBox1);
-            this.Font = new System.Drawing.Font("Slabo 27px", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmInteresado";

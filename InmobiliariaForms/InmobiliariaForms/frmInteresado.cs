@@ -55,8 +55,6 @@ namespace InmobiliariaForms
 
         private void btGuardar_Click(object sender, EventArgs e)
         {
-            //ToDo: Facu
-            //Validar campos mandatorios o requeridos
            
             try
             {
@@ -136,7 +134,5 @@ namespace InmobiliariaForms
         {
             //Parece qye ahi va.
         }
-
-       
     }
 }

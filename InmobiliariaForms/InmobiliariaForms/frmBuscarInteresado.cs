@@ -20,7 +20,6 @@ namespace InmobiliariaForms
         private void btBuscar_Click(object sender, EventArgs e)
         {
             Interesado interesado = new Interesado();
-            
 
             eTipoInmueble tipoInmueble;
             Enum.TryParse<eTipoInmueble>(cbTipoInmueble.SelectedValue.ToString(), out tipoInmueble);
