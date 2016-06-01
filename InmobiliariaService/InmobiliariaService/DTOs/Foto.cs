@@ -9,7 +9,7 @@ namespace InmobiliariaService
     public class Foto
     {
         public int Id { get; set; }
-        public int InmobiliariaId { get; set; }
+        public int InmuebleId { get; set; }
         public byte[] Imagen { get; set; }
     }
 }

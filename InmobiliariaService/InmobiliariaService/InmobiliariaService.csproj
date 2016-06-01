@@ -73,6 +73,7 @@
     <Compile Include="DAOs\InmuebleDAO.cs" />
     <Compile Include="DAOs\InteresadoDAO.cs" />
     <Compile Include="DTOs\Foto.cs" />
+    <Compile Include="FotoDAO.cs" />
     <Compile Include="Service.asmx.cs">
       <DependentUpon>Service.asmx</DependentUpon>
       <SubType>Component</SubType>

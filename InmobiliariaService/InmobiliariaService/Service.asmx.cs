@@ -123,6 +123,19 @@ namespace InmobiliariaService
                 throw ex;
             }
         }
+
+        [WebMethod]
+        public Foto[] GetFotosDelInmueble(int inmuebleId)
+        {
+            try
+            {
+                return FotoDAO.GetFotosDelInmueble(inmuebleId).ToArray();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 
 }
