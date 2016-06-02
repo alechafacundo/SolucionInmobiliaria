@@ -69,14 +69,13 @@
             // 
             this.gvResultado.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.gvResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvResultado.Location = new System.Drawing.Point(2, 190);
+            this.gvResultado.Location = new System.Drawing.Point(2, 194);
             this.gvResultado.MultiSelect = false;
             this.gvResultado.Name = "gvResultado";
             this.gvResultado.ReadOnly = true;
             this.gvResultado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvResultado.Size = new System.Drawing.Size(626, 226);
+            this.gvResultado.Size = new System.Drawing.Size(626, 218);
             this.gvResultado.TabIndex = 5;
-            this.gvResultado.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvResultado_CellContentDoubleClick);
             this.gvResultado.DoubleClick += new System.EventHandler(this.gvResultado_DoubleClick);
             // 
             // g
@@ -115,7 +114,7 @@
             this.g.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.g.Location = new System.Drawing.Point(2, 1);
             this.g.Name = "g";
-            this.g.Size = new System.Drawing.Size(626, 186);
+            this.g.Size = new System.Drawing.Size(626, 187);
             this.g.TabIndex = 4;
             this.g.TabStop = false;
             // 
@@ -123,7 +122,7 @@
             // 
             this.btCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btCancelar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCancelar.Location = new System.Drawing.Point(284, 152);
+            this.btCancelar.Location = new System.Drawing.Point(294, 150);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(160, 31);
             this.btCancelar.TabIndex = 50;
@@ -162,7 +161,7 @@
             // 
             this.btBuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btBuscar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBuscar.Location = new System.Drawing.Point(461, 152);
+            this.btBuscar.Location = new System.Drawing.Point(460, 150);
             this.btBuscar.Name = "btBuscar";
             this.btBuscar.Size = new System.Drawing.Size(160, 31);
             this.btBuscar.TabIndex = 46;

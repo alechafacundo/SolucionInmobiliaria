@@ -15,6 +15,8 @@ namespace InmobiliariaForms
     {
         public Vendedor Vendedor { get; set; }
 
+        List<Inmueble> inmuebles = new List<Inmueble>();
+
         public frmBuscarInmueble()
         {
             InitializeComponent();
@@ -58,6 +60,11 @@ namespace InmobiliariaForms
                 Service ws = new Service();
                 List<Inmueble> inmuebles = ws.BuscarInmuebles(inmueble, precioDesde, precioHasta).ToList();
                 gvResultado.DataSource = inmuebles;
+
+                gvResultado.Columns["Id"].Visible = false;
+                gvResultado.Columns["Moneda"].Visible = false;
+                gvResultado.Columns["Operacion"].Visible = false;
+                gvResultado.Columns["Tipo"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -79,7 +86,17 @@ namespace InmobiliariaForms
                 cbMoneda.DataSource = Enum.GetNames(typeof(eMoneda));
                 cbMoneda.SelectedItem = null;
 
-                          
+
+                //Para mas adelante lo cambiamos así o vemos como lo hacemos
+                //if (inmuebles.Count() == 0)
+                //{
+                //    Service ws = new Service();
+                //    inmuebles = ws.GetInmuebles().ToList();
+                //}
+
+                //gvResultado.DataSource = inmuebles;
+                //gvResultado.Columns["Id"].Visible = false;
+
             }
             catch (Exception ex)
             {
@@ -89,11 +106,6 @@ namespace InmobiliariaForms
         }
         //ToDo Fabri
         //estos eventos que son?
-
-        private void gvResultado_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void gvResultado_DoubleClick(object sender, EventArgs e)
         {

@@ -47,6 +47,8 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         private System.Threading.SendOrPostCallback GetInteresadosOperationCompleted;
         
+        private System.Threading.SendOrPostCallback GetInmueblesOperationCompleted;
+        
         private System.Threading.SendOrPostCallback LoginOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetFotosDelInmuebleOperationCompleted;
@@ -117,6 +119,9 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         /// <remarks/>
         public event GetInteresadosCompletedEventHandler GetInteresadosCompleted;
+        
+        /// <remarks/>
+        public event GetInmueblesCompletedEventHandler GetInmueblesCompleted;
         
         /// <remarks/>
         public event LoginCompletedEventHandler LoginCompleted;
@@ -389,6 +394,33 @@ namespace InmobiliariaForms.InmobiliariaService {
             if ((this.GetInteresadosCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.GetInteresadosCompleted(this, new GetInteresadosCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetInmuebles", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Inmueble[] GetInmuebles() {
+            object[] results = this.Invoke("GetInmuebles", new object[0]);
+            return ((Inmueble[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetInmueblesAsync() {
+            this.GetInmueblesAsync(null);
+        }
+        
+        /// <remarks/>
+        public void GetInmueblesAsync(object userState) {
+            if ((this.GetInmueblesOperationCompleted == null)) {
+                this.GetInmueblesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetInmueblesOperationCompleted);
+            }
+            this.InvokeAsync("GetInmuebles", new object[0], this.GetInmueblesOperationCompleted, userState);
+        }
+        
+        private void OnGetInmueblesOperationCompleted(object arg) {
+            if ((this.GetInmueblesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetInmueblesCompleted(this, new GetInmueblesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1349,6 +1381,32 @@ namespace InmobiliariaForms.InmobiliariaService {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((Interesado[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetInmueblesCompletedEventHandler(object sender, GetInmueblesCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetInmueblesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetInmueblesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Inmueble[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Inmueble[])(this.results[0]));
             }
         }
     }
