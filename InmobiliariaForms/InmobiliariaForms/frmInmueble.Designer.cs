@@ -741,7 +741,7 @@
             this.btGuardarFotos.Name = "btGuardarFotos";
             this.btGuardarFotos.Size = new System.Drawing.Size(95, 23);
             this.btGuardarFotos.TabIndex = 29;
-            this.btGuardarFotos.Text = "Guardar Fotos";
+            this.btGuardarFotos.Text = "Agregar Fotos";
             this.btGuardarFotos.UseVisualStyleBackColor = false;
             this.btGuardarFotos.Click += new System.EventHandler(this.btGuardarFotos_Click);
             // 
