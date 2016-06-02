@@ -20,16 +20,34 @@ namespace InmobiliariaForms
 
         private void btBuscar_Click(object sender, EventArgs e)
         {
-
-
-            Service ws = new Service();
-
-            if (Interesados.Count() == 0)
+            try
             {
-                Interesados = ws.GetInteresados().ToList();
-            }
+                if (gvResultado.SelectedRows.Count == 1)
+                {
+                    Interesado interesado = (Interesado)gvResultado.SelectedRows[0].DataBoundItem;
 
-            gvResultado.DataSource = Interesados;
+                    frmInteresado frmInteresado = new frmInteresado();
+                    frmInteresado.Interesado = interesado;
+
+                    frmInteresado.MdiParent = (Form)this.Parent.Parent;
+                    Panel p = (Panel)this.Parent.Parent.Controls.Find("pnlMdi", true).First();
+                    p.Controls.Add(frmInteresado);
+
+                    frmInteresado.BringToFront();
+                    frmInteresado.StartPosition = FormStartPosition.Manual;
+
+                    //int width = this.Controls.Find("netBarControl1", true)[0].Width;
+                    frmInteresado.Location = new Point(120, 0);
+                    this.Close();
+                    frmInteresado.Show();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Helper.EnviarNotificacion(ex);
+                throw;
+            }
         }
 
         private void FiltrarResultados(object sender, EventArgs e)
@@ -40,8 +58,6 @@ namespace InmobiliariaForms
                 interesado.Nombre = txNombre.Text;
                 interesado.Email = txEmail.Text;
                 interesado.Telefono = txTelefono.Text;
-
-
 
                 List<Interesado> aux = new List<Interesado>();
 
@@ -77,38 +93,17 @@ namespace InmobiliariaForms
             this.Close();
         }
 
-        private void gvResultado_CellContentDoubleClick(object sender, EventArgs e)
+        private void frmBuscarInteresado_Load(object sender, EventArgs e)
         {
+            Service ws = new Service();
+
+            if (Interesados.Count() == 0)
             {
-                try
-                {
-                    if (gvResultado.SelectedRows.Count == 1)
-                    {
-                        Interesado interesado = (Interesado)gvResultado.SelectedRows[0].DataBoundItem;
-
-                        frmInteresado frmInteresado = new frmInteresado();
-                        //frmInteresado.Interesado = interesado;
-                        
-                        frmInteresado.MdiParent = (Form)this.Parent.Parent;
-                        Panel p = (Panel)this.Parent.Parent.Controls.Find("pnlMdi", true).First();
-                        p.Controls.Add(frmInteresado);
-
-                        frmInteresado.BringToFront();
-                        frmInteresado.StartPosition = FormStartPosition.Manual;
-
-                        //int width = this.Controls.Find("netBarControl1", true)[0].Width;
-                        frmInteresado.Location = new Point(120, 0);
-                        this.Close();
-                        frmInteresado.Show();
-
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Helper.EnviarNotificacion(ex);
-                    throw;
-                }
+                Interesados = ws.GetInteresados().ToList();
             }
+
+            gvResultado.DataSource = Interesados;
+            gvResultado.Columns["Id"].Visible = false;
         }
     }
 

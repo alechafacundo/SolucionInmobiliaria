@@ -30,8 +30,6 @@
         {
             this.gvResultado = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btCancelar = new System.Windows.Forms.Button();
-            this.btBuscar = new System.Windows.Forms.Button();
             this.txDorm = new System.Windows.Forms.TextBox();
             this.cbMoneda = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -51,6 +49,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btCancelar = new System.Windows.Forms.Button();
+            this.btBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvResultado)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHasta)).BeginInit();
@@ -61,17 +61,17 @@
             // 
             this.gvResultado.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.gvResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvResultado.Location = new System.Drawing.Point(9, 199);
+            this.gvResultado.Location = new System.Drawing.Point(9, 165);
             this.gvResultado.MultiSelect = false;
             this.gvResultado.Name = "gvResultado";
-            this.gvResultado.Size = new System.Drawing.Size(612, 191);
+            this.gvResultado.ReadOnly = true;
+            this.gvResultado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gvResultado.Size = new System.Drawing.Size(612, 179);
             this.gvResultado.TabIndex = 43;
-            this.gvResultado.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvResultado_CellContentDoubleClick);
+            this.gvResultado.DoubleClick += new System.EventHandler(this.btBuscar_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btCancelar);
-            this.groupBox1.Controls.Add(this.btBuscar);
             this.groupBox1.Controls.Add(this.txDorm);
             this.groupBox1.Controls.Add(this.cbMoneda);
             this.groupBox1.Controls.Add(this.label12);
@@ -94,33 +94,9 @@
             this.groupBox1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(9, 1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(612, 198);
+            this.groupBox1.Size = new System.Drawing.Size(612, 158);
             this.groupBox1.TabIndex = 44;
             this.groupBox1.TabStop = false;
-            // 
-            // btCancelar
-            // 
-            this.btCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btCancelar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCancelar.Location = new System.Drawing.Point(280, 161);
-            this.btCancelar.Name = "btCancelar";
-            this.btCancelar.Size = new System.Drawing.Size(160, 31);
-            this.btCancelar.TabIndex = 74;
-            this.btCancelar.Text = "Cancelar";
-            this.btCancelar.UseVisualStyleBackColor = false;
-            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
-            // 
-            // btBuscar
-            // 
-            this.btBuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btBuscar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBuscar.Location = new System.Drawing.Point(446, 161);
-            this.btBuscar.Name = "btBuscar";
-            this.btBuscar.Size = new System.Drawing.Size(160, 31);
-            this.btBuscar.TabIndex = 73;
-            this.btBuscar.Text = "Buscar";
-            this.btBuscar.UseVisualStyleBackColor = false;
-            this.btBuscar.Click += new System.EventHandler(this.btBuscar_Click);
             // 
             // txDorm
             // 
@@ -327,17 +303,44 @@
             this.label1.TabIndex = 53;
             this.label1.Text = "Nombre:";
             // 
+            // btCancelar
+            // 
+            this.btCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btCancelar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancelar.Location = new System.Drawing.Point(301, 354);
+            this.btCancelar.Name = "btCancelar";
+            this.btCancelar.Size = new System.Drawing.Size(160, 31);
+            this.btCancelar.TabIndex = 74;
+            this.btCancelar.Text = "Cancelar";
+            this.btCancelar.UseVisualStyleBackColor = false;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
+            // 
+            // btBuscar
+            // 
+            this.btBuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btBuscar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btBuscar.Location = new System.Drawing.Point(467, 354);
+            this.btBuscar.Name = "btBuscar";
+            this.btBuscar.Size = new System.Drawing.Size(154, 31);
+            this.btBuscar.TabIndex = 73;
+            this.btBuscar.Text = "Mas Detalles";
+            this.btBuscar.UseVisualStyleBackColor = false;
+            this.btBuscar.Click += new System.EventHandler(this.btBuscar_Click);
+            // 
             // frmBuscarInteresado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(629, 397);
+            this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btBuscar);
             this.Controls.Add(this.gvResultado);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmBuscarInteresado";
             this.Text = "frmBuscarInteresado";
+            this.Load += new System.EventHandler(this.frmBuscarInteresado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvResultado)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

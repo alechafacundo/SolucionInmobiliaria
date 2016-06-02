@@ -12,7 +12,7 @@ namespace InmobiliariaForms
 {
     public partial class frmInteresado : Form
     {
-        Interesado Interesado { get; set; }
+        public Interesado Interesado { get; set; }
 
         public frmInteresado()
         {
