@@ -120,6 +120,32 @@ namespace InmobiliariaService
             }
         }
 
+        internal static List<Inmueble> GetInmuebles()
+        {
+            try
+            {
+                //Instanciamos una lista de inmuebles que es la que vamos a retornar
+                List<Inmueble> inmuebles = new List<Inmueble>();
+                //Hasta aca la lista esta vacia
+
+                //Le pedimos a la bd que nos de todos los inmuebles
+                DataTable dt = DAOBase.GetDataTable(new Inmueble(), string.Empty);
+                if (dt.Rows.Count > 0)
+                {
+                    //Aca llenamos la lista de inmuebles
+                    inmuebles = LlenarInmuebles(new Inmueble(), dt);
+                }
+
+                //Retornamos la lista de inmuebles
+                return inmuebles;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         private static List<Inmueble> LlenarInmuebles(Inmueble inmueble, DataTable dt)
         {
             List<Inmueble> dtos = new List<Inmueble>();

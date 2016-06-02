@@ -124,6 +124,19 @@ namespace InmobiliariaService
         }
 
         [WebMethod]
+        public Inmueble[] GetInmuebles()
+        {
+            try
+            {
+                return InmuebleDAO.GetInmuebles().ToArray();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [WebMethod]
         public Vendedor Login(string dni, string password)
         {
             try
