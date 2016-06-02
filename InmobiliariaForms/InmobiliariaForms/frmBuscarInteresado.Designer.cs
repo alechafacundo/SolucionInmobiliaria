@@ -62,9 +62,11 @@
             this.gvResultado.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.gvResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvResultado.Location = new System.Drawing.Point(9, 199);
+            this.gvResultado.MultiSelect = false;
             this.gvResultado.Name = "gvResultado";
             this.gvResultado.Size = new System.Drawing.Size(612, 191);
             this.gvResultado.TabIndex = 43;
+            this.gvResultado.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvResultado_CellContentDoubleClick);
             // 
             // groupBox1
             // 
