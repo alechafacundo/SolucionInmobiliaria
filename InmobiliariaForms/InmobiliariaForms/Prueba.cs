@@ -43,11 +43,10 @@ namespace InmobiliariaForms
             {
                 if (f.ShowDialog() == DialogResult.OK)
                 {
+                    //Para que no setee el vendedor y quede como nulo
                     if (f.Vendedor.Nombre == "admin")
-                    {
-                        //Para que no setee el vendedor y quede como nulo
                         return;
-                    }
+
                     this.Vendedor = f.Vendedor;
 
                 }
@@ -152,6 +151,43 @@ namespace InmobiliariaForms
             //frmAgregarInmueble.Location = new Point(121, 275);
             frmAgregarInteresado.Location = new Point(90, 10);
             frmAgregarInteresado.Show();
+        }
+
+        private void pbCerrar1_MouseHover(object sender, EventArgs e)
+        {
+            pbCerrar1.Visible = false;
+            pbCerrar2.Visible = true;
+            MouseHoverTime = 1;
+        }
+
+        private void pbCerrar2_MouseLeave(object sender, EventArgs e)
+        {
+            pbCerrar1.Visible = true;
+            pbCerrar2.Visible = false;
+        }
+
+        private void pbMinimizar1_MouseHover(object sender, EventArgs e)
+        {
+            pbMinimizar1.Visible = false;
+            pbMinimizar2.Visible = true;
+            MouseHoverTime = 1;
+        }
+
+        private void pbMinimizar2_MouseLeave(object sender, EventArgs e)
+        {
+            pbMinimizar1.Visible = true;
+            pbMinimizar2.Visible = false;
+        }
+
+        private void pbCerrar2_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        private void pbMinimizar2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
