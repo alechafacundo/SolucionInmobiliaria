@@ -37,12 +37,12 @@ namespace InmobiliariaService
                 List<Inmueble> inmuebles = new List<Inmueble>();
 
                 string where = string.Empty;
-                if (interesado.Dormitorios != null)
+                if (interesado.Dormitorios != null && interesado.Dormitorios != string.Empty)
                 {
-                    where += "Dormitorios == " + interesado.Dormitorios;
+                    where += "Dormitorios = " + interesado.Dormitorios;
                 }
 
-                if (interesado.MontoDesde != null)
+                if (interesado.MontoDesde != null && interesado.MontoDesde != 0)
                 {
                     if (where != string.Empty)
                         where += " AND ";
@@ -50,7 +50,7 @@ namespace InmobiliariaService
                     where += "Precio >= " + interesado.MontoDesde;
                 }
 
-                if (interesado.MontoHasta != null)
+                if (interesado.MontoHasta != null && interesado.MontoHasta != 0)
                 {
                     if (where != string.Empty)
                         where += " AND ";

@@ -176,6 +176,32 @@ namespace InmobiliariaService
                 throw ex;
             }
         }
+
+        [WebMethod]
+        public void NotificarSobreInmueble(Interesado interesado)
+        {
+            try
+            {
+                List<Inmueble> inmuebles = InmuebleDAO.GetInmueblesParaInteresado(interesado);
+                EmailHelper.SendInmueblesInEmail(inmuebles);
+            }
+            catch (Exception ex)
+            {
+                EmailHelper.EnviarNotificacion(ex);
+            }
+        }
+
+        [WebMethod]
+        public void NotificarSobreInteresado(Inmueble inmueble)
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+            }
+        }
     }
 
 }

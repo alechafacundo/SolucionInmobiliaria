@@ -70,6 +70,7 @@
     <Compile Include="DTOs\Inmueble.cs" />
     <Compile Include="DTOs\Interesado.cs" />
     <Compile Include="DTOs\Localidad.cs" />
+    <Compile Include="EmailHelper.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="DAOs\InmuebleDAO.cs" />
     <Compile Include="DAOs\InteresadoDAO.cs" />
