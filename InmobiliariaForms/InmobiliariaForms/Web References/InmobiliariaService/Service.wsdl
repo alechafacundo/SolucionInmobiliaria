@@ -267,6 +267,26 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="NotificarSobreInmueble">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="interesado" type="tns:Interesado" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NotificarSobreInmuebleResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="NotificarSobreInteresado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inmueble" type="tns:Inmueble" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NotificarSobreInteresadoResponse">
+        <s:complexType />
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HelloWorldSoapIn">
@@ -347,6 +367,18 @@
   <wsdl:message name="GuardarFotoSoapOut">
     <wsdl:part name="parameters" element="tns:GuardarFotoResponse" />
   </wsdl:message>
+  <wsdl:message name="NotificarSobreInmuebleSoapIn">
+    <wsdl:part name="parameters" element="tns:NotificarSobreInmueble" />
+  </wsdl:message>
+  <wsdl:message name="NotificarSobreInmuebleSoapOut">
+    <wsdl:part name="parameters" element="tns:NotificarSobreInmuebleResponse" />
+  </wsdl:message>
+  <wsdl:message name="NotificarSobreInteresadoSoapIn">
+    <wsdl:part name="parameters" element="tns:NotificarSobreInteresado" />
+  </wsdl:message>
+  <wsdl:message name="NotificarSobreInteresadoSoapOut">
+    <wsdl:part name="parameters" element="tns:NotificarSobreInteresadoResponse" />
+  </wsdl:message>
   <wsdl:portType name="ServiceSoap">
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
@@ -399,6 +431,14 @@
     <wsdl:operation name="GuardarFoto">
       <wsdl:input message="tns:GuardarFotoSoapIn" />
       <wsdl:output message="tns:GuardarFotoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NotificarSobreInmueble">
+      <wsdl:input message="tns:NotificarSobreInmuebleSoapIn" />
+      <wsdl:output message="tns:NotificarSobreInmuebleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NotificarSobreInteresado">
+      <wsdl:input message="tns:NotificarSobreInteresadoSoapIn" />
+      <wsdl:output message="tns:NotificarSobreInteresadoSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
@@ -520,6 +560,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="NotificarSobreInmueble">
+      <soap:operation soapAction="http://tempuri.org/NotificarSobreInmueble" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotificarSobreInteresado">
+      <soap:operation soapAction="http://tempuri.org/NotificarSobreInteresado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -633,6 +691,24 @@
     </wsdl:operation>
     <wsdl:operation name="GuardarFoto">
       <soap12:operation soapAction="http://tempuri.org/GuardarFoto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotificarSobreInmueble">
+      <soap12:operation soapAction="http://tempuri.org/NotificarSobreInmueble" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotificarSobreInteresado">
+      <soap12:operation soapAction="http://tempuri.org/NotificarSobreInteresado" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

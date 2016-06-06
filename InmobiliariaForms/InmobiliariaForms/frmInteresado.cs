@@ -89,6 +89,9 @@ namespace InmobiliariaForms
                     Service ws = new Service();
                     ws.GuardarInteresado(Interesado);
                     MessageBox.Show("Interesado guardado correctamente");
+
+                    ws.NotificarSobreInmuebleAsync(Interesado);
+
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                    

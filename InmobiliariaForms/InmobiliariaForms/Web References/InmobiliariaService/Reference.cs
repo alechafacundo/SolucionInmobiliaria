@@ -55,6 +55,10 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         private System.Threading.SendOrPostCallback GuardarFotoOperationCompleted;
         
+        private System.Threading.SendOrPostCallback NotificarSobreInmuebleOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback NotificarSobreInteresadoOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -131,6 +135,12 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         /// <remarks/>
         public event GuardarFotoCompletedEventHandler GuardarFotoCompleted;
+        
+        /// <remarks/>
+        public event NotificarSobreInmuebleCompletedEventHandler NotificarSobreInmuebleCompleted;
+        
+        /// <remarks/>
+        public event NotificarSobreInteresadoCompletedEventHandler NotificarSobreInteresadoCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/HelloWorld", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -510,6 +520,62 @@ namespace InmobiliariaForms.InmobiliariaService {
             if ((this.GuardarFotoCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.GuardarFotoCompleted(this, new GuardarFotoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/NotificarSobreInmueble", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void NotificarSobreInmueble(Interesado interesado) {
+            this.Invoke("NotificarSobreInmueble", new object[] {
+                        interesado});
+        }
+        
+        /// <remarks/>
+        public void NotificarSobreInmuebleAsync(Interesado interesado) {
+            this.NotificarSobreInmuebleAsync(interesado, null);
+        }
+        
+        /// <remarks/>
+        public void NotificarSobreInmuebleAsync(Interesado interesado, object userState) {
+            if ((this.NotificarSobreInmuebleOperationCompleted == null)) {
+                this.NotificarSobreInmuebleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNotificarSobreInmuebleOperationCompleted);
+            }
+            this.InvokeAsync("NotificarSobreInmueble", new object[] {
+                        interesado}, this.NotificarSobreInmuebleOperationCompleted, userState);
+        }
+        
+        private void OnNotificarSobreInmuebleOperationCompleted(object arg) {
+            if ((this.NotificarSobreInmuebleCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NotificarSobreInmuebleCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/NotificarSobreInteresado", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void NotificarSobreInteresado(Inmueble inmueble) {
+            this.Invoke("NotificarSobreInteresado", new object[] {
+                        inmueble});
+        }
+        
+        /// <remarks/>
+        public void NotificarSobreInteresadoAsync(Inmueble inmueble) {
+            this.NotificarSobreInteresadoAsync(inmueble, null);
+        }
+        
+        /// <remarks/>
+        public void NotificarSobreInteresadoAsync(Inmueble inmueble, object userState) {
+            if ((this.NotificarSobreInteresadoOperationCompleted == null)) {
+                this.NotificarSobreInteresadoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNotificarSobreInteresadoOperationCompleted);
+            }
+            this.InvokeAsync("NotificarSobreInteresado", new object[] {
+                        inmueble}, this.NotificarSobreInteresadoOperationCompleted, userState);
+        }
+        
+        private void OnNotificarSobreInteresadoOperationCompleted(object arg) {
+            if ((this.NotificarSobreInteresadoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NotificarSobreInteresadoCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1488,6 +1554,14 @@ namespace InmobiliariaForms.InmobiliariaService {
             }
         }
     }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void NotificarSobreInmuebleCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void NotificarSobreInteresadoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
 }
 
 #pragma warning restore 1591
