@@ -33,7 +33,6 @@
             this.txDorm = new System.Windows.Forms.TextBox();
             this.cbMoneda = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.checkEsInversion = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cbTipoOperacion = new System.Windows.Forms.ComboBox();
@@ -52,6 +51,8 @@
             this.btEliminar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.btGuardar = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txObservaciones = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHasta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDesde)).BeginInit();
@@ -64,10 +65,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.groupBox1.Controls.Add(this.txObservaciones);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txDorm);
             this.groupBox1.Controls.Add(this.cbMoneda);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.checkEsInversion);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.cbTipoOperacion);
@@ -118,21 +120,6 @@
             this.label12.Size = new System.Drawing.Size(61, 16);
             this.label12.TabIndex = 23;
             this.label12.Text = "Moneda:";
-            // 
-            // checkEsInversion
-            // 
-            this.checkEsInversion.AutoSize = true;
-            this.checkEsInversion.BackColor = System.Drawing.Color.Transparent;
-            this.checkEsInversion.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkEsInversion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkEsInversion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.checkEsInversion.Location = new System.Drawing.Point(485, 140);
-            this.checkEsInversion.Name = "checkEsInversion";
-            this.checkEsInversion.Size = new System.Drawing.Size(131, 20);
-            this.checkEsInversion.TabIndex = 10;
-            this.checkEsInversion.Text = "Es para Inversión";
-            this.checkEsInversion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkEsInversion.UseVisualStyleBackColor = false;
             // 
             // label8
             // 
@@ -205,6 +192,7 @@
             this.numHasta.Name = "numHasta";
             this.numHasta.Size = new System.Drawing.Size(137, 21);
             this.numHasta.TabIndex = 6;
+            this.numHasta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label5
             // 
@@ -234,6 +222,7 @@
             this.numDesde.Name = "numDesde";
             this.numDesde.Size = new System.Drawing.Size(132, 21);
             this.numDesde.TabIndex = 5;
+            this.numDesde.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label4
             // 
@@ -348,6 +337,24 @@
             this.btGuardar.UseVisualStyleBackColor = false;
             this.btGuardar.Click += new System.EventHandler(this.btGuardar_Click);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(261, 143);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(89, 14);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Observaciones:";
+            // 
+            // txObservaciones
+            // 
+            this.txObservaciones.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txObservaciones.Location = new System.Drawing.Point(356, 138);
+            this.txObservaciones.Name = "txObservaciones";
+            this.txObservaciones.Size = new System.Drawing.Size(261, 22);
+            this.txObservaciones.TabIndex = 25;
+            // 
             // frmInteresado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -377,7 +384,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox checkEsInversion;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbTipoOperacion;
@@ -399,5 +405,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox cbMoneda;
         private System.Windows.Forms.TextBox txDorm;
+        private System.Windows.Forms.TextBox txObservaciones;
+        private System.Windows.Forms.Label label9;
     }
 }

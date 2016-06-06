@@ -227,7 +227,7 @@
             this.gvResultado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvResultado.Size = new System.Drawing.Size(612, 170);
             this.gvResultado.TabIndex = 44;
-            // 
+           
             // frmBuscarVendedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

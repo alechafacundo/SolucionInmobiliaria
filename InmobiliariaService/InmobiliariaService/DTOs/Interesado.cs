@@ -18,5 +18,6 @@ namespace InmobiliariaService
         public int TipoDeInmueble { get; set; }
         public string Dormitorios { get; set; }
         public bool ParaInversion { get; set; }
+        public string Observaciones { get; set; }
     }
 }

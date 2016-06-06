@@ -67,6 +67,8 @@ namespace InmobiliariaForms
             }
 
             gvResultado.DataSource = Vendedores;
+            gvResultado.Columns["Password"].Visible = false;
+            gvResultado.Columns["Id"].Visible = false; 
 
         }
 
@@ -82,6 +84,7 @@ namespace InmobiliariaForms
                 vendedor.Telefono = txTelefono.Text;
                 vendedor.Celular = txCelular.Text;
                 vendedor.Email = txEmail.Text;
+              
 
                 List<Vendedor> aux = new List<Vendedor>();
 
@@ -119,11 +122,15 @@ namespace InmobiliariaForms
                 gvResultado.DataSource = aux;
                 gvResultado.Columns["Id"].Visible = false;
                 gvResultado.Columns["FullName"].Visible = false;
+                
+
             }
             catch (Exception)
             {
             }
 
         }
+
+
     }
 }

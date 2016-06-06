@@ -48,6 +48,7 @@ namespace InmobiliariaForms
                 inmueble.Baños = txBaño.Text.ToUpperInvariant();
                 inmueble.Garage = txGarage.Text.ToUpperInvariant();
                 inmueble.Comedor = txComedor.Text.ToUpperInvariant();
+                
 
                 decimal? precioDesde = null;
                 if (numPrecioDesde.Value != 0)
@@ -62,7 +63,7 @@ namespace InmobiliariaForms
                 gvResultado.DataSource = inmuebles;
 
                 gvResultado.Columns["Id"].Visible = false;
-                gvResultado.Columns["Moneda"].Visible = false;
+             
                 gvResultado.Columns["Operacion"].Visible = false;
                 gvResultado.Columns["Tipo"].Visible = false;
             }
