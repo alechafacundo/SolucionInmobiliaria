@@ -136,6 +136,7 @@ namespace InmobiliariaForms
                 cbCargadoPor.DisplayMember = "FullName";
                 cbCargadoPor.ValueMember = "Id";
                 cbCargadoPor.SelectedItem = null;
+                cbCargadoPor.Enabled = false;
 
                 if (this.Vendedor != null)
                 {
@@ -167,7 +168,7 @@ namespace InmobiliariaForms
                     txGarage.Text = Inmueble.Garage;
                     txPatio.Text = Inmueble.Patio;
                     txOtras.Text = Inmueble.OtrasDependencias;
-                    cbCargadoPor.SelectedValue = vendedores.Find(x => x.Id == Vendedor.Id);
+                    cbCargadoPor.SelectedValue = vendedores.Find(x => x.Id == Vendedor.Id).Id;
                     txContacto.Text = Inmueble.Contacto;
                     txReferencia.Text = Inmueble.Referencia;
                     

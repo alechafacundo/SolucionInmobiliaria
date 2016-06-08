@@ -16,6 +16,7 @@ namespace InmobiliariaForms
         public Vendedor Vendedor { get; set; }
 
         List<Inmueble> inmuebles = new List<Inmueble>();
+        List<Vendedor> vendedores = new List<Vendedor>();
 
         public frmBuscarInmueble()
         {
@@ -61,18 +62,32 @@ namespace InmobiliariaForms
                     precioHasta = numPrecioHasta.Value;
 
                 Service ws = new Service();
+
+                //Para tener el maestro de Vendedores y poder ponerlos ahi
+                if (vendedores.Count == 0)
+                {
+                    vendedores = ws.GetVendedores().ToList();
+                }
+
                 List<Inmueble> inmuebles = ws.BuscarInmuebles(inmueble, precioDesde, precioHasta).ToList();
                 gvResultado.DataSource = inmuebles;
 
                 gvResultado.Columns["Id"].Visible = false;
-             
                 gvResultado.Columns["Operacion"].Visible = false;
                 gvResultado.Columns["Tipo"].Visible = false;
+                gvResultado.Columns["Moneda"].Visible = false;
+                gvResultado.Columns["CargadoPor"].Visible = false;
+                gvResultado.Columns.Add("CargadoNombre", "Cargado Por");
+
+                foreach (DataGridViewRow item in gvResultado.Rows)
+                {
+                    item.Cells["CargadoNombre"].Value = vendedores.Find(x => x.Id == (int)item.Cells["CargadoPor"].Value).FullName;
+                }
             }
             catch (Exception ex)
             {
                 Helper.EnviarNotificacion(ex);
-                throw;
+                throw ex;
             }
         }
 
@@ -87,7 +102,7 @@ namespace InmobiliariaForms
                 cbTipoOperacion.SelectedItem = null;
 
                 cbMoneda.DataSource = Enum.GetNames(typeof(eMoneda));
-                cbMoneda.SelectedItem = null;
+                cbMoneda.SelectedItem = eMoneda.Peso;
 
 
                 //Para mas adelante lo cambiamos así o vemos como lo hacemos
@@ -107,8 +122,6 @@ namespace InmobiliariaForms
                 throw;
             }
         }
-        //ToDo Fabri
-        //estos eventos que son?
 
         private void gvResultado_DoubleClick(object sender, EventArgs e)
         {
@@ -118,8 +131,10 @@ namespace InmobiliariaForms
                 {
                     Inmueble inmueble = (Inmueble)gvResultado.SelectedRows[0].DataBoundItem;
 
+                    Vendedor cargadoPor = vendedores.Find(x => x.Id == inmueble.CargadoPor);
+
                     frmInmueble frmInmueble = new frmInmueble();
-                    frmInmueble.Vendedor = this.Vendedor;
+                    frmInmueble.Vendedor = cargadoPor;
                     frmInmueble.Inmueble = inmueble;
 
                     frmInmueble.MdiParent = (Form)this.Parent.Parent;
