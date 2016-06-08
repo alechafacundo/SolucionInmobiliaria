@@ -20,9 +20,9 @@ namespace InmobiliariaService
 
     public enum eTipoOperacion
     {
-
-        Venta = 0,
-        Alquiler = 1
+        Sin_Especificar = 0,
+        Venta = 1,
+        Alquiler = 2
     }
 
     public enum eMoneda

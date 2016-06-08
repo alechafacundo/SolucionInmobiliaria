@@ -196,7 +196,8 @@ namespace InmobiliariaService
         {
             try
             {
-
+                List<Interesado> interesados = InteresadoDAO.GetInteresadosParaInmueble(inmueble);
+                EmailHelper.SendInteresadosInEmail(interesados);
             }
             catch (Exception ex)
             {

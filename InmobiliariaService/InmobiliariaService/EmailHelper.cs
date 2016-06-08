@@ -66,7 +66,7 @@ namespace InmobiliariaService
                 EnviarNotificacion(cabecera + cuerpo);
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -121,6 +121,18 @@ namespace InmobiliariaService
             }
             catch (Exception)
             {
+            }
+        }
+
+        internal static void SendInteresadosInEmail(List<Interesado> interesados)
+        {
+            try
+            {
+
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
 
