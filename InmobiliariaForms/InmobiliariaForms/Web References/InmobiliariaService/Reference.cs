@@ -55,6 +55,16 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         private System.Threading.SendOrPostCallback GuardarFotoOperationCompleted;
         
+        private System.Threading.SendOrPostCallback NotificarSobreInmuebleOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback NotificarSobreInteresadoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback EliminarVendedorOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback EliminarInmuebleOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback EliminarInteresadoOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -131,6 +141,21 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         /// <remarks/>
         public event GuardarFotoCompletedEventHandler GuardarFotoCompleted;
+        
+        /// <remarks/>
+        public event NotificarSobreInmuebleCompletedEventHandler NotificarSobreInmuebleCompleted;
+        
+        /// <remarks/>
+        public event NotificarSobreInteresadoCompletedEventHandler NotificarSobreInteresadoCompleted;
+        
+        /// <remarks/>
+        public event EliminarVendedorCompletedEventHandler EliminarVendedorCompleted;
+        
+        /// <remarks/>
+        public event EliminarInmuebleCompletedEventHandler EliminarInmuebleCompleted;
+        
+        /// <remarks/>
+        public event EliminarInteresadoCompletedEventHandler EliminarInteresadoCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/HelloWorld", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -514,6 +539,149 @@ namespace InmobiliariaForms.InmobiliariaService {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/NotificarSobreInmueble", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void NotificarSobreInmueble(Interesado interesado) {
+            this.Invoke("NotificarSobreInmueble", new object[] {
+                        interesado});
+        }
+        
+        /// <remarks/>
+        public void NotificarSobreInmuebleAsync(Interesado interesado) {
+            this.NotificarSobreInmuebleAsync(interesado, null);
+        }
+        
+        /// <remarks/>
+        public void NotificarSobreInmuebleAsync(Interesado interesado, object userState) {
+            if ((this.NotificarSobreInmuebleOperationCompleted == null)) {
+                this.NotificarSobreInmuebleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNotificarSobreInmuebleOperationCompleted);
+            }
+            this.InvokeAsync("NotificarSobreInmueble", new object[] {
+                        interesado}, this.NotificarSobreInmuebleOperationCompleted, userState);
+        }
+        
+        private void OnNotificarSobreInmuebleOperationCompleted(object arg) {
+            if ((this.NotificarSobreInmuebleCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NotificarSobreInmuebleCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/NotificarSobreInteresado", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void NotificarSobreInteresado(Inmueble inmueble) {
+            this.Invoke("NotificarSobreInteresado", new object[] {
+                        inmueble});
+        }
+        
+        /// <remarks/>
+        public void NotificarSobreInteresadoAsync(Inmueble inmueble) {
+            this.NotificarSobreInteresadoAsync(inmueble, null);
+        }
+        
+        /// <remarks/>
+        public void NotificarSobreInteresadoAsync(Inmueble inmueble, object userState) {
+            if ((this.NotificarSobreInteresadoOperationCompleted == null)) {
+                this.NotificarSobreInteresadoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNotificarSobreInteresadoOperationCompleted);
+            }
+            this.InvokeAsync("NotificarSobreInteresado", new object[] {
+                        inmueble}, this.NotificarSobreInteresadoOperationCompleted, userState);
+        }
+        
+        private void OnNotificarSobreInteresadoOperationCompleted(object arg) {
+            if ((this.NotificarSobreInteresadoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NotificarSobreInteresadoCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/EliminarVendedor", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool EliminarVendedor(Vendedor vendedor) {
+            object[] results = this.Invoke("EliminarVendedor", new object[] {
+                        vendedor});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void EliminarVendedorAsync(Vendedor vendedor) {
+            this.EliminarVendedorAsync(vendedor, null);
+        }
+        
+        /// <remarks/>
+        public void EliminarVendedorAsync(Vendedor vendedor, object userState) {
+            if ((this.EliminarVendedorOperationCompleted == null)) {
+                this.EliminarVendedorOperationCompleted = new System.Threading.SendOrPostCallback(this.OnEliminarVendedorOperationCompleted);
+            }
+            this.InvokeAsync("EliminarVendedor", new object[] {
+                        vendedor}, this.EliminarVendedorOperationCompleted, userState);
+        }
+        
+        private void OnEliminarVendedorOperationCompleted(object arg) {
+            if ((this.EliminarVendedorCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.EliminarVendedorCompleted(this, new EliminarVendedorCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/EliminarInmueble", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool EliminarInmueble(Inmueble inmueble) {
+            object[] results = this.Invoke("EliminarInmueble", new object[] {
+                        inmueble});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void EliminarInmuebleAsync(Inmueble inmueble) {
+            this.EliminarInmuebleAsync(inmueble, null);
+        }
+        
+        /// <remarks/>
+        public void EliminarInmuebleAsync(Inmueble inmueble, object userState) {
+            if ((this.EliminarInmuebleOperationCompleted == null)) {
+                this.EliminarInmuebleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnEliminarInmuebleOperationCompleted);
+            }
+            this.InvokeAsync("EliminarInmueble", new object[] {
+                        inmueble}, this.EliminarInmuebleOperationCompleted, userState);
+        }
+        
+        private void OnEliminarInmuebleOperationCompleted(object arg) {
+            if ((this.EliminarInmuebleCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.EliminarInmuebleCompleted(this, new EliminarInmuebleCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/EliminarInteresado", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool EliminarInteresado(Interesado interesado) {
+            object[] results = this.Invoke("EliminarInteresado", new object[] {
+                        interesado});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void EliminarInteresadoAsync(Interesado interesado) {
+            this.EliminarInteresadoAsync(interesado, null);
+        }
+        
+        /// <remarks/>
+        public void EliminarInteresadoAsync(Interesado interesado, object userState) {
+            if ((this.EliminarInteresadoOperationCompleted == null)) {
+                this.EliminarInteresadoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnEliminarInteresadoOperationCompleted);
+            }
+            this.InvokeAsync("EliminarInteresado", new object[] {
+                        interesado}, this.EliminarInteresadoOperationCompleted, userState);
+        }
+        
+        private void OnEliminarInteresadoOperationCompleted(object arg) {
+            if ((this.EliminarInteresadoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.EliminarInteresadoCompleted(this, new EliminarInteresadoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -533,7 +701,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -880,7 +1048,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -926,7 +1094,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1055,7 +1223,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1083,6 +1251,8 @@ namespace InmobiliariaForms.InmobiliariaService {
         private string dormitoriosField;
         
         private bool paraInversionField;
+        
+        private string observacionesField;
         
         /// <remarks/>
         public int Id {
@@ -1195,10 +1365,20 @@ namespace InmobiliariaForms.InmobiliariaService {
                 this.paraInversionField = value;
             }
         }
+        
+        /// <remarks/>
+        public string Observaciones {
+            get {
+                return this.observacionesField;
+            }
+            set {
+                this.observacionesField = value;
+            }
+        }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public enum eTipoInmueble {
@@ -1214,7 +1394,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public enum eTipoOperacion {
@@ -1227,7 +1407,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public enum eMoneda {
@@ -1476,6 +1656,92 @@ namespace InmobiliariaForms.InmobiliariaService {
         private object[] results;
         
         internal GuardarFotoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void NotificarSobreInmuebleCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void NotificarSobreInteresadoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void EliminarVendedorCompletedEventHandler(object sender, EliminarVendedorCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class EliminarVendedorCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal EliminarVendedorCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void EliminarInmuebleCompletedEventHandler(object sender, EliminarInmuebleCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class EliminarInmuebleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal EliminarInmuebleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void EliminarInteresadoCompletedEventHandler(object sender, EliminarInteresadoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class EliminarInteresadoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal EliminarInteresadoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
