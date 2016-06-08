@@ -6,9 +6,16 @@ namespace InmobiliariaService
 {
     public enum eTipoInmueble
 	{
-        Casa = 0,
-        Terreno = 1,
-        Departamento = 2
+        Sin_Especificar = 0,
+        Casa = 1,
+        Terreno = 2,
+        Departamento = 3,
+        Quinta = 4,
+        Local = 5,
+        Oficina = 6,
+        Galpon = 7
+              
+
 	}
 
     public enum eTipoOperacion
