@@ -121,7 +121,7 @@ namespace InmobiliariaForms
             try
             {
                 cbTipoInmueble.DataSource = Enum.GetNames(typeof(eTipoInmueble));
-                cbTipoInmueble.SelectedItem = null;
+                cbTipoInmueble.SelectedItem = 0;
 
                 cbTipoOperacion.DataSource = Enum.GetNames(typeof(eTipoOperacion));
                 cbTipoOperacion.SelectedItem = null;

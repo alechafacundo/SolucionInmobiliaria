@@ -40,6 +40,8 @@ namespace InmobiliariaForms
                 Enum.TryParse(cbMoneda.SelectedValue.ToString(), out tipoMoneda);
                 inmueble.Moneda = (int)tipoMoneda;
 
+                
+
                 inmueble.Fecha = dateTimeFecha.Value;
                 inmueble.Localidad = txLocalidad.Text.ToUpperInvariant();
                 inmueble.Barrio = txBarrio.Text.ToUpperInvariant();

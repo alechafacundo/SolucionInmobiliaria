@@ -180,10 +180,10 @@
             this.cbTipoOperacion.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTipoOperacion.FormattingEnabled = true;
             this.cbTipoOperacion.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.cbTipoOperacion.Location = new System.Drawing.Point(275, 17);
+            this.cbTipoOperacion.Location = new System.Drawing.Point(305, 17);
             this.cbTipoOperacion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbTipoOperacion.Name = "cbTipoOperacion";
-            this.cbTipoOperacion.Size = new System.Drawing.Size(115, 22);
+            this.cbTipoOperacion.Size = new System.Drawing.Size(95, 22);
             this.cbTipoOperacion.TabIndex = 2;
             // 
             // groupBox1
@@ -667,7 +667,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(206, 23);
+            this.label2.Location = new System.Drawing.Point(241, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 14);
             this.label2.TabIndex = 2;
@@ -681,7 +681,7 @@
             this.cbTipoInmueble.Location = new System.Drawing.Point(114, 18);
             this.cbTipoInmueble.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbTipoInmueble.Name = "cbTipoInmueble";
-            this.cbTipoInmueble.Size = new System.Drawing.Size(89, 22);
+            this.cbTipoInmueble.Size = new System.Drawing.Size(121, 22);
             this.cbTipoInmueble.TabIndex = 1;
             // 
             // label1
