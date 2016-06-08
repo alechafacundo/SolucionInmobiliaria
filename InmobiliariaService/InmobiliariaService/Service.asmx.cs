@@ -202,6 +202,48 @@ namespace InmobiliariaService
             {
             }
         }
+
+        [WebMethod]
+        public bool EliminarVendedor(Vendedor vendedor)
+        {
+            try
+            {
+                return DAOBase.DeleteEntity(vendedor);
+            }
+            catch (Exception ex)
+            {
+                EmailHelper.EnviarNotificacion(ex);
+                throw ex;
+            }
+        }
+
+        [WebMethod]
+        public bool EliminarInmueble(Inmueble inmueble)
+        {
+            try
+            {
+                return DAOBase.DeleteEntity(inmueble);
+            }
+            catch (Exception ex)
+            {
+                EmailHelper.EnviarNotificacion(ex);
+                throw ex;
+            }
+        }
+
+        [WebMethod]
+        public bool EliminarInteresado(Interesado interesado)
+        {
+            try
+            {
+                return DAOBase.DeleteEntity(interesado);
+            }
+            catch (Exception ex)
+            {
+                EmailHelper.EnviarNotificacion(ex);
+                throw ex;
+            }
+        }
     }
 
 }
