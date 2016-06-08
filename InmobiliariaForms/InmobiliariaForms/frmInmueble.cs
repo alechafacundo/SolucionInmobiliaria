@@ -121,13 +121,13 @@ namespace InmobiliariaForms
             try
             {
                 cbTipoInmueble.DataSource = Enum.GetNames(typeof(eTipoInmueble));
-                cbTipoInmueble.SelectedItem = 0;
+                cbTipoInmueble.SelectedItem = eTipoInmueble.Sin_Especificar;
 
                 cbTipoOperacion.DataSource = Enum.GetNames(typeof(eTipoOperacion));
-                cbTipoOperacion.SelectedItem = null;
+                cbTipoOperacion.SelectedItem = eTipoOperacion.Sin_Especificar;
 
                 cbMoneda.DataSource = Enum.GetNames(typeof(eMoneda));
-                cbMoneda.SelectedItem = null;
+                cbMoneda.SelectedItem = eMoneda.Peso;
                 
                 Service ws = new Service();
                 //Esta lista la hago global para poder accederla

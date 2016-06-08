@@ -105,6 +105,7 @@ namespace InmobiliariaForms
             gvResultado.DataSource = Interesados;
             gvResultado.Columns["Id"].Visible = false;
         }
+               
     }
 
 }

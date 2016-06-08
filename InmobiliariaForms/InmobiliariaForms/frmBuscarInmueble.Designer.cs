@@ -59,6 +59,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cbTipoInmueble = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btImprimir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvResultado)).BeginInit();
             this.g.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecioHasta)).BeginInit();
@@ -82,6 +83,7 @@
             // 
             this.g.BackColor = System.Drawing.Color.White;
             this.g.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.g.Controls.Add(this.btImprimir);
             this.g.Controls.Add(this.btCancelar);
             this.g.Controls.Add(this.numPrecioHasta);
             this.g.Controls.Add(this.label6);
@@ -389,6 +391,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tipo de Inmueble:";
             // 
+            // btImprimir
+            // 
+            this.btImprimir.Location = new System.Drawing.Point(16, 155);
+            this.btImprimir.Name = "btImprimir";
+            this.btImprimir.Size = new System.Drawing.Size(75, 23);
+            this.btImprimir.TabIndex = 51;
+            this.btImprimir.Text = "\'";
+            this.btImprimir.UseVisualStyleBackColor = true;
+            this.btImprimir.Click += new System.EventHandler(this.btImprimir_Click);
+            // 
             // frmBuscarInmueble
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -443,5 +455,6 @@
         private System.Windows.Forms.ComboBox cbTipoInmueble;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btCancelar;
+        private System.Windows.Forms.Button btImprimir;
     }
 }

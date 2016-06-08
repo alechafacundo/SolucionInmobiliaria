@@ -86,6 +86,7 @@
       </s:simpleType>
       <s:simpleType name="eTipoOperacion">
         <s:restriction base="s:string">
+          <s:enumeration value="Sin_Especificar" />
           <s:enumeration value="Venta" />
           <s:enumeration value="Alquiler" />
         </s:restriction>

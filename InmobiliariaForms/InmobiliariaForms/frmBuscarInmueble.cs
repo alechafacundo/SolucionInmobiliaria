@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace InmobiliariaForms
 {
-  
+
     public partial class frmBuscarInmueble : Form
     {
         public Vendedor Vendedor { get; set; }
@@ -41,7 +41,7 @@ namespace InmobiliariaForms
                 Enum.TryParse(cbMoneda.SelectedValue.ToString(), out tipoMoneda);
                 inmueble.Moneda = (int)tipoMoneda;
 
-                
+
 
                 inmueble.Fecha = dateTimeFecha.Value;
                 inmueble.Localidad = txLocalidad.Text.ToUpperInvariant();
@@ -51,7 +51,7 @@ namespace InmobiliariaForms
                 inmueble.Baños = txBaño.Text.ToUpperInvariant();
                 inmueble.Garage = txGarage.Text.ToUpperInvariant();
                 inmueble.Comedor = txComedor.Text.ToUpperInvariant();
-                
+
 
                 decimal? precioDesde = null;
                 if (numPrecioDesde.Value != 0)
@@ -161,6 +161,18 @@ namespace InmobiliariaForms
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void btImprimir_Click(object sender, EventArgs e)
+        {
+            //DataGridView gvAux = new DataGridView();
+            //gvAux.Columns.Add("Fecha", "Fecha");
+            //gvAux.Columns.Add("Operacion", "Operación");
+            //gvAux.Columns.Add("Tipo", "Tipo");
+            //gvAux.Columns.Add("Fecha", "Fecha");
+            //gvAux.Columns.Add("Fecha", "Fecha");
+            //gvAux.Columns.Add("Fecha", "Fecha");
+
         }
     }
 }
