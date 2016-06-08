@@ -30,6 +30,7 @@
         {
             this.gvResultado = new System.Windows.Forms.DataGridView();
             this.g = new System.Windows.Forms.GroupBox();
+            this.btImprimir = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.numPrecioHasta = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
@@ -59,7 +60,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cbTipoInmueble = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btImprimir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvResultado)).BeginInit();
             this.g.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecioHasta)).BeginInit();
@@ -77,7 +77,7 @@
             this.gvResultado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvResultado.Size = new System.Drawing.Size(626, 218);
             this.gvResultado.TabIndex = 5;
-            this.gvResultado.DoubleClick += new System.EventHandler(this.gvResultado_DoubleClick);
+            this.gvResultado.DoubleClick += new System.EventHandler(this.btBuscar_Click);
             // 
             // g
             // 
@@ -119,6 +119,16 @@
             this.g.Size = new System.Drawing.Size(626, 187);
             this.g.TabIndex = 4;
             this.g.TabStop = false;
+            // 
+            // btImprimir
+            // 
+            this.btImprimir.Location = new System.Drawing.Point(16, 155);
+            this.btImprimir.Name = "btImprimir";
+            this.btImprimir.Size = new System.Drawing.Size(75, 23);
+            this.btImprimir.TabIndex = 51;
+            this.btImprimir.Text = "\'";
+            this.btImprimir.UseVisualStyleBackColor = true;
+            this.btImprimir.Click += new System.EventHandler(this.btImprimir_Click);
             // 
             // btCancelar
             // 
@@ -390,16 +400,6 @@
             this.label1.Size = new System.Drawing.Size(102, 14);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tipo de Inmueble:";
-            // 
-            // btImprimir
-            // 
-            this.btImprimir.Location = new System.Drawing.Point(16, 155);
-            this.btImprimir.Name = "btImprimir";
-            this.btImprimir.Size = new System.Drawing.Size(75, 23);
-            this.btImprimir.TabIndex = 51;
-            this.btImprimir.Text = "\'";
-            this.btImprimir.UseVisualStyleBackColor = true;
-            this.btImprimir.Click += new System.EventHandler(this.btImprimir_Click);
             // 
             // frmBuscarInmueble
             // 

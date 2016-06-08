@@ -28,6 +28,7 @@ namespace InmobiliariaForms
         {
             try
             {
+                //ToDo hacer que queda el campor Sin_Especificar pida poner inmueble 
                 string errores = ValidarCamposObligatorios();
                 if (errores == string.Empty)
                 {
