@@ -30,11 +30,8 @@
         {
             this.gvResultado = new System.Windows.Forms.DataGridView();
             this.g = new System.Windows.Forms.GroupBox();
-            this.btImprimir = new System.Windows.Forms.Button();
-            this.btCancelar = new System.Windows.Forms.Button();
             this.numPrecioHasta = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
-            this.btBuscar = new System.Windows.Forms.Button();
             this.cbTipoOperacion = new System.Windows.Forms.ComboBox();
             this.txPatio = new System.Windows.Forms.TextBox();
             this.txGarage = new System.Windows.Forms.TextBox();
@@ -60,6 +57,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cbTipoInmueble = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btImprimir = new System.Windows.Forms.Button();
+            this.btCancelar = new System.Windows.Forms.Button();
+            this.btBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvResultado)).BeginInit();
             this.g.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecioHasta)).BeginInit();
@@ -70,24 +70,20 @@
             // 
             this.gvResultado.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.gvResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvResultado.Location = new System.Drawing.Point(2, 194);
+            this.gvResultado.Location = new System.Drawing.Point(2, 149);
             this.gvResultado.MultiSelect = false;
             this.gvResultado.Name = "gvResultado";
             this.gvResultado.ReadOnly = true;
             this.gvResultado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvResultado.Size = new System.Drawing.Size(626, 218);
+            this.gvResultado.Size = new System.Drawing.Size(626, 229);
             this.gvResultado.TabIndex = 5;
-            this.gvResultado.DoubleClick += new System.EventHandler(this.btBuscar_Click);
             // 
             // g
             // 
             this.g.BackColor = System.Drawing.Color.White;
             this.g.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.g.Controls.Add(this.btImprimir);
-            this.g.Controls.Add(this.btCancelar);
             this.g.Controls.Add(this.numPrecioHasta);
             this.g.Controls.Add(this.label6);
-            this.g.Controls.Add(this.btBuscar);
             this.g.Controls.Add(this.cbTipoOperacion);
             this.g.Controls.Add(this.txPatio);
             this.g.Controls.Add(this.txGarage);
@@ -116,31 +112,9 @@
             this.g.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.g.Location = new System.Drawing.Point(2, 1);
             this.g.Name = "g";
-            this.g.Size = new System.Drawing.Size(626, 187);
+            this.g.Size = new System.Drawing.Size(626, 142);
             this.g.TabIndex = 4;
             this.g.TabStop = false;
-            // 
-            // btImprimir
-            // 
-            this.btImprimir.Location = new System.Drawing.Point(16, 155);
-            this.btImprimir.Name = "btImprimir";
-            this.btImprimir.Size = new System.Drawing.Size(75, 23);
-            this.btImprimir.TabIndex = 51;
-            this.btImprimir.Text = "\'";
-            this.btImprimir.UseVisualStyleBackColor = true;
-            this.btImprimir.Click += new System.EventHandler(this.btImprimir_Click);
-            // 
-            // btCancelar
-            // 
-            this.btCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btCancelar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCancelar.Location = new System.Drawing.Point(294, 150);
-            this.btCancelar.Name = "btCancelar";
-            this.btCancelar.Size = new System.Drawing.Size(160, 31);
-            this.btCancelar.TabIndex = 50;
-            this.btCancelar.Text = "Cancelar";
-            this.btCancelar.UseVisualStyleBackColor = false;
-            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // numPrecioHasta
             // 
@@ -168,18 +142,6 @@
             this.label6.Size = new System.Drawing.Size(79, 14);
             this.label6.TabIndex = 47;
             this.label6.Text = "Precio Hasta:";
-            // 
-            // btBuscar
-            // 
-            this.btBuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btBuscar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBuscar.Location = new System.Drawing.Point(460, 150);
-            this.btBuscar.Name = "btBuscar";
-            this.btBuscar.Size = new System.Drawing.Size(160, 31);
-            this.btBuscar.TabIndex = 46;
-            this.btBuscar.Text = "Buscar";
-            this.btBuscar.UseVisualStyleBackColor = false;
-            this.btBuscar.Click += new System.EventHandler(this.btBuscar_Click);
             // 
             // cbTipoOperacion
             // 
@@ -401,12 +363,51 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tipo de Inmueble:";
             // 
+            // btImprimir
+            // 
+            this.btImprimir.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btImprimir.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btImprimir.Location = new System.Drawing.Point(2, 387);
+            this.btImprimir.Name = "btImprimir";
+            this.btImprimir.Size = new System.Drawing.Size(140, 25);
+            this.btImprimir.TabIndex = 54;
+            this.btImprimir.Text = "Imprimir";
+            this.btImprimir.UseVisualStyleBackColor = false;
+            this.btImprimir.Click += new System.EventHandler(this.btImprimir_Click_1);
+            // 
+            // btCancelar
+            // 
+            this.btCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btCancelar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancelar.Location = new System.Drawing.Point(301, 384);
+            this.btCancelar.Name = "btCancelar";
+            this.btCancelar.Size = new System.Drawing.Size(160, 31);
+            this.btCancelar.TabIndex = 53;
+            this.btCancelar.Text = "Cancelar";
+            this.btCancelar.UseVisualStyleBackColor = false;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click_1);
+            // 
+            // btBuscar
+            // 
+            this.btBuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btBuscar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btBuscar.Location = new System.Drawing.Point(467, 384);
+            this.btBuscar.Name = "btBuscar";
+            this.btBuscar.Size = new System.Drawing.Size(160, 31);
+            this.btBuscar.TabIndex = 52;
+            this.btBuscar.Text = "Mas Detalles";
+            this.btBuscar.UseVisualStyleBackColor = false;
+            this.btBuscar.Click += new System.EventHandler(this.btBuscar_Click_1);
+            // 
             // frmBuscarInmueble
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(632, 424);
+            this.Controls.Add(this.btImprimir);
+            this.Controls.Add(this.btCancelar);
+            this.Controls.Add(this.btBuscar);
             this.Controls.Add(this.gvResultado);
             this.Controls.Add(this.g);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -428,7 +429,6 @@
         private System.Windows.Forms.GroupBox g;
         private System.Windows.Forms.NumericUpDown numPrecioHasta;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btBuscar;
         private System.Windows.Forms.ComboBox cbTipoOperacion;
         private System.Windows.Forms.TextBox txPatio;
         private System.Windows.Forms.TextBox txGarage;
@@ -454,7 +454,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbTipoInmueble;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btCancelar;
         private System.Windows.Forms.Button btImprimir;
+        private System.Windows.Forms.Button btCancelar;
+        private System.Windows.Forms.Button btBuscar;
     }
 }

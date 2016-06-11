@@ -95,6 +95,15 @@ namespace InmobiliariaForms
 
         private void frmBuscarInteresado_Load(object sender, EventArgs e)
         {
+            cbTipoInmueble.DataSource = Enum.GetNames(typeof(eTipoInmueble));
+            cbTipoInmueble.SelectedItem = eTipoInmueble.Sin_Especificar;
+
+            cbTipoOperacion.DataSource = Enum.GetNames(typeof(eTipoOperacion));
+            cbTipoOperacion.SelectedItem = eTipoOperacion.Sin_Especificar;
+
+            cbMoneda.DataSource = Enum.GetNames(typeof(eMoneda));
+            cbMoneda.SelectedItem = eMoneda.Peso;
+
             Service ws = new Service();
 
             if (Interesados.Count() == 0)

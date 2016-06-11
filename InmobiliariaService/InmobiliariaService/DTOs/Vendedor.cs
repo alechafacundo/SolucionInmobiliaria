@@ -13,6 +13,7 @@ namespace InmobiliariaService
         public string Telefono { get; set; }
         public string Celular { get; set; }
         public string Legajo { get; set; }
+        //todo poner a DNI como int asi no admite letras
         public string Email { get; set; }
         public string DNI { get; set; }
         public string Password { get; set; }

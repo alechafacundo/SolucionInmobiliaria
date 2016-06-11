@@ -51,6 +51,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btCancelar = new System.Windows.Forms.Button();
             this.btBuscar = new System.Windows.Forms.Button();
+            this.btImprimir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvResultado)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHasta)).BeginInit();
@@ -327,12 +328,24 @@
             this.btBuscar.UseVisualStyleBackColor = false;
             this.btBuscar.Click += new System.EventHandler(this.btBuscar_Click);
             // 
+            // btImprimir
+            // 
+            this.btImprimir.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btImprimir.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btImprimir.Location = new System.Drawing.Point(9, 357);
+            this.btImprimir.Name = "btImprimir";
+            this.btImprimir.Size = new System.Drawing.Size(140, 25);
+            this.btImprimir.TabIndex = 75;
+            this.btImprimir.Text = "Imprimir";
+            this.btImprimir.UseVisualStyleBackColor = false;
+            // 
             // frmBuscarInteresado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(629, 397);
+            this.Controls.Add(this.btImprimir);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btBuscar);
@@ -374,5 +387,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txNombre;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btImprimir;
     }
 }

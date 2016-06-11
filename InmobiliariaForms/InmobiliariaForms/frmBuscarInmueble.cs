@@ -22,64 +22,9 @@ namespace InmobiliariaForms
         {
             InitializeComponent();
         }
+        
 
-        private void btBuscar_Click(object sender, EventArgs e)
-        {
-
-            try
-            {
-                if (gvResultado.SelectedRows.Count == 1)
-                {
-                    Inmueble inmueble = (Inmueble)gvResultado.SelectedRows[0].DataBoundItem;
-
-                    frmInmueble frmInmueble = new frmInmueble();
-                    frmInmueble.Inmueble = inmueble;
-
-                    frmInmueble.MdiParent = (Form)this.Parent.Parent;
-                    Panel p = (Panel)this.Parent.Parent.Controls.Find("pnlMdi", true).First();
-                    p.Controls.Add(frmInmueble);
-
-                    frmInmueble.BringToFront();
-                    frmInmueble.StartPosition = FormStartPosition.Manual;
-
-
-
-                    inmueble.Fecha = dateTimeFecha.Value;
-                    inmueble.Localidad = txLocalidad.Text.ToUpperInvariant();
-                    inmueble.Barrio = txBarrio.Text.ToUpperInvariant();
-                    inmueble.Dormitorios = txDorm.Text.ToUpperInvariant();
-                    inmueble.Patio = txPatio.Text.ToUpperInvariant();
-                    inmueble.Baños = txBaño.Text.ToUpperInvariant();
-                    inmueble.Garage = txGarage.Text.ToUpperInvariant();
-                    inmueble.Comedor = txComedor.Text.ToUpperInvariant();
-
-
-                    decimal? precioDesde = null;
-                    if (numPrecioDesde.Value != 0)
-                        precioDesde = numPrecioDesde.Value;
-
-                    decimal? precioHasta = null;
-                    if (numPrecioHasta.Value != 0)
-                        precioHasta = numPrecioHasta.Value;
-
-                    Service ws = new Service();
-
-                    //Para tener el maestro de Vendedores y poder ponerlos ahi
-                    if (vendedores.Count == 0)
-                    {
-                        vendedores = ws.GetVendedores().ToList();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Helper.EnviarNotificacion(ex);
-                throw;
-
-            }
-        }
-
-        private void frmBuscarInmueble_Load(object sender, EventArgs e)
+    private void frmBuscarInmueble_Load(object sender, EventArgs e)
         {
             cbTipoInmueble.DataSource = Enum.GetNames(typeof(eTipoInmueble));
             cbTipoInmueble.SelectedItem = eTipoInmueble.Sin_Especificar;
@@ -103,14 +48,16 @@ namespace InmobiliariaForms
                 inmuebles = ws.GetInmuebles().ToList();
             }
 
-            gvResultado.DataSource = inmuebles;
-            gvResultado.Columns["Id"].Visible = false;
-            gvResultado.Columns["CargadoPor"].Visible = false;
-            gvResultado.Columns.Add("CargadoNombre", "Cargado Por");
             foreach (DataGridViewRow item in gvResultado.Rows)
             {
                 item.Cells["CargadoNombre"].Value = vendedores.Find(x => x.Id == (int)item.Cells["CargadoPor"].Value).FullName;
             }
+
+            gvResultado.DataSource = inmuebles;
+            gvResultado.Columns["Id"].Visible = false;
+            gvResultado.Columns["CargadoPor"].Visible = false;
+            gvResultado.Columns.Add("CargadoNombre", "Cargado Por");
+          
         }
 
         private void FiltrarResultados(object sender, EventArgs e)
@@ -174,13 +121,73 @@ namespace InmobiliariaForms
 
         }
 
-        private void btCancelar_Click(object sender, EventArgs e)
+     
+   
+        private void btBuscar_Click_1(object sender, EventArgs e)
+        {
+            {
+
+                try
+                {
+                    if (gvResultado.SelectedRows.Count == 1)
+                    {
+                        Inmueble inmueble = (Inmueble)gvResultado.SelectedRows[0].DataBoundItem;
+
+                        frmInmueble frmInmueble = new frmInmueble();
+                        frmInmueble.Inmueble = inmueble;
+
+                        frmInmueble.MdiParent = (Form)this.Parent.Parent;
+                        Panel p = (Panel)this.Parent.Parent.Controls.Find("pnlMdi", true).First();
+                        p.Controls.Add(frmInmueble);
+
+                        frmInmueble.BringToFront();
+                        frmInmueble.StartPosition = FormStartPosition.Manual;
+
+
+
+                        inmueble.Fecha = dateTimeFecha.Value;
+                        inmueble.Localidad = txLocalidad.Text.ToUpperInvariant();
+                        inmueble.Barrio = txBarrio.Text.ToUpperInvariant();
+                        inmueble.Dormitorios = txDorm.Text.ToUpperInvariant();
+                        inmueble.Patio = txPatio.Text.ToUpperInvariant();
+                        inmueble.Baños = txBaño.Text.ToUpperInvariant();
+                        inmueble.Garage = txGarage.Text.ToUpperInvariant();
+                        inmueble.Comedor = txComedor.Text.ToUpperInvariant();
+
+
+                        decimal? precioDesde = null;
+                        if (numPrecioDesde.Value != 0)
+                            precioDesde = numPrecioDesde.Value;
+
+                        decimal? precioHasta = null;
+                        if (numPrecioHasta.Value != 0)
+                            precioHasta = numPrecioHasta.Value;
+
+                        Service ws = new Service();
+
+                        //Para tener el maestro de Vendedores y poder ponerlos ahi
+                        if (vendedores.Count == 0)
+                        {
+                            vendedores = ws.GetVendedores().ToList();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Helper.EnviarNotificacion(ex);
+                    throw;
+
+                }
+            }
+        }
+
+        private void btCancelar_Click_1(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
 
-        private void btImprimir_Click(object sender, EventArgs e)
+        private void btImprimir_Click_1(object sender, EventArgs e)
         {
             //DataGridView gvAux = new DataGridView();
             //gvAux.Columns.Add("Fecha", "Fecha");
@@ -189,7 +196,6 @@ namespace InmobiliariaForms
             //gvAux.Columns.Add("Fecha", "Fecha");
             //gvAux.Columns.Add("Fecha", "Fecha");
             //gvAux.Columns.Add("Fecha", "Fecha");
-
         }
     }
 }
