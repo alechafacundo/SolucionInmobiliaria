@@ -77,24 +77,36 @@ namespace InmobiliariaForms
                 List<Inmueble> aux = new List<Inmueble>();
                 aux = inmuebles;
 
-                if ((int)cbTipoInmueble.SelectedValue != (int)eTipoInmueble.Sin_Especificar)
+                if (cbTipoInmueble.SelectedValue != null)
                 {
-                    aux = aux.Where(x => x.Tipo == (int)cbTipoInmueble.SelectedValue).ToList();
+                    eTipoInmueble tipoInmueble;
+                    Enum.TryParse<eTipoInmueble>(cbTipoInmueble.SelectedValue.ToString(), out tipoInmueble);
+
+                    if (tipoInmueble != eTipoInmueble.Sin_Especificar)
+                    {
+                        aux = aux.Where(x => x.Tipo == (int)tipoInmueble).ToList();
+                    }
                 }
 
-                if ((int)cbTipoOperacion.SelectedValue != (int)eTipoOperacion.Sin_Especificar)
+                if (cbTipoOperacion.SelectedValue != null)
                 {
-                    aux = aux.Where(x => x.Operacion == (int)cbTipoOperacion.SelectedValue).ToList();
+                    eTipoOperacion tipoOperacion;
+                    Enum.TryParse<eTipoOperacion>(cbTipoOperacion.SelectedValue.ToString(), out tipoOperacion);
+
+                    if (tipoOperacion != eTipoOperacion.Sin_Especificar)
+                    {
+                        aux = aux.Where(x => x.Operacion == (int)tipoOperacion).ToList();
+                    }
                 }
 
                 if (!string.IsNullOrEmpty(inmueble.Localidad))
                 {
-                    aux.AddRange(inmuebles.Where(x => x.Localidad.ToUpperInvariant().Contains(inmueble.Localidad.ToUpperInvariant())).ToList());
+                    aux.AddRange(inmuebles.Where(x => x.Localidad.ToUpperInvariant().Contains(inmueble.Localidad)).ToList());
                 }
 
                 if (!string.IsNullOrEmpty(inmueble.Barrio))
                 {
-                    aux.AddRange(inmuebles.Where(x => x.Barrio.ToUpperInvariant().Contains(inmueble.Barrio.ToUpperInvariant())).ToList());
+                    aux.AddRange(inmuebles.Where(x => x.Barrio.ToUpperInvariant().Contains(inmueble.Barrio)).ToList());
                 }
 
                 if (numPrecioDesde.Value != 0)
@@ -106,7 +118,7 @@ namespace InmobiliariaForms
                     aux = aux.Where(x => x.Precio <= numPrecioHasta.Value).ToList();
                 }
 
-                //gvResultado.DataSource = aux;
+                gvResultado.DataSource = aux;
 
                 //Inmueble inmueble = new Inmueble();
                 //inmueble.Localidad = txLocalidad.Text;
@@ -115,7 +127,7 @@ namespace InmobiliariaForms
                 //aux = inmuebles.Where(x => x.Operacion == (int)cbTipoOperacion.SelectedValue).ToList();
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
             }
 

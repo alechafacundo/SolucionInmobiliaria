@@ -133,6 +133,7 @@
             this.numPrecioHasta.Size = new System.Drawing.Size(120, 22);
             this.numPrecioHasta.TabIndex = 48;
             this.numPrecioHasta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numPrecioHasta.ValueChanged += new System.EventHandler(this.FiltrarResultados);
             // 
             // label6
             // 
@@ -152,6 +153,7 @@
             this.cbTipoOperacion.Name = "cbTipoOperacion";
             this.cbTipoOperacion.Size = new System.Drawing.Size(118, 22);
             this.cbTipoOperacion.TabIndex = 45;
+            this.cbTipoOperacion.SelectedValueChanged += new System.EventHandler(this.FiltrarResultados);
             // 
             // txPatio
             // 
@@ -269,6 +271,7 @@
             this.numPrecioDesde.Size = new System.Drawing.Size(120, 22);
             this.numPrecioDesde.TabIndex = 21;
             this.numPrecioDesde.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numPrecioDesde.ValueChanged += new System.EventHandler(this.FiltrarResultados);
             // 
             // label11
             // 
@@ -286,6 +289,7 @@
             this.txBarrio.Name = "txBarrio";
             this.txBarrio.Size = new System.Drawing.Size(286, 22);
             this.txBarrio.TabIndex = 10;
+            this.txBarrio.TextChanged += new System.EventHandler(this.FiltrarResultados);
             // 
             // txLocalidad
             // 
@@ -293,6 +297,7 @@
             this.txLocalidad.Name = "txLocalidad";
             this.txLocalidad.Size = new System.Drawing.Size(201, 22);
             this.txLocalidad.TabIndex = 9;
+            this.txLocalidad.TextChanged += new System.EventHandler(this.FiltrarResultados);
             // 
             // label5
             // 
@@ -353,6 +358,7 @@
             this.cbTipoInmueble.Name = "cbTipoInmueble";
             this.cbTipoInmueble.Size = new System.Drawing.Size(101, 22);
             this.cbTipoInmueble.TabIndex = 1;
+            this.cbTipoInmueble.SelectedValueChanged += new System.EventHandler(this.FiltrarResultados);
             // 
             // label1
             // 
