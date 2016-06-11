@@ -75,7 +75,7 @@ namespace InmobiliariaForms
                 inmueble.Comedor = txComedor.Text.ToUpperInvariant(); 
 
                 List<Inmueble> aux = new List<Inmueble>();
-                aux = inmuebles;
+                aux.AddRange(inmuebles);
 
                 if (cbTipoInmueble.SelectedValue != null)
                 {
@@ -84,7 +84,8 @@ namespace InmobiliariaForms
 
                     if (tipoInmueble != eTipoInmueble.Sin_Especificar)
                     {
-                        aux = aux.Where(x => x.Tipo == (int)tipoInmueble).ToList();
+                        aux.RemoveAll(x => x.Tipo != (int)tipoInmueble);
+                        //aux = aux.Where(x => x.Tipo == (int)tipoInmueble).ToList();
                     }
                 }
 
@@ -95,27 +96,32 @@ namespace InmobiliariaForms
 
                     if (tipoOperacion != eTipoOperacion.Sin_Especificar)
                     {
-                        aux = aux.Where(x => x.Operacion == (int)tipoOperacion).ToList();
+                        aux.RemoveAll(x => x.Operacion != (int)tipoOperacion);
+                        //aux = aux.Where(x => x.Operacion == (int)tipoOperacion).ToList();
                     }
                 }
 
                 if (!string.IsNullOrEmpty(inmueble.Localidad))
                 {
-                    aux.AddRange(inmuebles.Where(x => x.Localidad.ToUpperInvariant().Contains(inmueble.Localidad)).ToList());
+                    aux.RemoveAll(x => !x.Localidad.Contains(inmueble.Localidad));
+                    //aux.AddRange(inmuebles.Where(x => x.Localidad.ToUpperInvariant().Contains(inmueble.Localidad)).ToList());
                 }
 
                 if (!string.IsNullOrEmpty(inmueble.Barrio))
                 {
-                    aux.AddRange(inmuebles.Where(x => x.Barrio.ToUpperInvariant().Contains(inmueble.Barrio)).ToList());
+                    aux.RemoveAll(x => !x.Barrio.Contains(inmueble.Barrio));
+                    //aux.AddRange(inmuebles.Where(x => x.Barrio.ToUpperInvariant().Contains(inmueble.Barrio)).ToList());
                 }
 
                 if (numPrecioDesde.Value != 0)
                 {
-                    aux = aux.Where(x => x.Precio >= numPrecioDesde.Value).ToList();
+                    aux.RemoveAll(x => x.Precio < numPrecioDesde.Value);
+                    //aux = aux.Where(x => x.Precio >= numPrecioDesde.Value).ToList();
                 }
                 if (numPrecioHasta.Value != 0)
                 {
-                    aux = aux.Where(x => x.Precio <= numPrecioHasta.Value).ToList();
+                    aux.RemoveAll(x => x.Precio > numPrecioHasta.Value);
+                    //aux = aux.Where(x => x.Precio <= numPrecioHasta.Value).ToList();
                 }
 
                 gvResultado.DataSource = aux;
