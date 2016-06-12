@@ -22,9 +22,9 @@ namespace InmobiliariaForms
         {
             InitializeComponent();
         }
-        
 
-    private void frmBuscarInmueble_Load(object sender, EventArgs e)
+
+        private void frmBuscarInmueble_Load(object sender, EventArgs e)
         {
             cbTipoInmueble.DataSource = Enum.GetNames(typeof(eTipoInmueble));
             cbTipoInmueble.SelectedItem = eTipoInmueble.Sin_Especificar;
@@ -44,20 +44,38 @@ namespace InmobiliariaForms
             }
 
             if (inmuebles.Count() == 0)
-            {   
+            {
                 inmuebles = ws.GetInmuebles().ToList();
             }
 
-            foreach (DataGridViewRow item in gvResultado.Rows)
-            {
-                item.Cells["CargadoNombre"].Value = vendedores.Find(x => x.Id == (int)item.Cells["CargadoPor"].Value).FullName;
-            }
+            //foreach (DataGridViewRow item in gvResultado.Rows)
+            //{
+            //    item.Cells["CargadoNombre"].Value = vendedores.Find(x => x.Id == (int)item.Cells["CargadoPor"].Value).FullName;
+            //}
 
             gvResultado.DataSource = inmuebles;
+
+            gvResultado.Columns.Add("TipoInmueble", "Tipo de Inmueble");
+            gvResultado.Columns.Add("TipoOperacion", "Tipo de Operación");
+            gvResultado.Columns.Add("Vendedor", "Vendedor");
+            gvResultado.Columns.Add("TipoMoneda", "Moneda");
+
+            foreach (DataGridViewRow row in gvResultado.Rows)
+            {
+                row.Cells["TipoInmueble"].Value = ((eTipoInmueble)(int)row.Cells["Tipo"].Value).ToString();
+                row.Cells["TipoOperacion"].Value = ((eTipoOperacion)(int)row.Cells["Operacion"].Value).ToString();
+                row.Cells["Vendedor"].Value = vendedores.Find(x => x.Id == (int)row.Cells["CargadoPor"].Value).FullName;
+                row.Cells["TipoMoneda"].Value = ((eMoneda)(int)row.Cells["Moneda"].Value).ToString();
+            }
+
             gvResultado.Columns["Id"].Visible = false;
+            gvResultado.Columns["Tipo"].Visible = false;
+            gvResultado.Columns["Operacion"].Visible = false;
             gvResultado.Columns["CargadoPor"].Visible = false;
-            gvResultado.Columns.Add("CargadoNombre", "Cargado Por");
-          
+            gvResultado.Columns["Moneda"].Visible = false;
+
+
+
         }
 
         private void FiltrarResultados(object sender, EventArgs e)
@@ -123,74 +141,18 @@ namespace InmobiliariaForms
 
                 gvResultado.DataSource = aux;
 
-                //Inmueble inmueble = new Inmueble();
-                //inmueble.Localidad = txLocalidad.Text;
-                //inmueble.Barrio = txBarrio.Text;
-
-                //aux = inmuebles.Where(x => x.Operacion == (int)cbTipoOperacion.SelectedValue).ToList();
-
+                foreach (DataGridViewRow row in gvResultado.Rows)
+                {
+                    row.Cells["TipoInmueble"].Value = ((eTipoInmueble)(int)row.Cells["Tipo"].Value).ToString();
+                    row.Cells["TipoOperacion"].Value = ((eTipoOperacion)(int)row.Cells["Operacion"].Value).ToString();
+                    row.Cells["Vendedor"].Value = vendedores.Find(x => x.Id == (int)row.Cells["CargadoPor"].Value).FullName;
+                    row.Cells["TipoMoneda"].Value = ((eMoneda)(int)row.Cells["Moneda"].Value).ToString();
+                }
             }
             catch (Exception ex)
             {
             }
 
-        }
-
-     
-   
-        private void btBuscar_Click_1(object sender, EventArgs e)
-        {
-            {
-
-                try
-                {
-                    if (gvResultado.SelectedRows.Count == 1)
-                    {
-                        Inmueble inmueble = (Inmueble)gvResultado.SelectedRows[0].DataBoundItem;
-
-                        frmInmueble frmInmueble = new frmInmueble();
-                        frmInmueble.Inmueble = inmueble;
-
-                        frmInmueble.MdiParent = (Form)this.Parent.Parent;
-                        Panel p = (Panel)this.Parent.Parent.Controls.Find("pnlMdi", true).First();
-                        p.Controls.Add(frmInmueble);
-
-                        frmInmueble.BringToFront();
-                        frmInmueble.StartPosition = FormStartPosition.Manual;
-
-
-
-                       
-                        inmueble.Localidad = txLocalidad.Text.ToUpperInvariant();
-                        inmueble.Barrio = txBarrio.Text.ToUpperInvariant();
-                        inmueble.Dormitorios = txDorm.Text.ToUpperInvariant();
-                       
-
-
-                        decimal? precioDesde = null;
-                        if (numPrecioDesde.Value != 0)
-                            precioDesde = numPrecioDesde.Value;
-
-                        decimal? precioHasta = null;
-                        if (numPrecioHasta.Value != 0)
-                            precioHasta = numPrecioHasta.Value;
-
-                        Service ws = new Service();
-
-                        //Para tener el maestro de Vendedores y poder ponerlos ahi
-                        if (vendedores.Count == 0)
-                        {
-                            vendedores = ws.GetVendedores().ToList();
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Helper.EnviarNotificacion(ex);
-                    throw;
-
-                }
-            }
         }
 
         private void btCancelar_Click_1(object sender, EventArgs e)
@@ -208,6 +170,35 @@ namespace InmobiliariaForms
             //gvAux.Columns.Add("Fecha", "Fecha");
             //gvAux.Columns.Add("Fecha", "Fecha");
             //gvAux.Columns.Add("Fecha", "Fecha");
+        }
+
+        private void btMasDetalles_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (gvResultado.SelectedRows.Count == 1)
+                {
+                    Inmueble inmueble = (Inmueble)gvResultado.SelectedRows[0].DataBoundItem;
+
+                    frmInmueble frmInmueble = new frmInmueble();
+                    frmInmueble.Inmueble = inmueble;
+
+                    frmInmueble.MdiParent = (Form)this.Parent.Parent;
+                    Panel p = (Panel)this.Parent.Parent.Controls.Find("pnlMdi", true).First();
+                    p.Controls.Add(frmInmueble);
+
+                    frmInmueble.BringToFront();
+                    frmInmueble.StartPosition = FormStartPosition.Manual;
+
+                    frmInmueble.Location = new Point(120, 0);
+                    this.Close();
+                    frmInmueble.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }

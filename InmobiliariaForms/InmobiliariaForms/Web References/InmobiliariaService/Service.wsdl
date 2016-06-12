@@ -123,7 +123,11 @@
         </s:complexType>
       </s:element>
       <s:element name="GuardarInmuebleResponse">
-        <s:complexType />
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GuardarInmuebleResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
       </s:element>
       <s:element name="GuardarInteresado">
         <s:complexType>

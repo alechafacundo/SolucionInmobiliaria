@@ -49,7 +49,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btImprimir = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
-            this.btBuscar = new System.Windows.Forms.Button();
+            this.btMasDetalles = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvResultado)).BeginInit();
             this.g.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecioHasta)).BeginInit();
@@ -129,9 +129,9 @@
             this.cbTipoOperacion.BackColor = System.Drawing.Color.Beige;
             this.cbTipoOperacion.FormattingEnabled = true;
             this.cbTipoOperacion.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.cbTipoOperacion.Location = new System.Drawing.Point(341, 21);
+            this.cbTipoOperacion.Location = new System.Drawing.Point(355, 21);
             this.cbTipoOperacion.Name = "cbTipoOperacion";
-            this.cbTipoOperacion.Size = new System.Drawing.Size(156, 22);
+            this.cbTipoOperacion.Size = new System.Drawing.Size(207, 22);
             this.cbTipoOperacion.TabIndex = 45;
             this.cbTipoOperacion.SelectedValueChanged += new System.EventHandler(this.FiltrarResultados);
             // 
@@ -157,7 +157,7 @@
             this.cbMoneda.FormattingEnabled = true;
             this.cbMoneda.Location = new System.Drawing.Point(509, 83);
             this.cbMoneda.Name = "cbMoneda";
-            this.cbMoneda.Size = new System.Drawing.Size(95, 22);
+            this.cbMoneda.Size = new System.Drawing.Size(101, 22);
             this.cbMoneda.TabIndex = 23;
             // 
             // label12
@@ -244,7 +244,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(267, 24);
+            this.label2.Location = new System.Drawing.Point(281, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 14);
             this.label2.TabIndex = 2;
@@ -256,7 +256,7 @@
             this.cbTipoInmueble.FormattingEnabled = true;
             this.cbTipoInmueble.Location = new System.Drawing.Point(108, 21);
             this.cbTipoInmueble.Name = "cbTipoInmueble";
-            this.cbTipoInmueble.Size = new System.Drawing.Size(135, 22);
+            this.cbTipoInmueble.Size = new System.Drawing.Size(162, 22);
             this.cbTipoInmueble.TabIndex = 1;
             this.cbTipoInmueble.SelectedValueChanged += new System.EventHandler(this.FiltrarResultados);
             // 
@@ -293,17 +293,17 @@
             this.btCancelar.UseVisualStyleBackColor = false;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click_1);
             // 
-            // btBuscar
+            // btMasDetalles
             // 
-            this.btBuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btBuscar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBuscar.Location = new System.Drawing.Point(467, 384);
-            this.btBuscar.Name = "btBuscar";
-            this.btBuscar.Size = new System.Drawing.Size(160, 31);
-            this.btBuscar.TabIndex = 52;
-            this.btBuscar.Text = "Mas Detalles";
-            this.btBuscar.UseVisualStyleBackColor = false;
-            this.btBuscar.Click += new System.EventHandler(this.btBuscar_Click_1);
+            this.btMasDetalles.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btMasDetalles.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btMasDetalles.Location = new System.Drawing.Point(467, 384);
+            this.btMasDetalles.Name = "btMasDetalles";
+            this.btMasDetalles.Size = new System.Drawing.Size(160, 31);
+            this.btMasDetalles.TabIndex = 52;
+            this.btMasDetalles.Text = "Mas Detalles";
+            this.btMasDetalles.UseVisualStyleBackColor = false;
+            this.btMasDetalles.Click += new System.EventHandler(this.btMasDetalles_Click);
             // 
             // frmBuscarInmueble
             // 
@@ -313,7 +313,7 @@
             this.ClientSize = new System.Drawing.Size(632, 424);
             this.Controls.Add(this.btImprimir);
             this.Controls.Add(this.btCancelar);
-            this.Controls.Add(this.btBuscar);
+            this.Controls.Add(this.btMasDetalles);
             this.Controls.Add(this.gvResultado);
             this.Controls.Add(this.g);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -352,6 +352,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btImprimir;
         private System.Windows.Forms.Button btCancelar;
-        private System.Windows.Forms.Button btBuscar;
+        private System.Windows.Forms.Button btMasDetalles;
     }
 }
