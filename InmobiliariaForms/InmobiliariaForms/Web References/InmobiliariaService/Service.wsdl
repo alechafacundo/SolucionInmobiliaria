@@ -93,6 +93,7 @@
       </s:simpleType>
       <s:simpleType name="eMoneda">
         <s:restriction base="s:string">
+          <s:enumeration value="Sin_Especificar" />
           <s:enumeration value="Peso" />
           <s:enumeration value="Dolar" />
         </s:restriction>

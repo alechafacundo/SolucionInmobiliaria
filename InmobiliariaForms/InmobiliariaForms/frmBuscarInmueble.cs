@@ -33,7 +33,7 @@ namespace InmobiliariaForms
             cbTipoOperacion.SelectedItem = eTipoOperacion.Sin_Especificar;
 
             cbMoneda.DataSource = Enum.GetNames(typeof(eMoneda));
-            cbMoneda.SelectedItem = eMoneda.Peso;
+            cbMoneda.SelectedItem = eMoneda.Sin_Especificar;
 
             Service ws = new Service();
 
@@ -65,14 +65,11 @@ namespace InmobiliariaForms
             try
             {
                 Inmueble inmueble = new Inmueble();
-                inmueble.Fecha = dateTimeFecha.Value;
+               
                 inmueble.Localidad = txLocalidad.Text.ToUpperInvariant();
                 inmueble.Barrio = txBarrio.Text.ToUpperInvariant();
                 inmueble.Dormitorios = txDorm.Text.ToUpperInvariant();
-                inmueble.Patio = txPatio.Text.ToUpperInvariant();
-                inmueble.Baños = txBaño.Text.ToUpperInvariant();
-                inmueble.Garage = txGarage.Text.ToUpperInvariant();
-                inmueble.Comedor = txComedor.Text.ToUpperInvariant(); 
+         
 
                 List<Inmueble> aux = new List<Inmueble>();
                 aux.AddRange(inmuebles);
@@ -163,14 +160,11 @@ namespace InmobiliariaForms
 
 
 
-                        inmueble.Fecha = dateTimeFecha.Value;
+                       
                         inmueble.Localidad = txLocalidad.Text.ToUpperInvariant();
                         inmueble.Barrio = txBarrio.Text.ToUpperInvariant();
                         inmueble.Dormitorios = txDorm.Text.ToUpperInvariant();
-                        inmueble.Patio = txPatio.Text.ToUpperInvariant();
-                        inmueble.Baños = txBaño.Text.ToUpperInvariant();
-                        inmueble.Garage = txGarage.Text.ToUpperInvariant();
-                        inmueble.Comedor = txComedor.Text.ToUpperInvariant();
+                       
 
 
                         decimal? precioDesde = null;

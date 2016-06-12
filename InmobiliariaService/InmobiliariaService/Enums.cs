@@ -27,7 +27,8 @@ namespace InmobiliariaService
 
     public enum eMoneda
     {
-        Peso = 0,
-        Dolar = 1
+        Sin_Especificar = 0,
+        Peso = 1,
+        Dolar = 0
     }
 }

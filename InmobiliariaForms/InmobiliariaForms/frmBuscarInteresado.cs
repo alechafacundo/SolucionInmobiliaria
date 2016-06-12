@@ -102,7 +102,7 @@ namespace InmobiliariaForms
             cbTipoOperacion.SelectedItem = eTipoOperacion.Sin_Especificar;
 
             cbMoneda.DataSource = Enum.GetNames(typeof(eMoneda));
-            cbMoneda.SelectedItem = eMoneda.Peso;
+            cbMoneda.SelectedItem = eMoneda.Sin_Especificar;
 
             Service ws = new Service();
 

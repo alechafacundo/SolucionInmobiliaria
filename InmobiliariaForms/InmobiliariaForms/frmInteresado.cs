@@ -24,13 +24,13 @@ namespace InmobiliariaForms
             try
             {
                 cbTipoInmueble.DataSource = Enum.GetNames(typeof(eTipoInmueble));
-                cbTipoInmueble.SelectedItem = null;
+                cbTipoInmueble.SelectedItem = eTipoInmueble.Sin_Especificar;
 
                 cbTipoOperacion.DataSource = Enum.GetNames(typeof(eTipoOperacion));
-                cbTipoOperacion.SelectedItem = null;
+                cbTipoOperacion.SelectedItem = eTipoOperacion.Sin_Especificar;
 
                 cbMoneda.DataSource = Enum.GetNames(typeof(eMoneda));
-                cbMoneda.SelectedItem = null;
+                cbMoneda.SelectedItem = eMoneda.Sin_Especificar;
 
                 if (Interesado != null)
                 {
@@ -115,12 +115,40 @@ namespace InmobiliariaForms
         {
             try
             {
-                if (cbTipoInmueble.SelectedItem == null)
-                    return "Seleccione un Tipo de Inmueble por favor";
-                if (cbMoneda.SelectedItem == null)
-                    return "Seleccione una moneda por favor";
-                if (cbTipoOperacion.SelectedItem == null)
-                    return "Seleccione un Tipo de Operación por favor";
+                if (cbTipoInmueble.SelectedItem != null)
+                {
+                    eTipoInmueble tipoInmueble;
+                    Enum.TryParse<eTipoInmueble>(cbTipoInmueble.SelectedValue.ToString(), out tipoInmueble);
+
+                    if (tipoInmueble == eTipoInmueble.Sin_Especificar)
+                    {
+                        return "Seleccione un tipo de Inmueble por favor";
+                    }
+
+                }
+
+                if (cbMoneda.SelectedItem != null)
+                {
+                    eMoneda tipoMoneda;
+                    Enum.TryParse<eMoneda>(cbMoneda.SelectedValue.ToString(), out tipoMoneda);
+
+                    if (tipoMoneda == eMoneda.Sin_Especificar)
+                    {
+                        return "Seleccione un tipo de Moneda por favor";
+                    }
+                }
+
+                if (cbTipoOperacion.SelectedItem != null)
+                {
+                    eTipoOperacion tipoOperacion;
+                    Enum.TryParse<eTipoOperacion>(cbTipoOperacion.SelectedValue.ToString(), out tipoOperacion);
+
+                    if (tipoOperacion == eTipoOperacion.Sin_Especificar)
+                    {
+                        return "Seleccione un tipo de Operación por favor";
+                    }
+                }
+
                 if (string.IsNullOrEmpty(txNombre.Text))
                     return "Ingrese un Nombre por favor";          
               

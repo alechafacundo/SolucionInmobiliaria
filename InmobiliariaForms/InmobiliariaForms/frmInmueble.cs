@@ -100,14 +100,42 @@ namespace InmobiliariaForms
         {
             try
             {
-                if (cbTipoInmueble.SelectedItem == null)
-                    return "Seleccione un Tipo de Inmueble por favor";
+                if (cbTipoInmueble.SelectedItem != null)
+                {
+                    eTipoInmueble tipoInmueble;
+                    Enum.TryParse<eTipoInmueble>(cbTipoInmueble.SelectedValue.ToString(), out tipoInmueble);
+
+                    if (tipoInmueble == eTipoInmueble.Sin_Especificar)
+                    {
+                        return "Seleccione un tipo de Inmueble por favor";
+                    }
+
+                }
+                                
                 if (cbCargadoPor.SelectedItem == null)
                     return "Seleccione un Vendedor por favor";
-                if (cbMoneda.SelectedItem == null)
-                    return "Seleccione una moneda por favor";
-                if (cbTipoOperacion.SelectedItem == null)
-                    return "Seleccione un Tipo de Operación por favor";
+                
+                if (cbMoneda.SelectedItem != null)
+                {
+                    eMoneda tipoMoneda;
+                    Enum.TryParse<eMoneda>(cbMoneda.SelectedValue.ToString(), out tipoMoneda);
+
+                    if (tipoMoneda == eMoneda.Sin_Especificar)
+                    {
+                        return "Seleccione un tipo de Moneda por favor";
+                    }
+                }
+                   
+                if (cbTipoOperacion.SelectedItem != null)
+                {
+                    eTipoOperacion tipoOperacion;
+                    Enum.TryParse<eTipoOperacion>(cbTipoOperacion.SelectedValue.ToString(), out tipoOperacion);
+
+                    if (tipoOperacion == eTipoOperacion.Sin_Especificar)
+                    {
+                        return "Seleccione un tipo de Operación por favor";
+                    }
+                }
 
                 return string.Empty;
             }

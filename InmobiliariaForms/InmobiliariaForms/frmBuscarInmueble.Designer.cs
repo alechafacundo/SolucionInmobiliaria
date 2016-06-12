@@ -33,15 +33,7 @@
             this.numPrecioHasta = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.cbTipoOperacion = new System.Windows.Forms.ComboBox();
-            this.txPatio = new System.Windows.Forms.TextBox();
-            this.txGarage = new System.Windows.Forms.TextBox();
-            this.txComedor = new System.Windows.Forms.TextBox();
-            this.txBaño = new System.Windows.Forms.TextBox();
             this.txDorm = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.cbMoneda = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -51,8 +43,6 @@
             this.txLocalidad = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimeFecha = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbTipoInmueble = new System.Windows.Forms.ComboBox();
@@ -85,15 +75,7 @@
             this.g.Controls.Add(this.numPrecioHasta);
             this.g.Controls.Add(this.label6);
             this.g.Controls.Add(this.cbTipoOperacion);
-            this.g.Controls.Add(this.txPatio);
-            this.g.Controls.Add(this.txGarage);
-            this.g.Controls.Add(this.txComedor);
-            this.g.Controls.Add(this.txBaño);
             this.g.Controls.Add(this.txDorm);
-            this.g.Controls.Add(this.label21);
-            this.g.Controls.Add(this.label20);
-            this.g.Controls.Add(this.label19);
-            this.g.Controls.Add(this.label18);
             this.g.Controls.Add(this.label17);
             this.g.Controls.Add(this.cbMoneda);
             this.g.Controls.Add(this.label12);
@@ -103,8 +85,6 @@
             this.g.Controls.Add(this.txLocalidad);
             this.g.Controls.Add(this.label5);
             this.g.Controls.Add(this.label4);
-            this.g.Controls.Add(this.dateTimeFecha);
-            this.g.Controls.Add(this.label3);
             this.g.Controls.Add(this.comboBox2);
             this.g.Controls.Add(this.label2);
             this.g.Controls.Add(this.cbTipoInmueble);
@@ -149,39 +129,11 @@
             this.cbTipoOperacion.BackColor = System.Drawing.Color.Beige;
             this.cbTipoOperacion.FormattingEnabled = true;
             this.cbTipoOperacion.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.cbTipoOperacion.Location = new System.Drawing.Point(278, 21);
+            this.cbTipoOperacion.Location = new System.Drawing.Point(341, 21);
             this.cbTipoOperacion.Name = "cbTipoOperacion";
-            this.cbTipoOperacion.Size = new System.Drawing.Size(118, 22);
+            this.cbTipoOperacion.Size = new System.Drawing.Size(156, 22);
             this.cbTipoOperacion.TabIndex = 45;
             this.cbTipoOperacion.SelectedValueChanged += new System.EventHandler(this.FiltrarResultados);
-            // 
-            // txPatio
-            // 
-            this.txPatio.Location = new System.Drawing.Point(418, 109);
-            this.txPatio.Name = "txPatio";
-            this.txPatio.Size = new System.Drawing.Size(38, 22);
-            this.txPatio.TabIndex = 42;
-            // 
-            // txGarage
-            // 
-            this.txGarage.Location = new System.Drawing.Point(335, 109);
-            this.txGarage.Name = "txGarage";
-            this.txGarage.Size = new System.Drawing.Size(38, 22);
-            this.txGarage.TabIndex = 41;
-            // 
-            // txComedor
-            // 
-            this.txComedor.Location = new System.Drawing.Point(240, 109);
-            this.txComedor.Name = "txComedor";
-            this.txComedor.Size = new System.Drawing.Size(38, 22);
-            this.txComedor.TabIndex = 40;
-            // 
-            // txBaño
-            // 
-            this.txBaño.Location = new System.Drawing.Point(138, 109);
-            this.txBaño.Name = "txBaño";
-            this.txBaño.Size = new System.Drawing.Size(38, 22);
-            this.txBaño.TabIndex = 39;
             // 
             // txDorm
             // 
@@ -189,42 +141,6 @@
             this.txDorm.Name = "txDorm";
             this.txDorm.Size = new System.Drawing.Size(38, 22);
             this.txDorm.TabIndex = 38;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(379, 112);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(39, 14);
-            this.label21.TabIndex = 36;
-            this.label21.Text = "Patio:";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(284, 112);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(49, 14);
-            this.label20.TabIndex = 35;
-            this.label20.Text = "Garage:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(182, 112);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(59, 14);
-            this.label19.TabIndex = 34;
-            this.label19.Text = "Comedor:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(97, 112);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(39, 14);
-            this.label18.TabIndex = 33;
-            this.label18.Text = "Baño:";
             // 
             // label17
             // 
@@ -317,22 +233,6 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Localidad:";
             // 
-            // dateTimeFecha
-            // 
-            this.dateTimeFecha.Location = new System.Drawing.Point(451, 21);
-            this.dateTimeFecha.Name = "dateTimeFecha";
-            this.dateTimeFecha.Size = new System.Drawing.Size(159, 22);
-            this.dateTimeFecha.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(402, 24);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 14);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Fecha:";
-            // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
@@ -344,7 +244,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(213, 24);
+            this.label2.Location = new System.Drawing.Point(267, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 14);
             this.label2.TabIndex = 2;
@@ -356,7 +256,7 @@
             this.cbTipoInmueble.FormattingEnabled = true;
             this.cbTipoInmueble.Location = new System.Drawing.Point(108, 21);
             this.cbTipoInmueble.Name = "cbTipoInmueble";
-            this.cbTipoInmueble.Size = new System.Drawing.Size(101, 22);
+            this.cbTipoInmueble.Size = new System.Drawing.Size(135, 22);
             this.cbTipoInmueble.TabIndex = 1;
             this.cbTipoInmueble.SelectedValueChanged += new System.EventHandler(this.FiltrarResultados);
             // 
@@ -436,15 +336,7 @@
         private System.Windows.Forms.NumericUpDown numPrecioHasta;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbTipoOperacion;
-        private System.Windows.Forms.TextBox txPatio;
-        private System.Windows.Forms.TextBox txGarage;
-        private System.Windows.Forms.TextBox txComedor;
-        private System.Windows.Forms.TextBox txBaño;
         private System.Windows.Forms.TextBox txDorm;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox cbMoneda;
         private System.Windows.Forms.Label label12;
@@ -454,8 +346,6 @@
         private System.Windows.Forms.TextBox txLocalidad;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimeFecha;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbTipoInmueble;
