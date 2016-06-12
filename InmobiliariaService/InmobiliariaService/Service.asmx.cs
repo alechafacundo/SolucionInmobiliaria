@@ -28,11 +28,11 @@ namespace InmobiliariaService
         }
 
         [WebMethod]
-        public void GuardarInmueble(Inmueble inmueble)
+        public int GuardarInmueble(Inmueble inmueble)
         {
             try
             {
-                InmuebleDAO.GuardarInmueble(inmueble);
+                return InmuebleDAO.GuardarInmueble(inmueble);
             }
             catch (Exception)
             {

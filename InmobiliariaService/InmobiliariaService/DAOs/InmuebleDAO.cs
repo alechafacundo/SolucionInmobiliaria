@@ -9,7 +9,7 @@ namespace InmobiliariaService
     public class InmuebleDAO : DAOBase
     {
 
-        internal static void GuardarInmueble(Inmueble inmueble)
+        internal static int GuardarInmueble(Inmueble inmueble)
         {
             try
             {
@@ -17,10 +17,12 @@ namespace InmobiliariaService
                 {
                     inmueble.Id = GetNextId(inmueble);
                     DAOBase.CreateEntity(inmueble);
+                    return inmueble.Id;
                 }
                 else
                 {
                     DAOBase.UpdateEntity(inmueble);
+                    return inmueble.Id;
                 }
             }
             catch (Exception)
