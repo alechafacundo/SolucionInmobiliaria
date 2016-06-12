@@ -235,7 +235,21 @@ namespace InmobiliariaForms
 
         private void btEliminar_Click(object sender, EventArgs e)
         {
+            {
+                Service ws = new Service();
+                Inmueble inmueble = new Inmueble();
 
+                if (ws.EliminarInmueble(Inmueble))
+                {
+                    
+                    MessageBox.Show("El Inmueble se elimino Correctamente", "Inmueble");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("El Inmueble NO se elimino", "Inmueble", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void btGuardarFotos_Click(object sender, EventArgs e)

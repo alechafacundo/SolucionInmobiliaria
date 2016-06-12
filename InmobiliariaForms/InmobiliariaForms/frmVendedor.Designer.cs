@@ -74,9 +74,9 @@
             this.groupBox1.Controls.Add(this.txNombre);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(2, 4);
+            this.groupBox1.Location = new System.Drawing.Point(2, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(626, 212);
+            this.groupBox1.Size = new System.Drawing.Size(626, 216);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -237,6 +237,7 @@
             this.btEliminar.Text = "Eliminar";
             this.btEliminar.UseVisualStyleBackColor = false;
             this.btEliminar.Visible = false;
+            this.btEliminar.Click += new System.EventHandler(this.btEliminar_Click);
             // 
             // btCancelar
             // 

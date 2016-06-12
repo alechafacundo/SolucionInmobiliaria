@@ -168,7 +168,20 @@ namespace InmobiliariaForms
 
         private void btEliminar_Click(object sender, EventArgs e)
         {
-            //Parece qye ahi va.
+            Service ws = new Service();
+            Interesado interesado = new Interesado();
+
+           if (ws.EliminarInteresado(Interesado))
+            {
+                //tu metodo es de tipo void, por lo que no retorna nada, ese return no puede ir
+                //lo que tenes que hacer es mostrar un cartel
+                MessageBox.Show("El Interesado se elimino Correctamente", "Interesado");
+                this.Close();
+            }
+           else 
+            {
+                MessageBox.Show("El Interesado NO se elimino", "Interesado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
