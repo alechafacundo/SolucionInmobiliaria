@@ -163,13 +163,41 @@ namespace InmobiliariaForms
 
         private void btImprimir_Click_1(object sender, EventArgs e)
         {
-            //DataGridView gvAux = new DataGridView();
-            //gvAux.Columns.Add("Fecha", "Fecha");
-            //gvAux.Columns.Add("Operacion", "Operación");
-            //gvAux.Columns.Add("Tipo", "Tipo");
-            //gvAux.Columns.Add("Fecha", "Fecha");
-            //gvAux.Columns.Add("Fecha", "Fecha");
-            //gvAux.Columns.Add("Fecha", "Fecha");
+            DataGridView gvAux = new DataGridView();
+            gvAux.Columns.Add("Tipo", "Tipo de Inmueble");
+            gvAux.Columns.Add("Operacion", "Tipo de Operación");
+            gvAux.Columns.Add("Localidad", "Localidad");
+            gvAux.Columns.Add("Calle", "Calle");
+            gvAux.Columns.Add("Moneda", "Moneda");
+            gvAux.Columns.Add("Precio", "Precio");
+            gvAux.Columns.Add("Vendedor", "Vendedor");
+
+            foreach (DataGridViewRow row in gvResultado.Rows)
+            {
+                //DataGridViewRow a = (DataGridViewRow)gvAux.RowTemplate.Clone();
+                //a.Cells["Tipo"].Value = row.Cells["TipoInmueble"].Value;
+                //a.Cells["Operacion"].Value = row.Cells["TipoOperacion"].Value;
+                //a.Cells["Localidad"].Value = row.Cells["Localidad"].Value;
+                //a.Cells["Calle"].Value = row.Cells["Calle"].Value + " " + row.Cells["Numero"].Value;
+                //a.Cells["Moneda"].Value = row.Cells["TipoMoneda"].Value;
+                //a.Cells["Precio"].Value = row.Cells["Precio"].Value;
+                //a.Cells["Vendedor"].Value = row.Cells["Vendedor"].Value;
+
+                gvAux.Rows.Add(row.Cells["TipoInmueble"].Value,
+                    row.Cells["TipoOperacion"].Value,
+                    row.Cells["Localidad"].Value,
+                    row.Cells["Calle"].Value + " " + row.Cells["Numero"].Value,
+                    row.Cells["TipoMoneda"].Value,
+                    row.Cells["Precio"].Value,
+                    row.Cells["Vendedor"].Value);
+
+                //gvAux.Rows.Add(a);
+            }
+
+            PrinterHelper printerHelper = new PrinterHelper();
+            printerHelper.gvListado = gvAux;
+            printerHelper.SetValues();
+            printerHelper.Imprimir();
         }
 
         private void btMasDetalles_Click(object sender, EventArgs e)
@@ -200,5 +228,12 @@ namespace InmobiliariaForms
 
             }
         }
+
+
+        #region Impresora
+
+
+        #endregion
+
     }
 }

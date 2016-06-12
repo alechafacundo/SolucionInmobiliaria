@@ -76,6 +76,8 @@ namespace InmobiliariaForms
         {
             try
             {
+                bool filtroAlgo = false;
+
                 Vendedor vendedor = new Vendedor();
                 vendedor.Nombre = txNombre.Text;
                 vendedor.Apellido = txApellido.Text;
@@ -91,31 +93,41 @@ namespace InmobiliariaForms
                 if (!string.IsNullOrEmpty(vendedor.Nombre))
                 {
                     aux.AddRange(Vendedores.Where(x => x.Nombre.ToUpperInvariant().Contains(vendedor.Nombre.ToUpperInvariant())).ToList());
+                    filtroAlgo = true;
                 }
                 if (!string.IsNullOrEmpty(vendedor.Apellido))
                 {
                     aux.AddRange(Vendedores.Where(x => x.Apellido.ToUpperInvariant().Contains(vendedor.Apellido.ToUpperInvariant())).ToList());
+                    filtroAlgo = true;
                 }
                 if (!string.IsNullOrEmpty(vendedor.DNI))
                 {
                     aux.AddRange(Vendedores.Where(x => x.DNI.ToUpperInvariant().Contains(vendedor.DNI.ToUpperInvariant())).ToList());
+                    filtroAlgo = true;
                 }
                 if (!string.IsNullOrEmpty(vendedor.Legajo))
                 {
                     aux.AddRange(Vendedores.Where(x => x.Legajo.ToUpperInvariant().Contains(vendedor.Legajo.ToUpperInvariant())).ToList());
+                    filtroAlgo = true;
                 }
                 if (!string.IsNullOrEmpty(vendedor.Telefono))
                 {
                     aux.AddRange(Vendedores.Where(x => x.Telefono.ToUpperInvariant().Contains(vendedor.Telefono.ToUpperInvariant())).ToList());
+                    filtroAlgo = true;
                 }
                 if (!string.IsNullOrEmpty(vendedor.Celular))
                 {
                     aux.AddRange(Vendedores.Where(x => x.Celular.ToUpperInvariant().Contains(vendedor.Celular.ToUpperInvariant())).ToList());
+                    filtroAlgo = true;
                 }
                 if (!string.IsNullOrEmpty(vendedor.Email))
                 {
                     aux.AddRange(Vendedores.Where(x => x.Email.ToUpperInvariant().Contains(vendedor.Email.ToUpperInvariant())).ToList());
+                    filtroAlgo = true;
                 }
+
+                if (!filtroAlgo)
+                    aux.AddRange(Vendedores);
 
                 aux = aux.Distinct().ToList();
 

@@ -54,6 +54,8 @@ namespace InmobiliariaForms
         {
             try
             {
+                bool filtroAlgo = false;
+
                 Interesado interesado = new Interesado();
                 interesado.Nombre = txNombre.Text;
                 interesado.Email = txEmail.Text;
@@ -64,16 +66,22 @@ namespace InmobiliariaForms
                 if (!string.IsNullOrEmpty(interesado.Nombre))
                 {
                     aux.AddRange(Interesados.Where(x => x.Nombre.ToUpperInvariant().Contains(interesado.Nombre.ToUpperInvariant())).ToList());
+                    filtroAlgo = true;
                 }
                 if (!string.IsNullOrEmpty(interesado.Telefono))
                 {
                     aux.AddRange(Interesados.Where(x => x.Telefono.ToUpperInvariant().Contains(interesado.Telefono.ToUpperInvariant())).ToList());
+                    filtroAlgo = true;
                 }
 
                 if (!string.IsNullOrEmpty(interesado.Email))
                 {
                     aux.AddRange(Interesados.Where(x => x.Email.ToUpperInvariant().Contains(interesado.Email.ToUpperInvariant())).ToList());
+                    filtroAlgo = true;
                 }
+
+                if (!filtroAlgo)
+                    aux.AddRange(Interesados);
 
                 aux = aux.Distinct().ToList();
 
