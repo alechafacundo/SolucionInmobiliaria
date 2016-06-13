@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web;
 using System.Web.Services;
 
@@ -178,6 +179,20 @@ namespace InmobiliariaService
         }
 
         [WebMethod]
+        public void TestNotificarSobreInmueble()
+        {
+            try
+            {
+                List<Interesado> interesados = InteresadoDAO.GetInteresados();
+                Interesado interesado = interesados.Find(x => x.Nombre == "Juan de los palotes");
+                NotificarSobreInmueble(interesado);
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        [WebMethod]
         public void NotificarSobreInmueble(Interesado interesado)
         {
             try
@@ -188,6 +203,21 @@ namespace InmobiliariaService
             catch (Exception ex)
             {
                 EmailHelper.EnviarNotificacion(ex);
+            }
+        }
+
+        [WebMethod]
+        public void TestNotificarSobreInteresado()
+        {
+            try
+            {
+                List<Inmueble> inmuebles = InmuebleDAO.GetInmuebles();
+                NotificarSobreInteresado(inmuebles.Find(x => x.Numero == "234"));
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
 

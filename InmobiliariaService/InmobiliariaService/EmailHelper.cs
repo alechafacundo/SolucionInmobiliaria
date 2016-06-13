@@ -165,7 +165,7 @@ namespace InmobiliariaService
                     if (!string.IsNullOrEmpty(interesado.Email))
                         email = interesado.Email;
                    
-                    cuerpo += string.Format("-  {Nombre}, teléfono {Telefono} y email {Email}.", nombre, telefono, email) + Environment.NewLine;
+                    cuerpo += string.Format("-  {0}, teléfono {1} y email {2}.", nombre, telefono, email) + Environment.NewLine;
                     
                 }
 

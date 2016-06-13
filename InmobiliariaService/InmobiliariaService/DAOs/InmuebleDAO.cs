@@ -36,38 +36,69 @@ namespace InmobiliariaService
         {
             try
             {
-                List<Inmueble> inmuebles = new List<Inmueble>();
+                List<Inmueble> aux = GetInmuebles();
 
-                string where = string.Empty;
-                if (interesado.Dormitorios != null && interesado.Dormitorios != string.Empty)
+                
+                if (interesado.TipoDeInmueble != (int)eTipoInmueble.Sin_Especificar)
                 {
-                    where += "Dormitorios = " + interesado.Dormitorios;
+                    aux.RemoveAll(x => x.Tipo != interesado.TipoDeInmueble);
+                    //aux = aux.Where(x => x.Tipo == (int)tipoInmueble).ToList();
+                }
+                
+                if (interesado.TipoDeOperacion != (int)eTipoOperacion.Sin_Especificar)
+                {
+                    aux.RemoveAll(x => x.Operacion != (int)interesado.TipoDeOperacion);
+                    //aux = aux.Where(x => x.Operacion == (int)tipoOperacion).ToList();
                 }
 
-                if (interesado.MontoDesde != null && interesado.MontoDesde != 0)
+                
+                if (interesado.MontoDesde !=  null && interesado.MontoDesde != 0)
                 {
-                    if (where != string.Empty)
-                        where += " AND ";
-
-                    where += "Precio >= " + interesado.MontoDesde;
+                    aux.RemoveAll(x => x.Precio < interesado.MontoDesde);
+                    //aux = aux.Where(x => x.Precio <= numPrecioHasta.Value).ToList();
                 }
 
                 if (interesado.MontoHasta != null && interesado.MontoHasta != 0)
                 {
-                    if (where != string.Empty)
-                        where += " AND ";
-
-                    where += "Precio <= " + interesado.MontoHasta;
+                    aux.RemoveAll(x => x.Precio > interesado.MontoHasta.Value);
+                    //aux = aux.Where(x => x.Precio >= numPrecioDesde.Value).ToList();
                 }
 
-                DataTable dt = DAOBase.GetDataTableWhere(new Inmueble(), where);
 
-                if (dt.Rows.Count > 0)
-                {
-                    inmuebles = LlenarInmuebles(new Inmueble(), dt);
-                }
+                return aux;
 
-                return inmuebles;
+
+                //List<Inmueble> inmuebles = new List<Inmueble>();
+
+                //string where = string.Empty;
+                //if (interesado.Dormitorios != null && interesado.Dormitorios != string.Empty)
+                //{
+                //    where += "Dormitorios = " + interesado.Dormitorios;
+                //}
+
+                //if (interesado.MontoDesde != null && interesado.MontoDesde != 0)
+                //{
+                //    if (where != string.Empty)
+                //        where += " AND ";
+
+                //    where += "Precio >= " + interesado.MontoDesde;
+                //}
+
+                //if (interesado.MontoHasta != null && interesado.MontoHasta != 0)
+                //{
+                //    if (where != string.Empty)
+                //        where += " AND ";
+
+                //    where += "Precio <= " + interesado.MontoHasta;
+                //}
+
+                //DataTable dt = DAOBase.GetDataTableWhere(new Inmueble(), where);
+
+                //if (dt.Rows.Count > 0)
+                //{
+                //    inmuebles = LlenarInmuebles(new Inmueble(), dt);
+                //}
+
             }
             catch (Exception)
             {
