@@ -10,11 +10,16 @@ namespace InmobiliariaService
     {
         internal static List<Vendedor> vendedores;
 
-        public static void SendInmueblesInEmail(List<Inmueble> inmuebles)
+        public static void SendInmueblesInEmail(List<Inmueble> inmuebles, Interesado interesado)
         {
             try
             {
-                string cabecera = "Se han encontrado coincidencias en los siguientes Inmuebles con el Interesado ingresado:" + Environment.NewLine + Environment.NewLine;
+                string cabecera = string.Empty;
+                string nombre = "N/A";
+                if (!string.IsNullOrEmpty(interesado.Nombre))
+                    nombre = interesado.Nombre;
+                cabecera += string.Format( "Se han encontrado coincidencias en los siguientes Inmuebles con el Interesado {0} que fue recientemente ingresado", nombre ) + Environment.NewLine;
+
                 string cuerpo = string.Empty;
 
                 foreach (Inmueble inmueble in inmuebles)
@@ -124,11 +129,43 @@ namespace InmobiliariaService
             }
         }
 
-        internal static void SendInteresadosInEmail(List<Interesado> interesados)
+        internal static void SendInteresadosInEmail(List<Interesado> interesados, Inmueble inmueble)
         {
             try
             {
 
+                string cabecera = string.Empty;
+                string localidad = "N/A";
+                string calle = "N/A";
+                string numero = "N/A";
+                if (!string.IsNullOrEmpty(inmueble.Localidad))
+                    localidad = inmueble.Localidad;
+                if (!string.IsNullOrEmpty(inmueble.Calle))
+                    calle = inmueble.Calle;
+                if (!string.IsNullOrEmpty(inmueble.Numero))
+                    numero = inmueble.Numero;
+                cabecera += string.Format("Se han encontrado los siguientes Interesados que coinciden con el sigueinte Inmueble ingresado: {0}, ubicado en {1} Nº{2} de la localidad de {3} ", ((eTipoInmueble)inmueble.Tipo).ToString(), calle, numero, localidad)) + Environment.NewLine;
+
+                string cuerpo = string.Empty;
+
+                foreach (Interesado interesado in interesados)
+                {
+                    string nombre = "N/A";
+                    string telefono = "N/A";
+                    string email = "N/A";
+                  
+                    if (!string.IsNullOrEmpty(interesado.Nombre))
+                        nombre = interesado.Nombre;
+                    if (!string.IsNullOrEmpty(interesado.Telefono))
+                        telefono = interesado.Telefono;
+                    if (!string.IsNullOrEmpty(interesado.Email))
+                        email = interesado.Email;
+                   
+                    cuerpo += string.Format("-  {Nombre}, teléfono {Telefono} y email {Email}.", nombre, telefono, email) + Environment.NewLine;
+                    
+                }
+
+                EnviarNotificacion(cabecera + cuerpo);
             }
             catch (Exception)
             {

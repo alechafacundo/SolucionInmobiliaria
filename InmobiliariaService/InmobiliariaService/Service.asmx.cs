@@ -183,7 +183,7 @@ namespace InmobiliariaService
             try
             {
                 List<Inmueble> inmuebles = InmuebleDAO.GetInmueblesParaInteresado(interesado);
-                EmailHelper.SendInmueblesInEmail(inmuebles);
+                EmailHelper.SendInmueblesInEmail(inmuebles,interesado);
             }
             catch (Exception ex)
             {
@@ -197,7 +197,7 @@ namespace InmobiliariaService
             try
             {
                 List<Interesado> interesados = InteresadoDAO.GetInteresadosParaInmueble(inmueble);
-                EmailHelper.SendInteresadosInEmail(interesados);
+                EmailHelper.SendInteresadosInEmail(interesados,inmueble);
             }
             catch (Exception ex)
             {
