@@ -34,6 +34,8 @@ namespace InmobiliariaForms
 
                 if (Interesado != null)
                 {
+                    btEliminar.Visible = true;
+
                     txNombre.Text = Interesado.Nombre;
                     txTelefono.Text = Interesado.Telefono;
                     txEmail.Text = Interesado.Email;

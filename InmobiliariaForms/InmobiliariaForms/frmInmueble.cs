@@ -77,9 +77,18 @@ namespace InmobiliariaForms
 
                     Service ws = new Service();
                     int inmuebleId = ws.GuardarInmueble(Inmueble);
-
+                    
                     Inmueble.Id = inmuebleId;
                     MessageBox.Show("Inmueble guardado correctamente");
+
+                    try
+                    {
+                        ws.NotificarSobreInteresadoAsync(Inmueble);
+                    }
+                    catch (Exception)
+                    {
+                    }
+
 
                     frmInmueble frmInmueble = new frmInmueble();
                     frmInmueble.Inmueble = Inmueble;
@@ -191,6 +200,9 @@ namespace InmobiliariaForms
 
                 if (Inmueble != null)
                 {
+                    btGuardarFotos.Enabled = true;
+                    btVerFotos.Enabled = true;
+
                     btEliminar.Visible = true;
                     cbTipoInmueble.SelectedIndex = (int)Inmueble.Tipo;
                     cbTipoOperacion.SelectedIndex = (int)Inmueble.Operacion;

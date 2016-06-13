@@ -737,6 +737,7 @@
             // btGuardarFotos
             // 
             this.btGuardarFotos.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btGuardarFotos.Enabled = false;
             this.btGuardarFotos.Location = new System.Drawing.Point(152, 328);
             this.btGuardarFotos.Name = "btGuardarFotos";
             this.btGuardarFotos.Size = new System.Drawing.Size(95, 23);
@@ -748,6 +749,7 @@
             // btVerFotos
             // 
             this.btVerFotos.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btVerFotos.Enabled = false;
             this.btVerFotos.Location = new System.Drawing.Point(253, 328);
             this.btVerFotos.Name = "btVerFotos";
             this.btVerFotos.Size = new System.Drawing.Size(95, 23);
