@@ -201,6 +201,7 @@ namespace InmobiliariaService
             }
             catch (Exception ex)
             {
+                EmailHelper.EnviarNotificacion(ex);
             }
         }
 
