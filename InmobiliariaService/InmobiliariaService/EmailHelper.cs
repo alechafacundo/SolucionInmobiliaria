@@ -144,7 +144,7 @@ namespace InmobiliariaService
                     calle = inmueble.Calle;
                 if (!string.IsNullOrEmpty(inmueble.Numero))
                     numero = inmueble.Numero;
-                cabecera += string.Format("Se han encontrado los siguientes Interesados que coinciden con el sigueinte Inmueble ingresado: {0}, ubicado en {1} Nº{2} de la localidad de {3} ", ((eTipoInmueble)inmueble.Tipo).ToString(), calle, numero, localidad)) + Environment.NewLine;
+                cabecera += string.Format("Se han encontrado los siguientes Interesados que coinciden con el sigueinte Inmueble ingresado: {0}, ubicado en {1} Nº{2} de la localidad de {3} ", ((eTipoInmueble)inmueble.Tipo).ToString(), calle, numero, localidad) + Environment.NewLine;
 
                 string cuerpo = string.Empty;
 
