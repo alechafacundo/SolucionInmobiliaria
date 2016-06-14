@@ -35,6 +35,7 @@ namespace InmobiliariaService
                     string supCubierta = "0";
                     decimal valor = 0m;
                     string referencia = "N/A";
+                    string contacto = "N/A";
 
                     if (!string.IsNullOrEmpty(inmueble.Localidad))
                         localidad = inmueble.Localidad;
@@ -58,6 +59,8 @@ namespace InmobiliariaService
                         valor = (decimal)inmueble.Precio;
                     if (!string.IsNullOrEmpty(inmueble.Referencia))
                         referencia = inmueble.Referencia;
+                    if (!string.IsNullOrEmpty(inmueble.Contacto))
+                        contacto = inmueble.Contacto;
 
 
                     cuerpo += string.Format("- Hay un/a {0}, que está ubicado en {1}, más precisamente en la calle {2} N° {3} piso {4} departamento {5}.",
@@ -65,7 +68,7 @@ namespace InmobiliariaService
                     cuerpo += string.Format("El mismo está constituido por {0} dormitorio/s, {1} baño/s y {2} comedor/es. ", dormitorio, baño, comedor);
                     cuerpo += string.Format("Cuenta con una superficie cubierta de {0} Mts.", supCubierta) + Environment.NewLine;
                     cuerpo += string.Format("Su valor de {0} es de {1} {2}", ((eTipoOperacion)inmueble.Operacion).ToString(), ((eMoneda)inmueble.Moneda).ToString(), valor.ToString()) + Environment.NewLine;
-                    cuerpo += string.Format("La administración del mismo la posee {0} y puede ser ubicado al {1}", referencia, GetVendedorName(inmueble.CargadoPor)) + Environment.NewLine;
+                    cuerpo += string.Format("El contacto del mismo es {0} y puede ser ubicado al {1}", contacto, referencia) + Environment.NewLine;
                 }
 
                 EnviarNotificacion(cabecera + cuerpo);
@@ -107,7 +110,7 @@ namespace InmobiliariaService
                 //Sino nos van a bloquear la cuenta porque van a pensar que es spam
                 //return;
                 MailMessage message = new MailMessage();
-                //message.To.Add("duarte.fabricio.90@gmail.com");
+                message.To.Add("duarte.fabricio.90@gmail.com");
                 message.To.Add("alechaf@gmail.com");
                 message.Subject = "Se encontraron coincidencias!";
                 message.From = new System.Net.Mail.MailAddress("system_as@outlook.com", "SystemAs");

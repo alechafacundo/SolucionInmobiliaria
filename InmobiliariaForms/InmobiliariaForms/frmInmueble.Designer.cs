@@ -217,9 +217,9 @@
             this.label25.AutoSize = true;
             this.label25.Location = new System.Drawing.Point(407, 28);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(67, 14);
+            this.label25.Size = new System.Drawing.Size(57, 14);
             this.label25.TabIndex = 4;
-            this.label25.Text = "Referencia:";
+            this.label25.Text = "Telefono:";
             // 
             // txContacto
             // 

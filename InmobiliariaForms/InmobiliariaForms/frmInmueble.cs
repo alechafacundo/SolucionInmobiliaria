@@ -301,6 +301,7 @@ namespace InmobiliariaForms
                             {
                                 ws.GuardarFoto(f);
                             }
+
                             catch (Exception)
                             {
                                 if (archivosSinGuardar == string.Empty)
@@ -318,6 +319,11 @@ namespace InmobiliariaForms
                     if (archivosSinGuardar != string.Empty)
                     {
                         MessageBox.Show(archivosSinGuardar, "Error");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Imagen/es Guardada Correctamente!");
+                        this.Close();
                     }
                 }
             }
