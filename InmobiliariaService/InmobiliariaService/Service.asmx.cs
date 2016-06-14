@@ -198,7 +198,10 @@ namespace InmobiliariaService
             try
             {
                 List<Inmueble> inmuebles = InmuebleDAO.GetInmueblesParaInteresado(interesado);
-                EmailHelper.SendInmueblesInEmail(inmuebles,interesado);
+                if(inmuebles.Count > 0)
+                {
+                    EmailHelper.SendInmueblesInEmail(inmuebles, interesado);
+                }
             }
             catch (Exception ex)
             {
@@ -227,7 +230,10 @@ namespace InmobiliariaService
             try
             {
                 List<Interesado> interesados = InteresadoDAO.GetInteresadosParaInmueble(inmueble);
-                EmailHelper.SendInteresadosInEmail(interesados,inmueble);
+                if (interesados.Count > 0)
+                {
+                    EmailHelper.SendInteresadosInEmail(interesados, inmueble);
+                }
             }
             catch (Exception ex)
             {
@@ -252,9 +258,12 @@ namespace InmobiliariaService
         [WebMethod]
         public bool EliminarInmueble(Inmueble inmueble)
         {
+            
             try
             {
-                return DAOBase.DeleteEntity(inmueble);
+                bool respuesta = InmuebleDAO.DeleteInmueble(inmueble);
+                return respuesta;
+                //return DAOBase.DeleteEntity(inmueble);
             }
             catch (Exception ex)
             {

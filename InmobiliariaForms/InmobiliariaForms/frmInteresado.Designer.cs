@@ -126,7 +126,7 @@
             this.cbMoneda.FormattingEnabled = true;
             this.cbMoneda.Location = new System.Drawing.Point(74, 78);
             this.cbMoneda.Name = "cbMoneda";
-            this.cbMoneda.Size = new System.Drawing.Size(66, 24);
+            this.cbMoneda.Size = new System.Drawing.Size(99, 24);
             this.cbMoneda.TabIndex = 4;
             // 
             // label12
@@ -218,7 +218,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(385, 83);
+            this.label5.Location = new System.Drawing.Point(394, 84);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(87, 16);
             this.label5.TabIndex = 8;
@@ -232,14 +232,14 @@
             0,
             0,
             0});
-            this.numDesde.Location = new System.Drawing.Point(244, 82);
+            this.numDesde.Location = new System.Drawing.Point(270, 82);
             this.numDesde.Maximum = new decimal(new int[] {
             -727379968,
             232,
             0,
             0});
             this.numDesde.Name = "numDesde";
-            this.numDesde.Size = new System.Drawing.Size(132, 21);
+            this.numDesde.Size = new System.Drawing.Size(121, 21);
             this.numDesde.TabIndex = 5;
             this.numDesde.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -249,7 +249,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(146, 84);
+            this.label4.Location = new System.Drawing.Point(179, 84);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 16);
             this.label4.TabIndex = 6;

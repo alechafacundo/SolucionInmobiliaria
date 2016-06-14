@@ -279,6 +279,12 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="TestNotificarSobreInmueble">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestNotificarSobreInmuebleResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="NotificarSobreInmueble">
         <s:complexType>
           <s:sequence>
@@ -287,6 +293,12 @@
         </s:complexType>
       </s:element>
       <s:element name="NotificarSobreInmuebleResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestNotificarSobreInteresado">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestNotificarSobreInteresadoResponse">
         <s:complexType />
       </s:element>
       <s:element name="NotificarSobreInteresado">
@@ -421,11 +433,23 @@
   <wsdl:message name="GuardarFotoSoapOut">
     <wsdl:part name="parameters" element="tns:GuardarFotoResponse" />
   </wsdl:message>
+  <wsdl:message name="TestNotificarSobreInmuebleSoapIn">
+    <wsdl:part name="parameters" element="tns:TestNotificarSobreInmueble" />
+  </wsdl:message>
+  <wsdl:message name="TestNotificarSobreInmuebleSoapOut">
+    <wsdl:part name="parameters" element="tns:TestNotificarSobreInmuebleResponse" />
+  </wsdl:message>
   <wsdl:message name="NotificarSobreInmuebleSoapIn">
     <wsdl:part name="parameters" element="tns:NotificarSobreInmueble" />
   </wsdl:message>
   <wsdl:message name="NotificarSobreInmuebleSoapOut">
     <wsdl:part name="parameters" element="tns:NotificarSobreInmuebleResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestNotificarSobreInteresadoSoapIn">
+    <wsdl:part name="parameters" element="tns:TestNotificarSobreInteresado" />
+  </wsdl:message>
+  <wsdl:message name="TestNotificarSobreInteresadoSoapOut">
+    <wsdl:part name="parameters" element="tns:TestNotificarSobreInteresadoResponse" />
   </wsdl:message>
   <wsdl:message name="NotificarSobreInteresadoSoapIn">
     <wsdl:part name="parameters" element="tns:NotificarSobreInteresado" />
@@ -504,9 +528,17 @@
       <wsdl:input message="tns:GuardarFotoSoapIn" />
       <wsdl:output message="tns:GuardarFotoSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="TestNotificarSobreInmueble">
+      <wsdl:input message="tns:TestNotificarSobreInmuebleSoapIn" />
+      <wsdl:output message="tns:TestNotificarSobreInmuebleSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="NotificarSobreInmueble">
       <wsdl:input message="tns:NotificarSobreInmuebleSoapIn" />
       <wsdl:output message="tns:NotificarSobreInmuebleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestNotificarSobreInteresado">
+      <wsdl:input message="tns:TestNotificarSobreInteresadoSoapIn" />
+      <wsdl:output message="tns:TestNotificarSobreInteresadoSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="NotificarSobreInteresado">
       <wsdl:input message="tns:NotificarSobreInteresadoSoapIn" />
@@ -644,8 +676,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="TestNotificarSobreInmueble">
+      <soap:operation soapAction="http://tempuri.org/TestNotificarSobreInmueble" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="NotificarSobreInmueble">
       <soap:operation soapAction="http://tempuri.org/NotificarSobreInmueble" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestNotificarSobreInteresado">
+      <soap:operation soapAction="http://tempuri.org/TestNotificarSobreInteresado" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -809,8 +859,26 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="TestNotificarSobreInmueble">
+      <soap12:operation soapAction="http://tempuri.org/TestNotificarSobreInmueble" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="NotificarSobreInmueble">
       <soap12:operation soapAction="http://tempuri.org/NotificarSobreInmueble" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestNotificarSobreInteresado">
+      <soap12:operation soapAction="http://tempuri.org/TestNotificarSobreInteresado" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

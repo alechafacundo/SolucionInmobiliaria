@@ -55,7 +55,11 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         private System.Threading.SendOrPostCallback GuardarFotoOperationCompleted;
         
+        private System.Threading.SendOrPostCallback TestNotificarSobreInmuebleOperationCompleted;
+        
         private System.Threading.SendOrPostCallback NotificarSobreInmuebleOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback TestNotificarSobreInteresadoOperationCompleted;
         
         private System.Threading.SendOrPostCallback NotificarSobreInteresadoOperationCompleted;
         
@@ -143,7 +147,13 @@ namespace InmobiliariaForms.InmobiliariaService {
         public event GuardarFotoCompletedEventHandler GuardarFotoCompleted;
         
         /// <remarks/>
+        public event TestNotificarSobreInmuebleCompletedEventHandler TestNotificarSobreInmuebleCompleted;
+        
+        /// <remarks/>
         public event NotificarSobreInmuebleCompletedEventHandler NotificarSobreInmuebleCompleted;
+        
+        /// <remarks/>
+        public event TestNotificarSobreInteresadoCompletedEventHandler TestNotificarSobreInteresadoCompleted;
         
         /// <remarks/>
         public event NotificarSobreInteresadoCompletedEventHandler NotificarSobreInteresadoCompleted;
@@ -540,6 +550,32 @@ namespace InmobiliariaForms.InmobiliariaService {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/TestNotificarSobreInmueble", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void TestNotificarSobreInmueble() {
+            this.Invoke("TestNotificarSobreInmueble", new object[0]);
+        }
+        
+        /// <remarks/>
+        public void TestNotificarSobreInmuebleAsync() {
+            this.TestNotificarSobreInmuebleAsync(null);
+        }
+        
+        /// <remarks/>
+        public void TestNotificarSobreInmuebleAsync(object userState) {
+            if ((this.TestNotificarSobreInmuebleOperationCompleted == null)) {
+                this.TestNotificarSobreInmuebleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnTestNotificarSobreInmuebleOperationCompleted);
+            }
+            this.InvokeAsync("TestNotificarSobreInmueble", new object[0], this.TestNotificarSobreInmuebleOperationCompleted, userState);
+        }
+        
+        private void OnTestNotificarSobreInmuebleOperationCompleted(object arg) {
+            if ((this.TestNotificarSobreInmuebleCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.TestNotificarSobreInmuebleCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/NotificarSobreInmueble", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public void NotificarSobreInmueble(Interesado interesado) {
             this.Invoke("NotificarSobreInmueble", new object[] {
@@ -564,6 +600,32 @@ namespace InmobiliariaForms.InmobiliariaService {
             if ((this.NotificarSobreInmuebleCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.NotificarSobreInmuebleCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/TestNotificarSobreInteresado", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void TestNotificarSobreInteresado() {
+            this.Invoke("TestNotificarSobreInteresado", new object[0]);
+        }
+        
+        /// <remarks/>
+        public void TestNotificarSobreInteresadoAsync() {
+            this.TestNotificarSobreInteresadoAsync(null);
+        }
+        
+        /// <remarks/>
+        public void TestNotificarSobreInteresadoAsync(object userState) {
+            if ((this.TestNotificarSobreInteresadoOperationCompleted == null)) {
+                this.TestNotificarSobreInteresadoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnTestNotificarSobreInteresadoOperationCompleted);
+            }
+            this.InvokeAsync("TestNotificarSobreInteresado", new object[0], this.TestNotificarSobreInteresadoOperationCompleted, userState);
+        }
+        
+        private void OnTestNotificarSobreInteresadoOperationCompleted(object arg) {
+            if ((this.TestNotificarSobreInteresadoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.TestNotificarSobreInteresadoCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1715,7 +1777,15 @@ namespace InmobiliariaForms.InmobiliariaService {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void TestNotificarSobreInmuebleCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void NotificarSobreInmuebleCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void TestNotificarSobreInteresadoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]

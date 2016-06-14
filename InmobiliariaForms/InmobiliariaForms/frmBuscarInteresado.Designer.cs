@@ -33,7 +33,6 @@
             this.txDorm = new System.Windows.Forms.TextBox();
             this.cbMoneda = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.checkEsInversion = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cbTipoOperacion = new System.Windows.Forms.ComboBox();
@@ -76,7 +75,6 @@
             this.groupBox1.Controls.Add(this.txDorm);
             this.groupBox1.Controls.Add(this.cbMoneda);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.checkEsInversion);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.cbTipoOperacion);
@@ -123,21 +121,6 @@
             this.label12.Size = new System.Drawing.Size(54, 14);
             this.label12.TabIndex = 71;
             this.label12.Text = "Moneda:";
-            // 
-            // checkEsInversion
-            // 
-            this.checkEsInversion.AutoSize = true;
-            this.checkEsInversion.BackColor = System.Drawing.Color.Transparent;
-            this.checkEsInversion.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkEsInversion.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkEsInversion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.checkEsInversion.Location = new System.Drawing.Point(486, 128);
-            this.checkEsInversion.Name = "checkEsInversion";
-            this.checkEsInversion.Size = new System.Drawing.Size(119, 18);
-            this.checkEsInversion.TabIndex = 67;
-            this.checkEsInversion.Text = "Es para Inversión";
-            this.checkEsInversion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkEsInversion.UseVisualStyleBackColor = false;
             // 
             // label8
             // 
@@ -371,7 +354,6 @@
         private System.Windows.Forms.TextBox txDorm;
         private System.Windows.Forms.ComboBox cbMoneda;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.CheckBox checkEsInversion;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbTipoOperacion;

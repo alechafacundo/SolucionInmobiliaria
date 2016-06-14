@@ -79,7 +79,7 @@ namespace InmobiliariaForms
                     int inmuebleId = ws.GuardarInmueble(Inmueble);
                     
                     Inmueble.Id = inmuebleId;
-                    MessageBox.Show("Inmueble guardado correctamente");
+                    MessageBox.Show("Inmueble guardado correctamente. Puede Agregar Fotos ahora si lo desea!");
 
                     try
                     {
@@ -250,10 +250,9 @@ namespace InmobiliariaForms
             {
                 Service ws = new Service();
                 Inmueble inmueble = new Inmueble();
+                Foto foto = new Foto();
 
-                //ToDo Facu
-                //Eliminar las fotos antes de eliminar el inmueble
-
+              
                 if (ws.EliminarInmueble(Inmueble))
                 {
                     

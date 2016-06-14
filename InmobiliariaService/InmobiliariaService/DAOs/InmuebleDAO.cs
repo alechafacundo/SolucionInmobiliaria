@@ -193,5 +193,21 @@ namespace InmobiliariaService
 
             return dtos;
         }
+        internal static bool DeleteInmueble(Inmueble inmueble)
+        {
+           
+            int inmuebleId = inmueble.Id;
+         
+            List<Foto> fotos = FotoDAO.GetFotosDelInmueble(inmuebleId);
+
+            for (int i = 0; i < fotos.Count; i++)
+            {
+                Foto foto = fotos[i];
+                DAOBase.DeleteEntity(foto);
+            }
+
+            bool pudoEliminar = DAOBase.DeleteEntity(inmueble);
+            return pudoEliminar;
+        }
     }
 }
