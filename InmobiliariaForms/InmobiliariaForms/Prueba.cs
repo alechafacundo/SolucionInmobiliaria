@@ -11,9 +11,6 @@ using System.Windows.Forms;
 
 namespace InmobiliariaForms
 {
-   
-   
-
     public partial class Prueba : Form
     {
         public static int MouseHoverTime { get; set; } 
@@ -33,9 +30,6 @@ namespace InmobiliariaForms
         {
             InitializeComponent();
         }
-
-         
-   
        
         private void Prueba_Load(object sender, EventArgs e)
         {
@@ -56,8 +50,6 @@ namespace InmobiliariaForms
                 }
             }
         }
-
-        
 
         private void pbInmueble1_MouseHover(object sender, EventArgs e)
         {

@@ -82,80 +82,80 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmAgregarInteresado.cs">
+    <Compile Include="Forms\Agregar\frmAgregarInteresado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAgregarInteresado.Designer.cs">
+    <Compile Include="Forms\Agregar\frmAgregarInteresado.Designer.cs">
       <DependentUpon>frmAgregarInteresado.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAgregarVendedor.cs">
+    <Compile Include="Forms\Agregar\frmAgregarVendedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAgregarVendedor.Designer.cs">
+    <Compile Include="Forms\Agregar\frmAgregarVendedor.Designer.cs">
       <DependentUpon>frmAgregarVendedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBuscarInmueble.cs">
+    <Compile Include="Forms\Buscar\frmBuscarInmueble.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBuscarInmueble.Designer.cs">
+    <Compile Include="Forms\Buscar\frmBuscarInmueble.Designer.cs">
       <DependentUpon>frmBuscarInmueble.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBuscarInteresado.cs">
+    <Compile Include="Forms\Buscar\frmBuscarInteresado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBuscarInteresado.Designer.cs">
+    <Compile Include="Forms\Buscar\frmBuscarInteresado.Designer.cs">
       <DependentUpon>frmBuscarInteresado.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBuscarVendedor.cs">
+    <Compile Include="Forms\Buscar\frmBuscarVendedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBuscarVendedor.Designer.cs">
+    <Compile Include="Forms\Buscar\frmBuscarVendedor.Designer.cs">
       <DependentUpon>frmBuscarVendedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmFotos.cs">
+    <Compile Include="Forms\Frms\frmFotos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFotos.Designer.cs">
+    <Compile Include="Forms\Frms\frmFotos.Designer.cs">
       <DependentUpon>frmFotos.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmInmueble.cs">
+    <Compile Include="Forms\Frms\frmInmueble.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmInmueble.Designer.cs">
+    <Compile Include="Forms\Frms\frmInmueble.Designer.cs">
       <DependentUpon>frmInmueble.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLogin.cs">
+    <Compile Include="Forms\Frms\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
+    <Compile Include="Forms\Frms\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helper.cs" />
+    <Compile Include="Helpers\EmailHelper.cs" />
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmInteresado.cs">
+    <Compile Include="Forms\Frms\frmInteresado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmInteresado.Designer.cs">
+    <Compile Include="Forms\Frms\frmInteresado.Designer.cs">
       <DependentUpon>frmInteresado.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAgregarInmueble.cs">
+    <Compile Include="Forms\Agregar\frmAgregarInmueble.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAgregarInmueble.Designer.cs">
+    <Compile Include="Forms\Agregar\frmAgregarInmueble.Designer.cs">
       <DependentUpon>frmAgregarInmueble.cs</DependentUpon>
     </Compile>
-    <Compile Include="PrinterHelper.cs" />
+    <Compile Include="Helpers\PrinterHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="frmVendedor.cs">
+    <Compile Include="Forms\Frms\frmVendedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmVendedor.Designer.cs">
+    <Compile Include="Forms\Frms\frmVendedor.Designer.cs">
       <DependentUpon>frmVendedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Prueba.cs">
@@ -164,42 +164,43 @@
     <Compile Include="Prueba.Designer.cs">
       <DependentUpon>Prueba.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ServiceHelper.cs" />
     <Compile Include="Web References\InmobiliariaService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmAgregarInteresado.resx">
+    <EmbeddedResource Include="Forms\Agregar\frmAgregarInteresado.resx">
       <DependentUpon>frmAgregarInteresado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAgregarVendedor.resx">
+    <EmbeddedResource Include="Forms\Agregar\frmAgregarVendedor.resx">
       <DependentUpon>frmAgregarVendedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBuscarInmueble.resx">
+    <EmbeddedResource Include="Forms\Buscar\frmBuscarInmueble.resx">
       <DependentUpon>frmBuscarInmueble.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBuscarInteresado.resx">
+    <EmbeddedResource Include="Forms\Buscar\frmBuscarInteresado.resx">
       <DependentUpon>frmBuscarInteresado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBuscarVendedor.resx">
+    <EmbeddedResource Include="Forms\Buscar\frmBuscarVendedor.resx">
       <DependentUpon>frmBuscarVendedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFotos.resx">
+    <EmbeddedResource Include="Forms\Frms\frmFotos.resx">
       <DependentUpon>frmFotos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmInmueble.resx">
+    <EmbeddedResource Include="Forms\Frms\frmInmueble.resx">
       <DependentUpon>frmInmueble.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLogin.resx">
+    <EmbeddedResource Include="Forms\Frms\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmInteresado.resx">
+    <EmbeddedResource Include="Forms\Frms\frmInteresado.resx">
       <DependentUpon>frmInteresado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAgregarInmueble.resx">
+    <EmbeddedResource Include="Forms\Agregar\frmAgregarInmueble.resx">
       <DependentUpon>frmAgregarInmueble.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -212,7 +213,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="frmVendedor.resx">
+    <EmbeddedResource Include="Forms\Frms\frmVendedor.resx">
       <DependentUpon>frmVendedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prueba.resx">
@@ -270,10 +271,15 @@
     <None Include="Resources\candado_oa.png" />
     <None Include="Resources\candado_oa1.png" />
     <None Include="Resources\backColor.png" />
+    <Content Include="App_Data\Settings.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Resources\MV.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>if exist "$(TargetPath).locked" del "$(TargetPath).locked"
