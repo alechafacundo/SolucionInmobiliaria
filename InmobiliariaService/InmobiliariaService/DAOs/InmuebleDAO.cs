@@ -8,7 +8,6 @@ namespace InmobiliariaService
 {
     public class InmuebleDAO : DAOBase
     {
-
         internal static int GuardarInmueble(Inmueble inmueble)
         {
             try
