@@ -82,6 +82,7 @@ namespace InmobiliariaForms
                 inmueble.Localidad = txLocalidad.Text.ToUpperInvariant();
                 inmueble.Barrio = txBarrio.Text.ToUpperInvariant();
                 inmueble.Dormitorios = txDorm.Text.ToUpperInvariant();
+                inmueble.Calle = txCalle.Text.ToUpperInvariant();
          
 
                 List<Inmueble> aux = new List<Inmueble>();
@@ -109,6 +110,12 @@ namespace InmobiliariaForms
                         aux.RemoveAll(x => x.Operacion != (int)tipoOperacion);
                         //aux = aux.Where(x => x.Operacion == (int)tipoOperacion).ToList();
                     }
+                }
+
+                if (!string.IsNullOrEmpty(inmueble.Calle))
+                {
+                    aux.RemoveAll(x => !x.Calle.Contains(inmueble.Calle));
+                    
                 }
 
                 if (!string.IsNullOrEmpty(inmueble.Localidad))

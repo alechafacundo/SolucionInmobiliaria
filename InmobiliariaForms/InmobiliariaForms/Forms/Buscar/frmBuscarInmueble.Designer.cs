@@ -50,6 +50,8 @@
             this.btImprimir = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.btMasDetalles = new System.Windows.Forms.Button();
+            this.txCalle = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gvResultado)).BeginInit();
             this.g.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecioHasta)).BeginInit();
@@ -72,6 +74,8 @@
             // 
             this.g.BackColor = System.Drawing.Color.White;
             this.g.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.g.Controls.Add(this.txCalle);
+            this.g.Controls.Add(this.label3);
             this.g.Controls.Add(this.numPrecioHasta);
             this.g.Controls.Add(this.label6);
             this.g.Controls.Add(this.cbTipoOperacion);
@@ -103,7 +107,7 @@
             0,
             0,
             0});
-            this.numPrecioHasta.Location = new System.Drawing.Point(301, 81);
+            this.numPrecioHasta.Location = new System.Drawing.Point(301, 109);
             this.numPrecioHasta.Maximum = new decimal(new int[] {
             1215752192,
             23,
@@ -118,7 +122,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(221, 83);
+            this.label6.Location = new System.Drawing.Point(222, 113);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 14);
             this.label6.TabIndex = 47;
@@ -137,15 +141,15 @@
             // 
             // txDorm
             // 
-            this.txDorm.Location = new System.Drawing.Point(53, 109);
+            this.txDorm.Location = new System.Drawing.Point(537, 81);
             this.txDorm.Name = "txDorm";
-            this.txDorm.Size = new System.Drawing.Size(38, 22);
+            this.txDorm.Size = new System.Drawing.Size(73, 22);
             this.txDorm.TabIndex = 38;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(6, 112);
+            this.label17.Location = new System.Drawing.Point(490, 84);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(39, 14);
             this.label17.TabIndex = 32;
@@ -155,7 +159,7 @@
             // 
             this.cbMoneda.BackColor = System.Drawing.Color.Beige;
             this.cbMoneda.FormattingEnabled = true;
-            this.cbMoneda.Location = new System.Drawing.Point(509, 83);
+            this.cbMoneda.Location = new System.Drawing.Point(509, 111);
             this.cbMoneda.Name = "cbMoneda";
             this.cbMoneda.Size = new System.Drawing.Size(101, 22);
             this.cbMoneda.TabIndex = 23;
@@ -164,7 +168,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Location = new System.Drawing.Point(454, 86);
+            this.label12.Location = new System.Drawing.Point(454, 114);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(54, 14);
             this.label12.TabIndex = 22;
@@ -177,7 +181,7 @@
             0,
             0,
             0});
-            this.numPrecioDesde.Location = new System.Drawing.Point(87, 81);
+            this.numPrecioDesde.Location = new System.Drawing.Point(87, 109);
             this.numPrecioDesde.Maximum = new decimal(new int[] {
             1215752192,
             23,
@@ -192,7 +196,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(7, 83);
+            this.label11.Location = new System.Drawing.Point(8, 114);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(80, 14);
             this.label11.TabIndex = 20;
@@ -305,6 +309,25 @@
             this.btMasDetalles.UseVisualStyleBackColor = false;
             this.btMasDetalles.Click += new System.EventHandler(this.btMasDetalles_Click);
             // 
+            // txCalle
+            // 
+            this.txCalle.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txCalle.Location = new System.Drawing.Point(56, 80);
+            this.txCalle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txCalle.Name = "txCalle";
+            this.txCalle.Size = new System.Drawing.Size(403, 22);
+            this.txCalle.TabIndex = 49;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(15, 84);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 14);
+            this.label3.TabIndex = 50;
+            this.label3.Text = "Calle: ";
+            // 
             // frmBuscarInmueble
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -353,5 +376,7 @@
         private System.Windows.Forms.Button btImprimir;
         private System.Windows.Forms.Button btCancelar;
         private System.Windows.Forms.Button btMasDetalles;
+        private System.Windows.Forms.TextBox txCalle;
+        private System.Windows.Forms.Label label3;
     }
 }

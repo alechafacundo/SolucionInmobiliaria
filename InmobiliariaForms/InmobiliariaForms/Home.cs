@@ -21,7 +21,7 @@ namespace InmobiliariaForms
 
         public Home()
         {
-            InitializeComponent();
+            //InitializeComponent();
         }
 
      
