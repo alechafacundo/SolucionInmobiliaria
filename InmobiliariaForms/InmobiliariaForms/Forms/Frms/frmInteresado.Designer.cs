@@ -53,6 +53,7 @@
             this.btEliminar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.btGuardar = new System.Windows.Forms.Button();
+            this.checkDisponible = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHasta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDesde)).BeginInit();
@@ -65,6 +66,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.groupBox1.Controls.Add(this.checkDisponible);
             this.groupBox1.Controls.Add(this.txObservaciones);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txDorm);
@@ -357,6 +359,20 @@
             this.btGuardar.UseVisualStyleBackColor = false;
             this.btGuardar.Click += new System.EventHandler(this.btGuardar_Click);
             // 
+            // checkDisponible
+            // 
+            this.checkDisponible.AutoSize = true;
+            this.checkDisponible.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkDisponible.Checked = true;
+            this.checkDisponible.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkDisponible.Font = new System.Drawing.Font("Roboto", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkDisponible.Location = new System.Drawing.Point(157, 141);
+            this.checkDisponible.Name = "checkDisponible";
+            this.checkDisponible.Size = new System.Drawing.Size(86, 19);
+            this.checkDisponible.TabIndex = 26;
+            this.checkDisponible.Text = "Disponible";
+            this.checkDisponible.UseVisualStyleBackColor = true;
+            // 
             // frmInteresado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -409,5 +425,6 @@
         private System.Windows.Forms.TextBox txDorm;
         private System.Windows.Forms.TextBox txObservaciones;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.CheckBox checkDisponible;
     }
 }

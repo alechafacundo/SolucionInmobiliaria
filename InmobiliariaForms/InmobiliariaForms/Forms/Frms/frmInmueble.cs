@@ -243,8 +243,6 @@ namespace InmobiliariaForms
             {
                 Inmueble inmueble = new Inmueble();
 
-                //ToDo Facu
-                //Eliminar las fotos antes de eliminar el inmueble
 
                 if (ServiceHelper.ws.EliminarInmueble(Inmueble))
                 {

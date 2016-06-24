@@ -30,6 +30,7 @@
         {
             this.gvResultado = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.txDorm = new System.Windows.Forms.TextBox();
             this.cbMoneda = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -51,8 +52,7 @@
             this.btCancelar = new System.Windows.Forms.Button();
             this.btBuscar = new System.Windows.Forms.Button();
             this.btImprimir = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txObservaciones = new System.Windows.Forms.ComboBox();
+            this.txObservaciones = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gvResultado)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHasta)).BeginInit();
@@ -100,6 +100,15 @@
             this.groupBox1.Size = new System.Drawing.Size(612, 158);
             this.groupBox1.TabIndex = 44;
             this.groupBox1.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(145, 130);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(89, 14);
+            this.label9.TabIndex = 72;
+            this.label9.Text = "Observaciones:";
             // 
             // txDorm
             // 
@@ -326,19 +335,9 @@
             this.btImprimir.Text = "Imprimir";
             this.btImprimir.UseVisualStyleBackColor = false;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(145, 130);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(89, 14);
-            this.label9.TabIndex = 72;
-            this.label9.Text = "Observaciones:";
-            // 
             // txObservaciones
             // 
-            this.txObservaciones.FormattingEnabled = true;
-            this.txObservaciones.Location = new System.Drawing.Point(239, 127);
+            this.txObservaciones.Location = new System.Drawing.Point(241, 126);
             this.txObservaciones.Name = "txObservaciones";
             this.txObservaciones.Size = new System.Drawing.Size(364, 22);
             this.txObservaciones.TabIndex = 73;
@@ -391,7 +390,7 @@
         private System.Windows.Forms.TextBox txNombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btImprimir;
-        private System.Windows.Forms.ComboBox txObservaciones;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txObservaciones;
     }
 }

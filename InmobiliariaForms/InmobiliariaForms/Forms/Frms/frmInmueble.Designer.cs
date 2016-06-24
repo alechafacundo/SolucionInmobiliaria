@@ -89,6 +89,7 @@
             this.btGuardar = new System.Windows.Forms.Button();
             this.btGuardarFotos = new System.Windows.Forms.Button();
             this.btVerFotos = new System.Windows.Forms.Button();
+            this.checkDisponible = new System.Windows.Forms.CheckBox();
             this.g.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).BeginInit();
@@ -98,6 +99,7 @@
             // 
             this.g.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.g.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.g.Controls.Add(this.checkDisponible);
             this.g.Controls.Add(this.txCocina);
             this.g.Controls.Add(this.label26);
             this.g.Controls.Add(this.cbTipoOperacion);
@@ -758,6 +760,20 @@
             this.btVerFotos.UseVisualStyleBackColor = false;
             this.btVerFotos.Click += new System.EventHandler(this.btVerFotos_Click);
             // 
+            // checkDisponible
+            // 
+            this.checkDisponible.AutoSize = true;
+            this.checkDisponible.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkDisponible.Checked = true;
+            this.checkDisponible.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkDisponible.Font = new System.Drawing.Font("Roboto", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkDisponible.Location = new System.Drawing.Point(179, 224);
+            this.checkDisponible.Name = "checkDisponible";
+            this.checkDisponible.Size = new System.Drawing.Size(86, 19);
+            this.checkDisponible.TabIndex = 31;
+            this.checkDisponible.Text = "Disponible";
+            this.checkDisponible.UseVisualStyleBackColor = true;
+            // 
             // frmInmueble
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -848,5 +864,6 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Button btGuardarFotos;
         private System.Windows.Forms.Button btVerFotos;
+        private System.Windows.Forms.CheckBox checkDisponible;
     }
 }

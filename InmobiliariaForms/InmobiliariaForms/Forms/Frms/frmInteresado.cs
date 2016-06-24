@@ -178,5 +178,7 @@ namespace InmobiliariaForms
                 MessageBox.Show("El Interesado NO se elimino", "Interesado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        //Todo: Fabri
+        //ahi hice los check, no me acuerdo el codigo mañana los hago y te voy consultando jaja
     }
 }

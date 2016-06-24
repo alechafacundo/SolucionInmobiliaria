@@ -128,4 +128,16 @@ namespace InmobiliariaForms
             gvResultado.Columns["Id"].Visible = false;
         }
     }
+    //ToDo: Facu
+//    1) filtro de busqueda inmueble agregar calle (falta que ande)
+	
+//2) ver inmuebles de un interesado
+
+//3) en el mail poner separador de miles y en el sistema tambien
+
+//4) en buscar interesado, sacar el es para inversión y que se pueda buscar por las observaciones (falta que ande)
+
+//5) poner un disponible en inmueble y para el interesado tambien (falta codigo, hago mañana)
+
+//6) inicio de sesion por nombre dr usuario de mail 
 }

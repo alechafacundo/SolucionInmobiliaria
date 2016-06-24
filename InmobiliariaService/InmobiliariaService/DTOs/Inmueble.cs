@@ -36,5 +36,6 @@ namespace InmobiliariaService
         public string Contacto { get; set; }
         public string Referencia { get; set; }
         public string Otros { get; set; }
+        public bool Disponible { get; set; }
     }
 }

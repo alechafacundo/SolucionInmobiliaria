@@ -827,6 +827,8 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         private string otrosField;
         
+        private bool disponibleField;
+        
         /// <remarks/>
         public int Id {
             get {
@@ -1108,6 +1110,16 @@ namespace InmobiliariaForms.InmobiliariaService {
                 this.otrosField = value;
             }
         }
+        
+        /// <remarks/>
+        public bool Disponible {
+            get {
+                return this.disponibleField;
+            }
+            set {
+                this.disponibleField = value;
+            }
+        }
     }
     
     /// <remarks/>
@@ -1317,6 +1329,8 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         private string observacionesField;
         
+        private bool disponibleField;
+        
         /// <remarks/>
         public int Id {
             get {
@@ -1436,6 +1450,16 @@ namespace InmobiliariaForms.InmobiliariaService {
             }
             set {
                 this.observacionesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public bool Disponible {
+            get {
+                return this.disponibleField;
+            }
+            set {
+                this.disponibleField = value;
             }
         }
     }
