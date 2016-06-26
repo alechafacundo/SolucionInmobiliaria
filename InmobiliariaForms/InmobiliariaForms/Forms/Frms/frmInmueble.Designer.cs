@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInmueble));
             this.g = new System.Windows.Forms.GroupBox();
+            this.checkDisponible = new System.Windows.Forms.CheckBox();
             this.txCocina = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.cbTipoOperacion = new System.Windows.Forms.ComboBox();
@@ -89,7 +90,6 @@
             this.btGuardar = new System.Windows.Forms.Button();
             this.btGuardarFotos = new System.Windows.Forms.Button();
             this.btVerFotos = new System.Windows.Forms.Button();
-            this.checkDisponible = new System.Windows.Forms.CheckBox();
             this.g.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).BeginInit();
@@ -156,6 +156,20 @@
             this.g.Size = new System.Drawing.Size(612, 316);
             this.g.TabIndex = 1;
             this.g.TabStop = false;
+            // 
+            // checkDisponible
+            // 
+            this.checkDisponible.AutoSize = true;
+            this.checkDisponible.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkDisponible.Checked = true;
+            this.checkDisponible.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkDisponible.Font = new System.Drawing.Font("Roboto", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkDisponible.Location = new System.Drawing.Point(179, 224);
+            this.checkDisponible.Name = "checkDisponible";
+            this.checkDisponible.Size = new System.Drawing.Size(96, 19);
+            this.checkDisponible.TabIndex = 31;
+            this.checkDisponible.Text = "Disponible";
+            this.checkDisponible.UseVisualStyleBackColor = true;
             // 
             // txCocina
             // 
@@ -492,6 +506,7 @@
             this.numPrecio.Size = new System.Drawing.Size(105, 22);
             this.numPrecio.TabIndex = 11;
             this.numPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numPrecio.ThousandsSeparator = true;
             // 
             // label11
             // 
@@ -759,20 +774,6 @@
             this.btVerFotos.Text = "Ver Fotos";
             this.btVerFotos.UseVisualStyleBackColor = false;
             this.btVerFotos.Click += new System.EventHandler(this.btVerFotos_Click);
-            // 
-            // checkDisponible
-            // 
-            this.checkDisponible.AutoSize = true;
-            this.checkDisponible.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkDisponible.Checked = true;
-            this.checkDisponible.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkDisponible.Font = new System.Drawing.Font("Roboto", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkDisponible.Location = new System.Drawing.Point(179, 224);
-            this.checkDisponible.Name = "checkDisponible";
-            this.checkDisponible.Size = new System.Drawing.Size(86, 19);
-            this.checkDisponible.TabIndex = 31;
-            this.checkDisponible.Text = "Disponible";
-            this.checkDisponible.UseVisualStyleBackColor = true;
             // 
             // frmInmueble
             // 

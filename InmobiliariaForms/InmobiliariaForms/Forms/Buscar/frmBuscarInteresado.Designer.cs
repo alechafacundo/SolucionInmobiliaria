@@ -30,6 +30,7 @@
         {
             this.gvResultado = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txObservaciones = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txDorm = new System.Windows.Forms.TextBox();
             this.cbMoneda = new System.Windows.Forms.ComboBox();
@@ -52,7 +53,6 @@
             this.btCancelar = new System.Windows.Forms.Button();
             this.btBuscar = new System.Windows.Forms.Button();
             this.btImprimir = new System.Windows.Forms.Button();
-            this.txObservaciones = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gvResultado)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHasta)).BeginInit();
@@ -100,6 +100,14 @@
             this.groupBox1.Size = new System.Drawing.Size(612, 158);
             this.groupBox1.TabIndex = 44;
             this.groupBox1.TabStop = false;
+            // 
+            // txObservaciones
+            // 
+            this.txObservaciones.Location = new System.Drawing.Point(241, 126);
+            this.txObservaciones.Name = "txObservaciones";
+            this.txObservaciones.Size = new System.Drawing.Size(364, 22);
+            this.txObservaciones.TabIndex = 73;
+            this.txObservaciones.TextChanged += new System.EventHandler(this.FiltrarResultados);
             // 
             // label9
             // 
@@ -203,6 +211,7 @@
             this.numHasta.Name = "numHasta";
             this.numHasta.Size = new System.Drawing.Size(172, 22);
             this.numHasta.TabIndex = 62;
+            this.numHasta.ThousandsSeparator = true;
             // 
             // label5
             // 
@@ -231,6 +240,7 @@
             this.numDesde.Name = "numDesde";
             this.numDesde.Size = new System.Drawing.Size(153, 22);
             this.numDesde.TabIndex = 60;
+            this.numDesde.ThousandsSeparator = true;
             // 
             // label4
             // 
@@ -334,13 +344,6 @@
             this.btImprimir.TabIndex = 75;
             this.btImprimir.Text = "Imprimir";
             this.btImprimir.UseVisualStyleBackColor = false;
-            // 
-            // txObservaciones
-            // 
-            this.txObservaciones.Location = new System.Drawing.Point(241, 126);
-            this.txObservaciones.Name = "txObservaciones";
-            this.txObservaciones.Size = new System.Drawing.Size(364, 22);
-            this.txObservaciones.TabIndex = 73;
             // 
             // frmBuscarInteresado
             // 

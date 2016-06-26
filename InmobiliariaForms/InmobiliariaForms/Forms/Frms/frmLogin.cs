@@ -33,7 +33,12 @@ namespace InmobiliariaForms
 
             try
             {
-                Vendedor vendedor = ServiceHelper.ws.Login(txUser.Text, txPassword.Text);
+                string email = txUser.Text;
+                if (!email.Contains("@"))
+                {
+                    email += "@moranvilla.com.ar";
+                }
+                Vendedor vendedor = ServiceHelper.ws.Login(email, txPassword.Text);
                 if (vendedor != null)
                 {
                     //Entro al sistema

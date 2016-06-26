@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInteresado));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkDisponible = new System.Windows.Forms.CheckBox();
             this.txObservaciones = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txDorm = new System.Windows.Forms.TextBox();
@@ -53,7 +54,6 @@
             this.btEliminar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.btGuardar = new System.Windows.Forms.Button();
-            this.checkDisponible = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHasta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDesde)).BeginInit();
@@ -93,6 +93,20 @@
             this.groupBox1.Size = new System.Drawing.Size(626, 272);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // checkDisponible
+            // 
+            this.checkDisponible.AutoSize = true;
+            this.checkDisponible.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkDisponible.Checked = true;
+            this.checkDisponible.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkDisponible.Font = new System.Drawing.Font("Roboto", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkDisponible.Location = new System.Drawing.Point(157, 141);
+            this.checkDisponible.Name = "checkDisponible";
+            this.checkDisponible.Size = new System.Drawing.Size(96, 19);
+            this.checkDisponible.TabIndex = 26;
+            this.checkDisponible.Text = "Disponible";
+            this.checkDisponible.UseVisualStyleBackColor = true;
             // 
             // txObservaciones
             // 
@@ -214,6 +228,7 @@
             this.numHasta.Size = new System.Drawing.Size(137, 21);
             this.numHasta.TabIndex = 6;
             this.numHasta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numHasta.ThousandsSeparator = true;
             // 
             // label5
             // 
@@ -244,6 +259,7 @@
             this.numDesde.Size = new System.Drawing.Size(121, 21);
             this.numDesde.TabIndex = 5;
             this.numDesde.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numDesde.ThousandsSeparator = true;
             // 
             // label4
             // 
@@ -358,20 +374,6 @@
             this.btGuardar.Text = "Guardar";
             this.btGuardar.UseVisualStyleBackColor = false;
             this.btGuardar.Click += new System.EventHandler(this.btGuardar_Click);
-            // 
-            // checkDisponible
-            // 
-            this.checkDisponible.AutoSize = true;
-            this.checkDisponible.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkDisponible.Checked = true;
-            this.checkDisponible.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkDisponible.Font = new System.Drawing.Font("Roboto", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkDisponible.Location = new System.Drawing.Point(157, 141);
-            this.checkDisponible.Name = "checkDisponible";
-            this.checkDisponible.Size = new System.Drawing.Size(86, 19);
-            this.checkDisponible.TabIndex = 26;
-            this.checkDisponible.Text = "Disponible";
-            this.checkDisponible.UseVisualStyleBackColor = true;
             // 
             // frmInteresado
             // 

@@ -1,0 +1,15 @@
+﻿Listo. 1) filtro de busqueda inmueble agregar calle
+	
+2) ver inmuebles de un interesado
+
+Probarlo 3) en el mail poner separador de miles y en el sistema tambien, falta en el mail
+
+Listo. 4) en buscar interesado, sacar el es para inversión y que se pueda buscar por las observaciones
+
+Listo. 5) poner un disponible en inmueble y para el interesado tambien y en base de datos
+
+Listo 6) inicio de sesion por nombre dr usuario de mail
+
+7) Buscar Interesado no está filtrando por: Moneda, Precio Desde (Listo), Precio Hasta (Listo), Tipo de Inmueble, Tipo de Operacion, Dormitorios
+
+8) Que todo0s los filtros los aplique sobre los Disponibles (en interesado e Inmueble tambieb)

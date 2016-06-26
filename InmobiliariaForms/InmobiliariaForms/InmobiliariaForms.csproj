@@ -267,6 +267,7 @@
     <None Include="Web References\InmobiliariaService\Service.disco" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ToDo%27s.txt" />
     <None Include="Resources\LoggIn.png" />
     <None Include="Resources\candado_oa.png" />
     <None Include="Resources\candado_oa1.png" />

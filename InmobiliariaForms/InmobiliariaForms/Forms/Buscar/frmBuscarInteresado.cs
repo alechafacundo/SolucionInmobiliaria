@@ -87,6 +87,17 @@ namespace InmobiliariaForms
                     filtroAlgo = true;
                 }
 
+                if (numDesde.Value != 0)
+                {
+                    aux.AddRange(Interesados.Where(x => x.MontoDesde < numDesde.Value));
+                    filtroAlgo = true;
+                }
+                if (numHasta.Value != 0)
+                {
+                    aux.AddRange(Interesados.Where(x => x.MontoHasta > numHasta.Value));
+                    filtroAlgo = true;
+                }
+
                 if (!filtroAlgo)
                     aux.AddRange(Interesados);
 
