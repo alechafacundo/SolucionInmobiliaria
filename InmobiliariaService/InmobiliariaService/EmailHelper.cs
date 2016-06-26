@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net.Mail;
 using System.Web;
@@ -67,7 +68,7 @@ namespace InmobiliariaService
                         ((eTipoInmueble)inmueble.Tipo).ToString(), localidad, calle, numero, piso, departamento) + Environment.NewLine;
                     cuerpo += string.Format("El mismo está constituido por {0} dormitorio/s, {1} baño/s y {2} comedor/es. ", dormitorio, baño, comedor);
                     cuerpo += string.Format("Cuenta con una superficie cubierta de {0} Mts.", supCubierta) + Environment.NewLine;
-                    cuerpo += string.Format("Su valor de {0} es de {1} {2}", ((eTipoOperacion)inmueble.Operacion).ToString(), ((eMoneda)inmueble.Moneda).ToString(), valor.ToString()) + Environment.NewLine;
+                    cuerpo += string.Format("Su valor de {0} es de {1} {2}", ((eTipoOperacion)inmueble.Operacion).ToString(), ((eMoneda)inmueble.Moneda).ToString(), valor.ToString(CultureInfo.CreateSpecificCulture("es-Ar"))) + Environment.NewLine;
                     cuerpo += string.Format("El contacto del mismo es {0} y puede ser ubicado al {1}", contacto, referencia) + Environment.NewLine;
                 }
 

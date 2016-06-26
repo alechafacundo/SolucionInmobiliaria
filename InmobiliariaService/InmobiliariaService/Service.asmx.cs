@@ -138,11 +138,11 @@ namespace InmobiliariaService
         }
 
         [WebMethod]
-        public Vendedor Login(string dni, string password)
+        public Vendedor Login(string email, string password)
         {
             try
             {
-                return VendedorDAO.Login(dni, password);
+                return VendedorDAO.Login(email, password);
             }
             catch (Exception ex)
             {

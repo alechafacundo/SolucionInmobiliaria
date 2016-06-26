@@ -77,12 +77,12 @@ namespace InmobiliariaService
             }
         }
 
-        internal static Vendedor Login(string dni, string password)
+        internal static Vendedor Login(string email, string password)
         {
             try
             {
                 List<Vendedor> vendedores = new List<Vendedor>();
-                DataTable dt = DAOBase.GetDataTableWhere(new Vendedor(), string.Format("DNI = '{0}' AND Password = '{1}'", dni, password));
+                DataTable dt = DAOBase.GetDataTableWhere(new Vendedor(), string.Format("Email = '{0}' AND Password = '{1}'", email, password));
 
                 if (dt.Rows.Count > 0)
                 {
