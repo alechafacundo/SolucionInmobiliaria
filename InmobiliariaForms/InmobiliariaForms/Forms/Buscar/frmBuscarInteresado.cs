@@ -53,15 +53,13 @@ namespace InmobiliariaForms
         {
             try
             {
-                bool filtroAlgo = false;
-
                 Interesado interesado = new Interesado();
+
                 interesado.Nombre = txNombre.Text;
                 interesado.Email = txEmail.Text;
                 interesado.Telefono = txTelefono.Text;
                 interesado.Observaciones = txObservaciones.Text;
                 interesado.Dormitorios = txDorm.Text;
-
 
                 List<Interesado> aux = new List<Interesado>();
                 aux.AddRange(Interesados);
@@ -73,8 +71,8 @@ namespace InmobiliariaForms
 
                     if (tipoInmueble != eTipoInmueble.Sin_Especificar)
                     {
+                        //aux.AddRange(Interesados.Where(x => x.TipoDeInmueble != (int)tipoInmueble).ToList());
                         aux.RemoveAll(x => x.TipoDeInmueble != (int)tipoInmueble);
-                        //aux = aux.Where(x => x.Tipo == (int)tipoInmueble).ToList();
                     }
                 }
 
@@ -85,69 +83,64 @@ namespace InmobiliariaForms
 
                     if (tipoOperacion != eTipoOperacion.Sin_Especificar)
                     {
+                        //aux.AddRange(Interesados.Where(x => x.TipoDeOperacion != (int)tipoOperacion).ToList());
                         aux.RemoveAll(x => x.TipoDeOperacion != (int)tipoOperacion);
-                        //aux = aux.Where(x => x.Operacion == (int)tipoOperacion).ToList();
                     }
                 }
 
                 if (cbMoneda.SelectedValue != null)
+                {
+                    eMoneda moneda;
+                    Enum.TryParse<eMoneda>(cbMoneda.SelectedValue.ToString(), out moneda);
+
+                    if (moneda != eMoneda.Sin_Especificar)
                     {
-                        eMoneda moneda;
-                        Enum.TryParse<eMoneda>(cbMoneda.SelectedValue.ToString(), out moneda);
-
-                        if (moneda != eMoneda.Sin_Especificar)
-                        {
-                            aux.RemoveAll(x => x.TipoDeMoneda != (int)moneda);
-                        }
-
+                        aux.RemoveAll(x => x.TipoDeMoneda != (int)moneda);
+                        //aux.AddRange(Interesados.Where(x => x.TipoDeMoneda != (int)moneda).ToList());
                     }
 
+                }
 
-                    if (!string.IsNullOrEmpty(interesado.Dormitorios))
+                if (!string.IsNullOrEmpty(interesado.Dormitorios))
                 {
-                    aux.AddRange(Interesados.Where(x => x.Dormitorios.ToUpperInvariant().Contains(interesado.Dormitorios.ToUpperInvariant())).ToList());
-                    filtroAlgo = true;
+                    aux.RemoveAll(x => !x.Dormitorios.ToUpperInvariant().Contains(interesado.Dormitorios.ToUpperInvariant()));
+                    //aux.AddRange(Interesados.Where(x => x.Dormitorios.ToUpperInvariant().Contains(interesado.Dormitorios.ToUpperInvariant())).ToList());
                 }
 
                 if (!string.IsNullOrEmpty(interesado.Nombre))
                 {
-                    aux.AddRange(Interesados.Where(x => x.Nombre.ToUpperInvariant().Contains(interesado.Nombre.ToUpperInvariant())).ToList());
-                    filtroAlgo = true;
+                    aux.RemoveAll(x => !x.Nombre.ToUpperInvariant().Contains(interesado.Nombre.ToUpperInvariant()));
+                    //aux.AddRange(Interesados.Where(x => x.Nombre.ToUpperInvariant().Contains(interesado.Nombre.ToUpperInvariant())).ToList());
                 }
                 if (!string.IsNullOrEmpty(interesado.Telefono))
                 {
-                    aux.AddRange(Interesados.Where(x => x.Telefono.ToUpperInvariant().Contains(interesado.Telefono.ToUpperInvariant())).ToList());
-                    filtroAlgo = true;
+                    aux.RemoveAll(x => !x.Telefono.ToUpperInvariant().Contains(interesado.Telefono.ToUpperInvariant()));
+                    //aux.AddRange(Interesados.Where(x => x.Telefono.ToUpperInvariant().Contains(interesado.Telefono.ToUpperInvariant())).ToList());
                 }
 
                 if (!string.IsNullOrEmpty(interesado.Email))
                 {
-                    aux.AddRange(Interesados.Where(x => x.Email.ToUpperInvariant().Contains(interesado.Email.ToUpperInvariant())).ToList());
-                    filtroAlgo = true;
+                    aux.RemoveAll(x => !x.Email.ToUpperInvariant().Contains(interesado.Email.ToUpperInvariant()));
+                    //aux.AddRange(Interesados.Where(x => x.Email.ToUpperInvariant().Contains(interesado.Email.ToUpperInvariant())).ToList());
                 }
 
 
                 if (!string.IsNullOrEmpty(interesado.Observaciones))
                 {
-                    aux.AddRange(Interesados.Where(x => x.Observaciones.ToUpperInvariant().Contains(interesado.Observaciones.ToUpperInvariant())).ToList());
-                    filtroAlgo = true;
+                    aux.RemoveAll(x => !x.Observaciones.ToUpperInvariant().Contains(interesado.Observaciones.ToUpperInvariant()));
+                    //aux.AddRange(Interesados.Where(x => x.Observaciones.ToUpperInvariant().Contains(interesado.Observaciones.ToUpperInvariant())).ToList());
                 }
 
                 if (numDesde.Value != 0)
                 {
-                    aux.AddRange(Interesados.Where(x => x.MontoDesde < numDesde.Value));
-                    filtroAlgo = true;
+                    aux.RemoveAll(x => x.MontoDesde > numDesde.Value);
+                    //aux.AddRange(Interesados.Where(x => x.MontoDesde < numDesde.Value));
                 }
                 if (numHasta.Value != 0)
                 {
-                    aux.AddRange(Interesados.Where(x => x.MontoHasta > numHasta.Value));
-                    filtroAlgo = true;
+                    aux.RemoveAll(x => x.MontoHasta < numHasta.Value);
+                    //aux.AddRange(Interesados.Where(x => x.MontoHasta > numHasta.Value));
                 }
-
-                if (!filtroAlgo)
-                    aux.AddRange(Interesados);
-
-                aux = aux.Distinct().ToList();
 
                 gvResultado.DataSource = aux;
                 gvResultado.Columns["Id"].Visible = false;
@@ -161,10 +154,10 @@ namespace InmobiliariaForms
                     row.Cells["TipoMoneda"].Value = ((eMoneda)(int)row.Cells["TipoDeMoneda"].Value).ToString();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                EmailHelper.EnviarNotificacion(ex);
             }
-
         }
 
         private void btCancelar_Click(object sender, EventArgs e)
