@@ -60,8 +60,54 @@ namespace InmobiliariaForms
                 interesado.Email = txEmail.Text;
                 interesado.Telefono = txTelefono.Text;
                 interesado.Observaciones = txObservaciones.Text;
+                interesado.Dormitorios = txDorm.Text;
+
 
                 List<Interesado> aux = new List<Interesado>();
+                aux.AddRange(Interesados);
+
+                if (cbTipoInmueble.SelectedValue != null)
+                {
+                    eTipoInmueble tipoInmueble;
+                    Enum.TryParse<eTipoInmueble>(cbTipoInmueble.SelectedValue.ToString(), out tipoInmueble);
+
+                    if (tipoInmueble != eTipoInmueble.Sin_Especificar)
+                    {
+                        aux.RemoveAll(x => x.TipoDeInmueble != (int)tipoInmueble);
+                        //aux = aux.Where(x => x.Tipo == (int)tipoInmueble).ToList();
+                    }
+                }
+
+                if (cbTipoOperacion.SelectedValue != null)
+                {
+                    eTipoOperacion tipoOperacion;
+                    Enum.TryParse<eTipoOperacion>(cbTipoOperacion.SelectedValue.ToString(), out tipoOperacion);
+
+                    if (tipoOperacion != eTipoOperacion.Sin_Especificar)
+                    {
+                        aux.RemoveAll(x => x.TipoDeOperacion != (int)tipoOperacion);
+                        //aux = aux.Where(x => x.Operacion == (int)tipoOperacion).ToList();
+                    }
+                }
+
+                if (cbMoneda.SelectedValue != null)
+                    {
+                        eMoneda moneda;
+                        Enum.TryParse<eMoneda>(cbMoneda.SelectedValue.ToString(), out moneda);
+
+                        if (moneda != eMoneda.Sin_Especificar)
+                        {
+                            aux.RemoveAll(x => x.TipoDeMoneda != (int)moneda);
+                        }
+
+                    }
+
+
+                    if (!string.IsNullOrEmpty(interesado.Dormitorios))
+                {
+                    aux.AddRange(Interesados.Where(x => x.Dormitorios.ToUpperInvariant().Contains(interesado.Dormitorios.ToUpperInvariant())).ToList());
+                    filtroAlgo = true;
+                }
 
                 if (!string.IsNullOrEmpty(interesado.Nombre))
                 {
@@ -106,6 +152,14 @@ namespace InmobiliariaForms
                 gvResultado.DataSource = aux;
                 gvResultado.Columns["Id"].Visible = false;
                 gvResultado.Columns["FullName"].Visible = false;
+
+                foreach (DataGridViewRow row in gvResultado.Rows)
+                {
+                    row.Cells["TipoInmueble"].Value = ((eTipoInmueble)(int)row.Cells["TipoDeInmueble"].Value).ToString();
+                    row.Cells["TipoOperacion"].Value = ((eTipoOperacion)(int)row.Cells["TipoDeOperacion"].Value).ToString();
+                    
+                    row.Cells["TipoMoneda"].Value = ((eMoneda)(int)row.Cells["TipoDeMoneda"].Value).ToString();
+                }
             }
             catch (Exception)
             {
@@ -139,16 +193,5 @@ namespace InmobiliariaForms
             gvResultado.Columns["Id"].Visible = false;
         }
     }
-    //ToDo: Facu
-//    1) filtro de busqueda inmueble agregar calle (falta que ande)
-	
-//2) ver inmuebles de un interesado
-
-//3) en el mail poner separador de miles y en el sistema tambien
-
-//4) en buscar interesado, sacar el es para inversión y que se pueda buscar por las observaciones (falta que ande)
-
-//5) poner un disponible en inmueble y para el interesado tambien (falta codigo, hago mañana)
-
-//6) inicio de sesion por nombre dr usuario de mail 
+    
 }

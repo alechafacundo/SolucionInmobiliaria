@@ -10,6 +10,6 @@ Listo. 5) poner un disponible en inmueble y para el interesado tambien y en base
 
 Listo 6) inicio de sesion por nombre dr usuario de mail
 
-7) Buscar Interesado no está filtrando por: Moneda, Precio Desde (Listo), Precio Hasta (Listo), Tipo de Inmueble, Tipo de Operacion, Dormitorios
+7) Buscar Interesado no está filtrando por: [Moneda], Precio Desde (Listo), Precio Hasta (Listo), [Tipo de Inmueble, Tipo de Operacion] no puedo hacer que filtre, Dormitorios (listo)
 
 8) Que todo0s los filtros los aplique sobre los Disponibles (en interesado e Inmueble tambieb)

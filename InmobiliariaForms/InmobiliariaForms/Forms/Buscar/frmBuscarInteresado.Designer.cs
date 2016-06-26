@@ -124,6 +124,7 @@
             this.txDorm.Name = "txDorm";
             this.txDorm.Size = new System.Drawing.Size(56, 22);
             this.txDorm.TabIndex = 66;
+            this.txDorm.TextChanged += new System.EventHandler(this.FiltrarResultados);
             // 
             // cbMoneda
             // 
@@ -132,6 +133,7 @@
             this.cbMoneda.Name = "cbMoneda";
             this.cbMoneda.Size = new System.Drawing.Size(47, 22);
             this.cbMoneda.TabIndex = 58;
+            this.cbMoneda.SelectedValueChanged += new System.EventHandler(this.FiltrarResultados);
             // 
             // label12
             // 
@@ -173,7 +175,7 @@
             this.cbTipoOperacion.Name = "cbTipoOperacion";
             this.cbTipoOperacion.Size = new System.Drawing.Size(189, 22);
             this.cbTipoOperacion.TabIndex = 65;
-            this.cbTipoOperacion.TextChanged += new System.EventHandler(this.FiltrarResultados);
+            this.cbTipoOperacion.SelectedValueChanged += new System.EventHandler(this.FiltrarResultados);
             // 
             // label6
             // 
@@ -193,7 +195,7 @@
             this.cbTipoInmueble.Name = "cbTipoInmueble";
             this.cbTipoInmueble.Size = new System.Drawing.Size(120, 22);
             this.cbTipoInmueble.TabIndex = 63;
-            this.cbTipoInmueble.TextChanged += new System.EventHandler(this.FiltrarResultados);
+            this.cbTipoInmueble.SelectedValueChanged += new System.EventHandler(this.FiltrarResultados);
             // 
             // numHasta
             // 
@@ -212,6 +214,7 @@
             this.numHasta.Size = new System.Drawing.Size(172, 22);
             this.numHasta.TabIndex = 62;
             this.numHasta.ThousandsSeparator = true;
+            this.numHasta.ValueChanged += new System.EventHandler(this.FiltrarResultados);
             // 
             // label5
             // 
@@ -241,6 +244,7 @@
             this.numDesde.Size = new System.Drawing.Size(153, 22);
             this.numDesde.TabIndex = 60;
             this.numDesde.ThousandsSeparator = true;
+            this.numDesde.ValueChanged += new System.EventHandler(this.FiltrarResultados);
             // 
             // label4
             // 
