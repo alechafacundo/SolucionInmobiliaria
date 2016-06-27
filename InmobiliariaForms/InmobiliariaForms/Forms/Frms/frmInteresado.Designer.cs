@@ -54,9 +54,12 @@
             this.btEliminar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.btGuardar = new System.Windows.Forms.Button();
+            this.dvInmueblesParaInteresado = new System.Windows.Forms.DataGridView();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHasta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDesde)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvInmueblesParaInteresado)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -90,7 +93,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(3, -7);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(626, 272);
+            this.groupBox1.Size = new System.Drawing.Size(627, 263);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -103,7 +106,7 @@
             this.checkDisponible.Font = new System.Drawing.Font("Roboto", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkDisponible.Location = new System.Drawing.Point(157, 141);
             this.checkDisponible.Name = "checkDisponible";
-            this.checkDisponible.Size = new System.Drawing.Size(96, 19);
+            this.checkDisponible.Size = new System.Drawing.Size(86, 19);
             this.checkDisponible.TabIndex = 26;
             this.checkDisponible.Text = "Disponible";
             this.checkDisponible.UseVisualStyleBackColor = true;
@@ -111,17 +114,17 @@
             // txObservaciones
             // 
             this.txObservaciones.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txObservaciones.Location = new System.Drawing.Point(12, 189);
+            this.txObservaciones.Location = new System.Drawing.Point(12, 183);
             this.txObservaciones.Multiline = true;
             this.txObservaciones.Name = "txObservaciones";
-            this.txObservaciones.Size = new System.Drawing.Size(603, 77);
+            this.txObservaciones.Size = new System.Drawing.Size(603, 32);
             this.txObservaciones.TabIndex = 25;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(9, 170);
+            this.label9.Location = new System.Drawing.Point(9, 164);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(103, 16);
             this.label9.TabIndex = 24;
@@ -336,9 +339,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btEliminar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btEliminar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEliminar.Location = new System.Drawing.Point(3, 270);
+            this.btEliminar.Location = new System.Drawing.Point(4, 215);
             this.btEliminar.Name = "btEliminar";
-            this.btEliminar.Size = new System.Drawing.Size(160, 29);
+            this.btEliminar.Size = new System.Drawing.Size(150, 30);
             this.btEliminar.TabIndex = 13;
             this.btEliminar.Text = "Eliminar";
             this.btEliminar.UseVisualStyleBackColor = false;
@@ -352,9 +355,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btCancelar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCancelar.Location = new System.Drawing.Point(307, 270);
+            this.btCancelar.Location = new System.Drawing.Point(321, 215);
             this.btCancelar.Name = "btCancelar";
-            this.btCancelar.Size = new System.Drawing.Size(160, 29);
+            this.btCancelar.Size = new System.Drawing.Size(150, 30);
             this.btCancelar.TabIndex = 12;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = false;
@@ -367,13 +370,34 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btGuardar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btGuardar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btGuardar.Location = new System.Drawing.Point(469, 270);
+            this.btGuardar.Location = new System.Drawing.Point(476, 215);
             this.btGuardar.Name = "btGuardar";
-            this.btGuardar.Size = new System.Drawing.Size(160, 29);
+            this.btGuardar.Size = new System.Drawing.Size(150, 30);
             this.btGuardar.TabIndex = 11;
             this.btGuardar.Text = "Guardar";
             this.btGuardar.UseVisualStyleBackColor = false;
             this.btGuardar.Click += new System.EventHandler(this.btGuardar_Click);
+            // 
+            // dvInmueblesParaInteresado
+            // 
+            this.dvInmueblesParaInteresado.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dvInmueblesParaInteresado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvInmueblesParaInteresado.Location = new System.Drawing.Point(5, 290);
+            this.dvInmueblesParaInteresado.Name = "dvInmueblesParaInteresado";
+            this.dvInmueblesParaInteresado.Size = new System.Drawing.Size(622, 89);
+            this.dvInmueblesParaInteresado.TabIndex = 15;
+            this.dvInmueblesParaInteresado.Visible = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(5, 268);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(192, 15);
+            this.label10.TabIndex = 16;
+            this.label10.Text = "Inmuebles Para Este Interesado";
+            this.label10.Visible = false;
             // 
             // frmInteresado
             // 
@@ -381,7 +405,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(632, 303);
+            this.ClientSize = new System.Drawing.Size(632, 387);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.dvInmueblesParaInteresado);
             this.Controls.Add(this.btGuardar);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btEliminar);
@@ -397,7 +423,9 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHasta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDesde)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvInmueblesParaInteresado)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -428,5 +456,7 @@
         private System.Windows.Forms.TextBox txObservaciones;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.CheckBox checkDisponible;
+        private System.Windows.Forms.DataGridView dvInmueblesParaInteresado;
+        private System.Windows.Forms.Label label10;
     }
 }
