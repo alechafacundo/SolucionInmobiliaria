@@ -110,6 +110,7 @@
             this.checkDisponible.TabIndex = 26;
             this.checkDisponible.Text = "Disponible";
             this.checkDisponible.UseVisualStyleBackColor = true;
+           
             // 
             // txObservaciones
             // 

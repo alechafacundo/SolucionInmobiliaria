@@ -183,8 +183,57 @@ namespace InmobiliariaForms
             }
 
             gvResultado.DataSource = Interesados;
+
+            gvResultado.Columns.Add("TipoInmueble", "Tipo de Inmueble");
+            gvResultado.Columns.Add("TipoOperacion", "Tipo de Operación");
+            gvResultado.Columns.Add("TipoMoneda", "Moneda");
+            gvResultado.Columns.Add("Nombre", "Nombre");
+            gvResultado.Columns.Add("Telefono", "Telefono");
+            gvResultado.Columns.Add("Email", "Email");
+
+            foreach (DataGridViewRow row in gvResultado.Rows)
+            {
+                row.Cells["TipoInmueble"].Value = ((eTipoInmueble)(int)row.Cells["TipoDeInmueble"].Value).ToString();
+                row.Cells["TipoOperacion"].Value = ((eTipoOperacion)(int)row.Cells["TipoDeOperacion"].Value).ToString();
+                row.Cells["TipoMoneda"].Value = ((eMoneda)(int)row.Cells["TipoDeMoneda"].Value).ToString();
+            }
+
             gvResultado.Columns["Id"].Visible = false;
+   
         }
+
+        private void btImprimir_Click(object sender, EventArgs e)
+        {
+          
+            DataGridView gvAux = new DataGridView();
+            gvAux.Columns.Add("Nombre", "Nombre");
+            gvAux.Columns.Add("TipoInmueble", "Tipo de Inmueble");
+            gvAux.Columns.Add("TipoOperacion", "Tipo de Operación");
+            gvAux.Columns.Add("TipoMoneda", "Moneda");
+            gvAux.Columns.Add("Monto Hasta", "Monto Hasta");
+            gvAux.Columns.Add("Email", "Email");
+            gvAux.Columns.Add("Telefono", "Telefono");
+
+            foreach (DataGridViewRow row in gvResultado.Rows)
+            {
+                    gvAux.Rows.Add(row.Cells["Nombre"].Value,
+                    row.Cells["TipoInmueble"].Value,
+                    row.Cells["TipoOperacion"].Value,
+                    row.Cells["TipoMoneda"].Value,
+                    row.Cells["MontoHasta"].Value,
+                    row.Cells["Email"].Value,
+                    row.Cells["Telefono"].Value);
+
+
+                //gvAux.Rows.Add(a);
+            }
+
+            PrinterHelper printerHelper = new PrinterHelper();
+            printerHelper.gvListado = gvAux;
+            printerHelper.SetValues();
+            printerHelper.Imprimir();
+        }
+    
     }
     
 }

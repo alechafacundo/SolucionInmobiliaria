@@ -348,6 +348,7 @@
             this.btImprimir.TabIndex = 75;
             this.btImprimir.Text = "Imprimir";
             this.btImprimir.UseVisualStyleBackColor = false;
+            this.btImprimir.Click += new System.EventHandler(this.btImprimir_Click);
             // 
             // frmBuscarInteresado
             // 
