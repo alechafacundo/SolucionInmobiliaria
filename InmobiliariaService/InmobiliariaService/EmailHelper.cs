@@ -23,7 +23,7 @@ namespace InmobiliariaService
 
                 string cuerpo = string.Empty;
 
-                foreach (Inmueble inmueble in inmuebles)
+                foreach (Inmueble inmueble in inmuebles.Where(x => x.Disponible))
                 {
                     string localidad = "N/A";
                     string calle = "N/A";
@@ -156,7 +156,7 @@ namespace InmobiliariaService
 
                 string cuerpo = string.Empty;
 
-                foreach (Interesado interesado in interesados)
+                foreach (Interesado interesado in interesados.Where(x => x.Disponible))
                 {
                     string nombre = "N/A";
                     string telefono = "N/A";

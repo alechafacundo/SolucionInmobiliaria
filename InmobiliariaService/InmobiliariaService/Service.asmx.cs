@@ -195,6 +195,9 @@ namespace InmobiliariaService
         [WebMethod]
         public void NotificarSobreInmueble(Interesado interesado)
         {
+            if (!interesado.Disponible)
+                return;
+
             try
             {
                 List<Inmueble> inmuebles = InmuebleDAO.GetInmueblesParaInteresado(interesado);
@@ -227,6 +230,9 @@ namespace InmobiliariaService
         [WebMethod]
         public void NotificarSobreInteresado(Inmueble inmueble)
         {
+            if (!inmueble.Disponible)
+                return;
+
             try
             {
                 List<Interesado> interesados = InteresadoDAO.GetInteresadosParaInmueble(inmueble);
