@@ -51,8 +51,7 @@ namespace InmobiliariaForms
                              Dormitorios = a.Dormitorios,
                              Email = a.Email,
                              MontoDesde = ((decimal)a.MontoDesde).ToString("#,##0"),
-                             //MontoDesde = a.MontoDesde,
-                             //MontoHasta = a.MontoHasta,
+                          
                              MontoHasta = ((decimal)a.MontoHasta).ToString("#,##0"),
                              Nombre = a.Nombre,
                              Disponible = a.Disponible,

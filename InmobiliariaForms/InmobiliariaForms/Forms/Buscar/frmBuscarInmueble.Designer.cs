@@ -52,6 +52,7 @@
             this.btImprimir = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.btMasDetalles = new System.Windows.Forms.Button();
+            this.chDisponible = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.gvResultado)).BeginInit();
             this.g.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecioHasta)).BeginInit();
@@ -62,12 +63,12 @@
             // 
             this.gvResultado.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.gvResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvResultado.Location = new System.Drawing.Point(2, 149);
+            this.gvResultado.Location = new System.Drawing.Point(2, 172);
             this.gvResultado.MultiSelect = false;
             this.gvResultado.Name = "gvResultado";
             this.gvResultado.ReadOnly = true;
             this.gvResultado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvResultado.Size = new System.Drawing.Size(626, 229);
+            this.gvResultado.Size = new System.Drawing.Size(626, 206);
             this.gvResultado.TabIndex = 5;
             // 
             // g
@@ -331,12 +332,24 @@
             this.btMasDetalles.UseVisualStyleBackColor = false;
             this.btMasDetalles.Click += new System.EventHandler(this.btMasDetalles_Click);
             // 
+            // chDisponible
+            // 
+            this.chDisponible.AutoSize = true;
+            this.chDisponible.Location = new System.Drawing.Point(2, 149);
+            this.chDisponible.Name = "chDisponible";
+            this.chDisponible.Size = new System.Drawing.Size(173, 17);
+            this.chDisponible.TabIndex = 77;
+            this.chDisponible.Text = "Ver sólo Inmuebles disponibles ";
+            this.chDisponible.UseVisualStyleBackColor = true;
+            this.chDisponible.CheckedChanged += new System.EventHandler(this.FiltrarResultados);
+            // 
             // frmBuscarInmueble
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(632, 424);
+            this.Controls.Add(this.chDisponible);
             this.Controls.Add(this.btImprimir);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btMasDetalles);
@@ -352,6 +365,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numPrecioHasta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecioDesde)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -381,5 +395,6 @@
         private System.Windows.Forms.Button btMasDetalles;
         private System.Windows.Forms.TextBox txCalle;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox chDisponible;
     }
 }

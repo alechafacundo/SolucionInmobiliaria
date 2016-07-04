@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -13,10 +14,12 @@ namespace InmobiliariaForms
 
     public partial class frmBuscarInmueble : Form
     {
+        bool yaCargo = false;
         public Vendedor Vendedor { get; set; }
 
         List<Inmueble> inmuebles = new List<Inmueble>();
         List<Vendedor> vendedores = new List<Vendedor>();
+        List<Propiedad> propiedades = new List<Propiedad>();
 
         public frmBuscarInmueble()
         {
@@ -46,35 +49,42 @@ namespace InmobiliariaForms
                 inmuebles = ServiceHelper.ws.GetInmuebles().ToList();
             }
 
-            //foreach (DataGridViewRow item in gvResultado.Rows)
-            //{
-            //    item.Cells["CargadoNombre"].Value = vendedores.Find(x => x.Id == (int)item.Cells["CargadoPor"].Value).FullName;
-            //}
+            NumberFormatInfo nfi = new NumberFormatInfo();
+            nfi.NumberDecimalSeparator = ",";
+            nfi.NumberGroupSeparator = ".";
 
-            gvResultado.DataSource = inmuebles;
+             propiedades = (from a in inmuebles
+                        select new Propiedad
+                        {
+                            Id = a.Id,
+                            Dormitorios = a.Dormitorios,
+                            Precio = ((decimal)a.Precio).ToString("#,##0"),                        
+                            Disponible = a.Disponible,
+                            Observaciones = a.Observaciones,                           
+                            TipoInmueblePropiedad = ((eTipoInmueble)a.Tipo).ToString(),
+                            MonedaPropiedad = ((eMoneda)a.Moneda).ToString(),
+                            OperacionPropiedad = ((eTipoOperacion)a.Operacion).ToString(),
+                            Localidad = a.Localidad,
+                            Barrio = a.Barrio,
+                            Calle = a.Calle,
+                            Numero = a.Numero,    
+                            Fecha = a.Fecha,                
+                          }).ToList();
 
-            gvResultado.Columns.Add("TipoInmueble", "Tipo de Inmueble");
-            gvResultado.Columns.Add("TipoOperacion", "Tipo de Operación");
-            gvResultado.Columns.Add("Vendedor", "Vendedor");
-            gvResultado.Columns.Add("TipoMoneda", "Moneda");
-
-            foreach (DataGridViewRow row in gvResultado.Rows)
-            {
-                row.Cells["TipoInmueble"].Value = ((eTipoInmueble)(int)row.Cells["Tipo"].Value).ToString();
-                row.Cells["TipoOperacion"].Value = ((eTipoOperacion)(int)row.Cells["Operacion"].Value).ToString();
-                row.Cells["Vendedor"].Value = vendedores.Find(x => x.Id == (int)row.Cells["CargadoPor"].Value).FullName;
-                row.Cells["TipoMoneda"].Value = ((eMoneda)(int)row.Cells["Moneda"].Value).ToString();
-            }
-
+            gvResultado.DataSource = propiedades;
+            gvResultado.Columns["Precio"].DefaultCellStyle.FormatProvider = CultureInfo.CreateSpecificCulture("es-AR");
+            gvResultado.AutoGenerateColumns = true;
             gvResultado.Columns["Id"].Visible = false;
-            gvResultado.Columns["Tipo"].Visible = false;
-            gvResultado.Columns["Operacion"].Visible = false;
-            gvResultado.Columns["CargadoPor"].Visible = false;
-            gvResultado.Columns["Moneda"].Visible = false;
+
+            yaCargo = true;
+
         }
 
         private void FiltrarResultados(object sender, EventArgs e)
         {
+            if (!yaCargo)
+                return;
+
             try
             {
                 Inmueble inmueble = new Inmueble();
@@ -83,33 +93,52 @@ namespace InmobiliariaForms
                 inmueble.Barrio = txBarrio.Text.ToUpperInvariant();
                 inmueble.Dormitorios = txDorm.Text.ToUpperInvariant();
                 inmueble.Calle = txCalle.Text.ToUpperInvariant();
+                inmueble.Disponible = chDisponible.Checked;
+                
          
 
-                List<Inmueble> aux = new List<Inmueble>();
-                aux.AddRange(inmuebles);
+                List<Propiedad> aux = new List<Propiedad>();
+                aux.AddRange(propiedades);
+
+                if (inmueble.Disponible)
+                {
+                    aux.RemoveAll(x => !x.Disponible);
+                }
 
                 if (cbTipoInmueble.SelectedValue != null)
                 {
-                    eTipoInmueble tipoInmueble;
-                    Enum.TryParse<eTipoInmueble>(cbTipoInmueble.SelectedValue.ToString(), out tipoInmueble);
+                    eTipoInmueble tipoInmueblePropiedad;
+                    Enum.TryParse<eTipoInmueble>(cbTipoInmueble.SelectedValue.ToString(), out tipoInmueblePropiedad);
 
-                    if (tipoInmueble != eTipoInmueble.Sin_Especificar)
+                    if (tipoInmueblePropiedad != eTipoInmueble.Sin_Especificar)
                     {
-                        aux.RemoveAll(x => x.Tipo != (int)tipoInmueble);
-                        //aux = aux.Where(x => x.Tipo == (int)tipoInmueble).ToList();
+                        aux.RemoveAll(x => x.TipoInmueblePropiedad != tipoInmueblePropiedad.ToString());
+                     
                     }
                 }
 
                 if (cbTipoOperacion.SelectedValue != null)
                 {
-                    eTipoOperacion tipoOperacion;
-                    Enum.TryParse<eTipoOperacion>(cbTipoOperacion.SelectedValue.ToString(), out tipoOperacion);
+                    eTipoOperacion operacionPropiedad;
+                    Enum.TryParse<eTipoOperacion>(cbTipoOperacion.SelectedValue.ToString(), out operacionPropiedad);
 
-                    if (tipoOperacion != eTipoOperacion.Sin_Especificar)
+                    if (operacionPropiedad != eTipoOperacion.Sin_Especificar)
                     {
-                        aux.RemoveAll(x => x.Operacion != (int)tipoOperacion);
-                        //aux = aux.Where(x => x.Operacion == (int)tipoOperacion).ToList();
+                        aux.RemoveAll(x => x.OperacionPropiedad != operacionPropiedad.ToString());
+                  
                     }
+                }
+
+                if (cbMoneda.SelectedValue != null)
+                {
+                    eMoneda moneda;
+                    Enum.TryParse<eMoneda>(cbMoneda.SelectedValue.ToString(), out moneda);
+
+                    if (moneda != eMoneda.Sin_Especificar)
+                    {
+                        aux.RemoveAll(x => x.MonedaPropiedad != moneda.ToString());
+                    }
+
                 }
 
                 if (!string.IsNullOrEmpty(inmueble.Calle))
@@ -129,28 +158,23 @@ namespace InmobiliariaForms
                     aux.RemoveAll(x => !x.Barrio.Contains(inmueble.Barrio));
                     //aux.AddRange(inmuebles.Where(x => x.Barrio.ToUpperInvariant().Contains(inmueble.Barrio)).ToList());
                 }
-
                 if (numPrecioDesde.Value != 0)
                 {
-                    aux.RemoveAll(x => x.Precio < numPrecioDesde.Value);
-                    //aux = aux.Where(x => x.Precio >= numPrecioDesde.Value).ToList();
+                    aux.RemoveAll(x => Convert.ToDecimal(x.Precio, CultureInfo.CreateSpecificCulture("es-AR")) > numPrecioDesde.Value);
+                    //aux.AddRange(Interesados.Where(x => x.MontoDesde < numDesde.Value));
                 }
+             
                 if (numPrecioHasta.Value != 0)
                 {
-                    aux.RemoveAll(x => x.Precio > numPrecioHasta.Value);
+                    aux.RemoveAll(x => Convert.ToDecimal(x.Precio, CultureInfo.CreateSpecificCulture("es-AR")) > numPrecioHasta.Value);
                     //aux = aux.Where(x => x.Precio <= numPrecioHasta.Value).ToList();
                 }
 
                 gvResultado.DataSource = aux;
+               
+                gvResultado.Columns["Id"].Visible = false;
 
-                foreach (DataGridViewRow row in gvResultado.Rows)
-                {
-                    row.Cells["TipoInmueble"].Value = ((eTipoInmueble)(int)row.Cells["Tipo"].Value).ToString();
-                    row.Cells["TipoOperacion"].Value = ((eTipoOperacion)(int)row.Cells["Operacion"].Value).ToString();
-                    row.Cells["Vendedor"].Value = vendedores.Find(x => x.Id == (int)row.Cells["CargadoPor"].Value).FullName;
-                    row.Cells["TipoMoneda"].Value = ((eMoneda)(int)row.Cells["Moneda"].Value).ToString();
                 }
-            }
             catch (Exception ex)
             {
                 EmailHelper.EnviarNotificacion(ex);
@@ -166,8 +190,8 @@ namespace InmobiliariaForms
         private void btImprimir_Click_1(object sender, EventArgs e)
         {
             DataGridView gvAux = new DataGridView();
-            gvAux.Columns.Add("Tipo", "Tipo de Inmueble");
-            gvAux.Columns.Add("Operacion", "Tipo de Operación");
+            gvAux.Columns.Add("TipoInmueblePropiedad", "Tipo de Inmueble");
+            gvAux.Columns.Add("OperacionPropiedad", "Tipo de Operación");
             gvAux.Columns.Add("Localidad", "Localidad");
             gvAux.Columns.Add("Calle", "Calle");
             gvAux.Columns.Add("Moneda", "Moneda");
@@ -176,20 +200,11 @@ namespace InmobiliariaForms
 
             foreach (DataGridViewRow row in gvResultado.Rows)
             {
-                //DataGridViewRow a = (DataGridViewRow)gvAux.RowTemplate.Clone();
-                //a.Cells["Tipo"].Value = row.Cells["TipoInmueble"].Value;
-                //a.Cells["Operacion"].Value = row.Cells["TipoOperacion"].Value;
-                //a.Cells["Localidad"].Value = row.Cells["Localidad"].Value;
-                //a.Cells["Calle"].Value = row.Cells["Calle"].Value + " " + row.Cells["Numero"].Value;
-                //a.Cells["Moneda"].Value = row.Cells["TipoMoneda"].Value;
-                //a.Cells["Precio"].Value = row.Cells["Precio"].Value;
-                //a.Cells["Vendedor"].Value = row.Cells["Vendedor"].Value;
-
-                gvAux.Rows.Add(row.Cells["TipoInmueble"].Value,
-                    row.Cells["TipoOperacion"].Value,
+                    gvAux.Rows.Add(row.Cells["TipoInmueblePropiedad"].Value,
+                    row.Cells["OperacionPropiedad"].Value,
                     row.Cells["Localidad"].Value,
                     row.Cells["Calle"].Value + " " + row.Cells["Numero"].Value,
-                    row.Cells["TipoMoneda"].Value,
+                    row.Cells["MonedaPropiedad"].Value,
                     row.Cells["Precio"].Value,
                     row.Cells["Vendedor"].Value);
 
@@ -208,7 +223,7 @@ namespace InmobiliariaForms
             {
                 if (gvResultado.SelectedRows.Count == 1)
                 {
-                    Inmueble inmueble = (Inmueble)gvResultado.SelectedRows[0].DataBoundItem;
+                    Inmueble inmueble = inmuebles.Find(x => x.Id == ((Propiedad)gvResultado.SelectedRows[0].DataBoundItem).Id);
 
                     frmInmueble frmInmueble = new frmInmueble();
                     frmInmueble.Inmueble = inmueble;
@@ -230,5 +245,39 @@ namespace InmobiliariaForms
                 EmailHelper.EnviarNotificacion(ex);
             }
         }
+    }
+
+    public partial class Propiedad
+    {
+        public int Id { get; set; }
+        public DateTime? Fecha { get; set; }
+       
+        public string OperacionPropiedad {get; set;}
+        public string TipoInmueblePropiedad { get; set; }     
+        public string Localidad { get; set; }
+        public string Barrio { get; set; }
+        public string Calle { get; set; }
+        public string Numero { get; set; }
+        public string Piso { get; set; }
+        public string Departamento { get; set; }
+        public string EntreCalles { get; set; }
+        public string Metros2Terreno { get; set; }
+        public string SupCubierta { get; set; }
+        public string MonedaPropiedad { get; set; }
+        public string Precio { get; set; }
+        public string Observaciones { get; set; }
+        public string Dormitorios { get; set; }
+        public string Baños { get; set; }
+        public string Comedor { get; set; }
+        public string Cocina { get; set; }
+        public string Garage { get; set; }
+        public string Patio { get; set; }
+        public string OtrasDependencias { get; set; }
+        public string ValorMetro2 { get; set; }
+        public int CargadoPor { get; set; }
+        public string Contacto { get; set; }
+        public string Referencia { get; set; }
+        public string Otros { get; set; }
+        public bool Disponible { get; set; }
     }
 }
