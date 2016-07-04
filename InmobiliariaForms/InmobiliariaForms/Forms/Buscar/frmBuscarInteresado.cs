@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -39,14 +40,20 @@ namespace InmobiliariaForms
                 Interesados = ServiceHelper.ws.GetInteresados().ToList();
             }
 
+            NumberFormatInfo nfi = new NumberFormatInfo();
+            nfi.NumberDecimalSeparator = ",";
+            nfi.NumberGroupSeparator = ".";
+
             Personas = (from a in Interesados
                          select new Persona
                          {
                              Id = a.Id,
                              Dormitorios = a.Dormitorios,
                              Email = a.Email,
-                             MontoDesde = a.MontoDesde,
-                             MontoHasta = a.MontoHasta,
+                             MontoDesde = ((decimal)a.MontoDesde).ToString("#,##0"),
+                             //MontoDesde = a.MontoDesde,
+                             //MontoHasta = a.MontoHasta,
+                             MontoHasta = ((decimal)a.MontoHasta).ToString("#,##0"),
                              Nombre = a.Nombre,
                              Disponible = a.Disponible,
                              Observaciones = a.Observaciones,
@@ -57,6 +64,8 @@ namespace InmobiliariaForms
                          }).ToList();
 
             gvResultado.DataSource = Personas;
+            //gvResultado.Columns["MontoDesde"].ValueType = typeof(decimal);
+            gvResultado.Columns["MontoDesde"].DefaultCellStyle.FormatProvider = CultureInfo.CreateSpecificCulture("es-AR");
             gvResultado.AutoGenerateColumns = true;
             gvResultado.Columns["Id"].Visible = false;
 
@@ -108,9 +117,15 @@ namespace InmobiliariaForms
                 interesado.Telefono = txTelefono.Text;
                 interesado.Observaciones = txObservaciones.Text;
                 interesado.Dormitorios = txDorm.Text;
+                interesado.Disponible = chDisponible.Checked;
 
                 List<Persona> aux = new List<Persona>();
                 aux.AddRange(Personas);
+
+                if (interesado.Disponible)
+                {
+                    aux.RemoveAll(x => !x.Disponible);
+                }
 
                 if (cbTipoInmueble.SelectedValue != null)
                 {
@@ -181,12 +196,12 @@ namespace InmobiliariaForms
 
                 if (numDesde.Value != 0)
                 {
-                    aux.RemoveAll(x => x.MontoDesde > numDesde.Value);
+                    aux.RemoveAll(x => Convert.ToDecimal(x.MontoDesde, CultureInfo.CreateSpecificCulture("es-AR")) > numDesde.Value);
                     //aux.AddRange(Interesados.Where(x => x.MontoDesde < numDesde.Value));
                 }
                 if (numHasta.Value != 0)
                 {
-                    aux.RemoveAll(x => x.MontoHasta < numHasta.Value);
+                    aux.RemoveAll(x => Convert.ToDecimal(x.MontoHasta, CultureInfo.CreateSpecificCulture("es-AR")) < numHasta.Value);
                     //aux.AddRange(Interesados.Where(x => x.MontoHasta > numHasta.Value));
                 }
 
@@ -245,7 +260,7 @@ namespace InmobiliariaForms
             printerHelper.SetValues();
             printerHelper.Imprimir();
         }
-    
+        
     }
 
     public partial class Persona
@@ -254,8 +269,10 @@ namespace InmobiliariaForms
         public string Nombre { get; set; }
         public string Telefono { get; set; }
         public string Email { get; set; }
-        public decimal? MontoDesde { get; set; }
-        public decimal? MontoHasta { get; set; }
+        public string MontoDesde { get; set; }
+        //public decimal? MontoDesde { get; set; }
+        public string MontoHasta { get; set; }
+        //public decimal? MontoHasta { get; set; }
         public string TipoMoneda { get; set; }
         public string TipoOperacion { get; set; }
         public string TipoInmueble { get; set; }

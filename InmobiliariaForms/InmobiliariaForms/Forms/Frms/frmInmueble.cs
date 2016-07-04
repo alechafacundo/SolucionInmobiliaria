@@ -70,6 +70,7 @@ namespace InmobiliariaForms
                     Inmueble.CargadoPor = ((Vendedor)cbCargadoPor.SelectedItem).Id;
                     Inmueble.Cocina = txCocina.Text.ToUpperInvariant();
                     Inmueble.Otros = txOtras.Text.ToUpperInvariant();
+                    Inmueble.Disponible = checkDisponible.Checked;
 
                     //Ahora que ya tenes el inmueble guardado lo tenes que mandar al web service para que lo guarde en la base de datos:
 
@@ -222,6 +223,7 @@ namespace InmobiliariaForms
                     cbCargadoPor.SelectedValue = vendedores.Find(x => x.Id == Inmueble.CargadoPor).Id;
                     txContacto.Text = Inmueble.Contacto;
                     txReferencia.Text = Inmueble.Referencia;
+                    checkDisponible.Checked = Inmueble.Disponible;
                 }
             }
             catch (Exception ex)

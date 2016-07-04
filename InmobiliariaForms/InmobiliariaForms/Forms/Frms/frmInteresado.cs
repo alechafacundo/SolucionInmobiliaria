@@ -45,7 +45,8 @@ namespace InmobiliariaForms
                     cbTipoOperacion.SelectedIndex = (int)Interesado.TipoDeOperacion;
                     numDesde.Value = Interesado.MontoDesde != null ? (decimal)Interesado.MontoDesde : 0;
                     numHasta.Value = Interesado.MontoHasta != null ? (decimal)Interesado.MontoHasta : 0;
-                    txObservaciones.Text = Interesado.Observaciones; 
+                    txObservaciones.Text = Interesado.Observaciones;
+                    checkDisponible.Checked = Interesado.Disponible;
 
                 }
             }
@@ -84,7 +85,8 @@ namespace InmobiliariaForms
                     Interesado.MontoDesde = numDesde.Value;
                     Interesado.MontoHasta = numHasta.Value;
                     Interesado.Dormitorios = txDorm.Text;
-                    Interesado.Observaciones = txObservaciones.Text; 
+                    Interesado.Observaciones = txObservaciones.Text;
+                    Interesado.Disponible = checkDisponible.Checked; 
 
                     //Ahora que ya tenes el interesado guardado lo tenes que mandar al web service para que lo guarde en la base de datos:
                     ServiceHelper.ws.GuardarInteresado(Interesado);

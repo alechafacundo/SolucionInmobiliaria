@@ -53,6 +53,7 @@
             this.btCancelar = new System.Windows.Forms.Button();
             this.btBuscar = new System.Windows.Forms.Button();
             this.btImprimir = new System.Windows.Forms.Button();
+            this.chDisponible = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.gvResultado)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHasta)).BeginInit();
@@ -63,7 +64,7 @@
             // 
             this.gvResultado.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.gvResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvResultado.Location = new System.Drawing.Point(9, 165);
+            this.gvResultado.Location = new System.Drawing.Point(9, 190);
             this.gvResultado.MultiSelect = false;
             this.gvResultado.Name = "gvResultado";
             this.gvResultado.ReadOnly = true;
@@ -318,7 +319,7 @@
             // 
             this.btCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btCancelar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCancelar.Location = new System.Drawing.Point(301, 354);
+            this.btCancelar.Location = new System.Drawing.Point(301, 375);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(160, 31);
             this.btCancelar.TabIndex = 74;
@@ -330,7 +331,7 @@
             // 
             this.btBuscar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btBuscar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBuscar.Location = new System.Drawing.Point(467, 354);
+            this.btBuscar.Location = new System.Drawing.Point(467, 375);
             this.btBuscar.Name = "btBuscar";
             this.btBuscar.Size = new System.Drawing.Size(154, 31);
             this.btBuscar.TabIndex = 73;
@@ -342,7 +343,7 @@
             // 
             this.btImprimir.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btImprimir.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btImprimir.Location = new System.Drawing.Point(9, 357);
+            this.btImprimir.Location = new System.Drawing.Point(9, 375);
             this.btImprimir.Name = "btImprimir";
             this.btImprimir.Size = new System.Drawing.Size(140, 25);
             this.btImprimir.TabIndex = 75;
@@ -350,12 +351,24 @@
             this.btImprimir.UseVisualStyleBackColor = false;
             this.btImprimir.Click += new System.EventHandler(this.btImprimir_Click);
             // 
+            // chDisponible
+            // 
+            this.chDisponible.AutoSize = true;
+            this.chDisponible.Location = new System.Drawing.Point(9, 166);
+            this.chDisponible.Name = "chDisponible";
+            this.chDisponible.Size = new System.Drawing.Size(180, 17);
+            this.chDisponible.TabIndex = 76;
+            this.chDisponible.Text = "Ver sólo Interesados disponibles ";
+            this.chDisponible.UseVisualStyleBackColor = true;
+            this.chDisponible.CheckedChanged += new System.EventHandler(this.FiltrarResultados);
+            // 
             // frmBuscarInteresado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(629, 397);
+            this.ClientSize = new System.Drawing.Size(629, 418);
+            this.Controls.Add(this.chDisponible);
             this.Controls.Add(this.btImprimir);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.groupBox1);
@@ -371,6 +384,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numHasta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDesde)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -400,5 +414,6 @@
         private System.Windows.Forms.Button btImprimir;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txObservaciones;
+        private System.Windows.Forms.CheckBox chDisponible;
     }
 }
