@@ -68,13 +68,15 @@ namespace InmobiliariaForms
                             Barrio = a.Barrio,
                             Calle = a.Calle,
                             Numero = a.Numero,    
-                            Fecha = a.Fecha,                
+                            Fecha = a.Fecha,  
+                            CargadoPor = a.CargadoPor              
                           }).ToList();
 
             gvResultado.DataSource = propiedades;
             gvResultado.Columns["Precio"].DefaultCellStyle.FormatProvider = CultureInfo.CreateSpecificCulture("es-AR");
             gvResultado.AutoGenerateColumns = true;
             gvResultado.Columns["Id"].Visible = false;
+            gvResultado.Columns["CargadoPor"].Visible = false;
 
             yaCargo = true;
 
@@ -200,13 +202,22 @@ namespace InmobiliariaForms
 
             foreach (DataGridViewRow row in gvResultado.Rows)
             {
+                //No tenes el atributo vendedor dentro de Propiedad, ves? no lo encuentra, pincha y queda vacio el gvAux/ claro
+                //o pones el vendedor en la Propiedad y lo llenas, o imprimis otro valor que no sea el vendedor, como el contacto o no tengo ni idea cual puede ser jaja
+                //a vos que te parece? poner el vendedor o no?
+                //me parece que lo pongamos, total es una gilada, es agregar un atributo mas nada mas porque ya lo tenes en el inmueble, te falta en la propiedad y mapearlo nada mas
+                //pero seria el cargado por o no? 
+                //si, pero tendrias que buscar el nombre mediante el id dentro de la lista de vendedores,
+                //asi debiera funcionar
+                //facepalm
+
                     gvAux.Rows.Add(row.Cells["TipoInmueblePropiedad"].Value,
                     row.Cells["OperacionPropiedad"].Value,
                     row.Cells["Localidad"].Value,
                     row.Cells["Calle"].Value + " " + row.Cells["Numero"].Value,
                     row.Cells["MonedaPropiedad"].Value,
                     row.Cells["Precio"].Value,
-                    row.Cells["Vendedor"].Value);
+                    vendedores.Find(x => x.Id == (int)row.Cells["CargadoPor"].Value).Nombre);
 
                 //gvAux.Rows.Add(a);
             }
