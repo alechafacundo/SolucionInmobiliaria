@@ -12,4 +12,4 @@ Listo 6) inicio de sesion por nombre dr usuario de mail
 
 Listo 7) Buscar Interesado no está filtrando por: [Moneda], Precio Desde (Listo), Precio Hasta (Listo), [Tipo de Inmueble, Tipo de Operacion] no puedo hacer que filtre, Dormitorios (listo)
 
-8) Que todo0s los filtros los aplique sobre los Disponibles (en interesado e Inmueble tambien)
+8) Que todos los filtros los aplique sobre los Disponibles (en interesado e Inmueble tambien)

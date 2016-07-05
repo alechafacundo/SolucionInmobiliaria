@@ -7,13 +7,14 @@ namespace InmobiliariaService
     public enum eTipoInmueble
 	{
         Sin_Especificar = 0,
-        Casa = 1,
-        Terreno = 2,
-        Departamento = 3,
+        Terreno = 1,
+        Departamento = 2,
+        Casa = 3,
         Quinta = 4,
         Local = 5,
-        Oficina = 6,
-        Galpon = 7
+        Fondo de Comercio = 6,
+        Oficina = 7,
+        Galpon = 8
               
 
 	}

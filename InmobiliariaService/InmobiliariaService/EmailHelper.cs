@@ -23,6 +23,10 @@ namespace InmobiliariaService
 
                 string cuerpo = string.Empty;
 
+                NumberFormatInfo nfi = new NumberFormatInfo();
+                nfi.NumberDecimalSeparator = ",";
+                nfi.NumberGroupSeparator = ".";
+
                 foreach (Inmueble inmueble in inmuebles.Where(x => x.Disponible))
                 {
                     string localidad = "N/A";
@@ -34,7 +38,7 @@ namespace InmobiliariaService
                     string baño = "N/A";
                     string comedor = "N/A";
                     string supCubierta = "0";
-                    decimal valor = 0m;
+                    string valor = "0";
                     string referencia = "N/A";
                     string contacto = "N/A";
 
@@ -57,7 +61,7 @@ namespace InmobiliariaService
                     if (!string.IsNullOrEmpty(inmueble.SupCubierta))
                         supCubierta = inmueble.SupCubierta;
                     if (inmueble.Precio != null)
-                        valor = (decimal)inmueble.Precio;
+                        valor = ((decimal)inmueble.Precio).ToString("#,##0");
                     if (!string.IsNullOrEmpty(inmueble.Referencia))
                         referencia = inmueble.Referencia;
                     if (!string.IsNullOrEmpty(inmueble.Contacto))

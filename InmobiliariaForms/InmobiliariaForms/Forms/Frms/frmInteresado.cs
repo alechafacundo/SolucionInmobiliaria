@@ -183,7 +183,6 @@ namespace InmobiliariaForms
 
 
 
-        //Todo: Fabri
-        //ahi hice los check, no me acuerdo el codigo mañana los hago y te voy consultando jaja
+      
     }
 }
