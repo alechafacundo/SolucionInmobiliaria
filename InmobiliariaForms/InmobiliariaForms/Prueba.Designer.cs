@@ -43,6 +43,8 @@
             this.pbMinimizar1 = new System.Windows.Forms.PictureBox();
             this.pbMinimizar2 = new System.Windows.Forms.PictureBox();
             this.pbCerrar2 = new System.Windows.Forms.PictureBox();
+            this.pbRefresh1 = new System.Windows.Forms.PictureBox();
+            this.pbRefresh2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbInmueble1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbInteresado1)).BeginInit();
@@ -57,6 +59,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRefresh1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRefresh2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -218,6 +222,30 @@
             this.pbCerrar2.Click += new System.EventHandler(this.pbCerrar2_Click);
             this.pbCerrar2.MouseLeave += new System.EventHandler(this.pbCerrar2_MouseLeave);
             // 
+            // pbRefresh1
+            // 
+            this.pbRefresh1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbRefresh1.BackgroundImage")));
+            this.pbRefresh1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbRefresh1.Location = new System.Drawing.Point(11, 10);
+            this.pbRefresh1.Name = "pbRefresh1";
+            this.pbRefresh1.Size = new System.Drawing.Size(35, 35);
+            this.pbRefresh1.TabIndex = 19;
+            this.pbRefresh1.TabStop = false;
+            this.pbRefresh1.MouseHover += new System.EventHandler(this.pbRefresh1_MouseHover);
+            // 
+            // pbRefresh2
+            // 
+            this.pbRefresh2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbRefresh2.BackgroundImage")));
+            this.pbRefresh2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbRefresh2.Location = new System.Drawing.Point(11, 10);
+            this.pbRefresh2.Name = "pbRefresh2";
+            this.pbRefresh2.Size = new System.Drawing.Size(35, 35);
+            this.pbRefresh2.TabIndex = 20;
+            this.pbRefresh2.TabStop = false;
+            this.pbRefresh2.Visible = false;
+            this.pbRefresh2.Click += new System.EventHandler(this.pbRefresh2_Click);
+            this.pbRefresh2.MouseLeave += new System.EventHandler(this.pbRefresh2_MouseLeave);
+            // 
             // Prueba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -226,6 +254,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(900, 716);
+            this.Controls.Add(this.pbRefresh2);
+            this.Controls.Add(this.pbRefresh1);
             this.Controls.Add(this.pbCerrar2);
             this.Controls.Add(this.pbMinimizar2);
             this.Controls.Add(this.pbMinimizar1);
@@ -260,6 +290,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCerrar2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRefresh1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRefresh2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -280,5 +312,7 @@
         private System.Windows.Forms.PictureBox pbMinimizar1;
         private System.Windows.Forms.PictureBox pbMinimizar2;
         private System.Windows.Forms.PictureBox pbCerrar2;
+        private System.Windows.Forms.PictureBox pbRefresh1;
+        private System.Windows.Forms.PictureBox pbRefresh2;
     }
 }
