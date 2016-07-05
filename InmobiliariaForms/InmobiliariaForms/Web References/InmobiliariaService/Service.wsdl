@@ -76,11 +76,12 @@
       <s:simpleType name="eTipoInmueble">
         <s:restriction base="s:string">
           <s:enumeration value="Sin_Especificar" />
-          <s:enumeration value="Casa" />
           <s:enumeration value="Terreno" />
           <s:enumeration value="Departamento" />
+          <s:enumeration value="Casa" />
           <s:enumeration value="Quinta" />
           <s:enumeration value="Local" />
+          <s:enumeration value="Fondo_de_Comercio" />
           <s:enumeration value="Oficina" />
           <s:enumeration value="Galpon" />
         </s:restriction>

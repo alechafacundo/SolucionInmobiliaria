@@ -1462,19 +1462,22 @@ namespace InmobiliariaForms.InmobiliariaService {
         Sin_Especificar,
         
         /// <remarks/>
-        Casa,
-        
-        /// <remarks/>
         Terreno,
         
         /// <remarks/>
         Departamento,
         
         /// <remarks/>
+        Casa,
+        
+        /// <remarks/>
         Quinta,
         
         /// <remarks/>
         Local,
+        
+        /// <remarks/>
+        Fondo_de_Comercio,
         
         /// <remarks/>
         Oficina,
