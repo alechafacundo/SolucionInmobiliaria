@@ -153,7 +153,7 @@
             this.g.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.g.Name = "g";
             this.g.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.g.Size = new System.Drawing.Size(612, 316);
+            this.g.Size = new System.Drawing.Size(612, 354);
             this.g.TabIndex = 1;
             this.g.TabStop = false;
             // 
@@ -164,9 +164,9 @@
             this.checkDisponible.Checked = true;
             this.checkDisponible.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkDisponible.Font = new System.Drawing.Font("Roboto", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkDisponible.Location = new System.Drawing.Point(179, 224);
+            this.checkDisponible.Location = new System.Drawing.Point(22, 195);
             this.checkDisponible.Name = "checkDisponible";
-            this.checkDisponible.Size = new System.Drawing.Size(96, 19);
+            this.checkDisponible.Size = new System.Drawing.Size(86, 19);
             this.checkDisponible.TabIndex = 31;
             this.checkDisponible.Text = "Disponible";
             this.checkDisponible.UseVisualStyleBackColor = true;
@@ -174,7 +174,7 @@
             // txCocina
             // 
             this.txCocina.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txCocina.Location = new System.Drawing.Point(65, 223);
+            this.txCocina.Location = new System.Drawing.Point(192, 192);
             this.txCocina.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txCocina.Name = "txCocina";
             this.txCocina.Size = new System.Drawing.Size(88, 22);
@@ -184,7 +184,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(15, 226);
+            this.label26.Location = new System.Drawing.Point(142, 195);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(48, 14);
             this.label26.TabIndex = 45;
@@ -211,7 +211,7 @@
             this.groupBox1.Controls.Add(this.cbCargadoPor);
             this.groupBox1.Controls.Add(this.label23);
             this.groupBox1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(4, 253);
+            this.groupBox1.Location = new System.Drawing.Point(4, 290);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -276,7 +276,7 @@
             // txOtras
             // 
             this.txOtras.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txOtras.Location = new System.Drawing.Point(509, 193);
+            this.txOtras.Location = new System.Drawing.Point(510, 162);
             this.txOtras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txOtras.Name = "txOtras";
             this.txOtras.Size = new System.Drawing.Size(92, 22);
@@ -285,7 +285,7 @@
             // txPatio
             // 
             this.txPatio.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txPatio.Location = new System.Drawing.Point(430, 193);
+            this.txPatio.Location = new System.Drawing.Point(431, 162);
             this.txPatio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txPatio.Name = "txPatio";
             this.txPatio.Size = new System.Drawing.Size(34, 22);
@@ -294,7 +294,7 @@
             // txGarage
             // 
             this.txGarage.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txGarage.Location = new System.Drawing.Point(345, 193);
+            this.txGarage.Location = new System.Drawing.Point(346, 162);
             this.txGarage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txGarage.Name = "txGarage";
             this.txGarage.Size = new System.Drawing.Size(34, 22);
@@ -303,7 +303,7 @@
             // txComedor
             // 
             this.txComedor.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txComedor.Location = new System.Drawing.Point(253, 193);
+            this.txComedor.Location = new System.Drawing.Point(254, 162);
             this.txComedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txComedor.Name = "txComedor";
             this.txComedor.Size = new System.Drawing.Size(34, 22);
@@ -312,7 +312,7 @@
             // txBaño
             // 
             this.txBaño.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txBaño.Location = new System.Drawing.Point(148, 193);
+            this.txBaño.Location = new System.Drawing.Point(149, 162);
             this.txBaño.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txBaño.Name = "txBaño";
             this.txBaño.Size = new System.Drawing.Size(34, 22);
@@ -321,7 +321,7 @@
             // txDorm
             // 
             this.txDorm.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txDorm.Location = new System.Drawing.Point(55, 193);
+            this.txDorm.Location = new System.Drawing.Point(56, 162);
             this.txDorm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txDorm.Name = "txDorm";
             this.txDorm.Size = new System.Drawing.Size(44, 22);
@@ -331,7 +331,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(467, 196);
+            this.label22.Location = new System.Drawing.Point(468, 165);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(39, 14);
             this.label22.TabIndex = 37;
@@ -341,7 +341,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(385, 196);
+            this.label21.Location = new System.Drawing.Point(386, 165);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(39, 14);
             this.label21.TabIndex = 36;
@@ -351,7 +351,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(293, 196);
+            this.label20.Location = new System.Drawing.Point(294, 165);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(49, 14);
             this.label20.TabIndex = 35;
@@ -361,7 +361,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(188, 196);
+            this.label19.Location = new System.Drawing.Point(189, 165);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(59, 14);
             this.label19.TabIndex = 34;
@@ -371,7 +371,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(104, 196);
+            this.label18.Location = new System.Drawing.Point(105, 165);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(39, 14);
             this.label18.TabIndex = 33;
@@ -381,7 +381,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(15, 196);
+            this.label17.Location = new System.Drawing.Point(16, 165);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(39, 14);
             this.label17.TabIndex = 32;
@@ -390,17 +390,18 @@
             // txObservaciones
             // 
             this.txObservaciones.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txObservaciones.Location = new System.Drawing.Point(315, 163);
+            this.txObservaciones.Location = new System.Drawing.Point(19, 233);
             this.txObservaciones.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txObservaciones.Multiline = true;
             this.txObservaciones.Name = "txObservaciones";
-            this.txObservaciones.Size = new System.Drawing.Size(286, 22);
+            this.txObservaciones.Size = new System.Drawing.Size(587, 55);
             this.txObservaciones.TabIndex = 16;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(217, 166);
+            this.label16.Location = new System.Drawing.Point(16, 218);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(92, 14);
             this.label16.TabIndex = 30;
@@ -409,7 +410,7 @@
             // txValorMts
             // 
             this.txValorMts.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txValorMts.Location = new System.Drawing.Point(102, 162);
+            this.txValorMts.Location = new System.Drawing.Point(386, 193);
             this.txValorMts.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txValorMts.Name = "txValorMts";
             this.txValorMts.Size = new System.Drawing.Size(109, 22);
@@ -419,7 +420,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(15, 166);
+            this.label15.Location = new System.Drawing.Point(299, 197);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(81, 14);
             this.label15.TabIndex = 28;
@@ -715,7 +716,7 @@
             // 
             this.btEliminar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btEliminar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEliminar.Location = new System.Drawing.Point(7, 323);
+            this.btEliminar.Location = new System.Drawing.Point(7, 363);
             this.btEliminar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btEliminar.Name = "btEliminar";
             this.btEliminar.Size = new System.Drawing.Size(130, 31);
@@ -729,7 +730,7 @@
             // 
             this.btCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btCancelar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCancelar.Location = new System.Drawing.Point(354, 323);
+            this.btCancelar.Location = new System.Drawing.Point(354, 363);
             this.btCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(130, 31);
@@ -742,7 +743,7 @@
             // 
             this.btGuardar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btGuardar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btGuardar.Location = new System.Drawing.Point(489, 323);
+            this.btGuardar.Location = new System.Drawing.Point(489, 363);
             this.btGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btGuardar.Name = "btGuardar";
             this.btGuardar.Size = new System.Drawing.Size(130, 31);
@@ -755,7 +756,7 @@
             // 
             this.btGuardarFotos.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btGuardarFotos.Enabled = false;
-            this.btGuardarFotos.Location = new System.Drawing.Point(152, 328);
+            this.btGuardarFotos.Location = new System.Drawing.Point(152, 368);
             this.btGuardarFotos.Name = "btGuardarFotos";
             this.btGuardarFotos.Size = new System.Drawing.Size(95, 23);
             this.btGuardarFotos.TabIndex = 29;
@@ -767,7 +768,7 @@
             // 
             this.btVerFotos.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btVerFotos.Enabled = false;
-            this.btVerFotos.Location = new System.Drawing.Point(253, 328);
+            this.btVerFotos.Location = new System.Drawing.Point(253, 368);
             this.btVerFotos.Name = "btVerFotos";
             this.btVerFotos.Size = new System.Drawing.Size(95, 23);
             this.btVerFotos.TabIndex = 30;
@@ -781,7 +782,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(626, 362);
+            this.ClientSize = new System.Drawing.Size(626, 397);
             this.Controls.Add(this.btVerFotos);
             this.Controls.Add(this.btGuardarFotos);
             this.Controls.Add(this.btGuardar);
