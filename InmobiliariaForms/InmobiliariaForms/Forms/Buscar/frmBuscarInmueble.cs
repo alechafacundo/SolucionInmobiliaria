@@ -53,24 +53,24 @@ namespace InmobiliariaForms
             nfi.NumberDecimalSeparator = ",";
             nfi.NumberGroupSeparator = ".";
 
-             propiedades = (from a in inmuebles
-                        select new Propiedad
-                        {
-                            Id = a.Id,
-                            Dormitorios = a.Dormitorios,
-                            Precio = ((decimal)a.Precio).ToString("#,##0"),                        
-                            Disponible = a.Disponible,
-                            Observaciones = a.Observaciones,                           
-                            TipoInmueblePropiedad = ((eTipoInmueble)a.Tipo).ToString(),
-                            MonedaPropiedad = ((eMoneda)a.Moneda).ToString(),
-                            OperacionPropiedad = ((eTipoOperacion)a.Operacion).ToString(),
-                            Localidad = a.Localidad,
-                            Barrio = a.Barrio,
-                            Calle = a.Calle,
-                            Numero = a.Numero,    
-                            Fecha = a.Fecha,  
-                            CargadoPor = a.CargadoPor              
-                          }).ToList();
+            propiedades = (from a in inmuebles
+                           select new Propiedad
+                           {
+                               Id = a.Id,
+                               Dormitorios = a.Dormitorios,
+                               Precio = a.Precio != null ? ((decimal)a.Precio).ToString("#,##0") : "0",
+                               Disponible = a.Disponible,
+                               Observaciones = a.Observaciones,
+                               TipoInmueblePropiedad = ((eTipoInmueble)a.Tipo).ToString(),
+                               MonedaPropiedad = ((eMoneda)a.Moneda).ToString(),
+                               OperacionPropiedad = ((eTipoOperacion)a.Operacion).ToString(),
+                               Localidad = a.Localidad,
+                               Barrio = a.Barrio,
+                               Calle = a.Calle,
+                               Numero = a.Numero,
+                               Fecha = a.Fecha,
+                               CargadoPor = a.CargadoPor
+                           }).ToList();
 
             gvResultado.DataSource = propiedades;
             gvResultado.Columns["Precio"].DefaultCellStyle.FormatProvider = CultureInfo.CreateSpecificCulture("es-AR");
@@ -90,14 +90,14 @@ namespace InmobiliariaForms
             try
             {
                 Inmueble inmueble = new Inmueble();
-               
+
                 inmueble.Localidad = txLocalidad.Text.ToUpperInvariant();
                 inmueble.Barrio = txBarrio.Text.ToUpperInvariant();
                 inmueble.Dormitorios = txDorm.Text.ToUpperInvariant();
                 inmueble.Calle = txCalle.Text.ToUpperInvariant();
                 inmueble.Disponible = chDisponible.Checked;
-                
-         
+
+
 
                 List<Propiedad> aux = new List<Propiedad>();
                 aux.AddRange(propiedades);
@@ -115,7 +115,7 @@ namespace InmobiliariaForms
                     if (tipoInmueblePropiedad != eTipoInmueble.Sin_Especificar)
                     {
                         aux.RemoveAll(x => x.TipoInmueblePropiedad != tipoInmueblePropiedad.ToString());
-                     
+
                     }
                 }
 
@@ -127,7 +127,7 @@ namespace InmobiliariaForms
                     if (operacionPropiedad != eTipoOperacion.Sin_Especificar)
                     {
                         aux.RemoveAll(x => x.OperacionPropiedad != operacionPropiedad.ToString());
-                  
+
                     }
                 }
 
@@ -146,7 +146,7 @@ namespace InmobiliariaForms
                 if (!string.IsNullOrEmpty(inmueble.Calle))
                 {
                     aux.RemoveAll(x => !x.Calle.Contains(inmueble.Calle));
-                    
+
                 }
 
                 if (!string.IsNullOrEmpty(inmueble.Localidad))
@@ -165,7 +165,7 @@ namespace InmobiliariaForms
                     aux.RemoveAll(x => Convert.ToDecimal(x.Precio, CultureInfo.CreateSpecificCulture("es-AR")) > numPrecioDesde.Value);
                     //aux.AddRange(Interesados.Where(x => x.MontoDesde < numDesde.Value));
                 }
-             
+
                 if (numPrecioHasta.Value != 0)
                 {
                     aux.RemoveAll(x => Convert.ToDecimal(x.Precio, CultureInfo.CreateSpecificCulture("es-AR")) > numPrecioHasta.Value);
@@ -173,10 +173,10 @@ namespace InmobiliariaForms
                 }
 
                 gvResultado.DataSource = aux;
-               
+
                 gvResultado.Columns["Id"].Visible = false;
 
-                }
+            }
             catch (Exception ex)
             {
                 EmailHelper.EnviarNotificacion(ex);
@@ -211,13 +211,13 @@ namespace InmobiliariaForms
                 //asi debiera funcionar
                 //facepalm
 
-                    gvAux.Rows.Add(row.Cells["TipoInmueblePropiedad"].Value,
-                    row.Cells["OperacionPropiedad"].Value,
-                    row.Cells["Localidad"].Value,
-                    row.Cells["Calle"].Value + " " + row.Cells["Numero"].Value,
-                    row.Cells["MonedaPropiedad"].Value,
-                    row.Cells["Precio"].Value,
-                    vendedores.Find(x => x.Id == (int)row.Cells["CargadoPor"].Value).Nombre);
+                gvAux.Rows.Add(row.Cells["TipoInmueblePropiedad"].Value,
+                row.Cells["OperacionPropiedad"].Value,
+                row.Cells["Localidad"].Value,
+                row.Cells["Calle"].Value + " " + row.Cells["Numero"].Value,
+                row.Cells["MonedaPropiedad"].Value,
+                row.Cells["Precio"].Value,
+                vendedores.Find(x => x.Id == (int)row.Cells["CargadoPor"].Value).Nombre);
 
                 //gvAux.Rows.Add(a);
             }
@@ -262,9 +262,9 @@ namespace InmobiliariaForms
     {
         public int Id { get; set; }
         public DateTime? Fecha { get; set; }
-       
-        public string OperacionPropiedad {get; set;}
-        public string TipoInmueblePropiedad { get; set; }     
+
+        public string OperacionPropiedad { get; set; }
+        public string TipoInmueblePropiedad { get; set; }
         public string Localidad { get; set; }
         public string Barrio { get; set; }
         public string Calle { get; set; }
