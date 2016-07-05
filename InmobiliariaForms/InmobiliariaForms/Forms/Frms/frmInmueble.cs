@@ -22,7 +22,14 @@ namespace InmobiliariaForms
         {
             InitializeComponent();
         }
-       
+
+        public void CreateMyMultilineTextBox()
+        {
+        
+            txObservaciones.Multiline = true;
+            txObservaciones.ScrollBars = ScrollBars.Vertical;
+     
+        }
 
         private void btGuardar_Click(object sender, EventArgs e)
         {

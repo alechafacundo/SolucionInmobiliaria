@@ -394,7 +394,8 @@
             this.txObservaciones.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txObservaciones.Multiline = true;
             this.txObservaciones.Name = "txObservaciones";
-            this.txObservaciones.Size = new System.Drawing.Size(587, 55);
+            this.txObservaciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txObservaciones.Size = new System.Drawing.Size(583, 55);
             this.txObservaciones.TabIndex = 16;
             // 
             // label16
