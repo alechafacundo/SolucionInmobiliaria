@@ -12,7 +12,7 @@ namespace InmobiliariaService
         Casa = 3,
         Quinta = 4,
         Local = 5,
-        Fondo de Comercio = 6,
+        Fondo_de_Comercio = 6,
         Oficina = 7,
         Galpon = 8
               
