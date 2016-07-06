@@ -49,6 +49,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.DynamicData" />
@@ -75,6 +77,7 @@
     <Compile Include="DAOs\InmuebleDAO.cs" />
     <Compile Include="DAOs\InteresadoDAO.cs" />
     <Compile Include="DTOs\Foto.cs" />
+    <Compile Include="InmuebleWeb.cs" />
     <Compile Include="Service.asmx.cs">
       <DependentUpon>Service.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -82,6 +85,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DTOs\Vendedor.cs" />
     <Compile Include="DAOs\VendedorDAO.cs" />
+    <Compile Include="WebHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

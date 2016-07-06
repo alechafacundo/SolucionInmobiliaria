@@ -291,6 +291,20 @@ namespace InmobiliariaService
                 throw ex;
             }
         }
+
+        [WebMethod]
+        public void GetInmueblesWeb()
+        {
+            try
+            {
+                WebHelper wHelper = new WebHelper();
+                wHelper.GetInmueblesWeb();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 
 }

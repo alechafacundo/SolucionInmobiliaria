@@ -8,11 +8,11 @@ namespace InmobiliariaService
 {
     public class InmuebleDAO : DAOBase
     {
-        internal static int GuardarInmueble(Inmueble inmueble)
+        internal static int GuardarInmueble(Inmueble inmueble, bool importado = false)
         {
             try
             {
-                if (inmueble.Id == null || inmueble.Id == 0)
+                if (inmueble.Id == 0)
                 {
                     inmueble.Id = GetNextId(inmueble);
                     DAOBase.CreateEntity(inmueble);
@@ -20,6 +20,11 @@ namespace InmobiliariaService
                 }
                 else
                 {
+                    if (importado)
+                    {
+                        DAOBase.CreateEntity(inmueble);
+                        return inmueble.Id;
+                    }
                     DAOBase.UpdateEntity(inmueble);
                     return inmueble.Id;
                 }

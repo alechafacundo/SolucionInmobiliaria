@@ -79,6 +79,10 @@ namespace InmobiliariaService
                                 {
                                     p.SqlDbType = ConvertToDBType(prop);
                                     p.SqlValue = prop.GetValue(dto, null);
+                                    if (p.SqlDbType == SqlDbType.NVarChar && p.SqlValue == null)
+                                    {
+                                        p.SqlValue = "";
+                                    }
                                 }
 
                                 p.ParameterName = "@" + prop.Name;
