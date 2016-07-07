@@ -42,7 +42,7 @@ namespace InmobiliariaService
             {
                 List<Inmueble> aux = GetInmuebles();
 
-                
+                aux.RemoveAll(x => !x.Disponible);
                 if (interesado.TipoDeInmueble != (int)eTipoInmueble.Sin_Especificar)
                 {
                     aux.RemoveAll(x => x.Tipo != interesado.TipoDeInmueble);
