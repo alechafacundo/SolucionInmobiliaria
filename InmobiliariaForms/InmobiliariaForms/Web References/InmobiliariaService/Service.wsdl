@@ -81,7 +81,7 @@
           <s:enumeration value="Casa" />
           <s:enumeration value="Quinta" />
           <s:enumeration value="Local" />
-          <s:enumeration value="Fondo_de_Comercio" />
+          <s:enumeration value="FondoDeComercio" />
           <s:enumeration value="Oficina" />
           <s:enumeration value="Galpon" />
         </s:restriction>
@@ -355,6 +355,12 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetInmueblesWeb">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetInmueblesWebResponse">
+        <s:complexType />
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HelloWorldSoapIn">
@@ -477,6 +483,12 @@
   <wsdl:message name="EliminarInteresadoSoapOut">
     <wsdl:part name="parameters" element="tns:EliminarInteresadoResponse" />
   </wsdl:message>
+  <wsdl:message name="GetInmueblesWebSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInmueblesWeb" />
+  </wsdl:message>
+  <wsdl:message name="GetInmueblesWebSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInmueblesWebResponse" />
+  </wsdl:message>
   <wsdl:portType name="ServiceSoap">
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
@@ -557,6 +569,10 @@
     <wsdl:operation name="EliminarInteresado">
       <wsdl:input message="tns:EliminarInteresadoSoapIn" />
       <wsdl:output message="tns:EliminarInteresadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInmueblesWeb">
+      <wsdl:input message="tns:GetInmueblesWebSoapIn" />
+      <wsdl:output message="tns:GetInmueblesWebSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
@@ -741,6 +757,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetInmueblesWeb">
+      <soap:operation soapAction="http://tempuri.org/GetInmueblesWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -917,6 +942,15 @@
     </wsdl:operation>
     <wsdl:operation name="EliminarInteresado">
       <soap12:operation soapAction="http://tempuri.org/EliminarInteresado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInmueblesWeb">
+      <soap12:operation soapAction="http://tempuri.org/GetInmueblesWeb" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

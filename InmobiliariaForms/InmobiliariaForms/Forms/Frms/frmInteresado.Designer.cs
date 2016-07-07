@@ -54,12 +54,12 @@
             this.btEliminar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.btGuardar = new System.Windows.Forms.Button();
-            this.dvInmueblesParaInteresado = new System.Windows.Forms.DataGridView();
-            this.label10 = new System.Windows.Forms.Label();
+            this.gvInmueblesParaInteresado = new System.Windows.Forms.DataGridView();
+            this.lbInmuebles = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHasta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDesde)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dvInmueblesParaInteresado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvInmueblesParaInteresado)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -106,11 +106,10 @@
             this.checkDisponible.Font = new System.Drawing.Font("Roboto", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkDisponible.Location = new System.Drawing.Point(157, 141);
             this.checkDisponible.Name = "checkDisponible";
-            this.checkDisponible.Size = new System.Drawing.Size(86, 19);
+            this.checkDisponible.Size = new System.Drawing.Size(96, 19);
             this.checkDisponible.TabIndex = 26;
             this.checkDisponible.Text = "Disponible";
             this.checkDisponible.UseVisualStyleBackColor = true;
-           
             // 
             // txObservaciones
             // 
@@ -379,26 +378,30 @@
             this.btGuardar.UseVisualStyleBackColor = false;
             this.btGuardar.Click += new System.EventHandler(this.btGuardar_Click);
             // 
-            // dvInmueblesParaInteresado
+            // gvInmueblesParaInteresado
             // 
-            this.dvInmueblesParaInteresado.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dvInmueblesParaInteresado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvInmueblesParaInteresado.Location = new System.Drawing.Point(5, 290);
-            this.dvInmueblesParaInteresado.Name = "dvInmueblesParaInteresado";
-            this.dvInmueblesParaInteresado.Size = new System.Drawing.Size(622, 89);
-            this.dvInmueblesParaInteresado.TabIndex = 15;
-            this.dvInmueblesParaInteresado.Visible = false;
+            this.gvInmueblesParaInteresado.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gvInmueblesParaInteresado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvInmueblesParaInteresado.Location = new System.Drawing.Point(5, 290);
+            this.gvInmueblesParaInteresado.MultiSelect = false;
+            this.gvInmueblesParaInteresado.Name = "gvInmueblesParaInteresado";
+            this.gvInmueblesParaInteresado.ReadOnly = true;
+            this.gvInmueblesParaInteresado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gvInmueblesParaInteresado.Size = new System.Drawing.Size(622, 89);
+            this.gvInmueblesParaInteresado.TabIndex = 15;
+            this.gvInmueblesParaInteresado.Visible = false;
+            this.gvInmueblesParaInteresado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvInmueblesParaInteresado_CellContentClick);
             // 
-            // label10
+            // lbInmuebles
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(5, 268);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(192, 15);
-            this.label10.TabIndex = 16;
-            this.label10.Text = "Inmuebles Para Este Interesado";
-            this.label10.Visible = false;
+            this.lbInmuebles.AutoSize = true;
+            this.lbInmuebles.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbInmuebles.Location = new System.Drawing.Point(5, 268);
+            this.lbInmuebles.Name = "lbInmuebles";
+            this.lbInmuebles.Size = new System.Drawing.Size(220, 15);
+            this.lbInmuebles.TabIndex = 16;
+            this.lbInmuebles.Text = "Inmuebles Para Este Interesado";
+            this.lbInmuebles.Visible = false;
             // 
             // frmInteresado
             // 
@@ -407,8 +410,8 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(632, 387);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.dvInmueblesParaInteresado);
+            this.Controls.Add(this.lbInmuebles);
+            this.Controls.Add(this.gvInmueblesParaInteresado);
             this.Controls.Add(this.btGuardar);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btEliminar);
@@ -424,7 +427,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHasta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDesde)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dvInmueblesParaInteresado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvInmueblesParaInteresado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -457,7 +460,7 @@
         private System.Windows.Forms.TextBox txObservaciones;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.CheckBox checkDisponible;
-        private System.Windows.Forms.DataGridView dvInmueblesParaInteresado;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridView gvInmueblesParaInteresado;
+        private System.Windows.Forms.Label lbInmuebles;
     }
 }

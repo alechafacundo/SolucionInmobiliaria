@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using InmobiliariaForms.InmobiliariaService;
+using System.Globalization;
 
 namespace InmobiliariaForms
 {
     public partial class frmInteresado : Form
     {
         public Interesado Interesado { get; set; }
+        public List<Inmueble> inmuebles = new List<Inmueble>();
+        List<Propiedad> propiedades = new List<Propiedad>();
 
         public frmInteresado()
         {
@@ -48,6 +51,38 @@ namespace InmobiliariaForms
                     txObservaciones.Text = Interesado.Observaciones;
                     checkDisponible.Checked = Interesado.Disponible;
 
+                    inmuebles = ServiceHelper.ws.GetInmuebles().ToList();
+
+                    NumberFormatInfo nfi = new NumberFormatInfo();
+                    nfi.NumberDecimalSeparator = ",";
+                    nfi.NumberGroupSeparator = ".";
+
+                    propiedades = (from a in inmuebles
+                                   select new Propiedad
+                                   {
+                                       Id = a.Id,
+                                       Dormitorios = a.Dormitorios,
+                                       Precio = a.Precio != null ? ((decimal)a.Precio).ToString("#,##0") : "0",
+                                       Disponible = a.Disponible,
+                                       Observaciones = a.Observaciones,
+                                       TipoInmueblePropiedad = ((eTipoInmueble)a.Tipo).ToString(),
+                                       MonedaPropiedad = ((eMoneda)a.Moneda).ToString(),
+                                       OperacionPropiedad = ((eTipoOperacion)a.Operacion).ToString(),
+                                       Localidad = a.Localidad,
+                                       Barrio = a.Barrio,
+                                       Calle = a.Calle,
+                                       Numero = a.Numero,
+                                       Fecha = a.Fecha,
+                                       CargadoPor = a.CargadoPor
+                                   }).ToList();
+
+                    gvInmueblesParaInteresado.DataSource = propiedades;
+                    gvInmueblesParaInteresado.Columns["Precio"].DefaultCellStyle.FormatProvider = CultureInfo.CreateSpecificCulture("es-AR");
+                    //gvInmueblesParaInteresado.AutoGenerateColumns = true;
+                    gvInmueblesParaInteresado.Columns["Id"].Visible = false;
+                    gvInmueblesParaInteresado.Columns["CargadoPor"].Visible = false;
+
+                    FillGridView();
                 }
             }
             catch (Exception ex)
@@ -55,6 +90,41 @@ namespace InmobiliariaForms
                 EmailHelper.EnviarNotificacion(ex);
                 throw;
             }
+        }
+
+        private void FillGridView()
+        {
+            lbInmuebles.Visible = true;
+            gvInmueblesParaInteresado.Visible = true;
+
+            List<Propiedad> aux = new List<Propiedad>();
+            aux.AddRange(propiedades);
+
+            aux.RemoveAll(x => !x.Disponible);
+            if (Interesado.TipoDeInmueble != (int)eTipoInmueble.Sin_Especificar)
+            {
+                aux.RemoveAll(x => x.TipoInmueblePropiedad != ((eTipoInmueble)Interesado.TipoDeInmueble).ToString());
+            }
+
+            if (Interesado.TipoDeOperacion != (int)eTipoOperacion.Sin_Especificar)
+            {
+                aux.RemoveAll(x => x.OperacionPropiedad != ((eTipoOperacion)Interesado.TipoDeOperacion).ToString());
+                //aux = aux.Where(x => x.Operacion == (int)tipoOperacion).ToList();
+            }
+
+            if (Interesado.MontoDesde != null && Interesado.MontoDesde != 0)
+            {
+                aux.RemoveAll(x => Convert.ToDecimal(x.Precio) < Interesado.MontoDesde);
+                //aux = aux.Where(x => x.Precio <= numPrecioHasta.Value).ToList();
+            }
+
+            if (Interesado.MontoHasta != null && Interesado.MontoHasta != 0)
+            {
+                aux.RemoveAll(x => Convert.ToDecimal(x.Precio) > Interesado.MontoHasta.Value);
+                //aux = aux.Where(x => x.Precio >= numPrecioDesde.Value).ToList();
+            }
+
+            gvInmueblesParaInteresado.DataSource = aux;
         }
 
         private void btGuardar_Click(object sender, EventArgs e)
@@ -181,8 +251,33 @@ namespace InmobiliariaForms
             }
         }
 
+        private void gvInmueblesParaInteresado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (gvInmueblesParaInteresado.SelectedRows.Count == 1)
+                {
+                    Inmueble inmueble = inmuebles.Find(x => x.Id == ((Propiedad)gvInmueblesParaInteresado.SelectedRows[0].DataBoundItem).Id);
 
+                    frmInmueble frmInmueble = new frmInmueble();
+                    frmInmueble.Inmueble = inmueble;
 
-      
+                    frmInmueble.MdiParent = (Form)this.Parent.Parent;
+                    Panel p = (Panel)this.Parent.Parent.Controls.Find("pnlMdi", true).First();
+                    p.Controls.Add(frmInmueble);
+
+                    frmInmueble.BringToFront();
+                    frmInmueble.StartPosition = FormStartPosition.Manual;
+
+                    frmInmueble.Location = new Point(120, 0);
+                    this.Close();
+                    frmInmueble.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                EmailHelper.EnviarNotificacion(ex);
+            }
+        }
     }
 }
