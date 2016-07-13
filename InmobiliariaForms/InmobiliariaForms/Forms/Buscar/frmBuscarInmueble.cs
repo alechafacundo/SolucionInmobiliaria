@@ -38,7 +38,10 @@ namespace InmobiliariaForms
             cbMoneda.DataSource = Enum.GetNames(typeof(eMoneda));
             cbMoneda.SelectedItem = eMoneda.Sin_Especificar;
 
-            //Para tener el maestro de Vendedores y poder ponerlos ahi
+            cbAmbientes.DataSource = Enum.GetNames(typeof(eAmbientes));
+            cbAmbientes.SelectedItem = eAmbientes.Sin_Especificar;
+
+           
             if (vendedores.Count == 0)
             {
                 vendedores = ServiceHelper.ws.GetVendedores().ToList();
@@ -57,7 +60,6 @@ namespace InmobiliariaForms
                            select new Propiedad
                            {
                                Id = a.Id,
-                               //Dormitorios = a.Dormitorios,
                                Precio = a.Precio != null ? ((decimal)a.Precio).ToString("#,##0") : "0",
                                Disponible = a.Disponible,
                                Observaciones = a.Observaciones,
@@ -65,7 +67,6 @@ namespace InmobiliariaForms
                                MonedaPropiedad = ((eMoneda)a.Moneda).ToString(),
                                OperacionPropiedad = ((eTipoOperacion)a.Operacion).ToString(),
                                Localidad = a.Localidad,
-                               //Barrio = a.Barrio,
                                Calle = a.Calle,
                                Numero = a.Numero,
                                Fecha = a.Fecha,
@@ -92,8 +93,6 @@ namespace InmobiliariaForms
                 Inmueble inmueble = new Inmueble();
 
                 inmueble.Localidad = txLocalidad.Text.ToUpperInvariant();
-                //inmueble.Barrio = txBarrio.Text.ToUpperInvariant();
-                //inmueble.Dormitorios = txDorm.Text.ToUpperInvariant();
                 inmueble.Calle = txCalle.Text.ToUpperInvariant();
                 inmueble.Disponible = chDisponible.Checked;
 
@@ -116,6 +115,17 @@ namespace InmobiliariaForms
                     {
                         aux.RemoveAll(x => x.TipoInmueblePropiedad != tipoInmueblePropiedad.ToString());
 
+                    }
+                }
+
+                if (cbAmbientes.SelectedValue!= null)
+                {
+                    eAmbientes ambientes;
+                    Enum.TryParse<eAmbientes>(cbAmbientes.SelectedValue.ToString(), out ambientes);
+
+                    if (ambientes != eAmbientes.Sin_Especificar)
+                    {
+                        aux.RemoveAll(x => x.Ambientes != ambientes.ToString());
                     }
                 }
 
@@ -152,24 +162,20 @@ namespace InmobiliariaForms
                 if (!string.IsNullOrEmpty(inmueble.Localidad))
                 {
                     aux.RemoveAll(x => !x.Localidad.Contains(inmueble.Localidad));
-                    //aux.AddRange(inmuebles.Where(x => x.Localidad.ToUpperInvariant().Contains(inmueble.Localidad)).ToList());
+                    
                 }
 
-                //if (!string.IsNullOrEmpty(inmueble.Barrio))
-                //{
-                //    aux.RemoveAll(x => !x.Barrio.Contains(inmueble.Barrio));
-                //    //aux.AddRange(inmuebles.Where(x => x.Barrio.ToUpperInvariant().Contains(inmueble.Barrio)).ToList());
-                //}
+               
                 if (numPrecioDesde.Value != 0)
                 {
                     aux.RemoveAll(x => Convert.ToDecimal(x.Precio, CultureInfo.CreateSpecificCulture("es-AR")) > numPrecioDesde.Value);
-                    //aux.AddRange(Interesados.Where(x => x.MontoDesde < numDesde.Value));
+                    
                 }
 
                 if (numPrecioHasta.Value != 0)
                 {
                     aux.RemoveAll(x => Convert.ToDecimal(x.Precio, CultureInfo.CreateSpecificCulture("es-AR")) > numPrecioHasta.Value);
-                    //aux = aux.Where(x => x.Precio <= numPrecioHasta.Value).ToList();
+                    
                 }
 
                 gvResultado.DataSource = aux;
@@ -199,20 +205,15 @@ namespace InmobiliariaForms
             gvAux.Columns.Add("Moneda", "Moneda");
             gvAux.Columns.Add("Precio", "Precio");
             gvAux.Columns.Add("Vendedor", "Vendedor");
+            gvAux.Columns.Add("Ambientes", "Ambientes");
 
             foreach (DataGridViewRow row in gvResultado.Rows)
             {
-                //No tenes el atributo vendedor dentro de Propiedad, ves? no lo encuentra, pincha y queda vacio el gvAux/ claro
-                //o pones el vendedor en la Propiedad y lo llenas, o imprimis otro valor que no sea el vendedor, como el contacto o no tengo ni idea cual puede ser jaja
-                //a vos que te parece? poner el vendedor o no?
-                //me parece que lo pongamos, total es una gilada, es agregar un atributo mas nada mas porque ya lo tenes en el inmueble, te falta en la propiedad y mapearlo nada mas
-                //pero seria el cargado por o no? 
-                //si, pero tendrias que buscar el nombre mediante el id dentro de la lista de vendedores,
-                //asi debiera funcionar
-                //facepalm
+               
 
                 gvAux.Rows.Add(row.Cells["TipoInmueblePropiedad"].Value,
                 row.Cells["OperacionPropiedad"].Value,
+                row.Cells["Ambientes"].Value,
                 row.Cells["Localidad"].Value,
                 row.Cells["Calle"].Value + " " + row.Cells["Numero"].Value,
                 row.Cells["MonedaPropiedad"].Value,
@@ -262,11 +263,9 @@ namespace InmobiliariaForms
     {
         public int Id { get; set; }
         public DateTime? Fecha { get; set; }
-
         public string OperacionPropiedad { get; set; }
         public string TipoInmueblePropiedad { get; set; }
         public string Localidad { get; set; }
-        public string Barrio { get; set; }
         public string Calle { get; set; }
         public string Numero { get; set; }
         public string Piso { get; set; }
@@ -277,18 +276,11 @@ namespace InmobiliariaForms
         public string MonedaPropiedad { get; set; }
         public string Precio { get; set; }
         public string Observaciones { get; set; }
-        public string Dormitorios { get; set; }
-        public string Baños { get; set; }
-        public string Comedor { get; set; }
-        public string Cocina { get; set; }
-        public string Garage { get; set; }
-        public string Patio { get; set; }
-        public string OtrasDependencias { get; set; }
-        public string ValorMetro2 { get; set; }
         public int CargadoPor { get; set; }
         public string Contacto { get; set; }
         public string Referencia { get; set; }
         public string Otros { get; set; }
         public bool Disponible { get; set; }
+        public string Ambientes { get; set; }
     }
 }

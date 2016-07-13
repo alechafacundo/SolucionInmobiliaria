@@ -35,6 +35,9 @@ namespace InmobiliariaForms
             cbMoneda.DataSource = Enum.GetNames(typeof(eMoneda));
             cbMoneda.SelectedItem = eMoneda.Sin_Especificar;
 
+            cbAmbientes.DataSource = Enum.GetNames(typeof(eAmbientes));
+            cbAmbientes.SelectedItem = eAmbientes.Sin_Especificar;
+
             if (Interesados.Count() == 0)
             {
                 Interesados = ServiceHelper.ws.GetInteresados().ToList();
@@ -48,12 +51,12 @@ namespace InmobiliariaForms
                          select new Persona
                          {
                              Id = a.Id,
-                             Dormitorios = a.Dormitorios,
+                             Ambientes = ((eAmbientes)a.AmbientesInteresado).ToString(),
                              Email = a.Email,
                              MontoDesde = ((decimal)a.MontoDesde).ToString("#,##0"),
-                          
                              MontoHasta = ((decimal)a.MontoHasta).ToString("#,##0"),
                              Nombre = a.Nombre,
+                             Apellido = a.Apellido,
                              Disponible = a.Disponible,
                              Observaciones = a.Observaciones,
                              Telefono = a.Telefono,
@@ -112,10 +115,10 @@ namespace InmobiliariaForms
                 Interesado interesado = new Interesado();
 
                 interesado.Nombre = txNombre.Text;
+                interesado.Apellido = txApellido.Text;
                 interesado.Email = txEmail.Text;
                 interesado.Telefono = txTelefono.Text;
                 interesado.Observaciones = txObservaciones.Text;
-                interesado.Dormitorios = txDorm.Text;
                 interesado.Disponible = chDisponible.Checked;
 
                 List<Persona> aux = new List<Persona>();
@@ -135,6 +138,18 @@ namespace InmobiliariaForms
                     {
                         //aux.AddRange(Interesados.Where(x => x.TipoDeInmueble != (int)tipoInmueble).ToList());
                         aux.RemoveAll(x => x.TipoInmueble != tipoInmueble.ToString());
+                    }
+                }
+
+                if (cbAmbientes.SelectedValue != null)
+                {
+                    eAmbientes ambientes;
+                    Enum.TryParse<eAmbientes>(cbAmbientes.SelectedValue.ToString(), out ambientes);
+
+                    if (ambientes != eAmbientes.Sin_Especificar)
+                    {
+                        //aux.AddRange(Interesados.Where(x => x.TipoDeInmueble != (int)tipoInmueble).ToList());
+                        aux.RemoveAll(x => x.Ambientes != ambientes.ToString());
                     }
                 }
 
@@ -163,9 +178,9 @@ namespace InmobiliariaForms
 
                 }
 
-                if (!string.IsNullOrEmpty(interesado.Dormitorios))
+                if (!string.IsNullOrEmpty(interesado.Apellido))
                 {
-                    aux.RemoveAll(x => !x.Dormitorios.ToUpperInvariant().Contains(interesado.Dormitorios.ToUpperInvariant()));
+                    aux.RemoveAll(x => !x.Apellido.ToUpperInvariant().Contains(interesado.Apellido.ToUpperInvariant()));
                     //aux.AddRange(Interesados.Where(x => x.Dormitorios.ToUpperInvariant().Contains(interesado.Dormitorios.ToUpperInvariant())).ToList());
                 }
 
@@ -266,16 +281,17 @@ namespace InmobiliariaForms
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
+        public string Apellido { get; set; }
         public string Telefono { get; set; }
         public string Email { get; set; }
         public string MontoDesde { get; set; }
-        //public decimal? MontoDesde { get; set; }
+        
         public string MontoHasta { get; set; }
-        //public decimal? MontoHasta { get; set; }
+        
         public string TipoMoneda { get; set; }
         public string TipoOperacion { get; set; }
         public string TipoInmueble { get; set; }
-        public string Dormitorios { get; set; }
+        public string Ambientes { get; set; }
         public string Observaciones { get; set; }
         public bool Disponible { get; set; }
     }

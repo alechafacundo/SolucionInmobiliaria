@@ -61,7 +61,6 @@
             this.txSupCubierta = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txObservaciones = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txComentariosInternos = new System.Windows.Forms.TextBox();
@@ -74,16 +73,17 @@
             this.cbTipoOperacion = new System.Windows.Forms.ComboBox();
             this.checkDisponible = new System.Windows.Forms.CheckBox();
             this.g = new System.Windows.Forms.GroupBox();
+            this.cbEstado = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.cbUbicacion = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.txAntiguedad = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.cbCochera = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.cbAmbientes = new System.Windows.Forms.ComboBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.cbEstado = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.g.SuspendLayout();
@@ -430,16 +430,6 @@
             this.txObservaciones.Size = new System.Drawing.Size(600, 70);
             this.txObservaciones.TabIndex = 16;
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(8, 143);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(67, 14);
-            this.label17.TabIndex = 32;
-            this.label17.Text = "Ambientes:";
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label5);
@@ -611,6 +601,23 @@
             this.g.TabIndex = 1;
             this.g.TabStop = false;
             // 
+            // cbEstado
+            // 
+            this.cbEstado.FormattingEnabled = true;
+            this.cbEstado.Location = new System.Drawing.Point(380, 169);
+            this.cbEstado.Name = "cbEstado";
+            this.cbEstado.Size = new System.Drawing.Size(136, 23);
+            this.cbEstado.TabIndex = 54;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(324, 173);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(49, 15);
+            this.label20.TabIndex = 53;
+            this.label20.Text = "Estado:";
+            // 
             // cbUbicacion
             // 
             this.cbUbicacion.FormattingEnabled = true;
@@ -662,15 +669,15 @@
             this.cbCochera.Size = new System.Drawing.Size(63, 23);
             this.cbCochera.TabIndex = 47;
             // 
-            // label12
+            // label17
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(216, 142);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(58, 14);
-            this.label12.TabIndex = 46;
-            this.label12.Text = "Cochera: ";
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(8, 143);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(67, 14);
+            this.label17.TabIndex = 32;
+            this.label17.Text = "Ambientes:";
             // 
             // cbAmbientes
             // 
@@ -681,22 +688,15 @@
             this.cbAmbientes.Size = new System.Drawing.Size(121, 23);
             this.cbAmbientes.TabIndex = 45;
             // 
-            // label20
+            // label12
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(324, 173);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(49, 15);
-            this.label20.TabIndex = 53;
-            this.label20.Text = "Estado:";
-            // 
-            // cbEstado
-            // 
-            this.cbEstado.FormattingEnabled = true;
-            this.cbEstado.Location = new System.Drawing.Point(380, 169);
-            this.cbEstado.Name = "cbEstado";
-            this.cbEstado.Size = new System.Drawing.Size(136, 23);
-            this.cbEstado.TabIndex = 54;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(216, 142);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(58, 14);
+            this.label12.TabIndex = 46;
+            this.label12.Text = "Cochera: ";
             // 
             // frmInmueble
             // 
@@ -760,7 +760,6 @@
         private System.Windows.Forms.TextBox txSupCubierta;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txObservaciones;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txComentariosInternos;
@@ -773,15 +772,16 @@
         private System.Windows.Forms.ComboBox cbTipoOperacion;
         private System.Windows.Forms.CheckBox checkDisponible;
         private System.Windows.Forms.GroupBox g;
-        private System.Windows.Forms.ComboBox cbAmbientes;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox cbCochera;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox cbUbicacion;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txAntiguedad;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ComboBox cbEstado;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox cbAmbientes;
+        private System.Windows.Forms.Label label17;
     }
 }

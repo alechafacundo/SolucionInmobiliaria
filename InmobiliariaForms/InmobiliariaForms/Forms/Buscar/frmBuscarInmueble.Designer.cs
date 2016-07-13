@@ -35,15 +35,11 @@
             this.numPrecioHasta = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.cbTipoOperacion = new System.Windows.Forms.ComboBox();
-            this.txDorm = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.cbMoneda = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.numPrecioDesde = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
-            this.txBarrio = new System.Windows.Forms.TextBox();
             this.txLocalidad = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,6 +49,8 @@
             this.btCancelar = new System.Windows.Forms.Button();
             this.btMasDetalles = new System.Windows.Forms.Button();
             this.chDisponible = new System.Windows.Forms.CheckBox();
+            this.cbAmbientes = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gvResultado)).BeginInit();
             this.g.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecioHasta)).BeginInit();
@@ -75,20 +73,18 @@
             // 
             this.g.BackColor = System.Drawing.Color.White;
             this.g.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.g.Controls.Add(this.cbAmbientes);
+            this.g.Controls.Add(this.label17);
             this.g.Controls.Add(this.txCalle);
             this.g.Controls.Add(this.label3);
             this.g.Controls.Add(this.numPrecioHasta);
             this.g.Controls.Add(this.label6);
             this.g.Controls.Add(this.cbTipoOperacion);
-            this.g.Controls.Add(this.txDorm);
-            this.g.Controls.Add(this.label17);
             this.g.Controls.Add(this.cbMoneda);
             this.g.Controls.Add(this.label12);
             this.g.Controls.Add(this.numPrecioDesde);
             this.g.Controls.Add(this.label11);
-            this.g.Controls.Add(this.txBarrio);
             this.g.Controls.Add(this.txLocalidad);
-            this.g.Controls.Add(this.label5);
             this.g.Controls.Add(this.label4);
             this.g.Controls.Add(this.comboBox2);
             this.g.Controls.Add(this.label2);
@@ -104,10 +100,10 @@
             // txCalle
             // 
             this.txCalle.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txCalle.Location = new System.Drawing.Point(56, 80);
+            this.txCalle.Location = new System.Drawing.Point(329, 53);
             this.txCalle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txCalle.Name = "txCalle";
-            this.txCalle.Size = new System.Drawing.Size(403, 22);
+            this.txCalle.Size = new System.Drawing.Size(281, 22);
             this.txCalle.TabIndex = 49;
             this.txCalle.TextChanged += new System.EventHandler(this.FiltrarResultados);
             // 
@@ -115,7 +111,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 84);
+            this.label3.Location = new System.Drawing.Point(288, 57);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 14);
             this.label3.TabIndex = 50;
@@ -160,22 +156,6 @@
             this.cbTipoOperacion.Size = new System.Drawing.Size(207, 22);
             this.cbTipoOperacion.TabIndex = 45;
             this.cbTipoOperacion.SelectedValueChanged += new System.EventHandler(this.FiltrarResultados);
-            // 
-            // txDorm
-            // 
-            this.txDorm.Location = new System.Drawing.Point(537, 81);
-            this.txDorm.Name = "txDorm";
-            this.txDorm.Size = new System.Drawing.Size(73, 22);
-            this.txDorm.TabIndex = 38;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(490, 84);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(39, 14);
-            this.label17.TabIndex = 32;
-            this.label17.Text = "Dorm:";
             // 
             // cbMoneda
             // 
@@ -225,15 +205,6 @@
             this.label11.TabIndex = 20;
             this.label11.Text = "Precio Desde:";
             // 
-            // txBarrio
-            // 
-            this.txBarrio.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txBarrio.Location = new System.Drawing.Point(324, 53);
-            this.txBarrio.Name = "txBarrio";
-            this.txBarrio.Size = new System.Drawing.Size(286, 22);
-            this.txBarrio.TabIndex = 10;
-            this.txBarrio.TextChanged += new System.EventHandler(this.FiltrarResultados);
-            // 
             // txLocalidad
             // 
             this.txLocalidad.Location = new System.Drawing.Point(69, 53);
@@ -241,15 +212,6 @@
             this.txLocalidad.Size = new System.Drawing.Size(201, 22);
             this.txLocalidad.TabIndex = 9;
             this.txLocalidad.TextChanged += new System.EventHandler(this.FiltrarResultados);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(281, 56);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 14);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Barrio:";
             // 
             // label4
             // 
@@ -343,6 +305,25 @@
             this.chDisponible.UseVisualStyleBackColor = true;
             this.chDisponible.CheckedChanged += new System.EventHandler(this.FiltrarResultados);
             // 
+            // cbAmbientes
+            // 
+            this.cbAmbientes.BackColor = System.Drawing.Color.Beige;
+            this.cbAmbientes.FormattingEnabled = true;
+            this.cbAmbientes.Location = new System.Drawing.Point(80, 81);
+            this.cbAmbientes.Name = "cbAmbientes";
+            this.cbAmbientes.Size = new System.Drawing.Size(190, 22);
+            this.cbAmbientes.TabIndex = 52;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(10, 85);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(67, 14);
+            this.label17.TabIndex = 51;
+            this.label17.Text = "Ambientes:";
+            // 
             // frmBuscarInmueble
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -376,15 +357,11 @@
         private System.Windows.Forms.NumericUpDown numPrecioHasta;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbTipoOperacion;
-        private System.Windows.Forms.TextBox txDorm;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox cbMoneda;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.NumericUpDown numPrecioDesde;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txBarrio;
         private System.Windows.Forms.TextBox txLocalidad;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label2;
@@ -396,5 +373,7 @@
         private System.Windows.Forms.TextBox txCalle;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox chDisponible;
+        private System.Windows.Forms.ComboBox cbAmbientes;
+        private System.Windows.Forms.Label label17;
     }
 }
