@@ -47,10 +47,25 @@ namespace InmobiliariaService
         Si = 1
     }
 
-    public enum eOrientacion
+    public enum eUbicacion
     {
-        Frente = 0,
-        Contrafrente = 1,
-        Lateral = 2
+        Sin_Especificar = 0,
+        Frente = 1,
+        Contrafrente = 2,
+        Lateral = 3,
+        Interno = 4
+    }
+
+    public enum eEstado
+    {
+        Sin_Especificar = 0,
+        Exelente = 1,
+        Muy_Bueno = 2,
+        Bueno = 3,
+        Regular = 4,
+        En_Construccion = 5,
+        En_Pozo = 6,
+        A_Estrenar = 7
+
     }
 }

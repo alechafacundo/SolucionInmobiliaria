@@ -23,7 +23,8 @@
             <s:element minOccurs="0" maxOccurs="1" name="vendedor" type="tns:Vendedor" />
             <s:element minOccurs="1" maxOccurs="1" name="ambientes" type="tns:eAmbientes" />
             <s:element minOccurs="1" maxOccurs="1" name="cochera" type="tns:eCochera" />
-            <s:element minOccurs="1" maxOccurs="1" name="orientacion" type="tns:eOrientacion" />
+            <s:element minOccurs="1" maxOccurs="1" name="ubicacion" type="tns:eUbicacion" />
+            <s:element minOccurs="1" maxOccurs="1" name="estado" type="tns:eEstado" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -34,8 +35,8 @@
           <s:element minOccurs="1" maxOccurs="1" name="Operacion" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="Tipo" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="Ambientes" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Cochera" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Orientacion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cochera" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ubicacion" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Antiguedad" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Comentarios" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Localidad" type="s:string" />
@@ -49,7 +50,6 @@
           <s:element minOccurs="1" maxOccurs="1" name="Moneda" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="Precio" nillable="true" type="s:decimal" />
           <s:element minOccurs="0" maxOccurs="1" name="Observaciones" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="ValorMetro2" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="CargadoPor" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="Contacto" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Referencia" type="s:string" />
@@ -60,6 +60,7 @@
         <s:sequence>
           <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Apellido" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="MontoDesde" nillable="true" type="s:decimal" />
@@ -70,6 +71,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Dormitorios" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Observaciones" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="Disponible" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AmbientesInteresado" type="s:int" />
         </s:sequence>
       </s:complexType>
       <s:simpleType name="eTipoInmueble">
@@ -129,11 +131,25 @@
           <s:enumeration value="Si" />
         </s:restriction>
       </s:simpleType>
-      <s:simpleType name="eOrientacion">
+      <s:simpleType name="eUbicacion">
         <s:restriction base="s:string">
+          <s:enumeration value="Sin_Especificar" />
           <s:enumeration value="Frente" />
           <s:enumeration value="Contrafrente" />
           <s:enumeration value="Lateral" />
+          <s:enumeration value="Interno" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="eEstado">
+        <s:restriction base="s:string">
+          <s:enumeration value="Sin_Especificar" />
+          <s:enumeration value="Exelente" />
+          <s:enumeration value="Muy_Bueno" />
+          <s:enumeration value="Bueno" />
+          <s:enumeration value="Regular" />
+          <s:enumeration value="En_Construccion" />
+          <s:enumeration value="En_Pozo" />
+          <s:enumeration value="A_Estrenar" />
         </s:restriction>
       </s:simpleType>
       <s:element name="TestResponse">

@@ -201,7 +201,7 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Test", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void Test(Inmueble inmueble, Interesado interesado, eTipoInmueble tipoInmueble, eTipoOperacion tipoOperacion, eMoneda moneda, Vendedor vendedor, eAmbientes ambientes, eCochera cochera, eOrientacion orientacion) {
+        public void Test(Inmueble inmueble, Interesado interesado, eTipoInmueble tipoInmueble, eTipoOperacion tipoOperacion, eMoneda moneda, Vendedor vendedor, eAmbientes ambientes, eCochera cochera, eUbicacion ubicacion, eEstado estado) {
             this.Invoke("Test", new object[] {
                         inmueble,
                         interesado,
@@ -211,16 +211,17 @@ namespace InmobiliariaForms.InmobiliariaService {
                         vendedor,
                         ambientes,
                         cochera,
-                        orientacion});
+                        ubicacion,
+                        estado});
         }
         
         /// <remarks/>
-        public void TestAsync(Inmueble inmueble, Interesado interesado, eTipoInmueble tipoInmueble, eTipoOperacion tipoOperacion, eMoneda moneda, Vendedor vendedor, eAmbientes ambientes, eCochera cochera, eOrientacion orientacion) {
-            this.TestAsync(inmueble, interesado, tipoInmueble, tipoOperacion, moneda, vendedor, ambientes, cochera, orientacion, null);
+        public void TestAsync(Inmueble inmueble, Interesado interesado, eTipoInmueble tipoInmueble, eTipoOperacion tipoOperacion, eMoneda moneda, Vendedor vendedor, eAmbientes ambientes, eCochera cochera, eUbicacion ubicacion, eEstado estado) {
+            this.TestAsync(inmueble, interesado, tipoInmueble, tipoOperacion, moneda, vendedor, ambientes, cochera, ubicacion, estado, null);
         }
         
         /// <remarks/>
-        public void TestAsync(Inmueble inmueble, Interesado interesado, eTipoInmueble tipoInmueble, eTipoOperacion tipoOperacion, eMoneda moneda, Vendedor vendedor, eAmbientes ambientes, eCochera cochera, eOrientacion orientacion, object userState) {
+        public void TestAsync(Inmueble inmueble, Interesado interesado, eTipoInmueble tipoInmueble, eTipoOperacion tipoOperacion, eMoneda moneda, Vendedor vendedor, eAmbientes ambientes, eCochera cochera, eUbicacion ubicacion, eEstado estado, object userState) {
             if ((this.TestOperationCompleted == null)) {
                 this.TestOperationCompleted = new System.Threading.SendOrPostCallback(this.OnTestOperationCompleted);
             }
@@ -233,7 +234,8 @@ namespace InmobiliariaForms.InmobiliariaService {
                         vendedor,
                         ambientes,
                         cochera,
-                        orientacion}, this.TestOperationCompleted, userState);
+                        ubicacion,
+                        estado}, this.TestOperationCompleted, userState);
         }
         
         private void OnTestOperationCompleted(object arg) {
@@ -818,9 +820,9 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         private int ambientesField;
         
-        private int cocheraField;
+        private bool cocheraField;
         
-        private int orientacionField;
+        private string ubicacionField;
         
         private string antiguedadField;
         
@@ -847,8 +849,6 @@ namespace InmobiliariaForms.InmobiliariaService {
         private System.Nullable<decimal> precioField;
         
         private string observacionesField;
-        
-        private string valorMetro2Field;
         
         private int cargadoPorField;
         
@@ -910,7 +910,7 @@ namespace InmobiliariaForms.InmobiliariaService {
         }
         
         /// <remarks/>
-        public int Cochera {
+        public bool Cochera {
             get {
                 return this.cocheraField;
             }
@@ -920,12 +920,12 @@ namespace InmobiliariaForms.InmobiliariaService {
         }
         
         /// <remarks/>
-        public int Orientacion {
+        public string Ubicacion {
             get {
-                return this.orientacionField;
+                return this.ubicacionField;
             }
             set {
-                this.orientacionField = value;
+                this.ubicacionField = value;
             }
         }
         
@@ -1057,16 +1057,6 @@ namespace InmobiliariaForms.InmobiliariaService {
             }
             set {
                 this.observacionesField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string ValorMetro2 {
-            get {
-                return this.valorMetro2Field;
-            }
-            set {
-                this.valorMetro2Field = value;
             }
         }
         
@@ -1298,6 +1288,8 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         private string nombreField;
         
+        private string apellidoField;
+        
         private string telefonoField;
         
         private string emailField;
@@ -1318,6 +1310,8 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         private bool disponibleField;
         
+        private int ambientesInteresadoField;
+        
         /// <remarks/>
         public int Id {
             get {
@@ -1335,6 +1329,16 @@ namespace InmobiliariaForms.InmobiliariaService {
             }
             set {
                 this.nombreField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Apellido {
+            get {
+                return this.apellidoField;
+            }
+            set {
+                this.apellidoField = value;
             }
         }
         
@@ -1437,6 +1441,16 @@ namespace InmobiliariaForms.InmobiliariaService {
             }
             set {
                 this.disponibleField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int AmbientesInteresado {
+            get {
+                return this.ambientesInteresadoField;
+            }
+            set {
+                this.ambientesInteresadoField = value;
             }
         }
     }
@@ -1549,7 +1563,10 @@ namespace InmobiliariaForms.InmobiliariaService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public enum eOrientacion {
+    public enum eUbicacion {
+        
+        /// <remarks/>
+        Sin_Especificar,
         
         /// <remarks/>
         Frente,
@@ -1559,6 +1576,40 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         /// <remarks/>
         Lateral,
+        
+        /// <remarks/>
+        Interno,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public enum eEstado {
+        
+        /// <remarks/>
+        Sin_Especificar,
+        
+        /// <remarks/>
+        Exelente,
+        
+        /// <remarks/>
+        Muy_Bueno,
+        
+        /// <remarks/>
+        Bueno,
+        
+        /// <remarks/>
+        Regular,
+        
+        /// <remarks/>
+        En_Construccion,
+        
+        /// <remarks/>
+        En_Pozo,
+        
+        /// <remarks/>
+        A_Estrenar,
     }
     
     /// <remarks/>

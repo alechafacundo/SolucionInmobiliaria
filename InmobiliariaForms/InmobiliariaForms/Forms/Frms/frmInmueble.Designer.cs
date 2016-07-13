@@ -74,14 +74,16 @@
             this.cbTipoOperacion = new System.Windows.Forms.ComboBox();
             this.checkDisponible = new System.Windows.Forms.CheckBox();
             this.g = new System.Windows.Forms.GroupBox();
+            this.cbUbicacion = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txAntiguedad = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.cbCochera = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.cbAmbientes = new System.Windows.Forms.ComboBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txAntiguedad = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.cbOrientacion = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.cbEstado = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.g.SuspendLayout();
@@ -559,7 +561,9 @@
             // 
             this.g.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.g.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.g.Controls.Add(this.cbOrientacion);
+            this.g.Controls.Add(this.cbEstado);
+            this.g.Controls.Add(this.label20);
+            this.g.Controls.Add(this.cbUbicacion);
             this.g.Controls.Add(this.label19);
             this.g.Controls.Add(this.txAntiguedad);
             this.g.Controls.Add(this.label18);
@@ -607,6 +611,39 @@
             this.g.TabIndex = 1;
             this.g.TabStop = false;
             // 
+            // cbUbicacion
+            // 
+            this.cbUbicacion.FormattingEnabled = true;
+            this.cbUbicacion.Location = new System.Drawing.Point(195, 170);
+            this.cbUbicacion.Name = "cbUbicacion";
+            this.cbUbicacion.Size = new System.Drawing.Size(121, 23);
+            this.cbUbicacion.TabIndex = 52;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(129, 173);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(70, 15);
+            this.label19.TabIndex = 51;
+            this.label19.Text = "Ubicacion: ";
+            // 
+            // txAntiguedad
+            // 
+            this.txAntiguedad.Location = new System.Drawing.Point(429, 139);
+            this.txAntiguedad.Name = "txAntiguedad";
+            this.txAntiguedad.Size = new System.Drawing.Size(48, 23);
+            this.txAntiguedad.TabIndex = 50;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(349, 142);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(74, 15);
+            this.label18.TabIndex = 49;
+            this.label18.Text = "Antiguedad:";
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -644,38 +681,22 @@
             this.cbAmbientes.Size = new System.Drawing.Size(121, 23);
             this.cbAmbientes.TabIndex = 45;
             // 
-            // label18
+            // label20
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(349, 142);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(74, 15);
-            this.label18.TabIndex = 49;
-            this.label18.Text = "Antiguedad:";
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(324, 173);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(49, 15);
+            this.label20.TabIndex = 53;
+            this.label20.Text = "Estado:";
             // 
-            // txAntiguedad
+            // cbEstado
             // 
-            this.txAntiguedad.Location = new System.Drawing.Point(429, 139);
-            this.txAntiguedad.Name = "txAntiguedad";
-            this.txAntiguedad.Size = new System.Drawing.Size(48, 23);
-            this.txAntiguedad.TabIndex = 50;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(171, 172);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(79, 15);
-            this.label19.TabIndex = 51;
-            this.label19.Text = "Orientación: ";
-            // 
-            // cbOrientacion
-            // 
-            this.cbOrientacion.FormattingEnabled = true;
-            this.cbOrientacion.Location = new System.Drawing.Point(246, 170);
-            this.cbOrientacion.Name = "cbOrientacion";
-            this.cbOrientacion.Size = new System.Drawing.Size(121, 23);
-            this.cbOrientacion.TabIndex = 52;
+            this.cbEstado.FormattingEnabled = true;
+            this.cbEstado.Location = new System.Drawing.Point(380, 169);
+            this.cbEstado.Name = "cbEstado";
+            this.cbEstado.Size = new System.Drawing.Size(136, 23);
+            this.cbEstado.TabIndex = 54;
             // 
             // frmInmueble
             // 
@@ -756,9 +777,11 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox cbCochera;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox cbOrientacion;
+        private System.Windows.Forms.ComboBox cbUbicacion;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txAntiguedad;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ComboBox cbEstado;
+        private System.Windows.Forms.Label label20;
     }
 }

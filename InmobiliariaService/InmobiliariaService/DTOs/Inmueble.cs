@@ -11,8 +11,8 @@ namespace InmobiliariaService
         public int Operacion { get; set; }
         public int Tipo { get; set; }
         public int Ambientes { get; set; }
-        public int Cochera { get; set; }
-        public int Orientacion { get; set; }
+        public bool Cochera { get; set; }
+        public string Ubicacion { get; set; }
         public string Antiguedad { get; set; }
         public string Comentarios { get; set; }   
         public string Localidad { get; set; }
@@ -26,10 +26,10 @@ namespace InmobiliariaService
         public int Moneda { get; set; }
         public decimal? Precio { get; set; }
         public string Observaciones { get; set; }
-        public string ValorMetro2 { get; set; }
         public int CargadoPor { get; set; }
         public string Contacto { get; set; }
         public string Referencia { get; set; }
         public bool Disponible { get; set; }
+        //public int Estado { get; set; }
     }
 }

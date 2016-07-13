@@ -35,10 +35,15 @@ namespace InmobiliariaForms
                     if (Inmueble == null)
                         Inmueble = new Inmueble();
 
+
                     eTipoInmueble tipoInmueble;
                     Enum.TryParse<eTipoInmueble>(cbTipoInmueble.SelectedValue.ToString(), out tipoInmueble);
                     Inmueble.Tipo = (int)tipoInmueble;
 
+                    eUbicacion ubicacion;
+                    Enum.TryParse<eUbicacion>(cbUbicacion.SelectedValue.ToString(), out ubicacion);
+                    Inmueble.Ubicacion = ubicacion.ToString();
+                    
                     eTipoOperacion tipoOperacion;
                     Enum.TryParse<eTipoOperacion>(cbTipoOperacion.SelectedValue.ToString(), out tipoOperacion);
                     Inmueble.Operacion = (int)tipoOperacion;
@@ -47,33 +52,33 @@ namespace InmobiliariaForms
                     Enum.TryParse<eMoneda>(cbMoneda.SelectedValue.ToString(), out tipoMoneda);
                     Inmueble.Moneda = (int)tipoMoneda;
 
+                    //eEstado estado;
+                    //Enum.TryParse<eEstado>(cbEstado.SelectedValue.ToString(), out estado);
+                    //Inmueble.Estado = (int)estado;
+
+                    //eCochera cochera;
+                    //Enum.TryParse<eCochera>(cbCochera.SelectedValue.ToString(), out cochera);
+                    //Inmueble.Cochera = cochera.
+
                     Inmueble.Fecha = dateTimeFecha.Value;
                     Inmueble.Localidad = txLocalidad.Text.ToUpperInvariant();
                     Inmueble.Calle = txCalle.Text.ToUpperInvariant();
-                    //Inmueble.Barrio = txBarrio.Text.ToUpperInvariant();
+                    Inmueble.Antiguedad = txAntiguedad.Text.ToUpperInvariant();
+                    Inmueble.Comentarios = txComentariosInternos.Text.ToUpperInvariant();
                     Inmueble.Numero = txNumero.Text.ToUpperInvariant();
                     Inmueble.Piso = txPiso.Text.ToUpperInvariant();
                     Inmueble.Departamento = txDepto.Text.ToUpperInvariant();
                     Inmueble.EntreCalles = txEntreCalles.Text.ToUpperInvariant();
                     Inmueble.Metros2Terreno = txMtsTerreno.Text.ToUpperInvariant();
                     Inmueble.SupCubierta = txSupCubierta.Text.ToUpperInvariant();
-                    //Inmueble.ValorMetro2 = txValorMts.Text.ToUpperInvariant();
                     Inmueble.Observaciones = txObservaciones.Text.ToUpperInvariant();
-                    //Inmueble.Dormitorios = txDorm.Text.ToUpperInvariant();
-                    //Inmueble.Patio = txPatio.Text.ToUpperInvariant();
-                    //Inmueble.Baños = txBaño.Text.ToUpperInvariant();
-                    //Inmueble.Garage = txGarage.Text.ToUpperInvariant();
-                    //Inmueble.Comedor = txComedor.Text.ToUpperInvariant();
-                    //Inmueble.OtrasDependencias = txOtras.Text.ToUpperInvariant();
                     Inmueble.Contacto = txContacto.Text.ToUpperInvariant();
                     Inmueble.Referencia = txReferencia.Text.ToUpperInvariant();
                     Inmueble.Precio = numPrecio.Value;
                     Inmueble.CargadoPor = ((Vendedor)cbCargadoPor.SelectedItem).Id;
-                    //Inmueble.Cocina = txCocina.Text.ToUpperInvariant();
-                    //Inmueble.Otros = txOtras.Text.ToUpperInvariant();
                     Inmueble.Disponible = checkDisponible.Checked;
 
-                    //Ahora que ya tenes el inmueble guardado lo tenes que mandar al web service para que lo guarde en la base de datos:
+                    
 
                     int inmuebleId = ServiceHelper.ws.GuardarInmueble(Inmueble);
                     
@@ -179,15 +184,20 @@ namespace InmobiliariaForms
 
                 cbMoneda.DataSource = Enum.GetNames(typeof(eMoneda));
                 cbMoneda.SelectedItem = eMoneda.Peso;
-                
-                
+                                
                 cbAmbientes.DataSource = Enum.GetNames(typeof(eAmbientes));
                 cbAmbientes.SelectedItem = eAmbientes.Monoambiente;
 
                 cbCochera.DataSource = Enum.GetNames(typeof(eCochera));
                 cbCochera.SelectedItem = eCochera.No;
+
+                cbUbicacion.DataSource = Enum.GetNames(typeof(eUbicacion));
+                cbUbicacion.SelectedItem = eUbicacion.Sin_Especificar;
+
+                cbEstado.DataSource = Enum.GetNames(typeof(eEstado));
+                cbEstado.SelectedItem = eEstado.Sin_Especificar; 
                 
-                //Esta lista la hago global para poder accederla
+              
                 vendedores = ServiceHelper.ws.GetVendedores().ToList();
                 cbCargadoPor.DataSource = vendedores;
                 cbCargadoPor.DisplayMember = "FullName";
@@ -211,7 +221,8 @@ namespace InmobiliariaForms
 
                     dateTimeFecha.Value = Inmueble.Fecha != null ? Inmueble.Fecha.Value : DateTime.Now;
                     txLocalidad.Text = Inmueble.Localidad;
-                    //txBarrio.Text = Inmueble.Barrio;
+                    txAntiguedad.Text = Inmueble.Antiguedad;
+                    txComentariosInternos.Text = Inmueble.Comentarios;
                     txCalle.Text = Inmueble.Calle;
                     txNumero.Text = Inmueble.Numero;
                     txPiso.Text = Inmueble.Piso;
@@ -221,13 +232,7 @@ namespace InmobiliariaForms
                     cbMoneda.SelectedIndex = Inmueble.Moneda;
                     txMtsTerreno.Text = Inmueble.Metros2Terreno;
                     txSupCubierta.Text = Inmueble.SupCubierta;
-                    //txValorMts.Text = Inmueble.ValorMetro2;
                     txObservaciones.Text = Inmueble.Observaciones;
-                    //txDorm.Text = Inmueble.Dormitorios;
-                    //txBaño.Text = Inmueble.Baños;
-                    //txGarage.Text = Inmueble.Garage;
-                    //txPatio.Text = Inmueble.Patio;
-                    //txOtras.Text = Inmueble.OtrasDependencias;
                     cbCargadoPor.SelectedValue = vendedores.Find(x => x.Id == Inmueble.CargadoPor).Id;
                     txContacto.Text = Inmueble.Contacto;
                     txReferencia.Text = Inmueble.Referencia;

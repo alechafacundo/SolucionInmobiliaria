@@ -35,18 +35,20 @@ namespace InmobiliariaForms
                 cbMoneda.DataSource = Enum.GetNames(typeof(eMoneda));
                 cbMoneda.SelectedItem = eMoneda.Sin_Especificar;
 
+                cbAmbientes.DataSource = Enum.GetNames(typeof(eAmbientes));
+                cbAmbientes.SelectedItem = eAmbientes.Sin_Especificar;
+
                 if (Interesado != null)
                 {
                     btEliminar.Visible = true;
 
                     txNombre.Text = Interesado.Nombre;
+                    txApellido.Text = Interesado.Apellido;
                     txTelefono.Text = Interesado.Telefono;
                     txEmail.Text = Interesado.Email;
-                    txDorm.Text = Interesado.Dormitorios;
                     cbMoneda.SelectedIndex = (int)Interesado.TipoDeMoneda;
                     cbTipoInmueble.SelectedIndex = (int)Interesado.TipoDeInmueble;
                     cbTipoOperacion.SelectedIndex = (int)Interesado.TipoDeOperacion;
-                    numDesde.Value = Interesado.MontoDesde != null ? (decimal)Interesado.MontoDesde : 0;
                     numHasta.Value = Interesado.MontoHasta != null ? (decimal)Interesado.MontoHasta : 0;
                     txObservaciones.Text = Interesado.Observaciones;
                     checkDisponible.Checked = Interesado.Disponible;
@@ -137,6 +139,10 @@ namespace InmobiliariaForms
                     if (Interesado == null)
                         Interesado = new Interesado();
 
+                    eAmbientes ambientes;
+                    Enum.TryParse<eAmbientes>(cbAmbientes.SelectedValue.ToString(), out ambientes);
+                    Interesado.AmbientesInteresado = (int)ambientes;
+
                     eTipoInmueble tipoInmueble;
                     Enum.TryParse<eTipoInmueble>(cbTipoInmueble.SelectedValue.ToString(), out tipoInmueble);
                     Interesado.TipoDeInmueble = (int)tipoInmueble;
@@ -150,11 +156,10 @@ namespace InmobiliariaForms
                     Interesado.TipoDeMoneda = (int)tipoMoneda;
                     
                     Interesado.Nombre = txNombre.Text;
+                    Interesado.Apellido = txApellido.Text;
                     Interesado.Email = txEmail.Text;
                     Interesado.Telefono = txTelefono.Text;
-                    Interesado.MontoDesde = numDesde.Value;
                     Interesado.MontoHasta = numHasta.Value;
-                    Interesado.Dormitorios = txDorm.Text;
                     Interesado.Observaciones = txObservaciones.Text;
                     Interesado.Disponible = checkDisponible.Checked; 
 
