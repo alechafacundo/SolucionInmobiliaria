@@ -30,6 +30,8 @@
         {
             this.gvResultado = new System.Windows.Forms.DataGridView();
             this.g = new System.Windows.Forms.GroupBox();
+            this.cbAmbientes = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.txCalle = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.numPrecioHasta = new System.Windows.Forms.NumericUpDown();
@@ -49,8 +51,6 @@
             this.btCancelar = new System.Windows.Forms.Button();
             this.btMasDetalles = new System.Windows.Forms.Button();
             this.chDisponible = new System.Windows.Forms.CheckBox();
-            this.cbAmbientes = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gvResultado)).BeginInit();
             this.g.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecioHasta)).BeginInit();
@@ -97,6 +97,25 @@
             this.g.TabIndex = 4;
             this.g.TabStop = false;
             // 
+            // cbAmbientes
+            // 
+            this.cbAmbientes.BackColor = System.Drawing.Color.Beige;
+            this.cbAmbientes.FormattingEnabled = true;
+            this.cbAmbientes.Location = new System.Drawing.Point(80, 81);
+            this.cbAmbientes.Name = "cbAmbientes";
+            this.cbAmbientes.Size = new System.Drawing.Size(190, 22);
+            this.cbAmbientes.TabIndex = 5;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(10, 85);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(67, 14);
+            this.label17.TabIndex = 51;
+            this.label17.Text = "Ambientes:";
+            // 
             // txCalle
             // 
             this.txCalle.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -104,7 +123,7 @@
             this.txCalle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txCalle.Name = "txCalle";
             this.txCalle.Size = new System.Drawing.Size(281, 22);
-            this.txCalle.TabIndex = 49;
+            this.txCalle.TabIndex = 4;
             this.txCalle.TextChanged += new System.EventHandler(this.FiltrarResultados);
             // 
             // label3
@@ -132,7 +151,7 @@
             0});
             this.numPrecioHasta.Name = "numPrecioHasta";
             this.numPrecioHasta.Size = new System.Drawing.Size(120, 22);
-            this.numPrecioHasta.TabIndex = 48;
+            this.numPrecioHasta.TabIndex = 7;
             this.numPrecioHasta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numPrecioHasta.ThousandsSeparator = true;
             this.numPrecioHasta.ValueChanged += new System.EventHandler(this.FiltrarResultados);
@@ -154,7 +173,7 @@
             this.cbTipoOperacion.Location = new System.Drawing.Point(355, 21);
             this.cbTipoOperacion.Name = "cbTipoOperacion";
             this.cbTipoOperacion.Size = new System.Drawing.Size(207, 22);
-            this.cbTipoOperacion.TabIndex = 45;
+            this.cbTipoOperacion.TabIndex = 2;
             this.cbTipoOperacion.SelectedValueChanged += new System.EventHandler(this.FiltrarResultados);
             // 
             // cbMoneda
@@ -164,7 +183,7 @@
             this.cbMoneda.Location = new System.Drawing.Point(509, 111);
             this.cbMoneda.Name = "cbMoneda";
             this.cbMoneda.Size = new System.Drawing.Size(101, 22);
-            this.cbMoneda.TabIndex = 23;
+            this.cbMoneda.TabIndex = 8;
             // 
             // label12
             // 
@@ -191,7 +210,7 @@
             0});
             this.numPrecioDesde.Name = "numPrecioDesde";
             this.numPrecioDesde.Size = new System.Drawing.Size(120, 22);
-            this.numPrecioDesde.TabIndex = 21;
+            this.numPrecioDesde.TabIndex = 6;
             this.numPrecioDesde.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numPrecioDesde.ThousandsSeparator = true;
             this.numPrecioDesde.ValueChanged += new System.EventHandler(this.FiltrarResultados);
@@ -210,7 +229,7 @@
             this.txLocalidad.Location = new System.Drawing.Point(69, 53);
             this.txLocalidad.Name = "txLocalidad";
             this.txLocalidad.Size = new System.Drawing.Size(201, 22);
-            this.txLocalidad.TabIndex = 9;
+            this.txLocalidad.TabIndex = 3;
             this.txLocalidad.TextChanged += new System.EventHandler(this.FiltrarResultados);
             // 
             // label4
@@ -265,7 +284,7 @@
             this.btImprimir.Location = new System.Drawing.Point(2, 387);
             this.btImprimir.Name = "btImprimir";
             this.btImprimir.Size = new System.Drawing.Size(140, 25);
-            this.btImprimir.TabIndex = 54;
+            this.btImprimir.TabIndex = 11;
             this.btImprimir.Text = "Imprimir";
             this.btImprimir.UseVisualStyleBackColor = false;
             this.btImprimir.Click += new System.EventHandler(this.btImprimir_Click_1);
@@ -277,7 +296,7 @@
             this.btCancelar.Location = new System.Drawing.Point(301, 384);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(160, 31);
-            this.btCancelar.TabIndex = 53;
+            this.btCancelar.TabIndex = 10;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = false;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click_1);
@@ -289,7 +308,7 @@
             this.btMasDetalles.Location = new System.Drawing.Point(467, 384);
             this.btMasDetalles.Name = "btMasDetalles";
             this.btMasDetalles.Size = new System.Drawing.Size(160, 31);
-            this.btMasDetalles.TabIndex = 52;
+            this.btMasDetalles.TabIndex = 9;
             this.btMasDetalles.Text = "Mas Detalles";
             this.btMasDetalles.UseVisualStyleBackColor = false;
             this.btMasDetalles.Click += new System.EventHandler(this.btMasDetalles_Click);
@@ -300,29 +319,10 @@
             this.chDisponible.Location = new System.Drawing.Point(2, 149);
             this.chDisponible.Name = "chDisponible";
             this.chDisponible.Size = new System.Drawing.Size(173, 17);
-            this.chDisponible.TabIndex = 77;
+            this.chDisponible.TabIndex = 12;
             this.chDisponible.Text = "Ver sólo Inmuebles disponibles ";
             this.chDisponible.UseVisualStyleBackColor = true;
             this.chDisponible.CheckedChanged += new System.EventHandler(this.FiltrarResultados);
-            // 
-            // cbAmbientes
-            // 
-            this.cbAmbientes.BackColor = System.Drawing.Color.Beige;
-            this.cbAmbientes.FormattingEnabled = true;
-            this.cbAmbientes.Location = new System.Drawing.Point(80, 81);
-            this.cbAmbientes.Name = "cbAmbientes";
-            this.cbAmbientes.Size = new System.Drawing.Size(190, 22);
-            this.cbAmbientes.TabIndex = 52;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(10, 85);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(67, 14);
-            this.label17.TabIndex = 51;
-            this.label17.Text = "Ambientes:";
             // 
             // frmBuscarInmueble
             // 

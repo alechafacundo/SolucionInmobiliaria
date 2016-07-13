@@ -81,9 +81,9 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.cbCochera = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.cbAmbientes = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.cbAmbientes = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.g.SuspendLayout();
@@ -97,7 +97,7 @@
             this.btEliminar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btEliminar.Name = "btEliminar";
             this.btEliminar.Size = new System.Drawing.Size(130, 31);
-            this.btEliminar.TabIndex = 28;
+            this.btEliminar.TabIndex = 26;
             this.btEliminar.Text = "Eliminar";
             this.btEliminar.UseVisualStyleBackColor = false;
             this.btEliminar.Visible = false;
@@ -111,7 +111,7 @@
             this.btCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(130, 31);
-            this.btCancelar.TabIndex = 27;
+            this.btCancelar.TabIndex = 25;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = false;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
@@ -124,7 +124,7 @@
             this.btGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btGuardar.Name = "btGuardar";
             this.btGuardar.Size = new System.Drawing.Size(130, 31);
-            this.btGuardar.TabIndex = 26;
+            this.btGuardar.TabIndex = 24;
             this.btGuardar.Text = "Guardar";
             this.btGuardar.UseVisualStyleBackColor = false;
             this.btGuardar.Click += new System.EventHandler(this.btGuardar_Click);
@@ -136,7 +136,7 @@
             this.btGuardarFotos.Location = new System.Drawing.Point(152, 428);
             this.btGuardarFotos.Name = "btGuardarFotos";
             this.btGuardarFotos.Size = new System.Drawing.Size(95, 23);
-            this.btGuardarFotos.TabIndex = 29;
+            this.btGuardarFotos.TabIndex = 28;
             this.btGuardarFotos.Text = "Agregar Fotos";
             this.btGuardarFotos.UseVisualStyleBackColor = false;
             this.btGuardarFotos.Click += new System.EventHandler(this.btGuardarFotos_Click);
@@ -148,7 +148,7 @@
             this.btVerFotos.Location = new System.Drawing.Point(253, 428);
             this.btVerFotos.Name = "btVerFotos";
             this.btVerFotos.Size = new System.Drawing.Size(95, 23);
-            this.btVerFotos.TabIndex = 30;
+            this.btVerFotos.TabIndex = 27;
             this.btVerFotos.Text = "Ver Fotos";
             this.btVerFotos.UseVisualStyleBackColor = false;
             this.btVerFotos.Click += new System.EventHandler(this.btVerFotos_Click);
@@ -239,7 +239,7 @@
             this.txLocalidad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txLocalidad.Name = "txLocalidad";
             this.txLocalidad.Size = new System.Drawing.Size(203, 22);
-            this.txLocalidad.TabIndex = 4;
+            this.txLocalidad.TabIndex = 9;
             // 
             // txCalle
             // 
@@ -248,7 +248,7 @@
             this.txCalle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txCalle.Name = "txCalle";
             this.txCalle.Size = new System.Drawing.Size(302, 22);
-            this.txCalle.TabIndex = 6;
+            this.txCalle.TabIndex = 4;
             // 
             // label7
             // 
@@ -288,7 +288,7 @@
             this.txNumero.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txNumero.Name = "txNumero";
             this.txNumero.Size = new System.Drawing.Size(47, 22);
-            this.txNumero.TabIndex = 7;
+            this.txNumero.TabIndex = 5;
             // 
             // txPiso
             // 
@@ -297,7 +297,7 @@
             this.txPiso.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txPiso.Name = "txPiso";
             this.txPiso.Size = new System.Drawing.Size(41, 22);
-            this.txPiso.TabIndex = 8;
+            this.txPiso.TabIndex = 6;
             // 
             // txDepto
             // 
@@ -306,7 +306,7 @@
             this.txDepto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txDepto.Name = "txDepto";
             this.txDepto.Size = new System.Drawing.Size(36, 22);
-            this.txDepto.TabIndex = 9;
+            this.txDepto.TabIndex = 7;
             // 
             // label10
             // 
@@ -325,7 +325,7 @@
             this.txEntreCalles.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txEntreCalles.Name = "txEntreCalles";
             this.txEntreCalles.Size = new System.Drawing.Size(255, 22);
-            this.txEntreCalles.TabIndex = 10;
+            this.txEntreCalles.TabIndex = 8;
             // 
             // label11
             // 
@@ -354,7 +354,7 @@
             0});
             this.numPrecio.Name = "numPrecio";
             this.numPrecio.Size = new System.Drawing.Size(105, 22);
-            this.numPrecio.TabIndex = 11;
+            this.numPrecio.TabIndex = 10;
             this.numPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numPrecio.ThousandsSeparator = true;
             // 
@@ -367,7 +367,7 @@
             this.cbMoneda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbMoneda.Name = "cbMoneda";
             this.cbMoneda.Size = new System.Drawing.Size(60, 22);
-            this.cbMoneda.TabIndex = 12;
+            this.cbMoneda.TabIndex = 11;
             // 
             // label13
             // 
@@ -387,7 +387,7 @@
             this.txMtsTerreno.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txMtsTerreno.Name = "txMtsTerreno";
             this.txMtsTerreno.Size = new System.Drawing.Size(56, 22);
-            this.txMtsTerreno.TabIndex = 13;
+            this.txMtsTerreno.TabIndex = 12;
             // 
             // label14
             // 
@@ -407,7 +407,7 @@
             this.txSupCubierta.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txSupCubierta.Name = "txSupCubierta";
             this.txSupCubierta.Size = new System.Drawing.Size(65, 22);
-            this.txSupCubierta.TabIndex = 14;
+            this.txSupCubierta.TabIndex = 13;
             // 
             // label16
             // 
@@ -428,7 +428,7 @@
             this.txObservaciones.Name = "txObservaciones";
             this.txObservaciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txObservaciones.Size = new System.Drawing.Size(600, 70);
-            this.txObservaciones.TabIndex = 16;
+            this.txObservaciones.TabIndex = 20;
             // 
             // groupBox1
             // 
@@ -466,7 +466,7 @@
             this.txComentariosInternos.Name = "txComentariosInternos";
             this.txComentariosInternos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txComentariosInternos.Size = new System.Drawing.Size(585, 48);
-            this.txComentariosInternos.TabIndex = 26;
+            this.txComentariosInternos.TabIndex = 23;
             // 
             // txReferencia
             // 
@@ -474,7 +474,7 @@
             this.txReferencia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txReferencia.Name = "txReferencia";
             this.txReferencia.Size = new System.Drawing.Size(122, 22);
-            this.txReferencia.TabIndex = 25;
+            this.txReferencia.TabIndex = 22;
             // 
             // label25
             // 
@@ -491,7 +491,7 @@
             this.txContacto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txContacto.Name = "txContacto";
             this.txContacto.Size = new System.Drawing.Size(110, 22);
-            this.txContacto.TabIndex = 24;
+            this.txContacto.TabIndex = 21;
             // 
             // label24
             // 
@@ -543,7 +543,7 @@
             this.checkDisponible.Location = new System.Drawing.Point(8, 172);
             this.checkDisponible.Name = "checkDisponible";
             this.checkDisponible.Size = new System.Drawing.Size(86, 19);
-            this.checkDisponible.TabIndex = 31;
+            this.checkDisponible.TabIndex = 17;
             this.checkDisponible.Text = "Disponible";
             this.checkDisponible.UseVisualStyleBackColor = true;
             // 
@@ -607,7 +607,7 @@
             this.cbEstado.Location = new System.Drawing.Point(380, 169);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(136, 23);
-            this.cbEstado.TabIndex = 54;
+            this.cbEstado.TabIndex = 19;
             // 
             // label20
             // 
@@ -624,7 +624,7 @@
             this.cbUbicacion.Location = new System.Drawing.Point(195, 170);
             this.cbUbicacion.Name = "cbUbicacion";
             this.cbUbicacion.Size = new System.Drawing.Size(121, 23);
-            this.cbUbicacion.TabIndex = 52;
+            this.cbUbicacion.TabIndex = 18;
             // 
             // label19
             // 
@@ -640,7 +640,7 @@
             this.txAntiguedad.Location = new System.Drawing.Point(429, 139);
             this.txAntiguedad.Name = "txAntiguedad";
             this.txAntiguedad.Size = new System.Drawing.Size(48, 23);
-            this.txAntiguedad.TabIndex = 50;
+            this.txAntiguedad.TabIndex = 16;
             // 
             // label18
             // 
@@ -667,26 +667,7 @@
             this.cbCochera.Location = new System.Drawing.Point(274, 138);
             this.cbCochera.Name = "cbCochera";
             this.cbCochera.Size = new System.Drawing.Size(63, 23);
-            this.cbCochera.TabIndex = 47;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(8, 143);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(67, 14);
-            this.label17.TabIndex = 32;
-            this.label17.Text = "Ambientes:";
-            // 
-            // cbAmbientes
-            // 
-            this.cbAmbientes.BackColor = System.Drawing.Color.Beige;
-            this.cbAmbientes.FormattingEnabled = true;
-            this.cbAmbientes.Location = new System.Drawing.Point(78, 139);
-            this.cbAmbientes.Name = "cbAmbientes";
-            this.cbAmbientes.Size = new System.Drawing.Size(121, 23);
-            this.cbAmbientes.TabIndex = 45;
+            this.cbCochera.TabIndex = 15;
             // 
             // label12
             // 
@@ -697,6 +678,25 @@
             this.label12.Size = new System.Drawing.Size(58, 14);
             this.label12.TabIndex = 46;
             this.label12.Text = "Cochera: ";
+            // 
+            // cbAmbientes
+            // 
+            this.cbAmbientes.BackColor = System.Drawing.Color.Beige;
+            this.cbAmbientes.FormattingEnabled = true;
+            this.cbAmbientes.Location = new System.Drawing.Point(78, 139);
+            this.cbAmbientes.Name = "cbAmbientes";
+            this.cbAmbientes.Size = new System.Drawing.Size(121, 23);
+            this.cbAmbientes.TabIndex = 14;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(8, 143);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(67, 14);
+            this.label17.TabIndex = 32;
+            this.label17.Text = "Ambientes:";
             // 
             // frmInmueble
             // 

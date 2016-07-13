@@ -286,10 +286,8 @@ namespace InmobiliariaForms
         public string Apellido { get; set; }
         public string Telefono { get; set; }
         public string Email { get; set; }
-        public string MontoDesde { get; set; }
-        
-        public string MontoHasta { get; set; }
-        
+        public string MontoDesde { get; set; }        
+        public string MontoHasta { get; set; }      
         public string TipoMoneda { get; set; }
         public string TipoOperacion { get; set; }
         public string TipoInmueble { get; set; }
