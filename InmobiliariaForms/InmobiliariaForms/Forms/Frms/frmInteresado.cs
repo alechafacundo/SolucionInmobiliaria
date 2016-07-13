@@ -159,6 +159,7 @@ namespace InmobiliariaForms
                     Interesado.Apellido = txApellido.Text;
                     Interesado.Email = txEmail.Text;
                     Interesado.Telefono = txTelefono.Text;
+                    Interesado.MontoDesde = 0m;
                     Interesado.MontoHasta = numHasta.Value;
                     Interesado.Observaciones = txObservaciones.Text;
                     Interesado.Disponible = checkDisponible.Checked; 
