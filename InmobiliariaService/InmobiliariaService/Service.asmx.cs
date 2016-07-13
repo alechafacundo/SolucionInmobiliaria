@@ -70,11 +70,11 @@ namespace InmobiliariaService
         }
 
         [WebMethod]
-        public Inmueble[] GetInmueblesParaInteresado(Interesado interesado)
+        public Inmueble[] GetInmueblesParaInteresado(Interesado interesado, decimal cotizacion)
         {
             try
             {
-                return InmuebleDAO.GetInmueblesParaInteresado(interesado).ToArray();
+                return InmuebleDAO.GetInmueblesParaInteresado(interesado, cotizacion).ToArray();
             }
             catch (Exception)
             {
@@ -186,7 +186,7 @@ namespace InmobiliariaService
             {
                 List<Interesado> interesados = InteresadoDAO.GetInteresados();
                 Interesado interesado = interesados.Find(x => x.Nombre == "Juan de los palotes");
-                NotificarSobreInmueble(interesado);
+                NotificarSobreInmueble(interesado, 14.5m);
             }
             catch (Exception ex)
             {
@@ -194,14 +194,14 @@ namespace InmobiliariaService
         }
 
         [WebMethod]
-        public void NotificarSobreInmueble(Interesado interesado)
+        public void NotificarSobreInmueble(Interesado interesado, decimal cotizacion)
         {
             if (!interesado.Disponible)
                 return;
 
             try
             {
-                List<Inmueble> inmuebles = InmuebleDAO.GetInmueblesParaInteresado(interesado);
+                List<Inmueble> inmuebles = InmuebleDAO.GetInmueblesParaInteresado(interesado, cotizacion);
                 if(inmuebles.Count > 0)
                 {
                     EmailHelper.SendInmueblesInEmail(inmuebles, interesado);

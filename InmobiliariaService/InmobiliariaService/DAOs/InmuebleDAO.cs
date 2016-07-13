@@ -36,10 +36,19 @@ namespace InmobiliariaService
             }
         }
 
-        internal static List<Inmueble> GetInmueblesParaInteresado(Interesado interesado)
+        internal static List<Inmueble> GetInmueblesParaInteresado(Interesado interesado, decimal cotizacion)
         {
             try
             {
+                decimal montoDesdePesos = (decimal)interesado.MontoDesde;
+                decimal montoHastaPesos = (decimal)interesado.MontoHasta;
+
+                if (interesado.TipoDeMoneda == (int)eMoneda.Dolar)
+                {
+                    montoDesdePesos *= cotizacion;
+                    montoHastaPesos *= cotizacion;
+                }
+
                 List<Inmueble> aux = GetInmuebles();
 
                 aux.RemoveAll(x => !x.Disponible);
@@ -58,51 +67,23 @@ namespace InmobiliariaService
                 
                 if (interesado.MontoDesde !=  null && interesado.MontoDesde != 0)
                 {
-                    aux.RemoveAll(x => x.Precio < interesado.MontoDesde);
-                    //aux = aux.Where(x => x.Precio <= numPrecioHasta.Value).ToList();
+                    //aux.RemoveAll(x => x.Precio < interesado.MontoDesde);
+
+
+                    aux.RemoveAll(x => ((x.Moneda == (int)eMoneda.Dolar) && ((x.Precio * cotizacion) > montoDesdePesos))
+                        || ((x.Moneda == (int)eMoneda.Peso) && (x.Precio > montoDesdePesos)));
+
                 }
 
                 if (interesado.MontoHasta != null && interesado.MontoHasta != 0)
                 {
                     aux.RemoveAll(x => x.Precio > interesado.MontoHasta.Value);
-                    //aux = aux.Where(x => x.Precio >= numPrecioDesde.Value).ToList();
+
+                    aux.RemoveAll(x => ((x.Moneda == (int)eMoneda.Dolar) && ((x.Precio * cotizacion) < montoHastaPesos))
+                    || ((x.Moneda == (int)eMoneda.Peso) && (x.Precio < montoHastaPesos)));
                 }
 
-
                 return aux;
-
-
-                //List<Inmueble> inmuebles = new List<Inmueble>();
-
-                //string where = string.Empty;
-                //if (interesado.Dormitorios != null && interesado.Dormitorios != string.Empty)
-                //{
-                //    where += "Dormitorios = " + interesado.Dormitorios;
-                //}
-
-                //if (interesado.MontoDesde != null && interesado.MontoDesde != 0)
-                //{
-                //    if (where != string.Empty)
-                //        where += " AND ";
-
-                //    where += "Precio >= " + interesado.MontoDesde;
-                //}
-
-                //if (interesado.MontoHasta != null && interesado.MontoHasta != 0)
-                //{
-                //    if (where != string.Empty)
-                //        where += " AND ";
-
-                //    where += "Precio <= " + interesado.MontoHasta;
-                //}
-
-                //DataTable dt = DAOBase.GetDataTableWhere(new Inmueble(), where);
-
-                //if (dt.Rows.Count > 0)
-                //{
-                //    inmuebles = LlenarInmuebles(new Inmueble(), dt);
-                //}
-
             }
             catch (Exception)
             {
