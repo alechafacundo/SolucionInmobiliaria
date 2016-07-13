@@ -168,7 +168,7 @@ namespace InmobiliariaForms
                     ServiceHelper.ws.GuardarInteresado(Interesado);
                     MessageBox.Show("Interesado guardado correctamente");
 
-                    ServiceHelper.ws.NotificarSobreInmuebleAsync(Interesado);
+                    ServiceHelper.ws.NotificarSobreInmuebleAsync(Interesado, ServiceHelper.ValorDolar);
 
                     this.DialogResult = DialogResult.OK;
                     this.Close();

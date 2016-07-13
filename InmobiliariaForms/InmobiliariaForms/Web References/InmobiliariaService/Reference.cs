@@ -332,24 +332,26 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetInmueblesParaInteresado", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public Inmueble[] GetInmueblesParaInteresado(Interesado interesado) {
+        public Inmueble[] GetInmueblesParaInteresado(Interesado interesado, decimal cotizacion) {
             object[] results = this.Invoke("GetInmueblesParaInteresado", new object[] {
-                        interesado});
+                        interesado,
+                        cotizacion});
             return ((Inmueble[])(results[0]));
         }
         
         /// <remarks/>
-        public void GetInmueblesParaInteresadoAsync(Interesado interesado) {
-            this.GetInmueblesParaInteresadoAsync(interesado, null);
+        public void GetInmueblesParaInteresadoAsync(Interesado interesado, decimal cotizacion) {
+            this.GetInmueblesParaInteresadoAsync(interesado, cotizacion, null);
         }
         
         /// <remarks/>
-        public void GetInmueblesParaInteresadoAsync(Interesado interesado, object userState) {
+        public void GetInmueblesParaInteresadoAsync(Interesado interesado, decimal cotizacion, object userState) {
             if ((this.GetInmueblesParaInteresadoOperationCompleted == null)) {
                 this.GetInmueblesParaInteresadoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetInmueblesParaInteresadoOperationCompleted);
             }
             this.InvokeAsync("GetInmueblesParaInteresado", new object[] {
-                        interesado}, this.GetInmueblesParaInteresadoOperationCompleted, userState);
+                        interesado,
+                        cotizacion}, this.GetInmueblesParaInteresadoOperationCompleted, userState);
         }
         
         private void OnGetInmueblesParaInteresadoOperationCompleted(object arg) {
@@ -590,23 +592,25 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/NotificarSobreInmueble", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void NotificarSobreInmueble(Interesado interesado) {
+        public void NotificarSobreInmueble(Interesado interesado, decimal cotizacion) {
             this.Invoke("NotificarSobreInmueble", new object[] {
-                        interesado});
+                        interesado,
+                        cotizacion});
         }
         
         /// <remarks/>
-        public void NotificarSobreInmuebleAsync(Interesado interesado) {
-            this.NotificarSobreInmuebleAsync(interesado, null);
+        public void NotificarSobreInmuebleAsync(Interesado interesado, decimal cotizacion) {
+            this.NotificarSobreInmuebleAsync(interesado, cotizacion, null);
         }
         
         /// <remarks/>
-        public void NotificarSobreInmuebleAsync(Interesado interesado, object userState) {
+        public void NotificarSobreInmuebleAsync(Interesado interesado, decimal cotizacion, object userState) {
             if ((this.NotificarSobreInmuebleOperationCompleted == null)) {
                 this.NotificarSobreInmuebleOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNotificarSobreInmuebleOperationCompleted);
             }
             this.InvokeAsync("NotificarSobreInmueble", new object[] {
-                        interesado}, this.NotificarSobreInmuebleOperationCompleted, userState);
+                        interesado,
+                        cotizacion}, this.NotificarSobreInmuebleOperationCompleted, userState);
         }
         
         private void OnNotificarSobreInmuebleOperationCompleted(object arg) {
@@ -803,7 +807,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1114,7 +1118,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1160,7 +1164,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1289,7 +1293,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1456,7 +1460,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public enum eTipoInmueble {
@@ -1490,7 +1494,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public enum eTipoOperacion {
@@ -1506,7 +1510,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public enum eMoneda {
@@ -1522,7 +1526,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public enum eAmbientes {
@@ -1547,7 +1551,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public enum eCochera {
@@ -1560,7 +1564,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public enum eUbicacion {
@@ -1582,7 +1586,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public enum eEstado {

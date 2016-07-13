@@ -8,6 +8,7 @@ namespace InmobiliariaForms
 {
     internal static class ServiceHelper
     {
+        internal static decimal ValorDolar { get; set; }
         internal static InmobiliariaService.Service ws = new InmobiliariaService.Service();
 
         public static void Connect()

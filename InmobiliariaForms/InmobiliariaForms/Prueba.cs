@@ -201,5 +201,10 @@ namespace InmobiliariaForms
             
             ServiceHelper.ws.HelloWorld();
         }
+
+        private void btActualizarDolar_Click(object sender, EventArgs e)
+        {
+            ServiceHelper.ValorDolar = Convert.ToDecimal(txCotizacion.Text);
+        }
     }
 }

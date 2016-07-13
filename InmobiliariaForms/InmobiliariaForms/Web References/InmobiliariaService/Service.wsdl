@@ -193,6 +193,7 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="interesado" type="tns:Interesado" />
+            <s:element minOccurs="1" maxOccurs="1" name="cotizacion" type="s:decimal" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -329,6 +330,7 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="interesado" type="tns:Interesado" />
+            <s:element minOccurs="1" maxOccurs="1" name="cotizacion" type="s:decimal" />
           </s:sequence>
         </s:complexType>
       </s:element>

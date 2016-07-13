@@ -46,8 +46,8 @@
             this.pbCerrar2 = new System.Windows.Forms.PictureBox();
             this.pbRefresh1 = new System.Windows.Forms.PictureBox();
             this.pbRefresh2 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txCotizacion = new System.Windows.Forms.TextBox();
+            this.btActualizarDolar = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbInmueble1)).BeginInit();
@@ -253,25 +253,26 @@
             this.pbRefresh2.Click += new System.EventHandler(this.pbRefresh2_Click);
             this.pbRefresh2.MouseLeave += new System.EventHandler(this.pbRefresh2_MouseLeave);
             // 
-            // textBox1
+            // txCotizacion
             // 
-            this.textBox1.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(68, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(39, 23);
-            this.textBox1.TabIndex = 22;
+            this.txCotizacion.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txCotizacion.Location = new System.Drawing.Point(68, 19);
+            this.txCotizacion.Name = "txCotizacion";
+            this.txCotizacion.Size = new System.Drawing.Size(39, 23);
+            this.txCotizacion.TabIndex = 22;
             // 
-            // button1
+            // btActualizarDolar
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(108, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 23);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Actualizar Dolar";
-            this.toolTip1.SetToolTip(this.button1, "Actualizar la cotizacion del Dolar");
-            this.button1.UseVisualStyleBackColor = false;
+            this.btActualizarDolar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btActualizarDolar.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btActualizarDolar.Location = new System.Drawing.Point(108, 19);
+            this.btActualizarDolar.Name = "btActualizarDolar";
+            this.btActualizarDolar.Size = new System.Drawing.Size(108, 23);
+            this.btActualizarDolar.TabIndex = 23;
+            this.btActualizarDolar.Text = "Actualizar Dolar";
+            this.toolTip1.SetToolTip(this.btActualizarDolar, "Actualizar la cotizacion del Dolar");
+            this.btActualizarDolar.UseVisualStyleBackColor = false;
+            this.btActualizarDolar.Click += new System.EventHandler(this.btActualizarDolar_Click);
             // 
             // Prueba
             // 
@@ -281,8 +282,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(900, 716);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btActualizarDolar);
+            this.Controls.Add(this.txCotizacion);
             this.Controls.Add(this.pbRefresh2);
             this.Controls.Add(this.pbRefresh1);
             this.Controls.Add(this.pbCerrar2);
@@ -344,8 +345,8 @@
         private System.Windows.Forms.PictureBox pbCerrar2;
         private System.Windows.Forms.PictureBox pbRefresh1;
         private System.Windows.Forms.PictureBox pbRefresh2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txCotizacion;
+        private System.Windows.Forms.Button btActualizarDolar;
         private System.Windows.Forms.ToolTip toolTip1;
     }
 }
