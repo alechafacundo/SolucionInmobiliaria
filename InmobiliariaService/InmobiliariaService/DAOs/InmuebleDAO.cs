@@ -123,18 +123,18 @@ namespace InmobiliariaService
                     inmuebles = inmuebles.Where(x => x.Operacion == inmueble.Operacion).ToList();
                     inmuebles = inmuebles.Where(x => x.Tipo == inmueble.Tipo).ToList();
 
-                    if (!string.IsNullOrEmpty(inmueble.Barrio))
-                    {
-                        inmuebles = inmuebles.Where(x => x.Barrio.Contains(inmueble.Barrio)).ToList();
-                    }
-                    if (!string.IsNullOrEmpty(inmueble.Baños))
-                    {
-                        inmuebles = inmuebles.Where(x => x.Baños.Contains(inmueble.Baños)).ToList();
-                    }
-                    if (!string.IsNullOrEmpty(inmueble.Dormitorios))
-                    {
-                        inmuebles = inmuebles.Where(x => x.Dormitorios.Contains(inmueble.Dormitorios)).ToList();
-                    }
+                    //if (!string.IsNullOrEmpty(inmueble.Barrio))
+                    //{
+                    //    inmuebles = inmuebles.Where(x => x.Barrio.Contains(inmueble.Barrio)).ToList();
+                    //}
+                    //if (!string.IsNullOrEmpty(inmueble.Baños))
+                    //{
+                    //    inmuebles = inmuebles.Where(x => x.Baños.Contains(inmueble.Baños)).ToList();
+                    //}
+                    //if (!string.IsNullOrEmpty(inmueble.Dormitorios))
+                    //{
+                    //    inmuebles = inmuebles.Where(x => x.Dormitorios.Contains(inmueble.Dormitorios)).ToList();
+                    //}
                     if (!string.IsNullOrEmpty(inmueble.Localidad))
                     {
                         inmuebles = inmuebles.Where(x => x.Localidad.Contains(inmueble.Localidad)).ToList();

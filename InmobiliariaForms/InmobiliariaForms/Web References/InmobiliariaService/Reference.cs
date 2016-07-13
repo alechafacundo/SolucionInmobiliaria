@@ -201,23 +201,26 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Test", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void Test(Inmueble inmueble, Interesado interesado, eTipoInmueble tipoInmueble, eTipoOperacion tipoOperacion, eMoneda moneda, Vendedor vendedor) {
+        public void Test(Inmueble inmueble, Interesado interesado, eTipoInmueble tipoInmueble, eTipoOperacion tipoOperacion, eMoneda moneda, Vendedor vendedor, eAmbientes ambientes, eCochera cochera, eOrientacion orientacion) {
             this.Invoke("Test", new object[] {
                         inmueble,
                         interesado,
                         tipoInmueble,
                         tipoOperacion,
                         moneda,
-                        vendedor});
+                        vendedor,
+                        ambientes,
+                        cochera,
+                        orientacion});
         }
         
         /// <remarks/>
-        public void TestAsync(Inmueble inmueble, Interesado interesado, eTipoInmueble tipoInmueble, eTipoOperacion tipoOperacion, eMoneda moneda, Vendedor vendedor) {
-            this.TestAsync(inmueble, interesado, tipoInmueble, tipoOperacion, moneda, vendedor, null);
+        public void TestAsync(Inmueble inmueble, Interesado interesado, eTipoInmueble tipoInmueble, eTipoOperacion tipoOperacion, eMoneda moneda, Vendedor vendedor, eAmbientes ambientes, eCochera cochera, eOrientacion orientacion) {
+            this.TestAsync(inmueble, interesado, tipoInmueble, tipoOperacion, moneda, vendedor, ambientes, cochera, orientacion, null);
         }
         
         /// <remarks/>
-        public void TestAsync(Inmueble inmueble, Interesado interesado, eTipoInmueble tipoInmueble, eTipoOperacion tipoOperacion, eMoneda moneda, Vendedor vendedor, object userState) {
+        public void TestAsync(Inmueble inmueble, Interesado interesado, eTipoInmueble tipoInmueble, eTipoOperacion tipoOperacion, eMoneda moneda, Vendedor vendedor, eAmbientes ambientes, eCochera cochera, eOrientacion orientacion, object userState) {
             if ((this.TestOperationCompleted == null)) {
                 this.TestOperationCompleted = new System.Threading.SendOrPostCallback(this.OnTestOperationCompleted);
             }
@@ -227,7 +230,10 @@ namespace InmobiliariaForms.InmobiliariaService {
                         tipoInmueble,
                         tipoOperacion,
                         moneda,
-                        vendedor}, this.TestOperationCompleted, userState);
+                        vendedor,
+                        ambientes,
+                        cochera,
+                        orientacion}, this.TestOperationCompleted, userState);
         }
         
         private void OnTestOperationCompleted(object arg) {
@@ -795,7 +801,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -810,9 +816,17 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         private int tipoField;
         
-        private string localidadField;
+        private int ambientesField;
         
-        private string barrioField;
+        private int cocheraField;
+        
+        private int orientacionField;
+        
+        private string antiguedadField;
+        
+        private string comentariosField;
+        
+        private string localidadField;
         
         private string calleField;
         
@@ -834,20 +848,6 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         private string observacionesField;
         
-        private string dormitoriosField;
-        
-        private string bañosField;
-        
-        private string comedorField;
-        
-        private string cocinaField;
-        
-        private string garageField;
-        
-        private string patioField;
-        
-        private string otrasDependenciasField;
-        
         private string valorMetro2Field;
         
         private int cargadoPorField;
@@ -855,8 +855,6 @@ namespace InmobiliariaForms.InmobiliariaService {
         private string contactoField;
         
         private string referenciaField;
-        
-        private string otrosField;
         
         private bool disponibleField;
         
@@ -902,22 +900,62 @@ namespace InmobiliariaForms.InmobiliariaService {
         }
         
         /// <remarks/>
+        public int Ambientes {
+            get {
+                return this.ambientesField;
+            }
+            set {
+                this.ambientesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Cochera {
+            get {
+                return this.cocheraField;
+            }
+            set {
+                this.cocheraField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Orientacion {
+            get {
+                return this.orientacionField;
+            }
+            set {
+                this.orientacionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Antiguedad {
+            get {
+                return this.antiguedadField;
+            }
+            set {
+                this.antiguedadField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Comentarios {
+            get {
+                return this.comentariosField;
+            }
+            set {
+                this.comentariosField = value;
+            }
+        }
+        
+        /// <remarks/>
         public string Localidad {
             get {
                 return this.localidadField;
             }
             set {
                 this.localidadField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Barrio {
-            get {
-                return this.barrioField;
-            }
-            set {
-                this.barrioField = value;
             }
         }
         
@@ -1023,76 +1061,6 @@ namespace InmobiliariaForms.InmobiliariaService {
         }
         
         /// <remarks/>
-        public string Dormitorios {
-            get {
-                return this.dormitoriosField;
-            }
-            set {
-                this.dormitoriosField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Baños {
-            get {
-                return this.bañosField;
-            }
-            set {
-                this.bañosField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Comedor {
-            get {
-                return this.comedorField;
-            }
-            set {
-                this.comedorField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Cocina {
-            get {
-                return this.cocinaField;
-            }
-            set {
-                this.cocinaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Garage {
-            get {
-                return this.garageField;
-            }
-            set {
-                this.garageField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Patio {
-            get {
-                return this.patioField;
-            }
-            set {
-                this.patioField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string OtrasDependencias {
-            get {
-                return this.otrasDependenciasField;
-            }
-            set {
-                this.otrasDependenciasField = value;
-            }
-        }
-        
-        /// <remarks/>
         public string ValorMetro2 {
             get {
                 return this.valorMetro2Field;
@@ -1133,16 +1101,6 @@ namespace InmobiliariaForms.InmobiliariaService {
         }
         
         /// <remarks/>
-        public string Otros {
-            get {
-                return this.otrosField;
-            }
-            set {
-                this.otrosField = value;
-            }
-        }
-        
-        /// <remarks/>
         public bool Disponible {
             get {
                 return this.disponibleField;
@@ -1154,7 +1112,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1200,7 +1158,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1329,7 +1287,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1484,7 +1442,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public enum eTipoInmueble {
@@ -1518,7 +1476,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public enum eTipoOperacion {
@@ -1534,7 +1492,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public enum eMoneda {
@@ -1547,6 +1505,60 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         /// <remarks/>
         Dolar,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public enum eAmbientes {
+        
+        /// <remarks/>
+        Sin_Especificar,
+        
+        /// <remarks/>
+        Monoambiente,
+        
+        /// <remarks/>
+        Dos_Ambiente,
+        
+        /// <remarks/>
+        Tres_Ambientes,
+        
+        /// <remarks/>
+        Cuatro_Ambientes,
+        
+        /// <remarks/>
+        Cinco_O_Mas_Ambientes,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public enum eCochera {
+        
+        /// <remarks/>
+        No,
+        
+        /// <remarks/>
+        Si,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public enum eOrientacion {
+        
+        /// <remarks/>
+        Frente,
+        
+        /// <remarks/>
+        Contrafrente,
+        
+        /// <remarks/>
+        Lateral,
     }
     
     /// <remarks/>

@@ -57,7 +57,7 @@ namespace InmobiliariaForms
                            select new Propiedad
                            {
                                Id = a.Id,
-                               Dormitorios = a.Dormitorios,
+                               //Dormitorios = a.Dormitorios,
                                Precio = a.Precio != null ? ((decimal)a.Precio).ToString("#,##0") : "0",
                                Disponible = a.Disponible,
                                Observaciones = a.Observaciones,
@@ -65,7 +65,7 @@ namespace InmobiliariaForms
                                MonedaPropiedad = ((eMoneda)a.Moneda).ToString(),
                                OperacionPropiedad = ((eTipoOperacion)a.Operacion).ToString(),
                                Localidad = a.Localidad,
-                               Barrio = a.Barrio,
+                               //Barrio = a.Barrio,
                                Calle = a.Calle,
                                Numero = a.Numero,
                                Fecha = a.Fecha,
@@ -92,8 +92,8 @@ namespace InmobiliariaForms
                 Inmueble inmueble = new Inmueble();
 
                 inmueble.Localidad = txLocalidad.Text.ToUpperInvariant();
-                inmueble.Barrio = txBarrio.Text.ToUpperInvariant();
-                inmueble.Dormitorios = txDorm.Text.ToUpperInvariant();
+                //inmueble.Barrio = txBarrio.Text.ToUpperInvariant();
+                //inmueble.Dormitorios = txDorm.Text.ToUpperInvariant();
                 inmueble.Calle = txCalle.Text.ToUpperInvariant();
                 inmueble.Disponible = chDisponible.Checked;
 
@@ -155,11 +155,11 @@ namespace InmobiliariaForms
                     //aux.AddRange(inmuebles.Where(x => x.Localidad.ToUpperInvariant().Contains(inmueble.Localidad)).ToList());
                 }
 
-                if (!string.IsNullOrEmpty(inmueble.Barrio))
-                {
-                    aux.RemoveAll(x => !x.Barrio.Contains(inmueble.Barrio));
-                    //aux.AddRange(inmuebles.Where(x => x.Barrio.ToUpperInvariant().Contains(inmueble.Barrio)).ToList());
-                }
+                //if (!string.IsNullOrEmpty(inmueble.Barrio))
+                //{
+                //    aux.RemoveAll(x => !x.Barrio.Contains(inmueble.Barrio));
+                //    //aux.AddRange(inmuebles.Where(x => x.Barrio.ToUpperInvariant().Contains(inmueble.Barrio)).ToList());
+                //}
                 if (numPrecioDesde.Value != 0)
                 {
                     aux.RemoveAll(x => Convert.ToDecimal(x.Precio, CultureInfo.CreateSpecificCulture("es-AR")) > numPrecioDesde.Value);

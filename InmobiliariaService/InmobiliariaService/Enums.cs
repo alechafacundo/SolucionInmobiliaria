@@ -30,4 +30,27 @@ namespace InmobiliariaService
         Peso = 1,
         Dolar = 0
     }
+
+    public enum eAmbientes
+    {
+        Sin_Especificar = 0,
+        Monoambiente = 1,
+        Dos_Ambiente = 2,
+        Tres_Ambientes = 3,
+        Cuatro_Ambientes = 4,
+        Cinco_O_Mas_Ambientes = 5
+    }
+
+    public enum eCochera
+    {
+        No = 0,
+        Si = 1
+    }
+
+    public enum eOrientacion
+    {
+        Frente = 0,
+        Contrafrente = 1,
+        Lateral = 2
+    }
 }

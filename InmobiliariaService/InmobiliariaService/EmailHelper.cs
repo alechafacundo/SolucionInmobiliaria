@@ -52,12 +52,12 @@ namespace InmobiliariaService
                         piso = inmueble.Piso;
                     if (!string.IsNullOrEmpty(inmueble.Departamento))
                         departamento = inmueble.Departamento;
-                    if (!string.IsNullOrEmpty(inmueble.Baños))
-                        baño = inmueble.Baños;
-                    if (!string.IsNullOrEmpty(inmueble.Dormitorios))
-                        dormitorio = inmueble.Dormitorios;
-                    if (!string.IsNullOrEmpty(inmueble.Comedor))
-                        comedor = inmueble.Comedor;
+                    //if (!string.IsNullOrEmpty(inmueble.Baños))
+                    //    baño = inmueble.Baños;
+                    //if (!string.IsNullOrEmpty(inmueble.Dormitorios))
+                    //    dormitorio = inmueble.Dormitorios;
+                    //if (!string.IsNullOrEmpty(inmueble.Comedor))
+                    //    comedor = inmueble.Comedor;
                     if (!string.IsNullOrEmpty(inmueble.SupCubierta))
                         supCubierta = inmueble.SupCubierta;
                     if (inmueble.Precio != null)

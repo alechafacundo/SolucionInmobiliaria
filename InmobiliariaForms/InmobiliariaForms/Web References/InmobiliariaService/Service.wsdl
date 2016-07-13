@@ -21,6 +21,9 @@
             <s:element minOccurs="1" maxOccurs="1" name="tipoOperacion" type="tns:eTipoOperacion" />
             <s:element minOccurs="1" maxOccurs="1" name="moneda" type="tns:eMoneda" />
             <s:element minOccurs="0" maxOccurs="1" name="vendedor" type="tns:Vendedor" />
+            <s:element minOccurs="1" maxOccurs="1" name="ambientes" type="tns:eAmbientes" />
+            <s:element minOccurs="1" maxOccurs="1" name="cochera" type="tns:eCochera" />
+            <s:element minOccurs="1" maxOccurs="1" name="orientacion" type="tns:eOrientacion" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -30,8 +33,12 @@
           <s:element minOccurs="1" maxOccurs="1" name="Fecha" nillable="true" type="s:dateTime" />
           <s:element minOccurs="1" maxOccurs="1" name="Operacion" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="Tipo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ambientes" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cochera" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Orientacion" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Antiguedad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comentarios" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Localidad" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Barrio" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Calle" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Numero" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Piso" type="s:string" />
@@ -42,18 +49,10 @@
           <s:element minOccurs="1" maxOccurs="1" name="Moneda" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="Precio" nillable="true" type="s:decimal" />
           <s:element minOccurs="0" maxOccurs="1" name="Observaciones" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Dormitorios" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Baños" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Comedor" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Cocina" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Garage" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Patio" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="OtrasDependencias" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="ValorMetro2" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="CargadoPor" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="Contacto" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Referencia" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Otros" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="Disponible" type="s:boolean" />
         </s:sequence>
       </s:complexType>
@@ -114,6 +113,29 @@
           <s:element minOccurs="0" maxOccurs="1" name="FullName" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:simpleType name="eAmbientes">
+        <s:restriction base="s:string">
+          <s:enumeration value="Sin_Especificar" />
+          <s:enumeration value="Monoambiente" />
+          <s:enumeration value="Dos_Ambiente" />
+          <s:enumeration value="Tres_Ambientes" />
+          <s:enumeration value="Cuatro_Ambientes" />
+          <s:enumeration value="Cinco_O_Mas_Ambientes" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="eCochera">
+        <s:restriction base="s:string">
+          <s:enumeration value="No" />
+          <s:enumeration value="Si" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="eOrientacion">
+        <s:restriction base="s:string">
+          <s:enumeration value="Frente" />
+          <s:enumeration value="Contrafrente" />
+          <s:enumeration value="Lateral" />
+        </s:restriction>
+      </s:simpleType>
       <s:element name="TestResponse">
         <s:complexType />
       </s:element>

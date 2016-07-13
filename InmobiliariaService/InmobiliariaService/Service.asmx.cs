@@ -23,7 +23,8 @@ namespace InmobiliariaService
 
         [WebMethod]
         public void Test(Inmueble inmueble, Interesado interesado, eTipoInmueble tipoInmueble,
-            eTipoOperacion tipoOperacion, eMoneda moneda, Vendedor vendedor)
+            eTipoOperacion tipoOperacion, eMoneda moneda, Vendedor vendedor, eAmbientes ambientes, eCochera cochera,
+            eOrientacion orientacion)
         {
 
         }

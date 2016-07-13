@@ -23,13 +23,7 @@ namespace InmobiliariaForms
             InitializeComponent();
         }
 
-        public void CreateMyMultilineTextBox()
-        {
-        
-            txObservaciones.Multiline = true;
-            txObservaciones.ScrollBars = ScrollBars.Vertical;
-     
-        }
+      
 
         private void btGuardar_Click(object sender, EventArgs e)
         {
@@ -56,27 +50,27 @@ namespace InmobiliariaForms
                     Inmueble.Fecha = dateTimeFecha.Value;
                     Inmueble.Localidad = txLocalidad.Text.ToUpperInvariant();
                     Inmueble.Calle = txCalle.Text.ToUpperInvariant();
-                    Inmueble.Barrio = txBarrio.Text.ToUpperInvariant();
+                    //Inmueble.Barrio = txBarrio.Text.ToUpperInvariant();
                     Inmueble.Numero = txNumero.Text.ToUpperInvariant();
                     Inmueble.Piso = txPiso.Text.ToUpperInvariant();
                     Inmueble.Departamento = txDepto.Text.ToUpperInvariant();
                     Inmueble.EntreCalles = txEntreCalles.Text.ToUpperInvariant();
                     Inmueble.Metros2Terreno = txMtsTerreno.Text.ToUpperInvariant();
                     Inmueble.SupCubierta = txSupCubierta.Text.ToUpperInvariant();
-                    Inmueble.ValorMetro2 = txValorMts.Text.ToUpperInvariant();
+                    //Inmueble.ValorMetro2 = txValorMts.Text.ToUpperInvariant();
                     Inmueble.Observaciones = txObservaciones.Text.ToUpperInvariant();
-                    Inmueble.Dormitorios = txDorm.Text.ToUpperInvariant();
-                    Inmueble.Patio = txPatio.Text.ToUpperInvariant();
-                    Inmueble.Baños = txBaño.Text.ToUpperInvariant();
-                    Inmueble.Garage = txGarage.Text.ToUpperInvariant();
-                    Inmueble.Comedor = txComedor.Text.ToUpperInvariant();
-                    Inmueble.OtrasDependencias = txOtras.Text.ToUpperInvariant();
+                    //Inmueble.Dormitorios = txDorm.Text.ToUpperInvariant();
+                    //Inmueble.Patio = txPatio.Text.ToUpperInvariant();
+                    //Inmueble.Baños = txBaño.Text.ToUpperInvariant();
+                    //Inmueble.Garage = txGarage.Text.ToUpperInvariant();
+                    //Inmueble.Comedor = txComedor.Text.ToUpperInvariant();
+                    //Inmueble.OtrasDependencias = txOtras.Text.ToUpperInvariant();
                     Inmueble.Contacto = txContacto.Text.ToUpperInvariant();
                     Inmueble.Referencia = txReferencia.Text.ToUpperInvariant();
                     Inmueble.Precio = numPrecio.Value;
                     Inmueble.CargadoPor = ((Vendedor)cbCargadoPor.SelectedItem).Id;
-                    Inmueble.Cocina = txCocina.Text.ToUpperInvariant();
-                    Inmueble.Otros = txOtras.Text.ToUpperInvariant();
+                    //Inmueble.Cocina = txCocina.Text.ToUpperInvariant();
+                    //Inmueble.Otros = txOtras.Text.ToUpperInvariant();
                     Inmueble.Disponible = checkDisponible.Checked;
 
                     //Ahora que ya tenes el inmueble guardado lo tenes que mandar al web service para que lo guarde en la base de datos:
@@ -186,6 +180,13 @@ namespace InmobiliariaForms
                 cbMoneda.DataSource = Enum.GetNames(typeof(eMoneda));
                 cbMoneda.SelectedItem = eMoneda.Peso;
                 
+                
+                cbAmbientes.DataSource = Enum.GetNames(typeof(eAmbientes));
+                cbAmbientes.SelectedItem = eAmbientes.Monoambiente;
+
+                cbCochera.DataSource = Enum.GetNames(typeof(eCochera));
+                cbCochera.SelectedItem = eCochera.No;
+                
                 //Esta lista la hago global para poder accederla
                 vendedores = ServiceHelper.ws.GetVendedores().ToList();
                 cbCargadoPor.DataSource = vendedores;
@@ -210,7 +211,7 @@ namespace InmobiliariaForms
 
                     dateTimeFecha.Value = Inmueble.Fecha != null ? Inmueble.Fecha.Value : DateTime.Now;
                     txLocalidad.Text = Inmueble.Localidad;
-                    txBarrio.Text = Inmueble.Barrio;
+                    //txBarrio.Text = Inmueble.Barrio;
                     txCalle.Text = Inmueble.Calle;
                     txNumero.Text = Inmueble.Numero;
                     txPiso.Text = Inmueble.Piso;
@@ -220,13 +221,13 @@ namespace InmobiliariaForms
                     cbMoneda.SelectedIndex = Inmueble.Moneda;
                     txMtsTerreno.Text = Inmueble.Metros2Terreno;
                     txSupCubierta.Text = Inmueble.SupCubierta;
-                    txValorMts.Text = Inmueble.ValorMetro2;
+                    //txValorMts.Text = Inmueble.ValorMetro2;
                     txObservaciones.Text = Inmueble.Observaciones;
-                    txDorm.Text = Inmueble.Dormitorios;
-                    txBaño.Text = Inmueble.Baños;
-                    txGarage.Text = Inmueble.Garage;
-                    txPatio.Text = Inmueble.Patio;
-                    txOtras.Text = Inmueble.OtrasDependencias;
+                    //txDorm.Text = Inmueble.Dormitorios;
+                    //txBaño.Text = Inmueble.Baños;
+                    //txGarage.Text = Inmueble.Garage;
+                    //txPatio.Text = Inmueble.Patio;
+                    //txOtras.Text = Inmueble.OtrasDependencias;
                     cbCargadoPor.SelectedValue = vendedores.Find(x => x.Id == Inmueble.CargadoPor).Id;
                     txContacto.Text = Inmueble.Contacto;
                     txReferencia.Text = Inmueble.Referencia;
@@ -449,5 +450,7 @@ namespace InmobiliariaForms
             //this.Close();
             frmFotos.Show();
         }
+
+       
     }
 }

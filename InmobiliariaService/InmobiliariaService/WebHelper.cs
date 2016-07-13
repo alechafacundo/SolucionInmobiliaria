@@ -58,7 +58,7 @@ namespace InmobiliariaService
                 observaciones += "Comentarios Internos: " + inmuebleWeb.comentarios_internos + Environment.NewLine;
                 inmueble.Observaciones = observaciones;
                 inmueble.Id = Convert.ToInt32(inmuebleWeb.id);
-                inmueble.Dormitorios = inmuebleWeb.ambientes;
+                //inmueble.Dormitorios = inmuebleWeb.ambientes;
                 inmueble.Calle = inmuebleWeb.direccion;
                 inmueble.Fecha = Convert.ToDateTime(inmuebleWeb.fecha);
                 inmueble.Tipo = Convert.ToInt32(inmuebleWeb.tipo_inmueble);

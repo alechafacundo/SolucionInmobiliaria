@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Prueba));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbInmueble1 = new System.Windows.Forms.PictureBox();
@@ -45,6 +46,9 @@
             this.pbCerrar2 = new System.Windows.Forms.PictureBox();
             this.pbRefresh1 = new System.Windows.Forms.PictureBox();
             this.pbRefresh2 = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbInmueble1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbInteresado1)).BeginInit();
@@ -126,6 +130,7 @@
             this.pbInmueble2.Size = new System.Drawing.Size(152, 40);
             this.pbInmueble2.TabIndex = 8;
             this.pbInmueble2.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbInmueble2, "Agregar o Buscar Inmueble");
             this.pbInmueble2.Visible = false;
             this.pbInmueble2.Click += new System.EventHandler(this.pbInmueble2_Click);
             this.pbInmueble2.MouseLeave += new System.EventHandler(this.pbInmueble2_MouseLeave);
@@ -139,6 +144,7 @@
             this.pbInteresado2.Size = new System.Drawing.Size(152, 40);
             this.pbInteresado2.TabIndex = 9;
             this.pbInteresado2.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbInteresado2, "Agreagar o Buscar Interesado");
             this.pbInteresado2.Visible = false;
             this.pbInteresado2.Click += new System.EventHandler(this.pbInteresado2_Click);
             this.pbInteresado2.MouseLeave += new System.EventHandler(this.pbInteresado2_MouseLeave);
@@ -152,6 +158,7 @@
             this.pbVendedor2.Size = new System.Drawing.Size(152, 40);
             this.pbVendedor2.TabIndex = 10;
             this.pbVendedor2.TabStop = false;
+            this.toolTip1.SetToolTip(this.pbVendedor2, "Agregar o Buscar Vendedor");
             this.pbVendedor2.Visible = false;
             this.pbVendedor2.Click += new System.EventHandler(this.pbVendedor2_Click);
             this.pbVendedor2.MouseLeave += new System.EventHandler(this.pbVendedor2_MouseLeave);
@@ -246,6 +253,26 @@
             this.pbRefresh2.Click += new System.EventHandler(this.pbRefresh2_Click);
             this.pbRefresh2.MouseLeave += new System.EventHandler(this.pbRefresh2_MouseLeave);
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(68, 19);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(39, 23);
+            this.textBox1.TabIndex = 22;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(108, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(108, 23);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Actualizar Dolar";
+            this.toolTip1.SetToolTip(this.button1, "Actualizar la cotizacion del Dolar");
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // Prueba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -254,6 +281,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(900, 716);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pbRefresh2);
             this.Controls.Add(this.pbRefresh1);
             this.Controls.Add(this.pbCerrar2);
@@ -293,6 +322,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbRefresh1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRefresh2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -314,5 +344,8 @@
         private System.Windows.Forms.PictureBox pbCerrar2;
         private System.Windows.Forms.PictureBox pbRefresh1;
         private System.Windows.Forms.PictureBox pbRefresh2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

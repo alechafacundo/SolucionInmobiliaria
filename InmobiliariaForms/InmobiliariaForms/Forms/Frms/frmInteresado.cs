@@ -61,7 +61,7 @@ namespace InmobiliariaForms
                                    select new Propiedad
                                    {
                                        Id = a.Id,
-                                       Dormitorios = a.Dormitorios,
+                                       //Dormitorios = a.Dormitorios,
                                        Precio = a.Precio != null ? ((decimal)a.Precio).ToString("#,##0") : "0",
                                        Disponible = a.Disponible,
                                        Observaciones = a.Observaciones,
@@ -69,7 +69,7 @@ namespace InmobiliariaForms
                                        MonedaPropiedad = ((eMoneda)a.Moneda).ToString(),
                                        OperacionPropiedad = ((eTipoOperacion)a.Operacion).ToString(),
                                        Localidad = a.Localidad,
-                                       Barrio = a.Barrio,
+                                       //Barrio = a.Barrio,
                                        Calle = a.Calle,
                                        Numero = a.Numero,
                                        Fecha = a.Fecha,
