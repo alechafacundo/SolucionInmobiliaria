@@ -54,6 +54,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Contacto" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Referencia" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="Disponible" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Estado" type="s:int" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="Interesado">
@@ -68,10 +69,9 @@
           <s:element minOccurs="1" maxOccurs="1" name="TipoDeMoneda" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="TipoDeOperacion" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="TipoDeInmueble" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="Dormitorios" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Observaciones" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="Disponible" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="AmbientesInteresado" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ambientes" type="s:int" />
         </s:sequence>
       </s:complexType>
       <s:simpleType name="eTipoInmueble">

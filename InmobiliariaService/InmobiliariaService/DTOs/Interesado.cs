@@ -17,9 +17,8 @@ namespace InmobiliariaService
         public int TipoDeMoneda { get; set; }
         public int TipoDeOperacion { get; set; }
         public int TipoDeInmueble { get; set; }
-        public string Dormitorios { get; set; }
         public string Observaciones { get; set; }
         public bool Disponible { get; set; }
-        public int AmbientesInteresado { get; set; }
+        public int Ambientes { get; set; }
     }
 }

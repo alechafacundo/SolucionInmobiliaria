@@ -51,10 +51,10 @@ namespace InmobiliariaForms
                          select new Persona
                          {
                              Id = a.Id,
-                             Ambientes = ((eAmbientes)a.AmbientesInteresado).ToString(),
+                             Ambientes = ((eAmbientes)a.Ambientes).ToString(),
                              Email = a.Email,
-                             MontoDesde = ((decimal)a.MontoDesde).ToString("#,##0"),
-                             MontoHasta = ((decimal)a.MontoHasta).ToString("#,##0"),
+                             MontoDesde = a.MontoDesde != null ? ((decimal)a.MontoDesde).ToString("#,##0") : "0",
+                             MontoHasta = a.MontoHasta != null ? ((decimal)a.MontoHasta).ToString("#,##0") : "0",
                              Nombre = a.Nombre,
                              Apellido = a.Apellido,
                              Disponible = a.Disponible,
@@ -248,6 +248,7 @@ namespace InmobiliariaForms
           
             DataGridView gvAux = new DataGridView();
             gvAux.Columns.Add("Nombre", "Nombre");
+            gvAux.Columns.Add("Apellido", "Apellido");
             gvAux.Columns.Add("TipoInmueble", "Tipo de Inmueble");
             gvAux.Columns.Add("TipoOperacion", "Tipo de Operación");
             gvAux.Columns.Add("TipoMoneda", "Moneda");
@@ -258,6 +259,7 @@ namespace InmobiliariaForms
             foreach (DataGridViewRow row in gvResultado.Rows)
             {
                     gvAux.Rows.Add(row.Cells["Nombre"].Value,
+                        row.Cells["Apellido"].Value,
                     row.Cells["TipoInmueble"].Value,
                     row.Cells["TipoOperacion"].Value,
                     row.Cells["TipoMoneda"].Value,

@@ -141,7 +141,7 @@ namespace InmobiliariaForms
 
                     eAmbientes ambientes;
                     Enum.TryParse<eAmbientes>(cbAmbientes.SelectedValue.ToString(), out ambientes);
-                    Interesado.AmbientesInteresado = (int)ambientes;
+                    Interesado.Ambientes = (int)ambientes;
 
                     eTipoInmueble tipoInmueble;
                     Enum.TryParse<eTipoInmueble>(cbTipoInmueble.SelectedValue.ToString(), out tipoInmueble);

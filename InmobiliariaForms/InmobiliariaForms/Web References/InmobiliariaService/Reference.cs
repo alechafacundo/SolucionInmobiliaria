@@ -858,6 +858,8 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         private bool disponibleField;
         
+        private int estadoField;
+        
         /// <remarks/>
         public int Id {
             get {
@@ -1099,6 +1101,16 @@ namespace InmobiliariaForms.InmobiliariaService {
                 this.disponibleField = value;
             }
         }
+        
+        /// <remarks/>
+        public int Estado {
+            get {
+                return this.estadoField;
+            }
+            set {
+                this.estadoField = value;
+            }
+        }
     }
     
     /// <remarks/>
@@ -1304,13 +1316,11 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         private int tipoDeInmuebleField;
         
-        private string dormitoriosField;
-        
         private string observacionesField;
         
         private bool disponibleField;
         
-        private int ambientesInteresadoField;
+        private int ambientesField;
         
         /// <remarks/>
         public int Id {
@@ -1415,16 +1425,6 @@ namespace InmobiliariaForms.InmobiliariaService {
         }
         
         /// <remarks/>
-        public string Dormitorios {
-            get {
-                return this.dormitoriosField;
-            }
-            set {
-                this.dormitoriosField = value;
-            }
-        }
-        
-        /// <remarks/>
         public string Observaciones {
             get {
                 return this.observacionesField;
@@ -1445,12 +1445,12 @@ namespace InmobiliariaForms.InmobiliariaService {
         }
         
         /// <remarks/>
-        public int AmbientesInteresado {
+        public int Ambientes {
             get {
-                return this.ambientesInteresadoField;
+                return this.ambientesField;
             }
             set {
-                this.ambientesInteresadoField = value;
+                this.ambientesField = value;
             }
         }
     }
