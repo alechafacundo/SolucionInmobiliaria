@@ -195,7 +195,7 @@ namespace InmobiliariaService
 
         [WebMethod]
         public void NotificarSobreInmueble(Interesado interesado, decimal cotizacion)
-                {
+        {
             if (!interesado.Disponible)
                 return;
 
@@ -219,7 +219,7 @@ namespace InmobiliariaService
             try
             {
                 List<Inmueble> inmuebles = InmuebleDAO.GetInmuebles();
-                NotificarSobreInteresado(inmuebles.Find(x => x.Numero == "234"));
+                NotificarSobreInteresado(inmuebles.Find(x => x.Numero == "234"), 15.0m);
             }
             catch (Exception)
             {
@@ -229,14 +229,14 @@ namespace InmobiliariaService
         }
 
         [WebMethod]
-        public void NotificarSobreInteresado(Inmueble inmueble)
+        public void NotificarSobreInteresado(Inmueble inmueble, decimal cotizacion)
         {
             if (!inmueble.Disponible)
                 return;
 
             try
             {
-                List<Interesado> interesados = InteresadoDAO.GetInteresadosParaInmueble(inmueble);
+                List<Interesado> interesados = InteresadoDAO.GetInteresadosParaInmueble(inmueble, cotizacion);
                 if (interesados.Count > 0)
                 {
                     EmailHelper.SendInteresadosInEmail(interesados, inmueble);

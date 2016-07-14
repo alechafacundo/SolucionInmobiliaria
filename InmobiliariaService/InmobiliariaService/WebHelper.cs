@@ -17,7 +17,7 @@ namespace InmobiliariaService
 
             WebClient syncClient = new WebClient();
             //syncClient.Headers.Add("application / json");
-            var contentString = syncClient.DownloadString("http://localhost/service/info.php");
+            var contentString = syncClient.DownloadString("http://www.moranvilla.com.ar/webservice");
             //var contentData = syncClient.DownloadData("http://localhost/service/info.php");
 
             // deserialize from json

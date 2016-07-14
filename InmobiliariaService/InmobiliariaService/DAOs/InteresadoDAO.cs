@@ -29,24 +29,31 @@ namespace InmobiliariaService
             }
         }
 
-        internal static List<Interesado> GetInteresadosParaInmueble(Inmueble inmueble)
+        internal static List<Interesado> GetInteresadosParaInmueble(Inmueble inmueble, decimal cotizacion)
         {
             try
             {
+                decimal montoPesos = (decimal)inmueble.Precio;
+
+                if (inmueble.Moneda == (int)eMoneda.Dolar)
+                {
+                    montoPesos *= cotizacion;
+                }
+
                 List<Interesado> interesados = new List<Interesado>();
 
                 string where = "1 = 1";
                 if (inmueble.Precio != null && inmueble.Precio != 0m)
                 {
-                    where += string.Format(" AND ((MontoDesde <= {0} AND MontoHasta >= {0}) OR (MontoDesde = 0 AND MontoHasta = 0))", inmueble.Precio);
+                    where += string.Format(" AND ((MontoDesde <= {0} AND MontoHasta >= {0}) OR (MontoDesde = 0 AND MontoHasta = 0))", montoPesos);
                 }
 
-                where += string.Format(" AND TipoDeMoneda = {0}", inmueble.Moneda);
+                //where += string.Format(" AND TipoDeMoneda = {0}", inmueble.Moneda);
 
-                if (inmueble.Tipo != (int)eTipoInmueble.Sin_Especificar)
-                {
-                    where += string.Format(" AND TipoDeInmueble = {0}", inmueble.Tipo);
-                }
+                //if (inmueble.Tipo != (int)eTipoInmueble.Sin_Especificar)
+                //{
+                //    where += string.Format(" AND TipoDeInmueble = {0}", inmueble.Tipo);
+                //}
 
                 if (inmueble.Operacion != (int)eTipoOperacion.Sin_Especificar)
                 {
