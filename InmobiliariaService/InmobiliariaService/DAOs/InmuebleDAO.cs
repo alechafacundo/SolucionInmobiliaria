@@ -70,17 +70,17 @@ namespace InmobiliariaService
                     //aux.RemoveAll(x => x.Precio < interesado.MontoDesde);
 
 
-                    aux.RemoveAll(x => ((x.Moneda == (int)eMoneda.Dolar) && ((x.Precio * cotizacion) > montoDesdePesos))
-                        || ((x.Moneda == (int)eMoneda.Peso) && (x.Precio > montoDesdePesos)));
+                    aux.RemoveAll(x => ((x.Moneda == (int)eMoneda.Dolar) && ((x.Precio * cotizacion) < montoDesdePesos))
+                        || ((x.Moneda == (int)eMoneda.Peso) && (x.Precio < montoDesdePesos)));
 
                 }
 
                 if (interesado.MontoHasta != null && interesado.MontoHasta != 0)
                 {
-                    aux.RemoveAll(x => x.Precio > interesado.MontoHasta.Value);
+                    //aux.RemoveAll(x => x.Precio > interesado.MontoHasta.Value);
 
-                    aux.RemoveAll(x => ((x.Moneda == (int)eMoneda.Dolar) && ((x.Precio * cotizacion) < montoHastaPesos))
-                    || ((x.Moneda == (int)eMoneda.Peso) && (x.Precio < montoHastaPesos)));
+                    aux.RemoveAll(x => ((x.Moneda == (int)eMoneda.Dolar) && ((x.Precio * cotizacion) > montoHastaPesos))
+                    || ((x.Moneda == (int)eMoneda.Peso) && (x.Precio > montoHastaPesos)));
                 }
 
                 return aux;

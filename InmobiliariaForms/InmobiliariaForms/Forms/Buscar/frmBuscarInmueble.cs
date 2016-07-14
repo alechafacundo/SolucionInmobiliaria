@@ -36,7 +36,7 @@ namespace InmobiliariaForms
             cbTipoOperacion.SelectedItem = eTipoOperacion.Sin_Especificar;
 
             cbMoneda.DataSource = Enum.GetNames(typeof(eMoneda));
-            cbMoneda.SelectedItem = eMoneda.Sin_Especificar;
+            cbMoneda.SelectedItem = eMoneda.Peso;
 
             cbAmbientes.DataSource = Enum.GetNames(typeof(eAmbientes));
             cbAmbientes.SelectedItem = eAmbientes.Sin_Especificar;

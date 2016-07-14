@@ -195,7 +195,7 @@ namespace InmobiliariaService
 
         [WebMethod]
         public void NotificarSobreInmueble(Interesado interesado, decimal cotizacion)
-        {
+                {
             if (!interesado.Disponible)
                 return;
 

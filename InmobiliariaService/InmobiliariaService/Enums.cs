@@ -28,7 +28,7 @@ namespace InmobiliariaService
     {
         Sin_Especificar = 0,
         Peso = 1,
-        Dolar = 0
+        Dolar = 2
     }
 
     public enum eAmbientes
