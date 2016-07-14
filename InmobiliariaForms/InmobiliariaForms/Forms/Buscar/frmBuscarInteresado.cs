@@ -110,6 +110,21 @@ namespace InmobiliariaForms
             if (!yaCargo)
                 return;
 
+            decimal precioDesdePesos = numDesde.Value;
+            decimal precioHastaPesos = numHasta.Value;
+
+            if (cbMoneda.SelectedValue != null)
+            {
+                eMoneda moneda;
+                Enum.TryParse<eMoneda>(cbMoneda.SelectedValue.ToString(), out moneda);
+
+                if (moneda != eMoneda.Dolar)
+                {
+                    precioDesdePesos *= ServiceHelper.ValorDolar;
+                    precioHastaPesos *= ServiceHelper.ValorDolar;
+                }
+            }
+
             try
             {
                 Interesado interesado = new Interesado();
@@ -165,18 +180,18 @@ namespace InmobiliariaForms
                     }
                 }
 
-                if (cbMoneda.SelectedValue != null)
-                {
-                    eMoneda moneda;
-                    Enum.TryParse<eMoneda>(cbMoneda.SelectedValue.ToString(), out moneda);
+                //if (cbMoneda.SelectedValue != null)
+                //{
+                //    eMoneda moneda;
+                //    Enum.TryParse<eMoneda>(cbMoneda.SelectedValue.ToString(), out moneda);
 
-                    if (moneda != eMoneda.Sin_Especificar)
-                    {
-                        aux.RemoveAll(x => x.TipoMoneda != moneda.ToString());
-                        //aux.AddRange(Interesados.Where(x => x.TipoDeMoneda != (int)moneda).ToList());
-                    }
+                //    if (moneda != eMoneda.Sin_Especificar)
+                //    {
+                //        aux.RemoveAll(x => x.TipoMoneda != moneda.ToString());
+                //        //aux.AddRange(Interesados.Where(x => x.TipoDeMoneda != (int)moneda).ToList());
+                //    }
 
-                }
+                //}
 
                 if (!string.IsNullOrEmpty(interesado.Apellido))
                 {
@@ -210,13 +225,14 @@ namespace InmobiliariaForms
 
                 if (numDesde.Value != 0)
                 {
-                    aux.RemoveAll(x => Convert.ToDecimal(x.MontoDesde, CultureInfo.CreateSpecificCulture("es-AR")) > numDesde.Value);
-                    //aux.AddRange(Interesados.Where(x => x.MontoDesde < numDesde.Value));
+                    //aux.RemoveAll(x => Convert.ToDecimal(x.MontoDesde, CultureInfo.CreateSpecificCulture("es-AR")) > numDesde.Value);
+                    aux.RemoveAll(x => Convert.ToDecimal(x.MontoDesde, CultureInfo.CreateSpecificCulture("es-AR")) > precioDesdePesos);
                 }
+
                 if (numHasta.Value != 0)
                 {
-                    aux.RemoveAll(x => Convert.ToDecimal(x.MontoHasta, CultureInfo.CreateSpecificCulture("es-AR")) < numHasta.Value);
-                    //aux.AddRange(Interesados.Where(x => x.MontoHasta > numHasta.Value));
+                    //aux.RemoveAll(x => Convert.ToDecimal(x.MontoHasta, CultureInfo.CreateSpecificCulture("es-AR")) < numHasta.Value);
+                    aux.RemoveAll(x => Convert.ToDecimal(x.MontoHasta, CultureInfo.CreateSpecificCulture("es-AR")) < precioHastaPesos);
                 }
 
                 gvResultado.DataSource = aux;

@@ -88,6 +88,21 @@ namespace InmobiliariaForms
             if (!yaCargo)
                 return;
 
+            decimal precioDesdePesos = numPrecioDesde.Value;
+            decimal precioHastaPesos = numPrecioHasta.Value;
+
+            if (cbMoneda.SelectedValue != null)
+            {
+                eMoneda moneda;
+                Enum.TryParse<eMoneda>(cbMoneda.SelectedValue.ToString(), out moneda);
+
+                if (moneda != eMoneda.Dolar)
+                {
+                    precioDesdePesos *= ServiceHelper.ValorDolar;
+                    precioHastaPesos *= ServiceHelper.ValorDolar;
+                }
+            }
+
             try
             {
                 Inmueble inmueble = new Inmueble();
@@ -95,8 +110,6 @@ namespace InmobiliariaForms
                 inmueble.Localidad = txLocalidad.Text.ToUpperInvariant();
                 inmueble.Calle = txCalle.Text.ToUpperInvariant();
                 inmueble.Disponible = chDisponible.Checked;
-
-
 
                 List<Propiedad> aux = new List<Propiedad>();
                 aux.AddRange(propiedades);
@@ -118,7 +131,7 @@ namespace InmobiliariaForms
                     }
                 }
 
-                if (cbAmbientes.SelectedValue!= null)
+                if (cbAmbientes.SelectedValue != null)
                 {
                     eAmbientes ambientes;
                     Enum.TryParse<eAmbientes>(cbAmbientes.SelectedValue.ToString(), out ambientes);
@@ -141,17 +154,17 @@ namespace InmobiliariaForms
                     }
                 }
 
-                if (cbMoneda.SelectedValue != null)
-                {
-                    eMoneda moneda;
-                    Enum.TryParse<eMoneda>(cbMoneda.SelectedValue.ToString(), out moneda);
+                //if (cbMoneda.SelectedValue != null)
+                //{
+                //    eMoneda moneda;
+                //    Enum.TryParse<eMoneda>(cbMoneda.SelectedValue.ToString(), out moneda);
 
-                    if (moneda != eMoneda.Sin_Especificar)
-                    {
-                        aux.RemoveAll(x => x.MonedaPropiedad != moneda.ToString());
-                    }
+                //    if (moneda != eMoneda.Sin_Especificar)
+                //    {
+                //        aux.RemoveAll(x => x.MonedaPropiedad != moneda.ToString());
+                //    }
 
-                }
+                //}
 
                 if (!string.IsNullOrEmpty(inmueble.Calle))
                 {
@@ -168,14 +181,18 @@ namespace InmobiliariaForms
                
                 if (numPrecioDesde.Value != 0)
                 {
-                    aux.RemoveAll(x => Convert.ToDecimal(x.Precio, CultureInfo.CreateSpecificCulture("es-AR")) > numPrecioDesde.Value);
-                    
+                    //aux.RemoveAll(x => Convert.ToDecimal(x.Precio, CultureInfo.CreateSpecificCulture("es-AR")) > numPrecioDesde.Value);
+
+                    aux.RemoveAll(x => ((x.MonedaPropiedad == "Dolar" && ((Convert.ToDecimal(x.Precio, CultureInfo.CreateSpecificCulture("es-AR")) * ServiceHelper.ValorDolar) < precioDesdePesos))
+                    || (x.MonedaPropiedad == "Peso" && Convert.ToDecimal(x.Precio, CultureInfo.CreateSpecificCulture("es-AR")) < precioDesdePesos)));
                 }
 
                 if (numPrecioHasta.Value != 0)
                 {
-                    aux.RemoveAll(x => Convert.ToDecimal(x.Precio, CultureInfo.CreateSpecificCulture("es-AR")) > numPrecioHasta.Value);
-                    
+                    //aux.RemoveAll(x => Convert.ToDecimal(x.Precio, CultureInfo.CreateSpecificCulture("es-AR")) > numPrecioHasta.Value);
+
+                    aux.RemoveAll(x => ((x.MonedaPropiedad == "Dolar" && ((Convert.ToDecimal(x.Precio, CultureInfo.CreateSpecificCulture("es-AR")) * ServiceHelper.ValorDolar) > precioHastaPesos))
+                    || (x.MonedaPropiedad == "Peso" && Convert.ToDecimal(x.Precio, CultureInfo.CreateSpecificCulture("es-AR")) > precioHastaPesos)));
                 }
 
                 gvResultado.DataSource = aux;

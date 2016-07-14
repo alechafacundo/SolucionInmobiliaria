@@ -198,8 +198,8 @@ namespace InmobiliariaForms
 
         private void pbRefresh2_Click(object sender, EventArgs e)
         {
-            
-            ServiceHelper.ws.HelloWorld();
+            ServiceHelper.ws.GetInmueblesWeb();
+            //ServiceHelper.ws.HelloWorld();
         }
 
         private void btActualizarDolar_Click(object sender, EventArgs e)

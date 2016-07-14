@@ -96,6 +96,15 @@ namespace InmobiliariaForms
 
         private void FillGridView()
         {
+            decimal precioDesdePesos = Interesado.MontoDesde.Value;
+            decimal precioHastaPesos = Interesado.MontoHasta.Value;
+
+            if (Interesado.TipoDeMoneda == (int)eMoneda.Dolar)
+            {
+                precioDesdePesos *= ServiceHelper.ValorDolar;
+                precioHastaPesos *= ServiceHelper.ValorDolar;
+            }
+
             lbInmuebles.Visible = true;
             gvInmueblesParaInteresado.Visible = true;
 
@@ -116,14 +125,14 @@ namespace InmobiliariaForms
 
             if (Interesado.MontoDesde != null && Interesado.MontoDesde != 0)
             {
-                aux.RemoveAll(x => Convert.ToDecimal(x.Precio) < Interesado.MontoDesde);
-                //aux = aux.Where(x => x.Precio <= numPrecioHasta.Value).ToList();
+                //aux.RemoveAll(x => Convert.ToDecimal(x.Precio) < Interesado.MontoDesde);
+                aux.RemoveAll(x => Convert.ToDecimal(x.Precio) < precioDesdePesos);
             }
 
             if (Interesado.MontoHasta != null && Interesado.MontoHasta != 0)
             {
-                aux.RemoveAll(x => Convert.ToDecimal(x.Precio) > Interesado.MontoHasta.Value);
-                //aux = aux.Where(x => x.Precio >= numPrecioDesde.Value).ToList();
+                aux.RemoveAll(x => Convert.ToDecimal(x.Precio) > precioHastaPesos);
+                //aux.RemoveAll(x => Convert.ToDecimal(x.Precio) > Interesado.MontoHasta.Value);
             }
 
             gvInmueblesParaInteresado.DataSource = aux;
