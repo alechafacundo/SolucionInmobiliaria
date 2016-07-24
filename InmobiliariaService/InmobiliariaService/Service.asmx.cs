@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.Hosting;
 using System.Web.Services;
+using System.Xml;
 
 namespace InmobiliariaService
 {
@@ -305,6 +308,38 @@ namespace InmobiliariaService
             {
                 throw ex;
             }
+        }
+
+        [WebMethod]
+        public decimal GetDolar()
+        {
+            try
+            {
+                string xmlName = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "Settings.xml");
+
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.Load(xmlName);
+                string valorDolar = xmlDoc.SelectSingleNode("dolar").InnerText;
+
+                return Convert.ToDecimal(valorDolar);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        [WebMethod]
+        public void SetDolar(decimal dolar)
+        {
+            string xmlName = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "Settings.xml");
+
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load(xmlName);
+            XmlNode valorDolar = xmlDoc.SelectSingleNode("dolar");
+            valorDolar.FirstChild.Value = dolar.ToString();
+
+            xmlDoc.Save(xmlName);
         }
     }
 
