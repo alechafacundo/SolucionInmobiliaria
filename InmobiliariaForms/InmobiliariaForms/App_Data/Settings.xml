@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Settings>
   <url>http://fabricio-001-site1.mywindowshosting.com/InmobiliariaService/Service.asmx</url>
+  <!--<url>http://localhost:51592/Service.asmx</url>-->
 </Settings>
 

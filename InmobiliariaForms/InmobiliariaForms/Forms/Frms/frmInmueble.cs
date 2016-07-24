@@ -87,7 +87,7 @@ namespace InmobiliariaForms
 
                     try
                     {
-                        ServiceHelper.ws.NotificarSobreInteresadoAsync(Inmueble);
+                        ServiceHelper.ws.NotificarSobreInteresadoAsync(Inmueble, ServiceHelper.ValorDolar);
                     }
                     catch (Exception)
                     {

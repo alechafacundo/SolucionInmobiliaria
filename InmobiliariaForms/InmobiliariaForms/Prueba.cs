@@ -42,7 +42,7 @@ namespace InmobiliariaForms
                         return;
 
                     this.Vendedor = f.Vendedor;
-
+                    txCotizacion.Text = ServiceHelper.ValorDolar.ToString("#.##");
                 }
                 else
                 {
@@ -204,6 +204,7 @@ namespace InmobiliariaForms
 
         private void btActualizarDolar_Click(object sender, EventArgs e)
         {
+            ServiceHelper.ws.SetDolar(Convert.ToDecimal(txCotizacion.Text));
             ServiceHelper.ValorDolar = Convert.ToDecimal(txCotizacion.Text);
         }
     }

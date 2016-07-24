@@ -19,8 +19,11 @@ namespace InmobiliariaForms
                 XmlDocument xmlDoc = new XmlDocument();
                 xmlDoc.Load("App_Data/Settings.xml");
                 ws.Url = xmlDoc.SelectSingleNode("Settings/url").InnerText;
+
+                ValorDolar = ws.GetDolar();
+                //ws.SetDolar(15.2m);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw;
             }
