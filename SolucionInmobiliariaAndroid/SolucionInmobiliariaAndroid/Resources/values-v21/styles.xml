@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+  <!-- Inherit from the light Material Theme -->
+  <style name="MyCustomTheme" parent="android:Theme.Material.Light">
+    <item name="android:fontFamily">sans-serif-medium</item>
+    <!-- Override the app bar color -->
+    <item name="android:colorPrimary">@color/my_yellow</item>
+    <!-- Override the color of UI controls -->
+    <item name="android:colorAccent">@color/my_yellow</item>
+    <!--<item name="android:navigationBarColor">@color/my_yellow</item>-->
+  </style>
+</resources>
