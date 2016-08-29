@@ -14,7 +14,8 @@ namespace InmobiliariaService
         Local = 5,
         FondoDeComercio = 6,
         Oficina = 7,
-        Galpon = 8
+        Galpon = 8,
+        Pozo = 9
 	}
 
     public enum eTipoOperacion

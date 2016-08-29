@@ -84,6 +84,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.cbAmbientes = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
+            this.btPublicarWeb = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.g.SuspendLayout();
@@ -698,13 +699,26 @@
             this.label17.TabIndex = 32;
             this.label17.Text = "Ambientes:";
             // 
+            // btPublicarWeb
+            // 
+            this.btPublicarWeb.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btPublicarWeb.Enabled = false;
+            this.btPublicarWeb.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPublicarWeb.Location = new System.Drawing.Point(354, 461);
+            this.btPublicarWeb.Name = "btPublicarWeb";
+            this.btPublicarWeb.Size = new System.Drawing.Size(265, 29);
+            this.btPublicarWeb.TabIndex = 29;
+            this.btPublicarWeb.Text = "Publicar Inmueble En la Web";
+            this.btPublicarWeb.UseVisualStyleBackColor = false;
+            // 
             // frmInmueble
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(626, 456);
+            this.ClientSize = new System.Drawing.Size(626, 502);
+            this.Controls.Add(this.btPublicarWeb);
             this.Controls.Add(this.btVerFotos);
             this.Controls.Add(this.btGuardarFotos);
             this.Controls.Add(this.btGuardar);
@@ -783,5 +797,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox cbAmbientes;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button btPublicarWeb;
     }
 }

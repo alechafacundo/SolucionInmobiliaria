@@ -341,6 +341,12 @@ namespace InmobiliariaService
 
             xmlDoc.Save(xmlName);
         }
+
+        [WebMethod]
+        public bool SubirInmuebleWeb(int inmuebleId)
+        {
+            return true;
+        }
     }
 
 }

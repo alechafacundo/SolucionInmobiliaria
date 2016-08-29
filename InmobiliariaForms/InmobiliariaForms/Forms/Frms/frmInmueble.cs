@@ -23,7 +23,7 @@ namespace InmobiliariaForms
             InitializeComponent();
         }
 
-      
+
 
         private void btGuardar_Click(object sender, EventArgs e)
         {
@@ -43,7 +43,7 @@ namespace InmobiliariaForms
                     eUbicacion ubicacion;
                     Enum.TryParse<eUbicacion>(cbUbicacion.SelectedValue.ToString(), out ubicacion);
                     Inmueble.Ubicacion = ubicacion.ToString();
-                    
+
                     eTipoOperacion tipoOperacion;
                     Enum.TryParse<eTipoOperacion>(cbTipoOperacion.SelectedValue.ToString(), out tipoOperacion);
                     Inmueble.Operacion = (int)tipoOperacion;
@@ -81,6 +81,7 @@ namespace InmobiliariaForms
                     
 
                     int inmuebleId = ServiceHelper.ws.GuardarInmueble(Inmueble);
+
                     
                     Inmueble.Id = inmuebleId;
                     MessageBox.Show("Inmueble guardado correctamente. Puede Agregar Fotos ahora si lo desea!");
@@ -121,7 +122,7 @@ namespace InmobiliariaForms
                 EmailHelper.EnviarNotificacion(ex);
                 throw ex;
             }
-            
+
         }
 
         private string ValidarCamposObligatorios()
@@ -138,10 +139,10 @@ namespace InmobiliariaForms
                         return "Seleccione un tipo de Inmueble por favor";
                     }
                 }
-                                
+
                 if (cbCargadoPor.SelectedItem == null)
                     return "Seleccione un Vendedor por favor";
-                
+
                 if (cbMoneda.SelectedItem != null)
                 {
                     eMoneda tipoMoneda;
@@ -152,7 +153,7 @@ namespace InmobiliariaForms
                         return "Seleccione un tipo de Moneda por favor";
                     }
                 }
-                   
+
                 if (cbTipoOperacion.SelectedItem != null)
                 {
                     eTipoOperacion tipoOperacion;
@@ -171,7 +172,7 @@ namespace InmobiliariaForms
                 throw;
             }
         }
-        
+
         private void frmInmueble_Load(object sender, EventArgs e)
         {
             try
@@ -184,7 +185,7 @@ namespace InmobiliariaForms
 
                 cbMoneda.DataSource = Enum.GetNames(typeof(eMoneda));
                 cbMoneda.SelectedItem = eMoneda.Peso;
-                                
+
                 cbAmbientes.DataSource = Enum.GetNames(typeof(eAmbientes));
                 cbAmbientes.SelectedItem = eAmbientes.Monoambiente;
 
@@ -195,9 +196,9 @@ namespace InmobiliariaForms
                 cbUbicacion.SelectedItem = eUbicacion.Sin_Especificar;
 
                 cbEstado.DataSource = Enum.GetNames(typeof(eEstado));
-                cbEstado.SelectedItem = eEstado.Sin_Especificar; 
-                
-              
+                cbEstado.SelectedItem = eEstado.Sin_Especificar;
+
+
                 vendedores = ServiceHelper.ws.GetVendedores().ToList();
                 cbCargadoPor.DataSource = vendedores;
                 cbCargadoPor.DisplayMember = "FullName";
@@ -212,6 +213,7 @@ namespace InmobiliariaForms
 
                 if (Inmueble != null)
                 {
+                    btPublicarWeb.Enabled = true;
                     btGuardarFotos.Enabled = true;
                     btVerFotos.Enabled = true;
 
@@ -456,6 +458,31 @@ namespace InmobiliariaForms
             frmFotos.Show();
         }
 
-       
+        private void btPublicarWeb_Click(object sender, EventArgs e)
+        {
+            List<Foto> fotos = ServiceHelper.ws.GetFotosDelInmueble(Inmueble.Id).ToList();  
+            if (fotos.Count > 0)
+            {
+                MessageBox.Show("Debe Guardar las Fotos antes de publicar el Inmueble en la Web");
+                
+            }
+            else
+            {
+                
+                if (Inmueble.Webid != null && Inmueble.Webid != 0)
+                {
+                    MessageBox.Show("Este Inmueble ya esta en la Web");
+                   
+                }
+                else
+                {
+                    ServiceHelper.ws.SubirInmuebleWeb(Inmueble.Id);
+                    MessageBox.Show("El inmueble fue Publicado Correctamente en la Web");
+                }
+
+            }
+
+    }
+
     }
 }

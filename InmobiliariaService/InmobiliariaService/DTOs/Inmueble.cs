@@ -31,5 +31,6 @@ namespace InmobiliariaService
         public string Referencia { get; set; }
         public bool Disponible { get; set; }
         public int Estado { get; set; }
+        public int Webid { get; set; }
     }
 }

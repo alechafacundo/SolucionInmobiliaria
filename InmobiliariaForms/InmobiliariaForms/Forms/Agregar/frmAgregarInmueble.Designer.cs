@@ -92,7 +92,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(632, 450);
+            this.ClientSize = new System.Drawing.Size(700, 450);
             this.Controls.Add(this.pbBuscarInmueble2);
             this.Controls.Add(this.pbBuscarInmueble1);
             this.Controls.Add(this.pbAgregarInmueble2);
