@@ -543,7 +543,7 @@
             this.checkDisponible.Font = new System.Drawing.Font("Roboto", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkDisponible.Location = new System.Drawing.Point(8, 172);
             this.checkDisponible.Name = "checkDisponible";
-            this.checkDisponible.Size = new System.Drawing.Size(86, 19);
+            this.checkDisponible.Size = new System.Drawing.Size(96, 19);
             this.checkDisponible.TabIndex = 17;
             this.checkDisponible.Text = "Disponible";
             this.checkDisponible.UseVisualStyleBackColor = true;
@@ -710,6 +710,7 @@
             this.btPublicarWeb.TabIndex = 29;
             this.btPublicarWeb.Text = "Publicar Inmueble En la Web";
             this.btPublicarWeb.UseVisualStyleBackColor = false;
+            this.btPublicarWeb.Click += new System.EventHandler(this.btPublicarWeb_Click);
             // 
             // frmInmueble
             // 

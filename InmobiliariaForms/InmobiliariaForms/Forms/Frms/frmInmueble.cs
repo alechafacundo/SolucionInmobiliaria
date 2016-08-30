@@ -458,21 +458,21 @@ namespace InmobiliariaForms
             frmFotos.Show();
         }
 
+
         private void btPublicarWeb_Click(object sender, EventArgs e)
         {
-            List<Foto> fotos = ServiceHelper.ws.GetFotosDelInmueble(Inmueble.Id).ToList();  
-            if (fotos.Count > 0)
+            List<Foto> fotos = ServiceHelper.ws.GetFotosDelInmueble(Inmueble.Id).ToList();
+            if (fotos.Count == 0)
             {
-                MessageBox.Show("Debe Guardar las Fotos antes de publicar el Inmueble en la Web");
-                
+                MessageBox.Show("Debe Guardar Fotos antes de publicar el Inmueble en la Web");
             }
             else
             {
-                
+
                 if (Inmueble.Webid != null && Inmueble.Webid != 0)
                 {
                     MessageBox.Show("Este Inmueble ya esta en la Web");
-                   
+
                 }
                 else
                 {
@@ -481,8 +481,6 @@ namespace InmobiliariaForms
                 }
 
             }
-
-    }
-
+        }
     }
 }

@@ -49,6 +49,7 @@ namespace InmobiliariaForms
                     cbMoneda.SelectedIndex = (int)Interesado.TipoDeMoneda;
                     cbTipoInmueble.SelectedIndex = (int)Interesado.TipoDeInmueble;
                     cbTipoOperacion.SelectedIndex = (int)Interesado.TipoDeOperacion;
+                    cbAmbientes.SelectedIndex = (int)Interesado.Ambientes;
                     numHasta.Value = Interesado.MontoHasta != null ? (decimal)Interesado.MontoHasta : 0;
                     txObservaciones.Text = Interesado.Observaciones;
                     checkDisponible.Checked = Interesado.Disponible;
