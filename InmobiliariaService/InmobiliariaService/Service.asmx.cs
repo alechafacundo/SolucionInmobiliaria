@@ -202,6 +202,9 @@ namespace InmobiliariaService
             if (!interesado.Disponible)
                 return;
 
+            if (cotizacion == 0)
+                cotizacion = GetDolar();
+
             try
             {
                 List<Inmueble> inmuebles = InmuebleDAO.GetInmueblesParaInteresado(interesado, cotizacion);
@@ -236,6 +239,9 @@ namespace InmobiliariaService
         {
             if (!inmueble.Disponible)
                 return;
+
+            if (cotizacion == 0)
+                cotizacion = GetDolar();
 
             try
             {
@@ -345,8 +351,37 @@ namespace InmobiliariaService
         [WebMethod]
         public bool SubirInmuebleWeb(int inmuebleId)
         {
+            try
+            {
+                WebHelper helper = new WebHelper();
+                List<Inmueble> inmuebles = InmuebleDAO.GetInmuebles();
+                Inmueble inmueble = inmuebles.Find(x => x.Id == inmuebleId);
+                int webId = helper.InsertInmueble(inmueble);
+
+                inmueble.WebId = webId;
+                InmuebleDAO.GuardarInmueble(inmueble);
+
+                List<Foto> fotos = FotoDAO.GetFotosDelInmueble(inmueble.Id);
+                foreach (Foto foto in fotos)
+                {
+                    helper.InsertFoto(foto, inmueble.WebId);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
             return true;
         }
+
+        [WebMethod]
+        public void Test2()
+        {
+            WebHelper wh = new WebHelper();
+            //wh.InsertFoto();
+        }
+
     }
 
 }
