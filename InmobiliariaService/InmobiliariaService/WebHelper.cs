@@ -70,15 +70,53 @@ namespace InmobiliariaService
                 string url = "http://www.moranvilla.com.ar/web/insertFormFoto";
                 using (WebClient client = new WebClient())
                 {
+                    string id = Guid.NewGuid().ToString();
+                    //Imagen original
                     var values = new NameValueCollection();
                     values["foto"] = Convert.ToBase64String(foto.Imagen, Base64FormattingOptions.None);
-                    values["filename"] = Guid.NewGuid().ToString() + ".jpg";
+                    values["filename"] = id + ".jpg";
                     values["inmueble"] = webId.ToString();
+                    values["nuevo"] = "si";
 
                     var result = client.UploadValues(url, values);
 
                     string hola = Encoding.UTF8.GetString(result);
 
+                    values = new NameValueCollection();
+
+                    //Imagen f75
+                    Image image75 = ResizeImage(foto.Imagen, 44, 75, true);
+                    byte[] img75;
+                    using (var ms = new MemoryStream())
+                    {
+                        image75.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                        img75 = ms.ToArray();
+                    }
+                    values["foto"] = Convert.ToBase64String(img75, Base64FormattingOptions.None);
+                    values["filename"] = id + "_h75.jpg";
+                    values["inmueble"] = webId.ToString();
+                    values["nuevo"] = "no";
+
+                    result = client.UploadValues(url, values);
+
+                    hola = Encoding.UTF8.GetString(result);
+
+                    //Imagen w280 
+                    Image image280 = ResizeImage(foto.Imagen, 257, 430, false);
+                    byte[] img280;
+                    using (var ms = new MemoryStream())
+                    {
+                        image280.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                        img280 = ms.ToArray();
+                    }
+                    values["foto"] = Convert.ToBase64String(img280, Base64FormattingOptions.None);
+                    values["filename"] = id + "_w280.jpg";
+                    values["inmueble"] = webId.ToString();
+                    values["nuevo"] = "no";
+
+                    result = client.UploadValues(url, values);
+
+                    hola = Encoding.UTF8.GetString(result);
                 }
             }
             catch (Exception)
@@ -88,42 +126,42 @@ namespace InmobiliariaService
             
         }
 
-        //internal static Image ResizeImage(byte[] orginalbytes, int NewWidth, int MaxHeight, bool OnlyResizeIfWider)
-        //{
-        //    Image originalImage;
+        internal static Image ResizeImage(byte[] orginalbytes, int NewWidth, int MaxHeight, bool OnlyResizeIfWider)
+        {
+            Image originalImage;
 
-        //    using (var ms = new MemoryStream(orginalbytes))
-        //    {
-        //        originalImage = Image.FromStream(ms);
-        //    }
+            using (var ms = new MemoryStream(orginalbytes))
+            {
+                originalImage = Image.FromStream(ms);
+            }
 
-        //    // Prevent using images internal thumbnail
-        //    originalImage.RotateFlip(System.Drawing.RotateFlipType.Rotate180FlipNone);
-        //    originalImage.RotateFlip(System.Drawing.RotateFlipType.Rotate180FlipNone);
+            // Prevent using images internal thumbnail
+            originalImage.RotateFlip(System.Drawing.RotateFlipType.Rotate180FlipNone);
+            originalImage.RotateFlip(System.Drawing.RotateFlipType.Rotate180FlipNone);
 
-        //    if (OnlyResizeIfWider)
-        //    {
-        //        if (originalImage.Width <= NewWidth)
-        //        {
-        //            NewWidth = originalImage.Width;
-        //        }
-        //    }
+            //if (OnlyResizeIfWider)
+            //{
+            //    if (originalImage.Width <= NewWidth)
+            //    {
+            //        NewWidth = originalImage.Width;
+            //    }
+            //}
 
-        //    int NewHeight = originalImage.Height * NewWidth / originalImage.Width;
-        //    if (NewHeight > MaxHeight)
-        //    {
-        //        // Resize with height instead
-        //        NewWidth = originalImage.Width * MaxHeight / originalImage.Height;
-        //        NewHeight = MaxHeight;
-        //    }
+            //int NewHeight = originalImage.Height * NewWidth / originalImage.Width;
+            //if (NewHeight > MaxHeight)
+            //{
+            //    // Resize with height instead
+            //    NewWidth = originalImage.Width * MaxHeight / originalImage.Height;
+            //    NewHeight = MaxHeight;
+            //}
 
-        //    System.Drawing.Image NewImage = originalImage.GetThumbnailImage(NewWidth, NewHeight, null, IntPtr.Zero);
+            System.Drawing.Image NewImage = originalImage.GetThumbnailImage(NewWidth, MaxHeight, null, IntPtr.Zero);
 
-        //    // Clear handle to original file so that we can overwrite it if necessary
-        //    originalImage.Dispose();
+            // Clear handle to original file so that we can overwrite it if necessary
+            originalImage.Dispose();
 
-        //    return NewImage;
-        //}
+            return NewImage;
+        }
 
 
         public void GetInmueblesWeb()
