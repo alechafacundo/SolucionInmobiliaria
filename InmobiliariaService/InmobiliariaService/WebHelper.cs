@@ -16,7 +16,7 @@ namespace InmobiliariaService
     {
         public int InsertInmueble(Inmueble inmueble)
         {
-            int inmuebleId = 0;
+            int webId = 0;
 
             string url = "http://www.moranvilla.com.ar/web/insertFormInmueble";
             using (WebClient client = new WebClient())
@@ -53,48 +53,14 @@ namespace InmobiliariaService
                 //ese id lo encodeo a un string
                 string resultado = Encoding.UTF8.GetString(result).ToString().Trim();
 
-                char[] r = Encoding.UTF8.GetChars(result);
-                string a = Encoding.ASCII.GetString(result);
-                string b = Encoding.Default.GetString(result);
-                string c = Encoding.Unicode.GetString(result);
 
-                for (int i = 0; i < r.Length; i++)
-                {
-                    int num2;
-                    if (int.TryParse(r[i].ToString(), out num2))
-                    {
-                        // It was assigned.
-                    }
-
-                    num2 = Convert.ToInt32(r[i]);
-                }
-
-                int num3;
-                if (int.TryParse(resultado, out num3))
-                {
-                    // It was assigned.
-                }
-                if (int.TryParse(a, out num3))
-                {
-                    // It was assigned.
-                }
-                if (int.TryParse(b, out num3))
-                {
-                    // It was assigned.
-                }
-                if (int.TryParse(c, out num3))
-                {
-                    // It was assigned.
-                }
-
-
-                Int32.TryParse(resultado.Trim(), System.Globalization.NumberStyles.Number, System.Globalization.CultureInfo.InvariantCulture, out inmuebleId);
-
-                inmuebleId = Convert.ToInt32(Convert.ToInt64(resultado));
+                char ch = (char)65279;
+                string resultado2 = resultado.Trim(ch);
+                webId = Convert.ToInt32(resultado2);
+                
             }
 
-            return inmuebleId;
-
+            return webId;
         }
 
         public void InsertFoto(Foto foto, int webId)
@@ -115,13 +81,9 @@ namespace InmobiliariaService
 
                 }
             }
-            catch (WebException wex)
+            catch (Exception)
             {
-                string pageContent = new StreamReader(wex.Response.GetResponseStream()).ReadToEnd().ToString();
-                //return pageContent;
-            }
-            catch (Exception ex)
-            {
+                throw;
             }
             
         }
