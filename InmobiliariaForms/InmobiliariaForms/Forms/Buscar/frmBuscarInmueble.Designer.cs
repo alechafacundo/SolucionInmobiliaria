@@ -68,6 +68,7 @@
             this.gvResultado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvResultado.Size = new System.Drawing.Size(626, 206);
             this.gvResultado.TabIndex = 5;
+            this.gvResultado.DoubleClick += new System.EventHandler(this.btMasDetalles_Click);
             // 
             // g
             // 

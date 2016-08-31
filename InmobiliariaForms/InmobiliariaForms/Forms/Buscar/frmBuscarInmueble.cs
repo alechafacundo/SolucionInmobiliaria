@@ -96,7 +96,7 @@ namespace InmobiliariaForms
                 eMoneda moneda;
                 Enum.TryParse<eMoneda>(cbMoneda.SelectedValue.ToString(), out moneda);
 
-                if (moneda != eMoneda.Dolar)
+                if (moneda == eMoneda.Dolar)
                 {
                     precioDesdePesos *= ServiceHelper.ValorDolar;
                     precioHastaPesos *= ServiceHelper.ValorDolar;

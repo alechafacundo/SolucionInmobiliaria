@@ -52,13 +52,17 @@ namespace InmobiliariaForms
                     Enum.TryParse<eMoneda>(cbMoneda.SelectedValue.ToString(), out tipoMoneda);
                     Inmueble.Moneda = (int)tipoMoneda;
 
-                    //eEstado estado;
-                    //Enum.TryParse<eEstado>(cbEstado.SelectedValue.ToString(), out estado);
-                    //Inmueble.Estado = (int)estado;
+                    eEstado estado;
+                    Enum.TryParse<eEstado>(cbEstado.SelectedValue.ToString(), out estado);
+                    Inmueble.Estado = (int)estado;
 
-                    //eCochera cochera;
-                    //Enum.TryParse<eCochera>(cbCochera.SelectedValue.ToString(), out cochera);
-                    //Inmueble.Cochera = cochera.
+                    eCochera cochera;
+                    Enum.TryParse<eCochera>(cbCochera.SelectedValue.ToString(), out cochera);
+                    Inmueble.Cochera = (int)cochera == 0 ? false : true;
+
+                    eAmbientes ambiente;
+                    Enum.TryParse<eAmbientes>(cbAmbientes.SelectedValue.ToString(), out ambiente);
+                    Inmueble.Ambientes = (int)ambiente;
 
                     Inmueble.Fecha = dateTimeFecha.Value;
                     Inmueble.Localidad = txLocalidad.Text.ToUpperInvariant();
@@ -187,7 +191,7 @@ namespace InmobiliariaForms
                 cbMoneda.SelectedItem = eMoneda.Peso;
 
                 cbAmbientes.DataSource = Enum.GetNames(typeof(eAmbientes));
-                cbAmbientes.SelectedItem = eAmbientes.Monoambiente;
+                cbAmbientes.SelectedItem = eAmbientes.Sin_Especificar;
 
                 cbCochera.DataSource = Enum.GetNames(typeof(eCochera));
                 cbCochera.SelectedItem = eCochera.No;
@@ -197,7 +201,6 @@ namespace InmobiliariaForms
 
                 cbEstado.DataSource = Enum.GetNames(typeof(eEstado));
                 cbEstado.SelectedItem = eEstado.Sin_Especificar;
-
 
                 vendedores = ServiceHelper.ws.GetVendedores().ToList();
                 cbCargadoPor.DataSource = vendedores;
@@ -239,6 +242,10 @@ namespace InmobiliariaForms
                     txContacto.Text = Inmueble.Contacto;
                     txReferencia.Text = Inmueble.Referencia;
                     checkDisponible.Checked = Inmueble.Disponible;
+                    cbAmbientes.SelectedIndex = Inmueble.Ambientes;
+                    cbCochera.SelectedIndex = Inmueble.Cochera == false ? 0 : 1;
+                    cbUbicacion.SelectedIndex = (int)Enum.Parse(typeof(eUbicacion), Inmueble.Ubicacion);
+                    cbEstado.SelectedIndex = Inmueble.Estado;
                 }
             }
             catch (Exception ex)
