@@ -115,8 +115,9 @@ namespace InmobiliariaService
                 //Sino nos van a bloquear la cuenta porque van a pensar que es spam
                 //return;
                 MailMessage message = new MailMessage();
-                message.To.Add("duarte.fabricio.90@gmail.com");
-                message.To.Add("alechaf@gmail.com");
+                message.To.Add("santiago @moranvilla.com.ar");
+                //message.To.Add("duarte.fabricio.90@gmail.com");
+                //message.To.Add("alechaf@gmail.com");
                 message.Subject = "Se encontraron coincidencias!";
                 message.From = new System.Net.Mail.MailAddress("system_as@outlook.com", "SystemAs");
                 message.Priority = MailPriority.High;
@@ -189,10 +190,8 @@ namespace InmobiliariaService
         {
             try
             {
-                //Sino nos van a bloquear la cuenta porque van a pensar que es spam
-                return;
                 MailMessage message = new MailMessage();
-                //message.To.Add("duarte.fabricio.90@gmail.com");
+                message.To.Add("duarte.fabricio.90@gmail.com");
                 message.To.Add("alechaf@gmail.com");
                 message.Subject = "Error en Solución Inmobiliaria";
                 message.From = new System.Net.Mail.MailAddress("system_as@outlook.com", "SystemAs");
