@@ -9,10 +9,11 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>InmobiliariaForms</RootNamespace>
-    <AssemblyName>InmobiliariaForms</AssemblyName>
+    <AssemblyName>Sistema Integral Inmobiliario</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -67,10 +68,14 @@
     <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
     <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\MV.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NetBarControl">
-      <HintPath>..\NetBarControl.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -267,7 +272,10 @@
     <None Include="Web References\InmobiliariaService\Service.disco" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ToDo%27s.txt" />
+    <Content Include="Resources\MV.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="ToDo%27s.txt" />
     <None Include="Resources\LoggIn.png" />
     <None Include="Resources\candado_oa.png" />
     <None Include="Resources\candado_oa1.png" />
