@@ -93,6 +93,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Web.config" />
+    <None Include="Properties\PublishProfiles\InmoService.pubxml" />
     <None Include="Properties\PublishProfiles\Service.pubxml" />
     <None Include="Properties\PublishProfiles\ServiceProfile.pubxml" />
     <None Include="Web.Debug.config">
