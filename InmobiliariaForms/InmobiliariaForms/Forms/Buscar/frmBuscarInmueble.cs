@@ -64,6 +64,7 @@ namespace InmobiliariaForms
                                Disponible = a.Disponible,
                                Observaciones = a.Observaciones,
                                TipoInmueblePropiedad = ((eTipoInmueble)a.Tipo).ToString(),
+                               Ambientes = ((eAmbientes)a.Ambientes).ToString(),
                                MonedaPropiedad = ((eMoneda)a.Moneda).ToString(),
                                OperacionPropiedad = ((eTipoOperacion)a.Operacion).ToString(),
                                Localidad = a.Localidad,

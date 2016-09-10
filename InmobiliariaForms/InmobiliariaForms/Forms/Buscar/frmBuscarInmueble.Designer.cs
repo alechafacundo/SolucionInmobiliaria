@@ -106,6 +106,7 @@
             this.cbAmbientes.Name = "cbAmbientes";
             this.cbAmbientes.Size = new System.Drawing.Size(190, 22);
             this.cbAmbientes.TabIndex = 5;
+            this.cbAmbientes.SelectedValueChanged += new System.EventHandler(this.FiltrarResultados);
             // 
             // label17
             // 
@@ -185,6 +186,7 @@
             this.cbMoneda.Name = "cbMoneda";
             this.cbMoneda.Size = new System.Drawing.Size(101, 22);
             this.cbMoneda.TabIndex = 8;
+            this.cbMoneda.SelectedValueChanged += new System.EventHandler(this.FiltrarResultados);
             // 
             // label12
             // 

@@ -114,6 +114,7 @@
             this.cbAmbientes.Name = "cbAmbientes";
             this.cbAmbientes.Size = new System.Drawing.Size(121, 22);
             this.cbAmbientes.TabIndex = 10;
+            this.cbAmbientes.SelectedValueChanged += new System.EventHandler(this.FiltrarResultados);
             // 
             // label17
             // 
@@ -131,6 +132,7 @@
             this.txApellido.Name = "txApellido";
             this.txApellido.Size = new System.Drawing.Size(259, 22);
             this.txApellido.TabIndex = 2;
+            this.txApellido.TextChanged += new System.EventHandler(this.FiltrarResultados);
             // 
             // label10
             // 
@@ -148,6 +150,7 @@
             this.txNombre.Name = "txNombre";
             this.txNombre.Size = new System.Drawing.Size(213, 22);
             this.txNombre.TabIndex = 1;
+            this.txNombre.TextChanged += new System.EventHandler(this.FiltrarResultados);
             // 
             // label1
             // 

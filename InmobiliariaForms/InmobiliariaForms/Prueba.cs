@@ -113,6 +113,12 @@ namespace InmobiliariaForms
 
         private void pbVendedor2_Click(object sender, EventArgs e)
         {
+            if (!Vendedor.Nombre.Contains("Santiago"))
+            {
+                MessageBox.Show("No tiene permisos suficientes para entrar a esta sección", "Permisos insuficientes", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
+
             if (frmAgregarVendedor == null || frmAgregarVendedor.IsDisposed)
                 frmAgregarVendedor = new frmAgregarVendedor();
 
@@ -182,7 +188,25 @@ namespace InmobiliariaForms
             this.WindowState = FormWindowState.Minimized;
         }
 
-  
+        //private void pbRefresh1_MouseHover(object sender, EventArgs e)
+        //{
+        //    pbRefresh1.Visible = false;
+        //    pbRefresh2.Visible = true;
+        //    MouseHoverTime = 1;
+        //}
+
+        //private void pbRefresh2_MouseLeave(object sender, EventArgs e)
+        //{
+        //    pbRefresh1.Visible = true;
+        //    pbRefresh2.Visible = false;
+
+        //}
+
+        //private void pbRefresh2_Click(object sender, EventArgs e)
+        //{
+        //    ServiceHelper.ws.GetInmueblesWeb();
+        //    //ServiceHelper.ws.HelloWorld();
+        //}
 
         private void btActualizarDolar_Click(object sender, EventArgs e)
         {
