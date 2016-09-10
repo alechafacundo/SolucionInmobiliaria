@@ -19,6 +19,9 @@ namespace InmobiliariaService
                 string nombre = "N/A";
                 if (!string.IsNullOrEmpty(interesado.Nombre))
                     nombre = interesado.Nombre;
+                if (!string.IsNullOrEmpty(interesado.Apellido))
+                    nombre += " " + interesado.Apellido;
+
                 cabecera += string.Format( "Se han encontrado coincidencias en los siguientes Inmuebles con el Interesado {0} que fue recientemente ingresado", nombre ) + Environment.NewLine;
 
                 string cuerpo = string.Empty;
@@ -169,6 +172,8 @@ namespace InmobiliariaService
                   
                     if (!string.IsNullOrEmpty(interesado.Nombre))
                         nombre = interesado.Nombre;
+                    if (!string.IsNullOrEmpty(interesado.Apellido))
+                        nombre += " " + interesado.Apellido;
                     if (!string.IsNullOrEmpty(interesado.Telefono))
                         telefono = interesado.Telefono;
                     if (!string.IsNullOrEmpty(interesado.Email))
