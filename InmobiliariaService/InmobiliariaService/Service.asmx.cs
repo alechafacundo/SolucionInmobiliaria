@@ -99,7 +99,7 @@ namespace InmobiliariaService
             }
 
         }
-        
+
 
         [WebMethod]
         public Vendedor[] GetVendedores()
@@ -208,7 +208,7 @@ namespace InmobiliariaService
             try
             {
                 List<Inmueble> inmuebles = InmuebleDAO.GetInmueblesParaInteresado(interesado, cotizacion);
-                if(inmuebles.Count > 0)
+                if (inmuebles.Count > 0)
                 {
                     EmailHelper.SendInmueblesInEmail(inmuebles, interesado);
                 }
@@ -274,7 +274,7 @@ namespace InmobiliariaService
         [WebMethod]
         public bool EliminarInmueble(Inmueble inmueble)
         {
-            
+
             try
             {
                 bool respuesta = InmuebleDAO.DeleteInmueble(inmueble);
@@ -378,10 +378,15 @@ namespace InmobiliariaService
         [WebMethod]
         public void Test2()
         {
-            WebHelper wh = new WebHelper();
-            //wh.InsertFoto();
-        }
+            List<Inmueble> inmuebles = InmuebleDAO.GetInmuebles();
 
+            decimal cotizacion = GetDolar();
+
+            foreach (Inmueble inmueble in inmuebles)
+            {
+                NotificarSobreInteresado(inmueble, cotizacion);
+            }
+        }
     }
 
 }
