@@ -64,6 +64,11 @@ namespace InmobiliariaService
                     //aux = aux.Where(x => x.Operacion == (int)tipoOperacion).ToList();
                 }
 
+                if (interesado.Ambientes != (int)eAmbientes.Sin_Especificar)
+                {
+                    aux.RemoveAll(x => x.Ambientes != (int)interesado.Ambientes);
+                }
+
                 
                 if (interesado.MontoDesde !=  null && interesado.MontoDesde != 0)
                 {

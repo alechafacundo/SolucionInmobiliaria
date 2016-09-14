@@ -387,6 +387,18 @@ namespace InmobiliariaService
                 NotificarSobreInteresado(inmueble, cotizacion);
             }
         }
+        [WebMethod]
+        public void Test3(int interesadoId)
+        {
+
+            List<Interesado> interesados = new List<InmobiliariaService.Interesado>();
+            interesados = InteresadoDAO.GetInteresados();
+            Interesado interesado = interesados.Find(XmlAttribute => XmlAttribute.Id == interesadoId);
+
+            decimal cotizacion = GetDolar();
+
+            GetInmueblesParaInteresado(interesado, cotizacion);
+        }
     }
 
 }
