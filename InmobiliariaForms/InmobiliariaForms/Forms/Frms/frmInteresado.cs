@@ -76,7 +76,8 @@ namespace InmobiliariaForms
                                        Calle = a.Calle,
                                        Numero = a.Numero,
                                        Fecha = a.Fecha,
-                                       CargadoPor = a.CargadoPor
+                                       CargadoPor = a.CargadoPor,
+                                       Ambientes = ((eAmbientes)a.Ambientes).ToString()
                                    }).ToList();
 
                     gvInmueblesParaInteresado.DataSource = propiedades;
@@ -126,14 +127,22 @@ namespace InmobiliariaForms
 
             if (Interesado.MontoDesde != null && Interesado.MontoDesde != 0)
             {
-                //aux.RemoveAll(x => Convert.ToDecimal(x.Precio) < Interesado.MontoDesde);
-                aux.RemoveAll(x => Convert.ToDecimal(x.Precio) < precioDesdePesos);
+                aux.RemoveAll(x => ((x.MonedaPropiedad == eMoneda.Dolar.ToString()) && ((Convert.ToDecimal(x.Precio) * ServiceHelper.ValorDolar) < precioDesdePesos))
+                        || ((x.MonedaPropiedad == eMoneda.Peso.ToString()) && (Convert.ToDecimal(x.Precio) < precioDesdePesos)));
+                //aux.RemoveAll(x => Convert.ToDecimal(x.Precio) < precioDesdePesos);
             }
 
             if (Interesado.MontoHasta != null && Interesado.MontoHasta != 0)
             {
-                aux.RemoveAll(x => Convert.ToDecimal(x.Precio) > precioHastaPesos);
-                //aux.RemoveAll(x => Convert.ToDecimal(x.Precio) > Interesado.MontoHasta.Value);
+                //aux.RemoveAll(x => Convert.ToDecimal(x.Precio) > precioHastaPesos);
+
+                aux.RemoveAll(x => ((x.MonedaPropiedad == eMoneda.Dolar.ToString()) && ((Convert.ToDecimal(x.Precio) * ServiceHelper.ValorDolar) > precioHastaPesos))
+                    || ((x.MonedaPropiedad == eMoneda.Peso.ToString()) && (Convert.ToDecimal(x.Precio) > precioHastaPesos)));
+            }
+
+            if (Interesado.Ambientes != (int)eAmbientes.Sin_Especificar)
+            {
+                aux.RemoveAll(x => x.Ambientes != ((eAmbientes)Interesado.Ambientes).ToString());
             }
 
             gvInmueblesParaInteresado.DataSource = aux;
