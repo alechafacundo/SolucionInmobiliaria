@@ -187,6 +187,7 @@ namespace InmobiliariaService
         {
             try
             {
+                //Este metodo es para probar el envio de los inmuebles
                 List<Interesado> interesados = InteresadoDAO.GetInteresados();
                 Interesado interesado = interesados.Find(x => x.Nombre == "Juan de los palotes");
                 NotificarSobreInmueble(interesado, 14.5m);
@@ -222,6 +223,7 @@ namespace InmobiliariaService
         [WebMethod]
         public void TestNotificarSobreInteresado()
         {
+            //Este metodo es para probar el envio de los interesados para el inmueble que se detalla abajo
             try
             {
                 List<Inmueble> inmuebles = InmuebleDAO.GetInmuebles();

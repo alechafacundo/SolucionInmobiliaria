@@ -118,12 +118,13 @@ namespace InmobiliariaService
                 //Sino nos van a bloquear la cuenta porque van a pensar que es spam
                 //return;
                 MailMessage message = new MailMessage();
-                message.To.Add("santiago@moranvilla.com.ar");
-                //message.To.Add("duarte.fabricio.90@gmail.com");
-                //message.To.Add("alechaf@gmail.com");
+                //message.To.Add("santiago@moranvilla.com.ar");
+                message.To.Add("duarte.fabricio.90@gmail.com");
+                message.To.Add("alechaf@gmail.com");
                 message.Subject = "Se encontraron coincidencias!";
                 message.From = new System.Net.Mail.MailAddress("system_as@outlook.com", "SystemAs");
                 message.Priority = MailPriority.High;
+                message.IsBodyHtml = true;
 
                 string text = string.Format(mensaje);
                 message.Body = text;
@@ -160,7 +161,8 @@ namespace InmobiliariaService
                 if (!string.IsNullOrEmpty(inmueble.Numero))
                     numero = inmueble.Numero;
 
-                cabecera += string.Format("Se han encontrado los siguientes Interesados que coinciden con el siguiente Inmueble ingresado: {0}, ubicado en {1} Nº{2} de la localidad de {3} ", ((eTipoInmueble)inmueble.Tipo).ToString(), calle, numero, localidad) + Environment.NewLine;
+                
+                cabecera += string.Format("Se han encontrado los siguientes Interesados para el Inmueble: {0}, ubicado en <b> {1} Nº{2} </b> de la localidad de {3} <br><br>", ((eTipoInmueble)inmueble.Tipo).ToString(), calle, numero, localidad) + Environment.NewLine;
 
                 string cuerpo = string.Empty;
 
@@ -178,9 +180,11 @@ namespace InmobiliariaService
                         telefono = interesado.Telefono;
                     if (!string.IsNullOrEmpty(interesado.Email))
                         email = interesado.Email;
-                   
-                    cuerpo += string.Format("-  {0}, teléfono {1} y email {2}.", nombre, telefono, email) + Environment.NewLine;
-                    
+
+                    cuerpo += string.Format("- <b> {0} </b>.<br>", nombre) + Environment.NewLine;
+                    cuerpo += string.Format("- Telefono: {0} <br> ", telefono) + Environment.NewLine;
+                    cuerpo += string.Format("- Email: {0} <br>", email) + Environment.NewLine;
+                    cuerpo += "<br><br>";
                 }
 
                 EnviarNotificacion(cabecera + cuerpo);
