@@ -51,6 +51,8 @@
             this.btCancelar = new System.Windows.Forms.Button();
             this.btMasDetalles = new System.Windows.Forms.Button();
             this.chDisponible = new System.Windows.Forms.CheckBox();
+            this.txObservaciones = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gvResultado)).BeginInit();
             this.g.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecioHasta)).BeginInit();
@@ -61,7 +63,7 @@
             // 
             this.gvResultado.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.gvResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvResultado.Location = new System.Drawing.Point(2, 172);
+            this.gvResultado.Location = new System.Drawing.Point(2, 206);
             this.gvResultado.MultiSelect = false;
             this.gvResultado.Name = "gvResultado";
             this.gvResultado.ReadOnly = true;
@@ -74,6 +76,8 @@
             // 
             this.g.BackColor = System.Drawing.Color.White;
             this.g.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.g.Controls.Add(this.txObservaciones);
+            this.g.Controls.Add(this.label9);
             this.g.Controls.Add(this.cbAmbientes);
             this.g.Controls.Add(this.label17);
             this.g.Controls.Add(this.txCalle);
@@ -94,7 +98,7 @@
             this.g.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.g.Location = new System.Drawing.Point(2, 1);
             this.g.Name = "g";
-            this.g.Size = new System.Drawing.Size(626, 142);
+            this.g.Size = new System.Drawing.Size(626, 176);
             this.g.TabIndex = 4;
             this.g.TabStop = false;
             // 
@@ -102,7 +106,7 @@
             // 
             this.cbAmbientes.BackColor = System.Drawing.Color.Beige;
             this.cbAmbientes.FormattingEnabled = true;
-            this.cbAmbientes.Location = new System.Drawing.Point(80, 81);
+            this.cbAmbientes.Location = new System.Drawing.Point(79, 86);
             this.cbAmbientes.Name = "cbAmbientes";
             this.cbAmbientes.Size = new System.Drawing.Size(190, 22);
             this.cbAmbientes.TabIndex = 5;
@@ -112,7 +116,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(10, 85);
+            this.label17.Location = new System.Drawing.Point(6, 89);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(67, 14);
             this.label17.TabIndex = 51;
@@ -124,7 +128,7 @@
             this.txCalle.Location = new System.Drawing.Point(329, 53);
             this.txCalle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txCalle.Name = "txCalle";
-            this.txCalle.Size = new System.Drawing.Size(281, 22);
+            this.txCalle.Size = new System.Drawing.Size(289, 22);
             this.txCalle.TabIndex = 4;
             this.txCalle.TextChanged += new System.EventHandler(this.FiltrarResultados);
             // 
@@ -145,7 +149,7 @@
             0,
             0,
             0});
-            this.numPrecioHasta.Location = new System.Drawing.Point(301, 109);
+            this.numPrecioHasta.Location = new System.Drawing.Point(301, 114);
             this.numPrecioHasta.Maximum = new decimal(new int[] {
             1215752192,
             23,
@@ -161,7 +165,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(222, 113);
+            this.label6.Location = new System.Drawing.Point(222, 118);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 14);
             this.label6.TabIndex = 47;
@@ -174,7 +178,7 @@
             this.cbTipoOperacion.ImeMode = System.Windows.Forms.ImeMode.On;
             this.cbTipoOperacion.Location = new System.Drawing.Point(355, 21);
             this.cbTipoOperacion.Name = "cbTipoOperacion";
-            this.cbTipoOperacion.Size = new System.Drawing.Size(207, 22);
+            this.cbTipoOperacion.Size = new System.Drawing.Size(263, 22);
             this.cbTipoOperacion.TabIndex = 2;
             this.cbTipoOperacion.SelectedValueChanged += new System.EventHandler(this.FiltrarResultados);
             // 
@@ -182,9 +186,9 @@
             // 
             this.cbMoneda.BackColor = System.Drawing.Color.Beige;
             this.cbMoneda.FormattingEnabled = true;
-            this.cbMoneda.Location = new System.Drawing.Point(509, 111);
+            this.cbMoneda.Location = new System.Drawing.Point(493, 116);
             this.cbMoneda.Name = "cbMoneda";
-            this.cbMoneda.Size = new System.Drawing.Size(101, 22);
+            this.cbMoneda.Size = new System.Drawing.Size(125, 22);
             this.cbMoneda.TabIndex = 8;
             this.cbMoneda.SelectedValueChanged += new System.EventHandler(this.FiltrarResultados);
             // 
@@ -192,7 +196,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Location = new System.Drawing.Point(454, 114);
+            this.label12.Location = new System.Drawing.Point(438, 119);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(54, 14);
             this.label12.TabIndex = 22;
@@ -205,7 +209,7 @@
             0,
             0,
             0});
-            this.numPrecioDesde.Location = new System.Drawing.Point(87, 109);
+            this.numPrecioDesde.Location = new System.Drawing.Point(92, 114);
             this.numPrecioDesde.Maximum = new decimal(new int[] {
             1215752192,
             23,
@@ -221,7 +225,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(8, 114);
+            this.label11.Location = new System.Drawing.Point(6, 119);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(80, 14);
             this.label11.TabIndex = 20;
@@ -229,7 +233,7 @@
             // 
             // txLocalidad
             // 
-            this.txLocalidad.Location = new System.Drawing.Point(69, 53);
+            this.txLocalidad.Location = new System.Drawing.Point(76, 53);
             this.txLocalidad.Name = "txLocalidad";
             this.txLocalidad.Size = new System.Drawing.Size(201, 22);
             this.txLocalidad.TabIndex = 3;
@@ -238,7 +242,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 56);
+            this.label4.Location = new System.Drawing.Point(6, 57);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 14);
             this.label4.TabIndex = 6;
@@ -284,7 +288,7 @@
             // 
             this.btImprimir.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btImprimir.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btImprimir.Location = new System.Drawing.Point(2, 387);
+            this.btImprimir.Location = new System.Drawing.Point(11, 421);
             this.btImprimir.Name = "btImprimir";
             this.btImprimir.Size = new System.Drawing.Size(140, 25);
             this.btImprimir.TabIndex = 11;
@@ -296,7 +300,7 @@
             // 
             this.btCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btCancelar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCancelar.Location = new System.Drawing.Point(301, 384);
+            this.btCancelar.Location = new System.Drawing.Point(293, 418);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(160, 31);
             this.btCancelar.TabIndex = 10;
@@ -308,7 +312,7 @@
             // 
             this.btMasDetalles.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btMasDetalles.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btMasDetalles.Location = new System.Drawing.Point(467, 384);
+            this.btMasDetalles.Location = new System.Drawing.Point(460, 418);
             this.btMasDetalles.Name = "btMasDetalles";
             this.btMasDetalles.Size = new System.Drawing.Size(160, 31);
             this.btMasDetalles.TabIndex = 9;
@@ -319,7 +323,7 @@
             // chDisponible
             // 
             this.chDisponible.AutoSize = true;
-            this.chDisponible.Location = new System.Drawing.Point(2, 149);
+            this.chDisponible.Location = new System.Drawing.Point(2, 183);
             this.chDisponible.Name = "chDisponible";
             this.chDisponible.Size = new System.Drawing.Size(173, 17);
             this.chDisponible.TabIndex = 12;
@@ -327,12 +331,29 @@
             this.chDisponible.UseVisualStyleBackColor = true;
             this.chDisponible.CheckedChanged += new System.EventHandler(this.FiltrarResultados);
             // 
+            // txObservaciones
+            // 
+            this.txObservaciones.Location = new System.Drawing.Point(101, 148);
+            this.txObservaciones.Name = "txObservaciones";
+            this.txObservaciones.Size = new System.Drawing.Size(517, 22);
+            this.txObservaciones.TabIndex = 73;
+            this.txObservaciones.TextChanged += new System.EventHandler(this.FiltrarResultados);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 151);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(89, 14);
+            this.label9.TabIndex = 74;
+            this.label9.Text = "Observaciones:";
+            // 
             // frmBuscarInmueble
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(632, 424);
+            this.ClientSize = new System.Drawing.Size(632, 461);
             this.Controls.Add(this.chDisponible);
             this.Controls.Add(this.btImprimir);
             this.Controls.Add(this.btCancelar);
@@ -378,5 +399,7 @@
         private System.Windows.Forms.CheckBox chDisponible;
         private System.Windows.Forms.ComboBox cbAmbientes;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txObservaciones;
+        private System.Windows.Forms.Label label9;
     }
 }

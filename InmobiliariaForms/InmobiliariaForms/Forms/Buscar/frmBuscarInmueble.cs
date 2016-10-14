@@ -111,6 +111,7 @@ namespace InmobiliariaForms
                 inmueble.Localidad = txLocalidad.Text.ToUpperInvariant();
                 inmueble.Calle = txCalle.Text.ToUpperInvariant();
                 inmueble.Disponible = chDisponible.Checked;
+                inmueble.Observaciones = txObservaciones.Text.ToUpperInvariant();
 
                 List<Propiedad> aux = new List<Propiedad>();
                 aux.AddRange(propiedades);
@@ -179,6 +180,11 @@ namespace InmobiliariaForms
                     
                 }
 
+                if (!string.IsNullOrEmpty(inmueble.Observaciones))
+                {
+                    aux.RemoveAll(x => !x.Observaciones.Contains(inmueble.Observaciones));
+                }
+
                
                 if (numPrecioDesde.Value != 0)
                 {
@@ -227,16 +233,16 @@ namespace InmobiliariaForms
 
             foreach (DataGridViewRow row in gvResultado.Rows)
             {
-               
+
 
                 gvAux.Rows.Add(row.Cells["TipoInmueblePropiedad"].Value,
                 row.Cells["OperacionPropiedad"].Value,
-                row.Cells["Ambientes"].Value,
                 row.Cells["Localidad"].Value,
                 row.Cells["Calle"].Value + " " + row.Cells["Numero"].Value,
                 row.Cells["MonedaPropiedad"].Value,
                 row.Cells["Precio"].Value,
-                vendedores.Find(x => x.Id == (int)row.Cells["CargadoPor"].Value).Nombre);
+                vendedores.Find(x => x.Id == (int)row.Cells["CargadoPor"].Value).Nombre,
+                row.Cells["Ambientes"].Value);
 
                 //gvAux.Rows.Add(a);
             }
