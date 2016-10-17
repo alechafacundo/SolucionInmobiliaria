@@ -189,7 +189,7 @@ namespace InmobiliariaService
             {
                 //Este metodo es para probar el envio de los inmuebles
                 List<Interesado> interesados = InteresadoDAO.GetInteresados();
-                Interesado interesado = interesados.Find(x => x.Nombre == "Juan de los palotes");
+                Interesado interesado = interesados.Find(x => x.Nombre == "Kevin");
                 NotificarSobreInmueble(interesado, 14.5m);
             }
             catch (Exception ex)
