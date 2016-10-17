@@ -22,7 +22,7 @@ namespace InmobiliariaService
                 if (!string.IsNullOrEmpty(interesado.Apellido))
                     nombre += " " + interesado.Apellido;
 
-                cabecera += string.Format("Se han encontrado los siguientes Inmuebles con el Interesado  <b> {0} </b> <br><br>:", nombre ) + Environment.NewLine;
+                cabecera += string.Format("Se han encontrado los siguientes Inmuebles con el Interesado  <b> {0} </b>:<br><br>", nombre ) + Environment.NewLine;
 
                 string cuerpo = string.Empty;
 
@@ -73,9 +73,9 @@ namespace InmobiliariaService
 
                     cuerpo += string.Format("- {0}, ubicado en <b> {1} </b>, en la calle <b> {2} N° {3} </b> piso {4} departamento {5}.<br>",
                         ((eTipoInmueble)inmueble.Tipo).ToString(), localidad, calle, numero, piso, departamento) + Environment.NewLine;
-                    cuerpo += string.Format("- El mismo está constituido por {0} dormitorio/s, {1} baño/s y {2} comedor/es. Cuenta con una superficie cubierta de {3} Mts.<br>", dormitorio, baño, comedor, supCubierta);
-                    cuerpo += string.Format(" -Su valor de {0} es de <b> {1} {2} </b>.<br>", ((eTipoOperacion)inmueble.Operacion).ToString(), ((eMoneda)inmueble.Moneda).ToString(), valor.ToString(CultureInfo.CreateSpecificCulture("es-Ar"))) + Environment.NewLine;
-                    cuerpo += string.Format("- El contacto del mismo es <b> {0} </b> puede ser ubicado al {1}.<br><br>", contacto, referencia) + Environment.NewLine;
+                    cuerpo += string.Format("El mismo está constituido por {0} dormitorio/s, {1} baño/s y {2} comedor/es. Cuenta con una superficie cubierta de {3} Mts.<br>", dormitorio, baño, comedor, supCubierta);
+                    cuerpo += string.Format("Su valor de {0} es de <b> {1} {2} </b>.<br>", ((eTipoOperacion)inmueble.Operacion).ToString(), ((eMoneda)inmueble.Moneda).ToString(), valor.ToString(CultureInfo.CreateSpecificCulture("es-Ar"))) + Environment.NewLine;
+                    cuerpo += string.Format("El contacto del mismo es <b> {0} </b> puede ser ubicado al {1}.<br><br>", contacto, referencia) + Environment.NewLine;
                 }
 
                 EnviarNotificacion(cabecera + cuerpo);
@@ -118,7 +118,15 @@ namespace InmobiliariaService
                 //return;
                 MailMessage message = new MailMessage();
                 //message.To.Add("santiago@moranvilla.com.ar");
-                //message.To.Add("duarte.fabricio.90@gmail.com");
+
+                //if (mensaje.ToUpperInvariant().Contains("ALQUILER"))
+                //    message.To.Add("alquileres@moranvilla.com.ar");
+                //else
+                //    message.To.Add("ventas@moranvilla.com.ar");
+
+                //message.CC.Add("santiago@moranvilla.com.ar");
+
+                message.To.Add("duarte.fabricio.90@gmail.com");
                 message.To.Add("alechaf@gmail.com");
                 message.Subject = "Se encontraron coincidencias!";
                 message.From = new System.Net.Mail.MailAddress("system_as@outlook.com", "SystemAs");
@@ -182,7 +190,7 @@ namespace InmobiliariaService
 
                     cuerpo += string.Format("- <b> {0} </b>.<br>", nombre) + Environment.NewLine;
                     cuerpo += string.Format("- Telefono: {0} <br> ", telefono) + Environment.NewLine;
-                    cuerpo += string.Format("- Email: {0} <br><br>, email) + Environment.NewLine;
+                    cuerpo += string.Format("- Email: {0} <br><br>, email") + Environment.NewLine;
                     cuerpo += "<br><br>";
                 }
 

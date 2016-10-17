@@ -189,8 +189,8 @@ namespace InmobiliariaService
             {
                 //Este metodo es para probar el envio de los inmuebles
                 List<Interesado> interesados = InteresadoDAO.GetInteresados();
-                Interesado interesado = interesados.Find(x => x.Nombre == "Kevin");
-                NotificarSobreInmueble(interesado, 14.5m);
+                Interesado interesado = interesados.Find(x => x.Nombre == " Lorena");
+                NotificarSobreInmueble(interesado, GetDolar());
             }
             catch (Exception ex)
             {
@@ -227,7 +227,7 @@ namespace InmobiliariaService
             try
             {
                 List<Inmueble> inmuebles = InmuebleDAO.GetInmuebles();
-                NotificarSobreInteresado(inmuebles.Find(x => x.Numero == "234"), 15.0m);
+                NotificarSobreInteresado(inmuebles.Find(x => x.Numero == "234"), GetDolar());
             }
             catch (Exception)
             {
