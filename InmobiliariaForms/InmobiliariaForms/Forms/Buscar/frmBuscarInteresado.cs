@@ -38,6 +38,9 @@ namespace InmobiliariaForms
             cbAmbientes.DataSource = Enum.GetNames(typeof(eAmbientes));
             cbAmbientes.SelectedItem = eAmbientes.Sin_Especificar;
 
+            cbLocalidad.DataSource = Enum.GetNames(typeof(eLocalidad));
+            cbLocalidad.SelectedItem = eLocalidad.Sin_Especificar;
+
             if (Interesados.Count() == 0)
             {
                 Interesados = ServiceHelper.ws.GetInteresados().ToList();
@@ -142,6 +145,32 @@ namespace InmobiliariaForms
                 if (interesado.Disponible)
                 {
                     aux.RemoveAll(x => !x.Disponible);
+                }
+
+                if (cbLocalidad.SelectedValue != null)
+                {
+                    /*if (cbLocalidad.SelectedValue != eLocalidad.Sin_Especificar)
+                    {
+                        aux.RemoveAll(x => x.TipoInmueble != cbLocalidad.SelectedValue.ToString());
+                    }*/
+
+                    eLocalidad localidad;
+                    Enum.TryParse<eLocalidad>(cbLocalidad.SelectedValue.ToString(), out localidad);
+
+                    if (localidad != eLocalidad.Sin_Especificar)
+                    {
+                        //aux.AddRange(Interesados.Where(x => x.TipoDeInmueble != (int)tipoInmueble).ToList());
+                        aux.RemoveAll(x => x.TipoInmueble != localidad.ToString());
+                    }
+
+                    /*eLocalidad localidad;
+                    Enum.TryParse<eLocalidad>(cbLocalidad.SelectedValue.ToString(), out localidad);
+
+                    if (tipoInmueble != eTipoInmueble.Sin_Especificar)
+                    {
+                        //aux.AddRange(Interesados.Where(x => x.TipoDeInmueble != (int)tipoInmueble).ToList());
+                        aux.RemoveAll(x => x.TipoInmueble != tipoInmueble.ToString());
+                    }*/
                 }
 
                 if (cbTipoInmueble.SelectedValue != null)
@@ -310,5 +339,6 @@ namespace InmobiliariaForms
         public string Ambientes { get; set; }
         public string Observaciones { get; set; }
         public bool Disponible { get; set; }
+        public string Localidad { get; set; }
     }
 }

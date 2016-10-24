@@ -77,6 +77,10 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         private System.Threading.SendOrPostCallback SubirInmuebleWebOperationCompleted;
         
+        private System.Threading.SendOrPostCallback Test2OperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Test3OperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -188,6 +192,12 @@ namespace InmobiliariaForms.InmobiliariaService {
         public event SubirInmuebleWebCompletedEventHandler SubirInmuebleWebCompleted;
         
         /// <remarks/>
+        public event Test2CompletedEventHandler Test2Completed;
+        
+        /// <remarks/>
+        public event Test3CompletedEventHandler Test3Completed;
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/HelloWorld", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public string HelloWorld() {
             object[] results = this.Invoke("HelloWorld", new object[0]);
@@ -216,7 +226,7 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Test", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void Test(Inmueble inmueble, Interesado interesado, eTipoInmueble tipoInmueble, eTipoOperacion tipoOperacion, eMoneda moneda, Vendedor vendedor, eAmbientes ambientes, eCochera cochera, eUbicacion ubicacion, eEstado estado) {
+        public void Test(Inmueble inmueble, Interesado interesado, eTipoInmueble tipoInmueble, eTipoOperacion tipoOperacion, eMoneda moneda, Vendedor vendedor, eAmbientes ambientes, eCochera cochera, eUbicacion ubicacion, eEstado estado, eLocalidad localidad) {
             this.Invoke("Test", new object[] {
                         inmueble,
                         interesado,
@@ -227,16 +237,17 @@ namespace InmobiliariaForms.InmobiliariaService {
                         ambientes,
                         cochera,
                         ubicacion,
-                        estado});
+                        estado,
+                        localidad});
         }
         
         /// <remarks/>
-        public void TestAsync(Inmueble inmueble, Interesado interesado, eTipoInmueble tipoInmueble, eTipoOperacion tipoOperacion, eMoneda moneda, Vendedor vendedor, eAmbientes ambientes, eCochera cochera, eUbicacion ubicacion, eEstado estado) {
-            this.TestAsync(inmueble, interesado, tipoInmueble, tipoOperacion, moneda, vendedor, ambientes, cochera, ubicacion, estado, null);
+        public void TestAsync(Inmueble inmueble, Interesado interesado, eTipoInmueble tipoInmueble, eTipoOperacion tipoOperacion, eMoneda moneda, Vendedor vendedor, eAmbientes ambientes, eCochera cochera, eUbicacion ubicacion, eEstado estado, eLocalidad localidad) {
+            this.TestAsync(inmueble, interesado, tipoInmueble, tipoOperacion, moneda, vendedor, ambientes, cochera, ubicacion, estado, localidad, null);
         }
         
         /// <remarks/>
-        public void TestAsync(Inmueble inmueble, Interesado interesado, eTipoInmueble tipoInmueble, eTipoOperacion tipoOperacion, eMoneda moneda, Vendedor vendedor, eAmbientes ambientes, eCochera cochera, eUbicacion ubicacion, eEstado estado, object userState) {
+        public void TestAsync(Inmueble inmueble, Interesado interesado, eTipoInmueble tipoInmueble, eTipoOperacion tipoOperacion, eMoneda moneda, Vendedor vendedor, eAmbientes ambientes, eCochera cochera, eUbicacion ubicacion, eEstado estado, eLocalidad localidad, object userState) {
             if ((this.TestOperationCompleted == null)) {
                 this.TestOperationCompleted = new System.Threading.SendOrPostCallback(this.OnTestOperationCompleted);
             }
@@ -250,7 +261,8 @@ namespace InmobiliariaForms.InmobiliariaService {
                         ambientes,
                         cochera,
                         ubicacion,
-                        estado}, this.TestOperationCompleted, userState);
+                        estado,
+                        localidad}, this.TestOperationCompleted, userState);
         }
         
         private void OnTestOperationCompleted(object arg) {
@@ -861,9 +873,10 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/SubirInmuebleWeb", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void SubirInmuebleWeb(int inmuebleId) {
-            this.Invoke("SubirInmuebleWeb", new object[] {
+        public bool SubirInmuebleWeb(int inmuebleId) {
+            object[] results = this.Invoke("SubirInmuebleWeb", new object[] {
                         inmuebleId});
+            return ((bool)(results[0]));
         }
         
         /// <remarks/>
@@ -883,7 +896,61 @@ namespace InmobiliariaForms.InmobiliariaService {
         private void OnSubirInmuebleWebOperationCompleted(object arg) {
             if ((this.SubirInmuebleWebCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.SubirInmuebleWebCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.SubirInmuebleWebCompleted(this, new SubirInmuebleWebCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Test2", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void Test2() {
+            this.Invoke("Test2", new object[0]);
+        }
+        
+        /// <remarks/>
+        public void Test2Async() {
+            this.Test2Async(null);
+        }
+        
+        /// <remarks/>
+        public void Test2Async(object userState) {
+            if ((this.Test2OperationCompleted == null)) {
+                this.Test2OperationCompleted = new System.Threading.SendOrPostCallback(this.OnTest2OperationCompleted);
+            }
+            this.InvokeAsync("Test2", new object[0], this.Test2OperationCompleted, userState);
+        }
+        
+        private void OnTest2OperationCompleted(object arg) {
+            if ((this.Test2Completed != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Test2Completed(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Test3", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void Test3(int interesadoId) {
+            this.Invoke("Test3", new object[] {
+                        interesadoId});
+        }
+        
+        /// <remarks/>
+        public void Test3Async(int interesadoId) {
+            this.Test3Async(interesadoId, null);
+        }
+        
+        /// <remarks/>
+        public void Test3Async(int interesadoId, object userState) {
+            if ((this.Test3OperationCompleted == null)) {
+                this.Test3OperationCompleted = new System.Threading.SendOrPostCallback(this.OnTest3OperationCompleted);
+            }
+            this.InvokeAsync("Test3", new object[] {
+                        interesadoId}, this.Test3OperationCompleted, userState);
+        }
+        
+        private void OnTest3OperationCompleted(object arg) {
+            if ((this.Test3Completed != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Test3Completed(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -907,7 +974,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -964,7 +1031,7 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         private int estadoField;
         
-        private int webidField;
+        private int webIdField;
         
         /// <remarks/>
         public int Id {
@@ -1219,18 +1286,18 @@ namespace InmobiliariaForms.InmobiliariaService {
         }
         
         /// <remarks/>
-        public int Webid {
+        public int WebId {
             get {
-                return this.webidField;
+                return this.webIdField;
             }
             set {
-                this.webidField = value;
+                this.webIdField = value;
             }
         }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1276,7 +1343,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1405,7 +1472,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1437,6 +1504,8 @@ namespace InmobiliariaForms.InmobiliariaService {
         private bool disponibleField;
         
         private int ambientesField;
+        
+        private string localidadField;
         
         /// <remarks/>
         public int Id {
@@ -1569,10 +1638,20 @@ namespace InmobiliariaForms.InmobiliariaService {
                 this.ambientesField = value;
             }
         }
+        
+        /// <remarks/>
+        public string Localidad {
+            get {
+                return this.localidadField;
+            }
+            set {
+                this.localidadField = value;
+            }
+        }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public enum eTipoInmueble {
@@ -1609,7 +1688,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public enum eTipoOperacion {
@@ -1625,7 +1704,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public enum eMoneda {
@@ -1641,7 +1720,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public enum eAmbientes {
@@ -1666,7 +1745,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public enum eCochera {
@@ -1679,7 +1758,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public enum eUbicacion {
@@ -1701,7 +1780,7 @@ namespace InmobiliariaForms.InmobiliariaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1067.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public enum eEstado {
@@ -1729,6 +1808,25 @@ namespace InmobiliariaForms.InmobiliariaService {
         
         /// <remarks/>
         A_Estrenar,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public enum eLocalidad {
+        
+        /// <remarks/>
+        Sin_Especificar,
+        
+        /// <remarks/>
+        Santa_Rosa,
+        
+        /// <remarks/>
+        Toay,
+        
+        /// <remarks/>
+        Buenos_Aires,
     }
     
     /// <remarks/>
@@ -2133,7 +2231,37 @@ namespace InmobiliariaForms.InmobiliariaService {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void SubirInmuebleWebCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    public delegate void SubirInmuebleWebCompletedEventHandler(object sender, SubirInmuebleWebCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SubirInmuebleWebCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SubirInmuebleWebCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void Test2CompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void Test3CompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
 }
 
 #pragma warning restore 1591

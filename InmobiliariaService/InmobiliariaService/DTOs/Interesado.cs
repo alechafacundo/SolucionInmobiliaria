@@ -20,5 +20,6 @@ namespace InmobiliariaService
         public string Observaciones { get; set; }
         public bool Disponible { get; set; }
         public int Ambientes { get; set; }
+        public string Localidad { get; set; }
     }
 }

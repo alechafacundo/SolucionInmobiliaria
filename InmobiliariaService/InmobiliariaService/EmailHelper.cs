@@ -190,7 +190,7 @@ namespace InmobiliariaService
 
                     cuerpo += string.Format("- <b> {0} </b>.<br>", nombre) + Environment.NewLine;
                     cuerpo += string.Format("- Telefono: {0} <br> ", telefono) + Environment.NewLine;
-                    cuerpo += string.Format("- Email: {0} <br><br>, email") + Environment.NewLine;
+                    cuerpo += string.Format("- Email: {0} <br><br>", email) + Environment.NewLine;
                     cuerpo += "<br><br>";
                 }
 

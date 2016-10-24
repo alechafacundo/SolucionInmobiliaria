@@ -46,6 +46,8 @@ namespace InmobiliariaService
 
                 aux.RemoveAll(x => !x.Disponible);
 
+                aux.RemoveAll(x => x.Localidad != inmueble.Localidad);
+
                 if (inmueble.Tipo != (int)eTipoInmueble.Sin_Especificar)
                 {
                     aux.RemoveAll(x => x.TipoDeInmueble != inmueble.Tipo);

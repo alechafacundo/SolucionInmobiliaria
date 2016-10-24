@@ -25,6 +25,7 @@
             <s:element minOccurs="1" maxOccurs="1" name="cochera" type="tns:eCochera" />
             <s:element minOccurs="1" maxOccurs="1" name="ubicacion" type="tns:eUbicacion" />
             <s:element minOccurs="1" maxOccurs="1" name="estado" type="tns:eEstado" />
+            <s:element minOccurs="1" maxOccurs="1" name="localidad" type="tns:eLocalidad" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -55,7 +56,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Referencia" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="Disponible" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="Estado" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="Webid" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="WebId" type="s:int" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="Interesado">
@@ -73,6 +74,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Observaciones" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="Disponible" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="Ambientes" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Localidad" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:simpleType name="eTipoInmueble">
@@ -152,6 +154,14 @@
           <s:enumeration value="En_Construccion" />
           <s:enumeration value="En_Pozo" />
           <s:enumeration value="A_Estrenar" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="eLocalidad">
+        <s:restriction base="s:string">
+          <s:enumeration value="Sin_Especificar" />
+          <s:enumeration value="Santa_Rosa" />
+          <s:enumeration value="Toay" />
+          <s:enumeration value="Buenos_Aires" />
         </s:restriction>
       </s:simpleType>
       <s:element name="TestResponse">
@@ -432,6 +442,26 @@
         </s:complexType>
       </s:element>
       <s:element name="SubirInmuebleWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SubirInmuebleWebResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Test2">
+        <s:complexType />
+      </s:element>
+      <s:element name="Test2Response">
+        <s:complexType />
+      </s:element>
+      <s:element name="Test3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="interesadoId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Test3Response">
         <s:complexType />
       </s:element>
     </s:schema>
@@ -580,6 +610,18 @@
   <wsdl:message name="SubirInmuebleWebSoapOut">
     <wsdl:part name="parameters" element="tns:SubirInmuebleWebResponse" />
   </wsdl:message>
+  <wsdl:message name="Test2SoapIn">
+    <wsdl:part name="parameters" element="tns:Test2" />
+  </wsdl:message>
+  <wsdl:message name="Test2SoapOut">
+    <wsdl:part name="parameters" element="tns:Test2Response" />
+  </wsdl:message>
+  <wsdl:message name="Test3SoapIn">
+    <wsdl:part name="parameters" element="tns:Test3" />
+  </wsdl:message>
+  <wsdl:message name="Test3SoapOut">
+    <wsdl:part name="parameters" element="tns:Test3Response" />
+  </wsdl:message>
   <wsdl:portType name="ServiceSoap">
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
@@ -676,6 +718,14 @@
     <wsdl:operation name="SubirInmuebleWeb">
       <wsdl:input message="tns:SubirInmuebleWebSoapIn" />
       <wsdl:output message="tns:SubirInmuebleWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Test2">
+      <wsdl:input message="tns:Test2SoapIn" />
+      <wsdl:output message="tns:Test2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Test3">
+      <wsdl:input message="tns:Test3SoapIn" />
+      <wsdl:output message="tns:Test3SoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
@@ -896,6 +946,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Test2">
+      <soap:operation soapAction="http://tempuri.org/Test2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test3">
+      <soap:operation soapAction="http://tempuri.org/Test3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -1108,6 +1176,24 @@
     </wsdl:operation>
     <wsdl:operation name="SubirInmuebleWeb">
       <soap12:operation soapAction="http://tempuri.org/SubirInmuebleWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test2">
+      <soap12:operation soapAction="http://tempuri.org/Test2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test3">
+      <soap12:operation soapAction="http://tempuri.org/Test3" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

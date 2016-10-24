@@ -56,6 +56,8 @@
             this.btBuscar = new System.Windows.Forms.Button();
             this.btImprimir = new System.Windows.Forms.Button();
             this.chDisponible = new System.Windows.Forms.CheckBox();
+            this.cbLocalidad = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gvResultado)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHasta)).BeginInit();
@@ -77,6 +79,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbLocalidad);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.cbAmbientes);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.txApellido);
@@ -387,6 +391,25 @@
             this.chDisponible.UseVisualStyleBackColor = true;
             this.chDisponible.CheckedChanged += new System.EventHandler(this.FiltrarResultados);
             // 
+            // cbLocalidad
+            // 
+            this.cbLocalidad.BackColor = System.Drawing.Color.Beige;
+            this.cbLocalidad.FormattingEnabled = true;
+            this.cbLocalidad.Location = new System.Drawing.Point(298, 127);
+            this.cbLocalidad.Name = "cbLocalidad";
+            this.cbLocalidad.Size = new System.Drawing.Size(121, 22);
+            this.cbLocalidad.TabIndex = 79;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(228, 131);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(61, 14);
+            this.label8.TabIndex = 80;
+            this.label8.Text = "Localidad";
+            // 
             // frmBuscarInteresado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -442,5 +465,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbAmbientes;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ComboBox cbLocalidad;
+        private System.Windows.Forms.Label label8;
     }
 }

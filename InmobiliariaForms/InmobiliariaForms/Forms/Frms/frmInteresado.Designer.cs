@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInteresado));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbLocalidad = new System.Windows.Forms.ComboBox();
             this.cbAmbientes = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.btCancelar = new System.Windows.Forms.Button();
@@ -68,6 +70,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.cbLocalidad);
             this.groupBox1.Controls.Add(this.cbAmbientes);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.btCancelar);
@@ -97,6 +101,25 @@
             this.groupBox1.Size = new System.Drawing.Size(627, 307);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(349, 153);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(71, 16);
+            this.label4.TabIndex = 48;
+            this.label4.Text = "Localidad:";
+            // 
+            // cbLocalidad
+            // 
+            this.cbLocalidad.BackColor = System.Drawing.Color.Beige;
+            this.cbLocalidad.FormattingEnabled = true;
+            this.cbLocalidad.Location = new System.Drawing.Point(427, 152);
+            this.cbLocalidad.Name = "cbLocalidad";
+            this.cbLocalidad.Size = new System.Drawing.Size(192, 22);
+            this.cbLocalidad.TabIndex = 47;
             // 
             // cbAmbientes
             // 
@@ -445,5 +468,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cbAmbientes;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cbLocalidad;
     }
 }

@@ -69,4 +69,12 @@ namespace InmobiliariaService
         A_Estrenar = 7
 
     }
+
+    public enum eLocalidad
+    {
+        Sin_Especificar = 0,
+        Santa_Rosa = 1,
+        Toay = 2,
+        Buenos_Aires = 3
+    }
 }

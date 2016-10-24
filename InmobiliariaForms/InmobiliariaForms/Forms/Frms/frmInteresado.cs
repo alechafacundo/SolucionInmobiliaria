@@ -38,6 +38,9 @@ namespace InmobiliariaForms
                 cbAmbientes.DataSource = Enum.GetNames(typeof(eAmbientes));
                 cbAmbientes.SelectedItem = eAmbientes.Sin_Especificar;
 
+                cbLocalidad.DataSource = Enum.GetNames(typeof(eLocalidad));
+                cbLocalidad.SelectedItem = eLocalidad.Santa_Rosa; 
+
                 if (Interesado != null)
                 {
                     btEliminar.Visible = true;
@@ -53,6 +56,12 @@ namespace InmobiliariaForms
                     numHasta.Value = Interesado.MontoHasta != null ? (decimal)Interesado.MontoHasta : 0;
                     txObservaciones.Text = Interesado.Observaciones;
                     checkDisponible.Checked = Interesado.Disponible;
+
+                    // = eLocalidad.Santa_Rosa;
+                    eLocalidad localidad = (eLocalidad)Enum.Parse(typeof(eLocalidad), Interesado.Localidad);
+
+                    cbLocalidad.SelectedIndex = (int)localidad; //esto creo que no es asi, deberiamos agarrar el texto y pasarlo a enum
+
 
                     inmuebles = ServiceHelper.ws.GetInmuebles().ToList();
 
@@ -173,7 +182,10 @@ namespace InmobiliariaForms
                     eMoneda tipoMoneda;
                     Enum.TryParse<eMoneda>(cbMoneda.SelectedValue.ToString(), out tipoMoneda);
                     Interesado.TipoDeMoneda = (int)tipoMoneda;
-                    
+
+
+                    Interesado.Localidad = cbLocalidad.SelectedValue.ToString();
+
                     Interesado.Nombre = txNombre.Text;
                     Interesado.Apellido = txApellido.Text;
                     Interesado.Email = txEmail.Text;
@@ -304,5 +316,6 @@ namespace InmobiliariaForms
                 EmailHelper.EnviarNotificacion(ex);
             }
         }
+
     }
 }

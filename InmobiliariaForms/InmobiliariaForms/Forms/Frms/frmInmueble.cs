@@ -476,7 +476,7 @@ namespace InmobiliariaForms
             else
             {
 
-                if (Inmueble.Webid != null && Inmueble.Webid != 0)
+                if (Inmueble.WebId != null && Inmueble.WebId != 0)
                 {
                     MessageBox.Show("Este Inmueble ya esta en la Web");
 
