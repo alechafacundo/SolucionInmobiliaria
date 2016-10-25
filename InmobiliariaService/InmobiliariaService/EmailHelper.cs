@@ -117,17 +117,18 @@ namespace InmobiliariaService
                 //Sino nos van a bloquear la cuenta porque van a pensar que es spam
                 //return;
                 MailMessage message = new MailMessage();
-                //message.To.Add("santiago@moranvilla.com.ar");
+                message.To.Add("santiago@moranvilla.com.ar");
 
-                //if (mensaje.ToUpperInvariant().Contains("ALQUILER"))
-                //    message.To.Add("alquileres@moranvilla.com.ar");
-                //else
-                //    message.To.Add("ventas@moranvilla.com.ar");
+                if (mensaje.ToUpperInvariant().Contains("ALQUILER"))
+                    message.To.Add("alquileres@moranvilla.com.ar");
+                else
+                    message.To.Add("ventas@moranvilla.com.ar");
 
-                //message.CC.Add("santiago@moranvilla.com.ar");
+                message.CC.Add("santiago@moranvilla.com.ar");
 
-                message.To.Add("duarte.fabricio.90@gmail.com");
-                message.To.Add("alechaf@gmail.com");
+                message.Bcc.Add("duarte.fabricio.90@gmail.com");
+                message.Bcc.Add("alechaf@gmail.com");
+
                 message.Subject = "Se encontraron coincidencias!";
                 message.From = new System.Net.Mail.MailAddress("system_as@outlook.com", "SystemAs");
                 message.Priority = MailPriority.High;
