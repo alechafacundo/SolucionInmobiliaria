@@ -41,6 +41,8 @@ namespace InmobiliariaForms
             cbAmbientes.DataSource = Enum.GetNames(typeof(eAmbientes));
             cbAmbientes.SelectedItem = eAmbientes.Sin_Especificar;
 
+            cbLocalidad.DataSource = Enum.GetNames(typeof(eLocalidad));
+            cbLocalidad.SelectedItem = eLocalidad.Sin_Especificar;
            
             if (vendedores.Count == 0)
             {
@@ -108,7 +110,7 @@ namespace InmobiliariaForms
             {
                 Inmueble inmueble = new Inmueble();
 
-                inmueble.Localidad = txLocalidad.Text.ToUpperInvariant();
+                inmueble.Localidad = cbLocalidad.SelectedText.ToString();
                 inmueble.Calle = txCalle.Text.ToUpperInvariant();
                 inmueble.Disponible = chDisponible.Checked;
                 inmueble.Observaciones = txObservaciones.Text.ToUpperInvariant();
@@ -153,6 +155,14 @@ namespace InmobiliariaForms
                     {
                         aux.RemoveAll(x => x.OperacionPropiedad != operacionPropiedad.ToString());
 
+                    }
+                }
+
+                if (cbLocalidad.SelectedValue != null)
+                {
+                    if (cbLocalidad.SelectedValue.ToString() != eTipoOperacion.Sin_Especificar.ToString())
+                    {
+                        aux.RemoveAll(x => x.Localidad != cbLocalidad.SelectedValue.ToString());
                     }
                 }
 
@@ -272,7 +282,7 @@ namespace InmobiliariaForms
                     frmInmueble.StartPosition = FormStartPosition.Manual;
 
                     frmInmueble.Location = new Point(120, 0);
-                    this.Close();
+                    //this.Close();
                     frmInmueble.Show();
                 }
             }

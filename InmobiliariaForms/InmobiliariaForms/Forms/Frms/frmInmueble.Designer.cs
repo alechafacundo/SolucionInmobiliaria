@@ -42,7 +42,6 @@
             this.dateTimeFecha = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txLocalidad = new System.Windows.Forms.TextBox();
             this.txCalle = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -85,6 +84,7 @@
             this.cbAmbientes = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.btPublicarWeb = new System.Windows.Forms.Button();
+            this.cbLocalidad = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.g.SuspendLayout();
@@ -232,15 +232,6 @@
             this.label6.Size = new System.Drawing.Size(40, 14);
             this.label6.TabIndex = 8;
             this.label6.Text = "Calle: ";
-            // 
-            // txLocalidad
-            // 
-            this.txLocalidad.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txLocalidad.Location = new System.Drawing.Point(403, 78);
-            this.txLocalidad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txLocalidad.Name = "txLocalidad";
-            this.txLocalidad.Size = new System.Drawing.Size(203, 22);
-            this.txLocalidad.TabIndex = 9;
             // 
             // txCalle
             // 
@@ -552,6 +543,7 @@
             // 
             this.g.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.g.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.g.Controls.Add(this.cbLocalidad);
             this.g.Controls.Add(this.cbEstado);
             this.g.Controls.Add(this.label20);
             this.g.Controls.Add(this.cbUbicacion);
@@ -584,7 +576,6 @@
             this.g.Controls.Add(this.label8);
             this.g.Controls.Add(this.label7);
             this.g.Controls.Add(this.txCalle);
-            this.g.Controls.Add(this.txLocalidad);
             this.g.Controls.Add(this.label6);
             this.g.Controls.Add(this.label4);
             this.g.Controls.Add(this.dateTimeFecha);
@@ -712,6 +703,14 @@
             this.btPublicarWeb.UseVisualStyleBackColor = false;
             this.btPublicarWeb.Click += new System.EventHandler(this.btPublicarWeb_Click);
             // 
+            // cbLocalidad
+            // 
+            this.cbLocalidad.FormattingEnabled = true;
+            this.cbLocalidad.Location = new System.Drawing.Point(407, 77);
+            this.cbLocalidad.Name = "cbLocalidad";
+            this.cbLocalidad.Size = new System.Drawing.Size(157, 23);
+            this.cbLocalidad.TabIndex = 54;
+            // 
             // frmInmueble
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -756,7 +755,6 @@
         private System.Windows.Forms.DateTimePicker dateTimeFecha;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txLocalidad;
         private System.Windows.Forms.TextBox txCalle;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -799,5 +797,6 @@
         private System.Windows.Forms.ComboBox cbAmbientes;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button btPublicarWeb;
+        private System.Windows.Forms.ComboBox cbLocalidad;
     }
 }

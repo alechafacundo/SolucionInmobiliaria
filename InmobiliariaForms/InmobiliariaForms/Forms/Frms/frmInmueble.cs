@@ -65,7 +65,7 @@ namespace InmobiliariaForms
                     Inmueble.Ambientes = (int)ambiente;
 
                     Inmueble.Fecha = dateTimeFecha.Value;
-                    Inmueble.Localidad = txLocalidad.Text.ToUpperInvariant();
+                    Inmueble.Localidad = cbLocalidad.SelectedValue.ToString();
                     Inmueble.Calle = txCalle.Text.ToUpperInvariant();
                     Inmueble.Antiguedad = txAntiguedad.Text.ToUpperInvariant();
                     Inmueble.Comentarios = txComentariosInternos.Text.ToUpperInvariant();
@@ -202,6 +202,9 @@ namespace InmobiliariaForms
                 cbEstado.DataSource = Enum.GetNames(typeof(eEstado));
                 cbEstado.SelectedItem = eEstado.Sin_Especificar;
 
+                cbLocalidad.DataSource = Enum.GetNames(typeof(eLocalidad));
+                cbLocalidad.SelectedItem = eLocalidad.Sin_Especificar;
+
                 vendedores = ServiceHelper.ws.GetVendedores().ToList();
                 cbCargadoPor.DataSource = vendedores;
                 cbCargadoPor.DisplayMember = "FullName";
@@ -225,7 +228,11 @@ namespace InmobiliariaForms
                     cbTipoOperacion.SelectedIndex = (int)Inmueble.Operacion;
 
                     dateTimeFecha.Value = Inmueble.Fecha != null ? Inmueble.Fecha.Value : DateTime.Now;
-                    txLocalidad.Text = Inmueble.Localidad;
+
+                    eLocalidad localidad = (eLocalidad)Enum.Parse(typeof(eLocalidad), Inmueble.Localidad);
+                    cbLocalidad.SelectedIndex = (int)localidad;
+                    //txLocalidad.Text = Inmueble.Localidad;
+
                     txAntiguedad.Text = Inmueble.Antiguedad;
                     txComentariosInternos.Text = Inmueble.Comentarios;
                     txCalle.Text = Inmueble.Calle;

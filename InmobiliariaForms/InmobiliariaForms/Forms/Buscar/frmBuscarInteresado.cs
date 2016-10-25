@@ -65,7 +65,8 @@ namespace InmobiliariaForms
                              Telefono = a.Telefono,
                              TipoInmueble = ((eTipoInmueble)a.TipoDeInmueble).ToString(),
                              TipoMoneda = ((eMoneda)a.TipoDeMoneda).ToString(),
-                             TipoOperacion = ((eTipoOperacion)a.TipoDeOperacion).ToString()
+                             TipoOperacion = ((eTipoOperacion)a.TipoDeOperacion).ToString(),
+                             Localidad = a.Localidad
                          }).ToList();
 
             gvResultado.DataSource = Personas;
@@ -97,7 +98,7 @@ namespace InmobiliariaForms
 
                     //int width = this.Controls.Find("netBarControl1", true)[0].Width;
                     frmInteresado.Location = new Point(120, 0);
-                    this.Close();
+                    //this.Close();
                     frmInteresado.Show();
                 }
             }
@@ -160,7 +161,7 @@ namespace InmobiliariaForms
                     if (localidad != eLocalidad.Sin_Especificar)
                     {
                         //aux.AddRange(Interesados.Where(x => x.TipoDeInmueble != (int)tipoInmueble).ToList());
-                        aux.RemoveAll(x => x.TipoInmueble != localidad.ToString());
+                        aux.RemoveAll(x => x.Localidad != localidad.ToString());
                     }
 
                     /*eLocalidad localidad;

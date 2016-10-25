@@ -30,6 +30,9 @@
         {
             this.gvResultado = new System.Windows.Forms.DataGridView();
             this.g = new System.Windows.Forms.GroupBox();
+            this.cbLocalidad = new System.Windows.Forms.ComboBox();
+            this.txObservaciones = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.cbAmbientes = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txCalle = new System.Windows.Forms.TextBox();
@@ -41,7 +44,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.numPrecioDesde = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
-            this.txLocalidad = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,8 +53,6 @@
             this.btCancelar = new System.Windows.Forms.Button();
             this.btMasDetalles = new System.Windows.Forms.Button();
             this.chDisponible = new System.Windows.Forms.CheckBox();
-            this.txObservaciones = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gvResultado)).BeginInit();
             this.g.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecioHasta)).BeginInit();
@@ -76,6 +76,7 @@
             // 
             this.g.BackColor = System.Drawing.Color.White;
             this.g.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.g.Controls.Add(this.cbLocalidad);
             this.g.Controls.Add(this.txObservaciones);
             this.g.Controls.Add(this.label9);
             this.g.Controls.Add(this.cbAmbientes);
@@ -89,7 +90,6 @@
             this.g.Controls.Add(this.label12);
             this.g.Controls.Add(this.numPrecioDesde);
             this.g.Controls.Add(this.label11);
-            this.g.Controls.Add(this.txLocalidad);
             this.g.Controls.Add(this.label4);
             this.g.Controls.Add(this.comboBox2);
             this.g.Controls.Add(this.label2);
@@ -102,13 +102,39 @@
             this.g.TabIndex = 4;
             this.g.TabStop = false;
             // 
+            // cbLocalidad
+            // 
+            this.cbLocalidad.FormattingEnabled = true;
+            this.cbLocalidad.Location = new System.Drawing.Point(79, 53);
+            this.cbLocalidad.Name = "cbLocalidad";
+            this.cbLocalidad.Size = new System.Drawing.Size(191, 22);
+            this.cbLocalidad.TabIndex = 75;
+            this.cbLocalidad.SelectedValueChanged += new System.EventHandler(this.FiltrarResultados);
+            // 
+            // txObservaciones
+            // 
+            this.txObservaciones.Location = new System.Drawing.Point(101, 148);
+            this.txObservaciones.Name = "txObservaciones";
+            this.txObservaciones.Size = new System.Drawing.Size(517, 22);
+            this.txObservaciones.TabIndex = 73;
+            this.txObservaciones.TextChanged += new System.EventHandler(this.FiltrarResultados);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 151);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(89, 14);
+            this.label9.TabIndex = 74;
+            this.label9.Text = "Observaciones:";
+            // 
             // cbAmbientes
             // 
             this.cbAmbientes.BackColor = System.Drawing.Color.Beige;
             this.cbAmbientes.FormattingEnabled = true;
             this.cbAmbientes.Location = new System.Drawing.Point(79, 86);
             this.cbAmbientes.Name = "cbAmbientes";
-            this.cbAmbientes.Size = new System.Drawing.Size(190, 22);
+            this.cbAmbientes.Size = new System.Drawing.Size(191, 22);
             this.cbAmbientes.TabIndex = 5;
             this.cbAmbientes.SelectedValueChanged += new System.EventHandler(this.FiltrarResultados);
             // 
@@ -231,14 +257,6 @@
             this.label11.TabIndex = 20;
             this.label11.Text = "Precio Desde:";
             // 
-            // txLocalidad
-            // 
-            this.txLocalidad.Location = new System.Drawing.Point(76, 53);
-            this.txLocalidad.Name = "txLocalidad";
-            this.txLocalidad.Size = new System.Drawing.Size(201, 22);
-            this.txLocalidad.TabIndex = 3;
-            this.txLocalidad.TextChanged += new System.EventHandler(this.FiltrarResultados);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -331,23 +349,6 @@
             this.chDisponible.UseVisualStyleBackColor = true;
             this.chDisponible.CheckedChanged += new System.EventHandler(this.FiltrarResultados);
             // 
-            // txObservaciones
-            // 
-            this.txObservaciones.Location = new System.Drawing.Point(101, 148);
-            this.txObservaciones.Name = "txObservaciones";
-            this.txObservaciones.Size = new System.Drawing.Size(517, 22);
-            this.txObservaciones.TabIndex = 73;
-            this.txObservaciones.TextChanged += new System.EventHandler(this.FiltrarResultados);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 151);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(89, 14);
-            this.label9.TabIndex = 74;
-            this.label9.Text = "Observaciones:";
-            // 
             // frmBuscarInmueble
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -385,7 +386,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.NumericUpDown numPrecioDesde;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txLocalidad;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label2;
@@ -401,5 +401,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txObservaciones;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cbLocalidad;
     }
 }

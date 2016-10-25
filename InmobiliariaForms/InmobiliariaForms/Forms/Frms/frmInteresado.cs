@@ -60,7 +60,7 @@ namespace InmobiliariaForms
                     // = eLocalidad.Santa_Rosa;
                     eLocalidad localidad = (eLocalidad)Enum.Parse(typeof(eLocalidad), Interesado.Localidad);
 
-                    cbLocalidad.SelectedIndex = (int)localidad; //esto creo que no es asi, deberiamos agarrar el texto y pasarlo a enum
+                    cbLocalidad.SelectedIndex = (int)localidad; 
 
 
                     inmuebles = ServiceHelper.ws.GetInmuebles().ToList();
@@ -126,6 +126,11 @@ namespace InmobiliariaForms
             if (Interesado.TipoDeInmueble != (int)eTipoInmueble.Sin_Especificar)
             {
                 aux.RemoveAll(x => x.TipoInmueblePropiedad != ((eTipoInmueble)Interesado.TipoDeInmueble).ToString());
+            }
+
+            if (Interesado.Localidad != eLocalidad.Sin_Especificar.ToString())
+            {
+                aux.RemoveAll(x => x.Localidad != Interesado.Localidad);
             }
 
             if (Interesado.TipoDeOperacion != (int)eTipoOperacion.Sin_Especificar)
