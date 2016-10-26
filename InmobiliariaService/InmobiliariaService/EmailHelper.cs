@@ -32,7 +32,7 @@ namespace InmobiliariaService
 
                 foreach (Inmueble inmueble in inmuebles.Where(x => x.Disponible))
                 {
-                    string localidad = "N/A";
+                    string provincia = "N/A";
                     string calle = "N/A";
                     string numero = "N/A";
                     string piso = "N/A";
@@ -45,8 +45,8 @@ namespace InmobiliariaService
                     string referencia = "N/A";
                     string contacto = "N/A";
 
-                    if (!string.IsNullOrEmpty(inmueble.Localidad))
-                        localidad = inmueble.Localidad;
+                    if (!string.IsNullOrEmpty(inmueble.Provincia))
+                        provincia = inmueble.Provincia;
                     if (!string.IsNullOrEmpty(inmueble.Calle))
                         calle = inmueble.Calle;
                     if (!string.IsNullOrEmpty(inmueble.Numero))
@@ -72,7 +72,7 @@ namespace InmobiliariaService
 
 
                     cuerpo += string.Format("- {0}, ubicado en <b> {1} </b>, en la calle <b> {2} N° {3} </b> piso {4} departamento {5}.<br>",
-                        ((eTipoInmueble)inmueble.Tipo).ToString(), localidad, calle, numero, piso, departamento) + Environment.NewLine;
+                        ((eTipoInmueble)inmueble.Tipo).ToString(), provincia, calle, numero, piso, departamento) + Environment.NewLine;
                     cuerpo += string.Format("El mismo está constituido por {0} dormitorio/s, {1} baño/s y {2} comedor/es. Cuenta con una superficie cubierta de {3} Mts.<br>", dormitorio, baño, comedor, supCubierta);
                     cuerpo += string.Format("Su valor de {0} es de <b> {1} {2} </b>.<br>", ((eTipoOperacion)inmueble.Operacion).ToString(), ((eMoneda)inmueble.Moneda).ToString(), valor.ToString(CultureInfo.CreateSpecificCulture("es-Ar"))) + Environment.NewLine;
                     cuerpo += string.Format("El contacto del mismo es <b> {0} </b> puede ser ubicado al {1}.<br><br>", contacto, referencia) + Environment.NewLine;
@@ -156,12 +156,12 @@ namespace InmobiliariaService
             {
                 string cabecera = string.Empty;
 
-                string localidad = "N/A";
+                string provincia = "N/A";
                 string calle = "N/A";
                 string numero = "N/A";
 
-                if (!string.IsNullOrEmpty(inmueble.Localidad))
-                    localidad = inmueble.Localidad;
+                if (!string.IsNullOrEmpty(inmueble.Provincia))
+                    provincia = inmueble.Provincia;
 
                 if (!string.IsNullOrEmpty(inmueble.Calle))
                     calle = inmueble.Calle;
@@ -170,7 +170,7 @@ namespace InmobiliariaService
                     numero = inmueble.Numero;
 
                 
-                cabecera += string.Format("Se han encontrado los siguientes Interesados para el Inmueble: {0}, ubicado en <b> {1} Nº{2} </b> de la localidad de {3} <br><br>", ((eTipoInmueble)inmueble.Tipo).ToString(), calle, numero, localidad) + Environment.NewLine;
+                cabecera += string.Format("Se han encontrado los siguientes Interesados para el Inmueble: {0}, ubicado en <b> {1} Nº{2} </b> de la localidad de {3} <br><br>", ((eTipoInmueble)inmueble.Tipo).ToString(), calle, numero, provincia) + Environment.NewLine;
 
                 string cuerpo = string.Empty;
 

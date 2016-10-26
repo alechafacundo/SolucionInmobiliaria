@@ -57,6 +57,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="Disponible" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="Estado" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="WebId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Provincia" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="Interesado">
@@ -89,6 +90,7 @@
           <s:enumeration value="Oficina" />
           <s:enumeration value="Galpon" />
           <s:enumeration value="Pozo" />
+          <s:enumeration value="Campo" />
         </s:restriction>
       </s:simpleType>
       <s:simpleType name="eTipoOperacion">
@@ -159,8 +161,7 @@
       <s:simpleType name="eLocalidad">
         <s:restriction base="s:string">
           <s:enumeration value="Sin_Especificar" />
-          <s:enumeration value="Santa_Rosa" />
-          <s:enumeration value="Toay" />
+          <s:enumeration value="La_Pampa" />
           <s:enumeration value="Buenos_Aires" />
         </s:restriction>
       </s:simpleType>

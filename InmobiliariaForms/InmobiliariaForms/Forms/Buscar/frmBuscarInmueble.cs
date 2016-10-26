@@ -73,7 +73,8 @@ namespace InmobiliariaForms
                                Calle = a.Calle,
                                Numero = a.Numero,
                                Fecha = a.Fecha,
-                               CargadoPor = a.CargadoPor
+                               CargadoPor = a.CargadoPor,
+                               Provincia = a.Provincia
                            }).ToList();
 
             gvResultado.DataSource = propiedades;
@@ -184,9 +185,9 @@ namespace InmobiliariaForms
 
                 }
 
-                if (!string.IsNullOrEmpty(inmueble.Localidad))
+                if (!string.IsNullOrEmpty(inmueble.Provincia))
                 {
-                    aux.RemoveAll(x => !x.Localidad.Contains(inmueble.Localidad));
+                    aux.RemoveAll(x => !x.Provincia.Contains(inmueble.Provincia));
                     
                 }
 
@@ -316,5 +317,6 @@ namespace InmobiliariaForms
         public string Otros { get; set; }
         public bool Disponible { get; set; }
         public string Ambientes { get; set; }
+        public string Provincia { get; set; }
     }
 }

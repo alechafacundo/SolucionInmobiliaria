@@ -81,6 +81,7 @@ namespace InmobiliariaForms
                     Inmueble.Precio = numPrecio.Value;
                     Inmueble.CargadoPor = ((Vendedor)cbCargadoPor.SelectedItem).Id;
                     Inmueble.Disponible = checkDisponible.Checked;
+                    Inmueble.Provincia = txLocalidad.Text.ToUpperInvariant();
 
                     
 
@@ -203,7 +204,7 @@ namespace InmobiliariaForms
                 cbEstado.SelectedItem = eEstado.Sin_Especificar;
 
                 cbLocalidad.DataSource = Enum.GetNames(typeof(eLocalidad));
-                cbLocalidad.SelectedItem = eLocalidad.Sin_Especificar;
+                cbLocalidad.SelectedItem = eLocalidad.La_Pampa;
 
                 vendedores = ServiceHelper.ws.GetVendedores().ToList();
                 cbCargadoPor.DataSource = vendedores;
@@ -253,6 +254,7 @@ namespace InmobiliariaForms
                     cbCochera.SelectedIndex = Inmueble.Cochera == false ? 0 : 1;
                     cbUbicacion.SelectedIndex = (int)Enum.Parse(typeof(eUbicacion), Inmueble.Ubicacion);
                     cbEstado.SelectedIndex = Inmueble.Estado;
+                    txLocalidad.Text = Inmueble.Provincia;
                 }
             }
             catch (Exception ex)

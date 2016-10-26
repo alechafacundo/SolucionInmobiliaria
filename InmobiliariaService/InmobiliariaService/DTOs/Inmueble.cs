@@ -32,5 +32,6 @@ namespace InmobiliariaService
         public bool Disponible { get; set; }
         public int Estado { get; set; }
         public int WebId { get; set; }
+        public string Provincia { get; set; }
     }
 }

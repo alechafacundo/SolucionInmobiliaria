@@ -15,7 +15,8 @@ namespace InmobiliariaService
         FondoDeComercio = 6,
         Oficina = 7,
         Galpon = 8,
-        Pozo = 9
+        Pozo = 9,
+        Campo = 10
 	}
 
     public enum eTipoOperacion
@@ -73,8 +74,7 @@ namespace InmobiliariaService
     public enum eLocalidad
     {
         Sin_Especificar = 0,
-        Santa_Rosa = 1,
-        Toay = 2,
-        Buenos_Aires = 3
+        La_Pampa = 1,
+        Buenos_Aires = 2
     }
 }

@@ -39,7 +39,7 @@ namespace InmobiliariaForms
                 cbAmbientes.SelectedItem = eAmbientes.Sin_Especificar;
 
                 cbLocalidad.DataSource = Enum.GetNames(typeof(eLocalidad));
-                cbLocalidad.SelectedItem = eLocalidad.Santa_Rosa; 
+                cbLocalidad.SelectedItem = eLocalidad.La_Pampa; 
 
                 if (Interesado != null)
                 {
