@@ -39,7 +39,7 @@ namespace InmobiliariaForms
                 cbAmbientes.SelectedItem = eAmbientes.Sin_Especificar;
 
                 cbLocalidad.DataSource = Enum.GetNames(typeof(eLocalidad));
-                cbLocalidad.SelectedItem = eLocalidad.La_Pampa; 
+                cbLocalidad.SelectedIndex = (int)eLocalidad.La_Pampa;
 
                 if (Interesado != null)
                 {
@@ -57,9 +57,8 @@ namespace InmobiliariaForms
                     txObservaciones.Text = Interesado.Observaciones;
                     checkDisponible.Checked = Interesado.Disponible;
 
-                    // = eLocalidad.Santa_Rosa;
+                    
                     eLocalidad localidad = (eLocalidad)Enum.Parse(typeof(eLocalidad), Interesado.Localidad);
-
                     cbLocalidad.SelectedIndex = (int)localidad; 
 
 
@@ -80,7 +79,7 @@ namespace InmobiliariaForms
                                        TipoInmueblePropiedad = ((eTipoInmueble)a.Tipo).ToString(),
                                        MonedaPropiedad = ((eMoneda)a.Moneda).ToString(),
                                        OperacionPropiedad = ((eTipoOperacion)a.Operacion).ToString(),
-                                       Localidad = a.Localidad,
+                                       Provincia = a.Localidad,
                                        //Barrio = a.Barrio,
                                        Calle = a.Calle,
                                        Numero = a.Numero,
@@ -128,10 +127,10 @@ namespace InmobiliariaForms
                 aux.RemoveAll(x => x.TipoInmueblePropiedad != ((eTipoInmueble)Interesado.TipoDeInmueble).ToString());
             }
 
-            if (Interesado.Localidad != eLocalidad.Sin_Especificar.ToString())
-            {
-                aux.RemoveAll(x => x.Localidad != Interesado.Localidad);
-            }
+            //if (Interesado.Localidad != eLocalidad.Sin_Especificar.ToString())
+            //{
+            //    aux.RemoveAll(x => x.Localidad != Interesado.Localidad);
+            //}
 
             if (Interesado.TipoDeOperacion != (int)eTipoOperacion.Sin_Especificar)
             {

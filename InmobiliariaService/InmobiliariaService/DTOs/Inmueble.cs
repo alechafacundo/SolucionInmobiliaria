@@ -15,7 +15,7 @@ namespace InmobiliariaService
         public string Ubicacion { get; set; }
         public string Antiguedad { get; set; }
         public string Comentarios { get; set; }   
-        public string Localidad { get; set; }
+        public string Localidad { get; set; } //combo Provincia
         public string Calle { get; set; }
         public string Numero { get; set; }
         public string Piso { get; set; }
@@ -32,6 +32,6 @@ namespace InmobiliariaService
         public bool Disponible { get; set; }
         public int Estado { get; set; }
         public int WebId { get; set; }
-        public string Provincia { get; set; }
+        public string Provincia { get; set; } //Tx localidad
     }
 }

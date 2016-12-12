@@ -25,7 +25,7 @@ namespace InmobiliariaForms
             }
             catch (Exception ex)
             {
-                throw;
+                //throw;
             }
 
         }

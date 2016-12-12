@@ -72,6 +72,8 @@
             this.cbTipoOperacion = new System.Windows.Forms.ComboBox();
             this.checkDisponible = new System.Windows.Forms.CheckBox();
             this.g = new System.Windows.Forms.GroupBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txLocalidad = new System.Windows.Forms.TextBox();
             this.cbLocalidad = new System.Windows.Forms.ComboBox();
             this.cbEstado = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -85,8 +87,6 @@
             this.cbAmbientes = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.btPublicarWeb = new System.Windows.Forms.Button();
-            this.txLocalidad = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecio)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.g.SuspendLayout();
@@ -381,7 +381,7 @@
             this.txMtsTerreno.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txMtsTerreno.Name = "txMtsTerreno";
             this.txMtsTerreno.Size = new System.Drawing.Size(56, 21);
-            this.txMtsTerreno.TabIndex = 12;
+            this.txMtsTerreno.TabIndex = 13;
             // 
             // label14
             // 
@@ -401,7 +401,7 @@
             this.txSupCubierta.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txSupCubierta.Name = "txSupCubierta";
             this.txSupCubierta.Size = new System.Drawing.Size(65, 21);
-            this.txSupCubierta.TabIndex = 13;
+            this.txSupCubierta.TabIndex = 17;
             // 
             // label16
             // 
@@ -504,7 +504,7 @@
             this.cbCargadoPor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbCargadoPor.Name = "cbCargadoPor";
             this.cbCargadoPor.Size = new System.Drawing.Size(126, 23);
-            this.cbCargadoPor.TabIndex = 23;
+            this.cbCargadoPor.TabIndex = 122;
             // 
             // label23
             // 
@@ -537,7 +537,7 @@
             this.checkDisponible.Location = new System.Drawing.Point(8, 172);
             this.checkDisponible.Name = "checkDisponible";
             this.checkDisponible.Size = new System.Drawing.Size(102, 20);
-            this.checkDisponible.TabIndex = 17;
+            this.checkDisponible.TabIndex = 123;
             this.checkDisponible.Text = "Disponible";
             this.checkDisponible.UseVisualStyleBackColor = true;
             // 
@@ -597,6 +597,24 @@
             this.g.TabIndex = 1;
             this.g.TabStop = false;
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(371, 81);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(64, 15);
+            this.label21.TabIndex = 56;
+            this.label21.Text = "Localidad:";
+            // 
+            // txLocalidad
+            // 
+            this.txLocalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txLocalidad.Location = new System.Drawing.Point(435, 78);
+            this.txLocalidad.Name = "txLocalidad";
+            this.txLocalidad.Size = new System.Drawing.Size(171, 21);
+            this.txLocalidad.TabIndex = 9;
+            // 
             // cbLocalidad
             // 
             this.cbLocalidad.BackColor = System.Drawing.Color.Beige;
@@ -604,7 +622,7 @@
             this.cbLocalidad.Location = new System.Drawing.Point(348, 106);
             this.cbLocalidad.Name = "cbLocalidad";
             this.cbLocalidad.Size = new System.Drawing.Size(122, 24);
-            this.cbLocalidad.TabIndex = 54;
+            this.cbLocalidad.TabIndex = 12;
             // 
             // cbEstado
             // 
@@ -715,24 +733,6 @@
             this.btPublicarWeb.Text = "Publicar Inmueble En la Web";
             this.btPublicarWeb.UseVisualStyleBackColor = false;
             this.btPublicarWeb.Click += new System.EventHandler(this.btPublicarWeb_Click);
-            // 
-            // txLocalidad
-            // 
-            this.txLocalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txLocalidad.Location = new System.Drawing.Point(435, 78);
-            this.txLocalidad.Name = "txLocalidad";
-            this.txLocalidad.Size = new System.Drawing.Size(171, 21);
-            this.txLocalidad.TabIndex = 55;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(371, 81);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(64, 15);
-            this.label21.TabIndex = 56;
-            this.label21.Text = "Localidad:";
             // 
             // frmInmueble
             // 

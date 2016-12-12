@@ -30,6 +30,8 @@
         {
             this.gvResultado = new System.Windows.Forms.DataGridView();
             this.g = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txProvincia = new System.Windows.Forms.TextBox();
             this.cbLocalidad = new System.Windows.Forms.ComboBox();
             this.txObservaciones = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -53,8 +55,6 @@
             this.btCancelar = new System.Windows.Forms.Button();
             this.btMasDetalles = new System.Windows.Forms.Button();
             this.chDisponible = new System.Windows.Forms.CheckBox();
-            this.txProvincia = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gvResultado)).BeginInit();
             this.g.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecioHasta)).BeginInit();
@@ -106,6 +106,23 @@
             this.g.TabIndex = 4;
             this.g.TabStop = false;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(375, 88);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(64, 15);
+            this.label5.TabIndex = 77;
+            this.label5.Text = "Localidad:";
+            // 
+            // txProvincia
+            // 
+            this.txProvincia.Location = new System.Drawing.Point(439, 86);
+            this.txProvincia.Name = "txProvincia";
+            this.txProvincia.Size = new System.Drawing.Size(179, 21);
+            this.txProvincia.TabIndex = 6;
+            this.txProvincia.TextChanged += new System.EventHandler(this.FiltrarResultados);
+            // 
             // cbLocalidad
             // 
             this.cbLocalidad.BackColor = System.Drawing.Color.Beige;
@@ -113,7 +130,7 @@
             this.cbLocalidad.Location = new System.Drawing.Point(79, 53);
             this.cbLocalidad.Name = "cbLocalidad";
             this.cbLocalidad.Size = new System.Drawing.Size(191, 23);
-            this.cbLocalidad.TabIndex = 75;
+            this.cbLocalidad.TabIndex = 3;
             this.cbLocalidad.SelectedValueChanged += new System.EventHandler(this.FiltrarResultados);
             // 
             // txObservaciones
@@ -121,7 +138,7 @@
             this.txObservaciones.Location = new System.Drawing.Point(101, 148);
             this.txObservaciones.Name = "txObservaciones";
             this.txObservaciones.Size = new System.Drawing.Size(517, 21);
-            this.txObservaciones.TabIndex = 73;
+            this.txObservaciones.TabIndex = 10;
             this.txObservaciones.TextChanged += new System.EventHandler(this.FiltrarResultados);
             // 
             // label9
@@ -188,7 +205,7 @@
             0});
             this.numPrecioHasta.Name = "numPrecioHasta";
             this.numPrecioHasta.Size = new System.Drawing.Size(120, 21);
-            this.numPrecioHasta.TabIndex = 7;
+            this.numPrecioHasta.TabIndex = 8;
             this.numPrecioHasta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numPrecioHasta.ThousandsSeparator = true;
             this.numPrecioHasta.ValueChanged += new System.EventHandler(this.FiltrarResultados);
@@ -217,17 +234,17 @@
             // 
             this.cbMoneda.BackColor = System.Drawing.Color.Beige;
             this.cbMoneda.FormattingEnabled = true;
-            this.cbMoneda.Location = new System.Drawing.Point(493, 116);
+            this.cbMoneda.Location = new System.Drawing.Point(493, 112);
             this.cbMoneda.Name = "cbMoneda";
             this.cbMoneda.Size = new System.Drawing.Size(125, 23);
-            this.cbMoneda.TabIndex = 8;
+            this.cbMoneda.TabIndex = 9;
             this.cbMoneda.SelectedValueChanged += new System.EventHandler(this.FiltrarResultados);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Location = new System.Drawing.Point(438, 119);
+            this.label12.Location = new System.Drawing.Point(435, 118);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(56, 15);
             this.label12.TabIndex = 22;
@@ -248,7 +265,7 @@
             0});
             this.numPrecioDesde.Name = "numPrecioDesde";
             this.numPrecioDesde.Size = new System.Drawing.Size(120, 21);
-            this.numPrecioDesde.TabIndex = 6;
+            this.numPrecioDesde.TabIndex = 7;
             this.numPrecioDesde.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numPrecioDesde.ThousandsSeparator = true;
             this.numPrecioDesde.ValueChanged += new System.EventHandler(this.FiltrarResultados);
@@ -353,22 +370,6 @@
             this.chDisponible.Text = "Ver sólo Inmuebles disponibles ";
             this.chDisponible.UseVisualStyleBackColor = true;
             this.chDisponible.CheckedChanged += new System.EventHandler(this.FiltrarResultados);
-            // 
-            // txProvincia
-            // 
-            this.txProvincia.Location = new System.Drawing.Point(439, 86);
-            this.txProvincia.Name = "txProvincia";
-            this.txProvincia.Size = new System.Drawing.Size(179, 21);
-            this.txProvincia.TabIndex = 76;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(375, 88);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 15);
-            this.label5.TabIndex = 77;
-            this.label5.Text = "Localidad:";
             // 
             // frmBuscarInmueble
             // 

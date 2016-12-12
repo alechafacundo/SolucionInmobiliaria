@@ -69,12 +69,12 @@ namespace InmobiliariaForms
                                Ambientes = ((eAmbientes)a.Ambientes).ToString(),
                                MonedaPropiedad = ((eMoneda)a.Moneda).ToString(),
                                OperacionPropiedad = ((eTipoOperacion)a.Operacion).ToString(),
-                               Localidad = a.Localidad,
+                               Provincia = a.Localidad,
                                Calle = a.Calle,
                                Numero = a.Numero,
                                Fecha = a.Fecha,
                                CargadoPor = a.CargadoPor,
-                               Provincia = a.Provincia
+                               Localidad = a.Provincia
                            }).ToList();
 
             gvResultado.DataSource = propiedades;
@@ -111,10 +111,11 @@ namespace InmobiliariaForms
             {
                 Inmueble inmueble = new Inmueble();
 
-                inmueble.Localidad = cbLocalidad.SelectedText.ToString();
+                inmueble.Localidad = cbLocalidad.SelectedValue.ToString();
                 inmueble.Calle = txCalle.Text.ToUpperInvariant();
                 inmueble.Disponible = chDisponible.Checked;
                 inmueble.Observaciones = txObservaciones.Text.ToUpperInvariant();
+                inmueble.Provincia = txProvincia.Text.ToUpperInvariant();
 
                 List<Propiedad> aux = new List<Propiedad>();
                 aux.AddRange(propiedades);
@@ -163,7 +164,7 @@ namespace InmobiliariaForms
                 {
                     if (cbLocalidad.SelectedValue.ToString() != eTipoOperacion.Sin_Especificar.ToString())
                     {
-                        aux.RemoveAll(x => x.Localidad != cbLocalidad.SelectedValue.ToString());
+                        aux.RemoveAll(x => x.Provincia != cbLocalidad.SelectedValue.ToString());
                     }
                 }
 
@@ -187,7 +188,7 @@ namespace InmobiliariaForms
 
                 if (!string.IsNullOrEmpty(inmueble.Provincia))
                 {
-                    aux.RemoveAll(x => !x.Provincia.Contains(inmueble.Provincia));
+                    aux.RemoveAll(x => !x.Localidad.ToUpperInvariant().Contains(inmueble.Provincia));
                     
                 }
 

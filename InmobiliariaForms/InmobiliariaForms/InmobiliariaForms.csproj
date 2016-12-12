@@ -277,10 +277,10 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://localhost:51592/Service.asmx">
+    <WebReferenceUrl Include="http://localhost:51592/service.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\InmobiliariaService\</RelPath>
-      <UpdateFromURL>http://localhost:51592/Service.asmx</UpdateFromURL>
+      <UpdateFromURL>http://localhost:51592/service.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

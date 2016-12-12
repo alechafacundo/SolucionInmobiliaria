@@ -39,7 +39,7 @@ namespace InmobiliariaForms
             cbAmbientes.SelectedItem = eAmbientes.Sin_Especificar;
 
             cbLocalidad.DataSource = Enum.GetNames(typeof(eLocalidad));
-            cbLocalidad.SelectedItem = eLocalidad.Sin_Especificar;
+            cbLocalidad.SelectedIndex = (int)eLocalidad.Sin_Especificar;
 
             if (Interesados.Count() == 0)
             {
@@ -66,7 +66,7 @@ namespace InmobiliariaForms
                              TipoInmueble = ((eTipoInmueble)a.TipoDeInmueble).ToString(),
                              TipoMoneda = ((eMoneda)a.TipoDeMoneda).ToString(),
                              TipoOperacion = ((eTipoOperacion)a.TipoDeOperacion).ToString(),
-                             Localidad = a.Localidad
+                             Provincia = a.Localidad
                          }).ToList();
 
             gvResultado.DataSource = Personas;
@@ -150,18 +150,13 @@ namespace InmobiliariaForms
 
                 if (cbLocalidad.SelectedValue != null)
                 {
-                    /*if (cbLocalidad.SelectedValue != eLocalidad.Sin_Especificar)
-                    {
-                        aux.RemoveAll(x => x.TipoInmueble != cbLocalidad.SelectedValue.ToString());
-                    }*/
-
                     eLocalidad localidad;
                     Enum.TryParse<eLocalidad>(cbLocalidad.SelectedValue.ToString(), out localidad);
 
                     if (localidad != eLocalidad.Sin_Especificar)
                     {
                         //aux.AddRange(Interesados.Where(x => x.TipoDeInmueble != (int)tipoInmueble).ToList());
-                        aux.RemoveAll(x => x.Localidad != localidad.ToString());
+                       aux.RemoveAll(x => x.Provincia != localidad.ToString());
                     }
 
                     /*eLocalidad localidad;
@@ -340,6 +335,6 @@ namespace InmobiliariaForms
         public string Ambientes { get; set; }
         public string Observaciones { get; set; }
         public bool Disponible { get; set; }
-        public string Localidad { get; set; }
+        public string Provincia { get; set; }
     }
 }

@@ -204,7 +204,7 @@ namespace InmobiliariaForms
                 cbEstado.SelectedItem = eEstado.Sin_Especificar;
 
                 cbLocalidad.DataSource = Enum.GetNames(typeof(eLocalidad));
-                cbLocalidad.SelectedItem = eLocalidad.La_Pampa;
+                cbLocalidad.SelectedIndex = (int)eLocalidad.La_Pampa;
 
                 vendedores = ServiceHelper.ws.GetVendedores().ToList();
                 cbCargadoPor.DataSource = vendedores;
@@ -232,7 +232,7 @@ namespace InmobiliariaForms
 
                     eLocalidad localidad = (eLocalidad)Enum.Parse(typeof(eLocalidad), Inmueble.Localidad);
                     cbLocalidad.SelectedIndex = (int)localidad;
-                    //txLocalidad.Text = Inmueble.Localidad;
+                    txLocalidad.Text = Inmueble.Provincia;
 
                     txAntiguedad.Text = Inmueble.Antiguedad;
                     txComentariosInternos.Text = Inmueble.Comentarios;
@@ -254,7 +254,7 @@ namespace InmobiliariaForms
                     cbCochera.SelectedIndex = Inmueble.Cochera == false ? 0 : 1;
                     cbUbicacion.SelectedIndex = (int)Enum.Parse(typeof(eUbicacion), Inmueble.Ubicacion);
                     cbEstado.SelectedIndex = Inmueble.Estado;
-                    txLocalidad.Text = Inmueble.Provincia;
+                    
                 }
             }
             catch (Exception ex)
