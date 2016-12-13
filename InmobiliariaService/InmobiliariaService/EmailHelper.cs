@@ -117,7 +117,6 @@ namespace InmobiliariaService
                 //Sino nos van a bloquear la cuenta porque van a pensar que es spam
                 //return;
                 MailMessage message = new MailMessage();
-              
 
                 //if (mensaje.ToUpperInvariant().Contains("ALQUILER"))
                 //    message.To.Add("alquileres@moranvilla.com.ar");

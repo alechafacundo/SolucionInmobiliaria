@@ -53,7 +53,7 @@ namespace InmobiliariaService
 
                 aux.RemoveAll(x => !x.Disponible);
 
-                if (interesado.Localidad != eLocalidad.La_Pampa.ToString())
+                if (interesado.Localidad != eLocalidad.Sin_Especificar.ToString())
                 {
                     aux.RemoveAll(x => x.Localidad != interesado.Localidad);
                 }
