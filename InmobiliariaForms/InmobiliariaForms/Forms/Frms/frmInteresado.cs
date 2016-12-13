@@ -127,10 +127,10 @@ namespace InmobiliariaForms
                 aux.RemoveAll(x => x.TipoInmueblePropiedad != ((eTipoInmueble)Interesado.TipoDeInmueble).ToString());
             }
 
-            //if (Interesado.Localidad != eLocalidad.Sin_Especificar.ToString())
-            //{
-            //    aux.RemoveAll(x => x.Localidad != Interesado.Localidad);
-            //}
+            if (Interesado.Localidad != eLocalidad.Sin_Especificar.ToString())
+            {
+                aux.RemoveAll(x => x.Provincia != Interesado.Localidad);
+            }
 
             if (Interesado.TipoDeOperacion != (int)eTipoOperacion.Sin_Especificar)
             {
