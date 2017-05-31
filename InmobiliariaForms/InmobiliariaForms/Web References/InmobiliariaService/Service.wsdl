@@ -76,6 +76,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="Disponible" type="s:boolean" />
           <s:element minOccurs="1" maxOccurs="1" name="Ambientes" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="Localidad" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="s:dateTime" />
         </s:sequence>
       </s:complexType>
       <s:simpleType name="eTipoInmueble">

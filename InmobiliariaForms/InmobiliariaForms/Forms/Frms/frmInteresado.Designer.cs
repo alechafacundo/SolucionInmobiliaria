@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInteresado));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dtFechaCreacion = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.numDesde = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.cbLocalidad = new System.Windows.Forms.ComboBox();
             this.cbAmbientes = new System.Windows.Forms.ComboBox();
@@ -58,25 +62,21 @@
             this.btEliminar = new System.Windows.Forms.Button();
             this.gvInmueblesParaInteresado = new System.Windows.Forms.DataGridView();
             this.lbInmuebles = new System.Windows.Forms.Label();
-            this.numDesde = new System.Windows.Forms.NumericUpDown();
-            this.label8 = new System.Windows.Forms.Label();
-            this.fechaCreacion = new System.Windows.Forms.DateTimePicker();
-            this.label11 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numDesde)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHasta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvInmueblesParaInteresado)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDesde)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.fechaCreacion);
+            this.groupBox1.Controls.Add(this.dtFechaCreacion);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.numDesde);
             this.groupBox1.Controls.Add(this.label4);
@@ -110,6 +110,54 @@
             this.groupBox1.Size = new System.Drawing.Size(627, 307);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(315, 187);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(106, 16);
+            this.label11.TabIndex = 52;
+            this.label11.Text = "Fecha Creación:";
+            // 
+            // dtFechaCreacion
+            // 
+            this.dtFechaCreacion.Location = new System.Drawing.Point(427, 182);
+            this.dtFechaCreacion.Name = "dtFechaCreacion";
+            this.dtFechaCreacion.Size = new System.Drawing.Size(189, 21);
+            this.dtFechaCreacion.TabIndex = 51;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(219, 88);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(92, 16);
+            this.label8.TabIndex = 50;
+            this.label8.Text = "Monto Desde:";
+            // 
+            // numDesde
+            // 
+            this.numDesde.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numDesde.Increment = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numDesde.Location = new System.Drawing.Point(312, 85);
+            this.numDesde.Maximum = new decimal(new int[] {
+            -1530494976,
+            232830,
+            0,
+            0});
+            this.numDesde.Name = "numDesde";
+            this.numDesde.Size = new System.Drawing.Size(103, 21);
+            this.numDesde.TabIndex = 49;
+            this.numDesde.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numDesde.ThousandsSeparator = true;
             // 
             // label4
             // 
@@ -151,9 +199,9 @@
             // 
             // btCancelar
             // 
-            this.btCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.btCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCancelar.Location = new System.Drawing.Point(351, 271);
@@ -166,9 +214,9 @@
             // 
             // btGuardar
             // 
-            this.btGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.btGuardar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btGuardar.Location = new System.Drawing.Point(489, 271);
@@ -382,9 +430,9 @@
             // 
             // btEliminar
             // 
-            this.btEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.btEliminar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btEliminar.Location = new System.Drawing.Point(8, 267);
@@ -421,54 +469,6 @@
             this.lbInmuebles.Text = "Inmuebles Para Este Interesado";
             this.lbInmuebles.Visible = false;
             // 
-            // numDesde
-            // 
-            this.numDesde.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numDesde.Increment = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.numDesde.Location = new System.Drawing.Point(312, 85);
-            this.numDesde.Maximum = new decimal(new int[] {
-            -1530494976,
-            232830,
-            0,
-            0});
-            this.numDesde.Name = "numDesde";
-            this.numDesde.Size = new System.Drawing.Size(103, 21);
-            this.numDesde.TabIndex = 49;
-            this.numDesde.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numDesde.ThousandsSeparator = true;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(219, 88);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(92, 16);
-            this.label8.TabIndex = 50;
-            this.label8.Text = "Monto Desde:";
-            // 
-            // fechaCreacion
-            // 
-            this.fechaCreacion.Location = new System.Drawing.Point(379, 182);
-            this.fechaCreacion.Name = "fechaCreacion";
-            this.fechaCreacion.Size = new System.Drawing.Size(237, 21);
-            this.fechaCreacion.TabIndex = 51;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(269, 183);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(106, 16);
-            this.label11.TabIndex = 52;
-            this.label11.Text = "Fecha Creación:";
-            // 
             // frmInteresado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -489,9 +489,9 @@
             this.Load += new System.EventHandler(this.frmInteresado_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numDesde)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHasta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvInmueblesParaInteresado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDesde)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -531,6 +531,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown numDesde;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker fechaCreacion;
+        private System.Windows.Forms.DateTimePicker dtFechaCreacion;
     }
 }

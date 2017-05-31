@@ -56,7 +56,7 @@ namespace InmobiliariaForms
                     numHasta.Value = Interesado.MontoHasta != null ? (decimal)Interesado.MontoHasta : 0;
                     txObservaciones.Text = Interesado.Observaciones;
                     checkDisponible.Checked = Interesado.Disponible;
-
+                    dtFechaCreacion.Value = Interesado.FechaCreacion.Date;
                     
                     eLocalidad localidad = (eLocalidad)Enum.Parse(typeof(eLocalidad), Interesado.Localidad);
                     cbLocalidad.SelectedIndex = (int)localidad; 
@@ -197,7 +197,8 @@ namespace InmobiliariaForms
                     Interesado.MontoDesde = 0m;
                     Interesado.MontoHasta = numHasta.Value;
                     Interesado.Observaciones = txObservaciones.Text;
-                    Interesado.Disponible = checkDisponible.Checked; 
+                    Interesado.Disponible = checkDisponible.Checked;
+                    Interesado.FechaCreacion = dtFechaCreacion.Value;
 
                     //Ahora que ya tenes el interesado guardado lo tenes que mandar al web service para que lo guarde en la base de datos:
                     ServiceHelper.ws.GuardarInteresado(Interesado);
