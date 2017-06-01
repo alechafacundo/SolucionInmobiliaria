@@ -54,6 +54,7 @@ namespace InmobiliariaForms
                     cbTipoOperacion.SelectedIndex = (int)Interesado.TipoDeOperacion;
                     cbAmbientes.SelectedIndex = (int)Interesado.Ambientes;
                     numHasta.Value = Interesado.MontoHasta != null ? (decimal)Interesado.MontoHasta : 0;
+                    numDesde.Value = Interesado.MontoDesde != null ? (decimal)Interesado.MontoDesde : 0;
                     txObservaciones.Text = Interesado.Observaciones;
                     checkDisponible.Checked = Interesado.Disponible;
                     dtFechaCreacion.Value = Interesado.FechaCreacion.Date;
@@ -194,7 +195,7 @@ namespace InmobiliariaForms
                     Interesado.Apellido = txApellido.Text;
                     Interesado.Email = txEmail.Text;
                     Interesado.Telefono = txTelefono.Text;
-                    Interesado.MontoDesde = 0m;
+                    Interesado.MontoDesde = numDesde.Value;
                     Interesado.MontoHasta = numHasta.Value;
                     Interesado.Observaciones = txObservaciones.Text;
                     Interesado.Disponible = checkDisponible.Checked;
